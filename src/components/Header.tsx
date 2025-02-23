@@ -32,7 +32,7 @@ export default function Header({ q, location }: HeaderProps) {
         <div className="flex flex-col items-center gap-4">
           <Link href="/">
             <span className="text-3xl font-bold text-primary-foreground">
-              Restaurant Finder
+              Hotels Finder
             </span>
           </Link>
           <form
