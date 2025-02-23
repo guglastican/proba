@@ -48,7 +48,7 @@ export default function LocationInput({
       <input type="hidden" name={name} value={input} />
       <PopoverContent className="w-[180px] p-0">
         <Command>
-          <CommandInput placeholder="Search location..." />
+          <CommandInput placeholder="Search hotels..." />
           <CommandList>
             <CommandEmpty>No location found.</CommandEmpty>
             <CommandGroup>
