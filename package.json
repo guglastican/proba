@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/third-parties": "^15.1.7",
     "@radix-ui/react-dialog": "^1.1.5",
     "@radix-ui/react-label": "^2.1.1",
     "@radix-ui/react-popover": "^1.1.5",
@@ -17,7 +18,7 @@
     "clsx": "^2.1.1",
     "cmdk": "^1.0.0",
     "lucide-react": "^0.474.0",
-    "next": "15.1.6",
+    "next": "^15.1.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwind-merge": "^3.0.1",
@@ -25,6 +26,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@types/google-publisher-tag": "^1.20250210.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
