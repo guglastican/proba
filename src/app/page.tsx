@@ -1,6 +1,14 @@
 import banner from "@/assets/restaurant-banner.jpg";
 import Header from "@/components/Header";
 import Image from "next/image";
+import { Metadata } from "next";
+
+// Add the metadata for Google Search Console verification
+export const metadata: Metadata = {
+  other: {
+    "google-site-verification": "your-verification-code",
+  },
+};
 
 export default async function Home() {
   return (
