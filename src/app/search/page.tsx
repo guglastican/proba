@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
-import RestaurantItem from "@/components/RestaurantItem";
+import HotelItem from "@/components/HotelItem";
 import { Skeleton } from "@/components/ui/skeleton";
-import { locations, searchRestaurants } from "@/data/restaurants";
+import { locations, searchHotels } from "@/data/hotels";
 import { redirect } from "next/navigation";
 import { Suspense } from "react";
 
@@ -33,7 +33,7 @@ interface ResultsProps {
 }
 
 async function Results({ q, location }: ResultsProps) {
-  const results = await searchRestaurants(q, location);
+  const results = await searchHotels(q, location);
 
   return (
     <main className="container mx-auto space-y-8 px-4 py-8">
@@ -41,8 +41,8 @@ async function Results({ q, location }: ResultsProps) {
         Showing {results.length} results for {`"${q}"`} near {location}
       </p>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {results.map((restaurant) => (
-          <RestaurantItem key={restaurant.id} restaurant={restaurant} />
+        {results.map((hotel) => (
+          <HotelItem key={hotel.id} hotel={hotel} />
         ))}
       </div>
     </main>

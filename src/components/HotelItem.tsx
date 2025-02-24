@@ -6,7 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Restaurant } from "@/data/hotels";
+import { Hotel } from "@/data/hotels";
 import { Clock, MapPin, Phone, Star, StarHalf } from "lucide-react";
 import Image from "next/image";
 
@@ -29,7 +29,7 @@ export default function HotelItem({ hotel }: HotelItemProps) {
           <div>
             <CardTitle className="text-xl">{hotel.name}</CardTitle>
             <CardDescription>
-              {hotel.cuisine} • {hotel.price}
+              {hotel.name} • {hotel.price}
             </CardDescription>
           </div>
           <div className="flex items-center">
@@ -50,7 +50,7 @@ export default function HotelItem({ hotel }: HotelItemProps) {
           </div>
           <div className="flex items-center text-muted-foreground">
             <Phone className="mr-2 h-4 w-4" />
-            <span className="text-sm">{hotel.phone}</span>
+            <span className="text-sm">{hotel.address}</span>
           </div>
           <div className="flex items-center text-muted-foreground">
             <Clock className="mr-2 h-4 w-4" />
