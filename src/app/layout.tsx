@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       {/* Add Google Tag Manager */}
-      <GoogleTagManager gtmId="GTM-XXXXXXX" />
+      <GoogleTagManager gtmId="GTM-KQ7B5BL5" />
       <body className={`${geistSans.className} antialiased`}>{children}</body>
     </html>
   );
