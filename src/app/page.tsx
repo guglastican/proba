@@ -10,14 +10,14 @@ export default async function Home() {
         <div className="relative h-96 w-full">
           <Image
             src={banner}
-            alt="Hotel Finder"
+            alt="Hotel With Hotube"
             layout="fill"
             objectFit="cover"
             className="rounded-lg"
           />
           <div className="absolute inset-0 flex flex-col items-center justify-end space-y-2 rounded-lg bg-gradient-to-t from-black via-transparent to-transparent p-4 text-white">
             <h1 className="text-center text-3xl font-bold xl:text-4xl">
-              Find the best Hotels near you
+              Find the Best Hotels Near You
             </h1>
             <p className="text-center text-lg">
               Search for your favorite cuisine, hotel, or dish
