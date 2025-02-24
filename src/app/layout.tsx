@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
 import { GoogleTagManager } from "@next/third-parties/google";
-import Script from "next/script";
-
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -12,7 +10,7 @@ const geistSans = Geist({
 
 export const metadata: Metadata = {
   title: "Hotel With Hotube",
-  description: "Find the best hotelss near you",
+  description: "Find the best hotels near you",
 };
 
 export default function RootLayout({
@@ -22,10 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <GoogleTagManager gtmId="GTM-KQ7B5BL5" />
+      {/* Add Google Tag Manager */}
+      <GoogleTagManager gtmId="GTM-XXXXXXX" />
       <body className={`${geistSans.className} antialiased`}>{children}</body>
     </html>
   );
 }
-//Google Manager Tag
-
