@@ -8,7 +8,7 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Hotel Finder",
+  title: "Hotel With Hotube",
   description: "Find the best hotelss near you",
 };
 
