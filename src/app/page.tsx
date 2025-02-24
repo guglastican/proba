@@ -6,7 +6,7 @@ import { Metadata } from "next";
 // Add the metadata for Google Search Console verification
 export const metadata: Metadata = {
   other: {
-    "google-site-verification": "your-verification-code",
+    "google-site-verification": "zlqSpO2H6dGPLVmzbIAwNzFr5tvkdRQaI_syLVkZXEI",
   },
 };
 
