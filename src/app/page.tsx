@@ -18,7 +18,7 @@ export default async function Home() {
         <div className="relative h-96 w-full">
           <Image
             src={banner}
-            alt="Hotel With Hotube"
+            alt="Hotel With Hot Tubs"
             layout="fill"
             objectFit="cover"
             className="rounded-lg"
@@ -28,7 +28,7 @@ export default async function Home() {
               Find the Best Hotels Near You
             </h1>
             <p className="text-center text-lg">
-              Search for your favorite cuisine, hotel, or dish
+              Search for your favorite hotels with hot tubes
             </p>
           </div>
         </div>

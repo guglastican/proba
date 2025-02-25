@@ -1,4 +1,5 @@
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -7,7 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Hotel } from "@/data/hotels";
-import { Clock, MapPin, Phone, Star, StarHalf } from "lucide-react";
+import { Clock, MapPin, Phone, Star, StarHalf, Building } from "lucide-react";
 import Image from "next/image";
 
 interface HotelItemProps {
@@ -62,6 +63,14 @@ export default function HotelItem({ hotel }: HotelItemProps) {
                 {tag}
               </Badge>
             ))}
+          </div>
+          <div className="mt-4">
+            <a href={hotel.link} target="_blank" rel="noopener noreferrer">
+              <Button className="w-full" variant="default">
+                <Building />
+                Book Hotel
+              </Button>
+            </a>
           </div>
         </div>
       </CardContent>

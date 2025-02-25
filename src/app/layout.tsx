@@ -9,7 +9,7 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Hotel With Hotube",
+  title: "Hotel With Hot Tubs ",
   description: "Find the best hotels near you",
 };
 
