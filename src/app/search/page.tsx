@@ -37,9 +37,12 @@ async function Results({ q, location }: ResultsProps) {
 
   return (
     <main className="container mx-auto space-y-8 px-4 py-8">
-      <p className="text-center font-semibold">
+      <p className="text-center font-semibold bg-blue-500 text-white p-2 rounded">
         Showing {results.length} results for {`"${q}"`} near {location}
       </p>
+      <h1 className="text-center text-3xl font-bold mt-4 mb-6">
+        {q.charAt(0).toUpperCase() + q.slice(1)} Hotels in {location}
+      </h1>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {results.map((hotel) => (
           <HotelItem key={hotel.id} hotel={hotel} />

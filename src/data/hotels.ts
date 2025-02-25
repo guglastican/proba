@@ -25,7 +25,7 @@ const hotels: Hotel[] = [
     description: "Luxury San Francisco hotel in Downtown San Francisco with a full-service spa. Enjoy modern amenities, eco-friendly design, and stunning waterfront views. Offers couples treatment rooms, hydrotherapy, and premium bedding in sophisticated suites.",
     hours: "24/7",
     reviews: 367,
-    tags: ["Luxury", "Spa", "Eco-Friendly", "Waterfront"],
+    tags: ["hotels in san francisco with hot tub in room", "Spa", "Eco-Friendly", "Waterfront"],
     amenities: ["Full-service Spa", "Bar", "Free WiFi", "Room Service", "Air Conditioning", "Terrace/Patio"],
     link: "https://expedia.com/affiliates/san-francisco-hotels-1-hotel-san-francisco.nmthOWh"
   },
@@ -39,7 +39,7 @@ const hotels: Hotel[] = [
   description: "4-star hotel in Downtown San Francisco featuring 2 restaurants and walking distance to Moscone Convention Center. Offers modern rooms with premium bedding, city views, and convenient access to cultural attractions.",
   hours: "24/7",
   reviews: 1006,
-  tags: ["Business Travel", "City Views", "Convention Center", "Fine Dining"],
+  tags: ["hotels in san francisco with hot tub in room", "City Views", "Convention Center", "Fine Dining"],
   amenities: ["2 Restaurants", "Indoor Pool", "24-Hour Gym", "Hot Tub", "Room Service", "Breakfast Available"],
   link: "https://expedia.com/affiliates/san-francisco-hotels-intercontinental-san-francisco.XFQqP4Y"
   },
@@ -53,7 +53,7 @@ const hotels: Hotel[] = [
       description: "Charming Mission District bed & breakfast featuring a rooftop terrace and Victorian-era charm. Offers individually decorated rooms with historic character, free breakfast, and easy access to Castro Street attractions.",
       hours: "24/7",
       reviews: 514,
-      tags: ["Boutique", "Historic", "Pet-Friendly", "Free Breakfast"],
+      tags: ["hotels in san francisco with hot tub in room", "Historic", "Pet-Friendly", "Free Breakfast"],
       amenities: [
         "Daily Breakfast",
         "Outdoor Spa Tub",
@@ -77,7 +77,7 @@ const hotels: Hotel[] = [
   hours: "24/7",  // Added the 'hours' property
   amenities: ["Breakfast included", "Free airport shuttle", "Hot Tub", "Gym", "Parking available", "Housekeeping"],
   reviews: 1005,
-  tags: ["Breakfast included", "Free airport shuttle", "Hot Tub"],
+  tags: ["hotels in san francisco with hot tub in room", "Free airport shuttle", "Hot Tub"],
   link: "https://expedia.com/affiliates/san-francisco-hotels-holiday-inn-express-san-francisco-airport-north.AhfYCnR"
 },
   {
@@ -91,7 +91,7 @@ const hotels: Hotel[] = [
     hours: "24/7",  // Added the 'hours' property
     amenities: ["Spa", "Pool", "Hot Tub", "Restaurant", "Breakfast available", "Bar"],
     reviews: 1000,
-    tags: ["Spa", "Pool", "Hot Tub"],
+    tags: ["Spa", "Pool", "hotels in san francisco with hot tub in room"],
     link: "https://expedia.com/affiliates/sonoma-hotels-fairmont-sonoma-mission-inn-spa.on9UmAB"
   },
   {
@@ -105,7 +105,7 @@ const hotels: Hotel[] = [
         hours: "24/7",
         amenities: ["Breakfast available", "Pool", "Room service", "Spa", "24/7 front desk", "Housekeeping"],
         reviews: 60,
-        tags: ["Luxury", "Spa", "Pool"],
+        tags: ["hotels in san francisco with hot tub in room", "Spa", "Pool"],
         link: "https://expedia.com/affiliates/forestville-hotels-farmhouse-inn.gQ3yQdB"
       },
   // Chicago
