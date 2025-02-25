@@ -26,7 +26,7 @@ const hotels: Hotel[] = [
     hours: "24/7",
     reviews: 367,
     tags: ["hotels in san francisco with hot tub in room", "Spa", "Eco-Friendly", "Waterfront"],
-    amenities: ["Full-service Spa", "Bar", "Free WiFi", "Room Service", "Air Conditioning", "Terrace/Patio"],
+    amenities: ["Full-service Spa", "Bar", "Free WiFi", "Hot Tub", "Air Conditioning", "Terrace/Patio"],
     link: "https://expedia.com/affiliates/san-francisco-hotels-1-hotel-san-francisco.nmthOWh"
   },
   {
@@ -53,7 +53,7 @@ const hotels: Hotel[] = [
       description: "Charming Mission District bed & breakfast featuring a rooftop terrace and Victorian-era charm. Offers individually decorated rooms with historic character, free breakfast, and easy access to Castro Street attractions.",
       hours: "24/7",
       reviews: 514,
-      tags: ["hotels in san francisco with hot tub in room", "Historic", "Pet-Friendly", "Free Breakfast"],
+      tags: ["Hot Tub", "Historic", "Pet-Friendly", "Free Breakfast"],
       amenities: [
         "Daily Breakfast",
         "Outdoor Spa Tub",
@@ -77,7 +77,7 @@ const hotels: Hotel[] = [
   hours: "24/7",  // Added the 'hours' property
   amenities: ["Breakfast included", "Free airport shuttle", "Hot Tub", "Gym", "Parking available", "Housekeeping"],
   reviews: 1005,
-  tags: ["hotels in san francisco with hot tub in room", "Free airport shuttle", "Hot Tub"],
+  tags: ["Hot Tubes", "Free airport shuttle", "Hot Tub"],
   link: "https://expedia.com/affiliates/san-francisco-hotels-holiday-inn-express-san-francisco-airport-north.AhfYCnR"
 },
   {
@@ -91,7 +91,7 @@ const hotels: Hotel[] = [
     hours: "24/7",  // Added the 'hours' property
     amenities: ["Spa", "Pool", "Hot Tub", "Restaurant", "Breakfast available", "Bar"],
     reviews: 1000,
-    tags: ["Spa", "Pool", "hotels in san francisco with hot tub in room"],
+    tags: ["Spa", "Pool", "Hot Tub"],
     link: "https://expedia.com/affiliates/sonoma-hotels-fairmont-sonoma-mission-inn-spa.on9UmAB"
   },
   {
@@ -105,7 +105,7 @@ const hotels: Hotel[] = [
         hours: "24/7",
         amenities: ["Breakfast available", "Pool", "Room service", "Spa", "24/7 front desk", "Housekeeping"],
         reviews: 60,
-        tags: ["hotels in san francisco with hot tub in room", "Spa", "Pool"],
+        tags: ["Hot Tub", "Spa", "Pool"],
         link: "https://expedia.com/affiliates/forestville-hotels-farmhouse-inn.gQ3yQdB"
       },
   // Chicago

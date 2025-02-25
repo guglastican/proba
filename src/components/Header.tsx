@@ -43,7 +43,7 @@ export default function Header({ q, location }: HeaderProps) {
           >
             <Input
               name="q"
-              placeholder="Search hotels with hot tubes ..."
+              placeholder="Type: Hot Tub ..."
               defaultValue={q}
               type="search"
               required
