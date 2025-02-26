@@ -25,7 +25,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "yearly",
       priority: 0.8,
     },
-    // Our pSEO pages:
-    ...searchLandingPages,
-  ];
+ // Our pSEO pages:
+ ...searchLandingPages,
+].map((page) => ({
+  loc: page.url.startsWith('https') ? page.url : `https://${baseUrl}${page.url}`, // Ensure the URL is fully qualified
+  lastmod: page.lastModified,
+  priority: page.priority,
+}));
 }

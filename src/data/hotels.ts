@@ -25,7 +25,7 @@ const hotels: Hotel[] = [
     description: "Luxury San Francisco hotel in Downtown San Francisco with a full-service spa. Enjoy modern amenities, eco-friendly design, and stunning waterfront views. Offers couples treatment rooms, hydrotherapy, and premium bedding in sophisticated suites.",
     hours: "24/7",
     reviews: 367,
-    tags: ["hotels in san francisco with hot tub in room", "Spa", "Eco-Friendly", "Waterfront"],
+    tags: ["hot tub", "Spa", "Eco-Friendly", "Waterfront"],
     amenities: ["Full-service Spa", "Bar", "Free WiFi", "Hot Tub", "Air Conditioning", "Terrace/Patio"],
     link: "https://expedia.com/affiliates/san-francisco-hotels-1-hotel-san-francisco.nmthOWh"
   },
@@ -39,7 +39,7 @@ const hotels: Hotel[] = [
   description: "4-star hotel in Downtown San Francisco featuring 2 restaurants and walking distance to Moscone Convention Center. Offers modern rooms with premium bedding, city views, and convenient access to cultural attractions.",
   hours: "24/7",
   reviews: 1006,
-  tags: ["hotels in san francisco with hot tub in room", "City Views", "Convention Center", "Fine Dining"],
+  tags: ["hot tub", "City Views", "Convention Center", "Fine Dining"],
   amenities: ["2 Restaurants", "Indoor Pool", "24-Hour Gym", "Hot Tub", "Room Service", "Breakfast Available"],
   link: "https://expedia.com/affiliates/san-francisco-hotels-intercontinental-san-francisco.XFQqP4Y"
   },
@@ -134,7 +134,7 @@ const hotels: Hotel[] = [
       hours: "24/7",
       amenities: ["Spa", "Pool", "Restaurant", "Gym", "Hot Tub", "Free Wi-Fi"],
       reviews: 998,
-      tags: ["Luxury", "Spa", "Downtown Chicago"],
+      tags: ["Hot tub", "Spa", "Downtown Chicago"],
       link: "https://expedia.com/affiliates/chicago-hotels-the-langham.TLKl1W3"
   },
   {
@@ -148,7 +148,7 @@ const hotels: Hotel[] = [
       hours: "24/7",
       amenities: ["Spa", "Pool", "Restaurant", "Gym", "Hot Tub", "Housekeeping", "Free Wi-Fi"],
       reviews: 1001,
-      tags: ["Luxury", "Downtown Chicago", "Spa", "Indoor Pool"],
+      tags: ["Hot Tub", "Downtown Chicago", "Spa", "Indoor Pool"],
       link: "https://expedia.com/affiliates/chicago-hotels-jw-marriott-chicago.ctu0tPJ"
   },
   {
@@ -162,7 +162,7 @@ const hotels: Hotel[] = [
       hours: "24/7",
       amenities: ["Pool", "Hot Tub", "Bar", "Spa", "Breakfast Available", "Pet Friendly"],
       reviews: 1000,
-      tags: ["Luxury", "Downtown Chicago", "Spa", "Pet Friendly"],
+      tags: ["Hot Tub", "Downtown Chicago", "Spa", "Pet Friendly"],
       link: "https://expedia.com/affiliates/chicago-hotels-park-hyatt-chicago.fLsb72J"
   },
   {
@@ -176,7 +176,7 @@ const hotels: Hotel[] = [
       hours: "24/7",
       amenities: ["Pool", "Parking Available", "Room Service", "Bar", "Housekeeping", "Laundry"],
       reviews: 1000,
-      tags: ["Luxury", "Spa", "Downtown Chicago", "Pet Friendly"],
+      tags: ["Hot Tub", "Spa", "Downtown Chicago", "Pet Friendly"],
       link: "https://expedia.com/affiliates/chicago-hotels-waldorf-astoria-chicago.5y1tbwo"
   },
   {
@@ -204,7 +204,7 @@ const hotels: Hotel[] = [
       hours: "24/7",
       amenities: ["2 Outdoor Swimming Pools", "Restaurant", "Gym", "Hot Tub", "Breakfast Available", "Pet Friendly"],
       reviews: 1000,
-      tags: ["Luxury", "Downtown Miami", "Pet Friendly", "Swimming Pools", "Restaurant", "Hot Tub"],
+      tags: ["Hot Tubs", "Downtown Miami", "Pet Friendly", "Swimming Pools", "Restaurant", "Hot Tub"],
       link: "https://expedia.com/affiliates/miami-hotels-the-gabriel-miami.bcBMhFf"
   },
   {
@@ -218,7 +218,7 @@ const hotels: Hotel[] = [
       hours: "24/7",
       amenities: ["3 Outdoor Pools", "Spa", "Restaurant", "Bar", "Hot Tub", "Parking Available", "Housekeeping"],
       reviews: 531,
-      tags: ["Luxury", "Beachfront", "Pools", "Spa", "Family Friendly", "Restaurant", "Bar"],
+      tags: ["Luxury", "Beachfront", "Pools", "Spa", "Family Friendly", "Restaurant", "Hot Tub"],
       link: "https://expedia.com/affiliates/miami-hotels-acqualina-resort-residences-on-the-beach.4dr761K"
   },
   {
@@ -232,7 +232,7 @@ const hotels: Hotel[] = [
       hours: "24/7",
       amenities: ["Restaurant", "Pool", "Gym", "Hot Tub", "Bar", "Pet Friendly"],
       reviews: 2962,
-      tags: ["Luxury", "Shopping", "City Center", "Rooftop", "Pet Friendly", "Bar", "Restaurant"],
+      tags: ["Luxury", "Shopping", "City Center", "Rooftop", "Pet Friendly", "Hot Tub", "Restaurant"],
       link: "https://expedia.com/affiliates/miami-hotels-east-miami.oKqd8tm"
   },
   {
@@ -260,7 +260,7 @@ const hotels: Hotel[] = [
       hours: "24/7",
       amenities: ["Pool", "Restaurant", "Pet Friendly", "Spa", "Bar", "Breakfast Available"],
       reviews: 1709,
-      tags: ["Luxury", "Downtown Miami", "Restaurants", "Spa", "Outdoor Pool", "Pet Friendly"],
+      tags: ["Luxury", "Downtown Miami", "Hut Tub", "Spa", "Outdoor Pool", "Pet Friendly"],
       link: "https://expedia.com/affiliates/miami-hotels-kimpton-epic-hotel.ZNrsbxq",
   },
   {
