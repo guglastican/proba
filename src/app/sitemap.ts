@@ -9,7 +9,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const searchLandingPages = allTags
     .map((tag) =>
       locations.map((location) => ({
-        url: `${baseUrl}/${location}/${tag}`,
+        url: `${baseUrl}/${location.replace(/\s+/g, '-')}/${tag.replace(/\s+/g, '-')}`,
         lastModified: new Date(),
         changeFrequency: "weekly",
         priority: 1,
@@ -25,11 +25,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "yearly",
       priority: 0.8,
     },
- // Our pSEO pages:
- ...searchLandingPages,
-].map((page) => ({
-  url: page.url.startsWith('https') ? page.url : `https://${baseUrl}${page.url}`,
-  lastModified: page.lastModified,
-  priority: page.priority,
-}));
+  // Our pSEO pages:
+  ...searchLandingPages,
+];
 }
