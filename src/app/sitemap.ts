@@ -3,6 +3,15 @@ import { MetadataRoute } from "next";
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL!;  // Add the non-null assertion
 
+// Function to format the location and tag to ensure no consecutive dashes
+const formatString = (str: string) =>
+  str
+    .replace(/\s+/g, '-')    // Replace spaces with dashes
+    .replace(/,/g, '-')      // Replace commas with dashes
+    .replace(/-+/g, '-')     // Replace multiple consecutive dashes with a single dash
+    .trim();                 // Trim leading and trailing spaces
+
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const allTags = await getAllTags();
 
@@ -10,7 +19,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     .map((tag) =>
       locations.map((location) => ({
         // Use baseUrl here without the undefined error
-        url: `${baseUrl.trim()}/${location.replace(/\s+/g, '-').replace(/,/g, '-').trim()}/${tag.replace(/\s+/g, '-').replace(/,/g, '-').trim()}`,
+        url: `${baseUrl.trim()}/${formatString(location)}/${formatString(tag)}`,
         lastModified: new Date(),
         changeFrequency: "weekly",
         priority: 1,
