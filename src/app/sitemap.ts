@@ -28,8 +28,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
  // Our pSEO pages:
  ...searchLandingPages,
 ].map((page) => ({
-  loc: page.url.startsWith('https') ? page.url : `https://${baseUrl}${page.url}`, // Ensure the URL is fully qualified
-  lastmod: page.lastModified,
+  url: page.url.startsWith('https') ? page.url : `https://${baseUrl}${page.url}`,
+  lastModified: page.lastModified,
   priority: page.priority,
 }));
 }
