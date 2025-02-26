@@ -30,7 +30,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [
     // Insert your other pages:
     {
-      url: `${baseUrl.trim()}/about`,
+      url: `https://${baseUrl.trim()}/about`,
       lastModified: "2024-12-31",
       changeFrequency: "yearly",
       priority: 0.8,
