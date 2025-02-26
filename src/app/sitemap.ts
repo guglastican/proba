@@ -19,7 +19,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     .map((tag) =>
       locations.map((location) => ({
         // Use baseUrl here without the undefined error
-        url: `${baseUrl.trim()}/${formatString(location)}/${formatString(tag)}`,
+        url: `${baseUrl.trim()}/${formatString(location)}/${formatString(tag)}/`,
         lastModified: new Date(),
         changeFrequency: "weekly",
         priority: 1,
