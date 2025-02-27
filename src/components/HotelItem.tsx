@@ -8,7 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Hotel } from "@/data/hotels";
-import { Clock, MapPin, Phone, Star, StarHalf, Building } from "lucide-react";
+import { Clock, MapPin, Star, StarHalf, Building,Type } from "lucide-react";
 import Image from "next/image";
 
 interface HotelItemProps {
@@ -21,9 +21,9 @@ export default function HotelItem({ hotel }: HotelItemProps) {
       <Image
         src={hotel.image}
         alt={hotel.name}
-        width={800}
-        height={500}
-        className="h-48 w-full object-cover"
+        width={1200}
+        height={600}
+        className="h-64 w-full object-cover"
       />
       <CardHeader>
         <div className="flex items-start justify-between">
@@ -50,8 +50,8 @@ export default function HotelItem({ hotel }: HotelItemProps) {
             <span className="text-sm">{hotel.address}</span>
           </div>
           <div className="flex items-center text-muted-foreground">
-            <Phone className="mr-2 h-4 w-4" />
-            <span className="text-sm">{hotel.address}</span>
+           <Type className="mr-2 h-4 w-4" /> {/* Text icon */}
+           <span className="text-sm">{hotel.description}</span>
           </div>
           <div className="flex items-center text-muted-foreground">
             <Clock className="mr-2 h-4 w-4" />
