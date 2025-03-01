@@ -138,7 +138,7 @@ const hotels: Hotel[] = [
       reviews: 998,
       tags: ["Hot tub", "Spa", "Downtown Chicago"],
       link: "https://expedia.com/affiliates/chicago-hotels-the-langham.TLKl1W3",
-      googlePlaceId: "ChIJQ8MSFLQsDogRUKLnmn-tJpA" // Example Google Place ID
+      googlePlaceId: "ChIJa8l-R64sDogREysrVzDMWTQ" // Example Google Place ID
   },
   {
       id: 9,
