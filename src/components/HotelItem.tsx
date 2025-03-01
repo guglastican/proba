@@ -8,14 +8,38 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Hotel } from "@/data/hotels";
-import { Clock, MapPin, Star, StarHalf, Building,Type } from "lucide-react";
+import { Clock, MapPin, Star, StarHalf, Building, Type } from "lucide-react";
 import Image from "next/image";
+import GoogleReviews from "@/components/GoogleReviews";
+import SchemaReviews from "@/components/SchemaReviews";
+import { Suspense, useState, useEffect } from "react";
+import { GoogleReview } from "@/types/review";
 
 interface HotelItemProps {
   hotel: Hotel;
 }
 
 export default function HotelItem({ hotel }: HotelItemProps) {
+  const [reviews, setReviews] = useState<GoogleReview[]>([]);
+
+  useEffect(() => {
+    // Fetch reviews for schema markup if hotel has a Google Place ID
+    async function fetchReviews() {
+      if (!hotel.googlePlaceId) return;
+      
+      try {
+        const response = await fetch(`/api/google-reviews?placeId=${hotel.googlePlaceId}`);
+        if (response.ok) {
+          const data = await response.json();
+          setReviews(data.reviews || []);
+        }
+      } catch (error) {
+        console.error('Error fetching reviews for schema:', error);
+      }
+    }
+
+    fetchReviews();
+  }, [hotel.googlePlaceId]);
   return (
     <Card className="overflow-hidden transition-shadow hover:shadow-lg">
       <Image
@@ -73,7 +97,21 @@ export default function HotelItem({ hotel }: HotelItemProps) {
             </a>
           </div>
         </div>
+        
+        {/* Google Reviews Section */}
+        {hotel.googlePlaceId && (
+          <div className="mt-6 border-t border-gray-200 pt-4">
+            <Suspense fallback={<div className="text-center">Loading reviews...</div>}>
+              <GoogleReviews placeId={hotel.googlePlaceId} />
+            </Suspense>
+          </div>
+        )}
       </CardContent>
+      
+      {/* Schema.org markup for SEO */}
+      {hotel.googlePlaceId && reviews.length > 0 && (
+        <SchemaReviews hotel={hotel} reviews={reviews} />
+      )}
     </Card>
   );
 }

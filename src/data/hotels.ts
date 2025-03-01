@@ -12,6 +12,7 @@ export interface Hotel {
   tags: string[];
   amenities: string[];
   link: string;
+  googlePlaceId?: string; // Google Place ID for fetching reviews
 }
 
 const hotels: Hotel[] = [
@@ -27,7 +28,8 @@ const hotels: Hotel[] = [
     reviews: 367,
     tags: ["hot tub", "Spa", "Eco-Friendly", "Waterfront"],
     amenities: ["Full-service Spa", "Bar", "Free WiFi", "Hot Tub", "Air Conditioning", "Terrace/Patio"],
-    link: "https://expedia.com/affiliates/san-francisco-hotels-1-hotel-san-francisco.nmthOWh"
+    link: "https://expedia.com/affiliates/san-francisco-hotels-1-hotel-san-francisco.nmthOWh",
+    googlePlaceId: "ChIJFUBxSWSAhYAR_-OXjzMVCrA" // Example Google Place ID
   },
   {
     id: 2,
@@ -135,7 +137,8 @@ const hotels: Hotel[] = [
       amenities: ["Spa", "Pool", "Restaurant", "Gym", "Hot Tub", "Free Wi-Fi"],
       reviews: 998,
       tags: ["Hot tub", "Spa", "Downtown Chicago"],
-      link: "https://expedia.com/affiliates/chicago-hotels-the-langham.TLKl1W3"
+      link: "https://expedia.com/affiliates/chicago-hotels-the-langham.TLKl1W3",
+      googlePlaceId: "ChIJQ8MSFLQsDogRUKLnmn-tJpA" // Example Google Place ID
   },
   {
       id: 9,
@@ -233,7 +236,8 @@ const hotels: Hotel[] = [
       amenities: ["Restaurant", "Pool", "Gym", "Hot Tub", "Bar", "Pet Friendly"],
       reviews: 2962,
       tags: ["Luxury", "Shopping", "City Center", "Rooftop", "Pet Friendly", "Hot Tub", "Restaurant"],
-      link: "https://expedia.com/affiliates/miami-hotels-east-miami.oKqd8tm"
+      link: "https://expedia.com/affiliates/miami-hotels-east-miami.oKqd8tm",
+      googlePlaceId: "ChIJhwGwQG622YgRYJnQW9o91Gg" // Example Google Place ID
   },
   {
       id: 16,
