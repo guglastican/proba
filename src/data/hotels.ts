@@ -26,7 +26,7 @@ const hotels: Hotel[] = [
     description: "Luxury San Francisco hotel in Downtown San Francisco with a full-service spa. Enjoy modern amenities, eco-friendly design, and stunning waterfront views. Offers couples treatment rooms, hydrotherapy, and premium bedding in sophisticated suites.",
     hours: "24/7",
     reviews: 367,
-    tags: ["hot tub", "Spa", "Hotels in San Francisco With Hhot Tub in Room", "Waterfront"],
+    tags: ["hot tub", "Spa", "Hotels in San Francisco With Hot Tub in Room", "Waterfront"],
     amenities: ["Full-service Spa", "Bar", "Free WiFi", "Hot Tub", "Air Conditioning", "Terrace/Patio"],
     link: "https://expedia.com/affiliates/san-francisco-hotels-1-hotel-san-francisco.nmthOWh",
     googlePlaceId: "ChIJFUBxSWSAhYAR_-OXjzMVCrA" // Google Place ID for 1 Hotel San Francisco
@@ -56,7 +56,7 @@ const hotels: Hotel[] = [
       description: "Charming Mission District bed & breakfast featuring a rooftop terrace and Victorian-era charm. Offers individually decorated rooms with historic character, free breakfast, and easy access to Castro Street attractions.",
       hours: "24/7",
       reviews: 514,
-      tags: ["Hot Tub", "Hotels in San Francisco With Hhot Tub in Room", "Pet-Friendly", "Free Breakfast"],
+      tags: ["Hot Tub", "Hotels in San Francisco With Hot Tub in Room", "Pet-Friendly", "Free Breakfast"],
       amenities: [
         "Daily Breakfast",
         "Outdoor Spa Tub",
@@ -80,7 +80,7 @@ const hotels: Hotel[] = [
   hours: "24/7",  // Added the 'hours' property
   amenities: ["Breakfast included", "Free airport shuttle", "Hot Tub", "Gym", "Parking available", "Housekeeping"],
   reviews: 1005,
-  tags: ["Hot Tubes", "Hotels in San Francisco With Hhot Tub in Room", "Hot Tub"],
+  tags: ["Hot Tubes", "Hotels in San Francisco With Hot Tub in Room", "Hot Tub"],
   link: "https://expedia.com/affiliates/san-francisco-hotels-holiday-inn-express-san-francisco-airport-north.AhfYCnR"
 },
   {
@@ -92,9 +92,9 @@ const hotels: Hotel[] = [
     address: "100 Boyes Boulevard, North San Francisco, CA, 95416",
     description: "Discover the finest of California Wine Country at Fairmont Sonoma Mission Inn & Spa, a top luxury resort in Sonoma. Just an hour north of San Francisco, it offers an unforgettable experience.",
     hours: "24/7",  // Added the 'hours' property
-    amenities: ["Spa", "Pool", "Hot Tub", "Restaurant", "Hotels in San Francisco With Hhot Tub in Room", "Bar"],
+    amenities: ["Spa", "Pool", "Hot Tub", "Restaurant", "Hotels in San Francisco With Hot Tub in Room", "Bar"],
     reviews: 1000,
-    tags: ["Spa", "Pool", "Hot Tub", "Hotels in San Francisco With Hhot Tub in Room"],
+    tags: ["Spa", "Pool", "Hot Tub", "Hotels in San Francisco With Hot Tub in Room"],
     link: "https://expedia.com/affiliates/sonoma-hotels-fairmont-sonoma-mission-inn-spa.on9UmAB"
   },
   {
@@ -106,9 +106,9 @@ const hotels: Hotel[] = [
         address: "7871 River Road, San Francisco, CA, 95436",
         description: "The Farmhouse in San Francisco Sonoma County's Russian River Valley offers a luxurious, intimate wine country retreat with 25 rooms, a Michelin-starred restaurant, and a Farm-to-Table Spa, surrounded by vineyards, redwood forests, and the stunning Sonoma Coast.",
         hours: "24/7",
-        amenities: ["Hotels in San Francisco With Hhot Tub in Room", "Pool", "Room service", "Spa", "24/7 front desk", "Housekeeping"],
+        amenities: ["Hotels in San Francisco With Hot Tub in Room", "Pool", "Room service", "Spa", "24/7 front desk", "Housekeeping"],
         reviews: 60,
-        tags: ["Hot Tub", "Spa", "Pool", "Hotels in San Francisco With Hhot Tub in Room"],
+        tags: ["Hot Tub", "Spa", "Pool", "Hotels in San Francisco With Hot Tub in Room"],
         link: "https://expedia.com/affiliates/forestville-hotels-farmhouse-inn.gQ3yQdB"
       },
   // Chicago
