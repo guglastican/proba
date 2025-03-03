@@ -26,10 +26,10 @@ const hotels: Hotel[] = [
     description: "Luxury San Francisco hotel in Downtown San Francisco with a full-service spa. Enjoy modern amenities, eco-friendly design, and stunning waterfront views. Offers couples treatment rooms, hydrotherapy, and premium bedding in sophisticated suites.",
     hours: "24/7",
     reviews: 367,
-    tags: ["hot tub", "Spa", "Eco-Friendly", "Waterfront"],
+    tags: ["hot tub", "Spa", "Hotels in San Francisco With Hhot Tub in Room", "Waterfront"],
     amenities: ["Full-service Spa", "Bar", "Free WiFi", "Hot Tub", "Air Conditioning", "Terrace/Patio"],
     link: "https://expedia.com/affiliates/san-francisco-hotels-1-hotel-san-francisco.nmthOWh",
-    googlePlaceId: "ChIJFUBxSWSAhYAR_-OXjzMVCrA" // Example Google Place ID
+    googlePlaceId: "ChIJFUBxSWSAhYAR_-OXjzMVCrA" // Google Place ID for 1 Hotel San Francisco
   },
   {
     id: 2,
@@ -41,9 +41,10 @@ const hotels: Hotel[] = [
   description: "4-star hotel in Downtown San Francisco featuring 2 restaurants and walking distance to Moscone Convention Center. Offers modern rooms with premium bedding, city views, and convenient access to cultural attractions.",
   hours: "24/7",
   reviews: 1006,
-  tags: ["hot tub", "City Views", "Convention Center", "Fine Dining"],
+  tags: ["hot tub", "Hotels in San Francisco With Hhot Tub in Room", "Convention Center", "Fine Dining"],
   amenities: ["2 Restaurants", "Indoor Pool", "24-Hour Gym", "Hot Tub", "Room Service", "Breakfast Available"],
-  link: "https://expedia.com/affiliates/san-francisco-hotels-intercontinental-san-francisco.XFQqP4Y"
+  link: "https://expedia.com/affiliates/san-francisco-hotels-intercontinental-san-francisco.XFQqP4Y",
+  googlePlaceId: "ChIJ0cDhRYSAhYARLN5_xPGX-j0" // Google Place ID for InterContinental San Francisco
   },
   {
     id: 3,
@@ -55,7 +56,7 @@ const hotels: Hotel[] = [
       description: "Charming Mission District bed & breakfast featuring a rooftop terrace and Victorian-era charm. Offers individually decorated rooms with historic character, free breakfast, and easy access to Castro Street attractions.",
       hours: "24/7",
       reviews: 514,
-      tags: ["Hot Tub", "Historic", "Pet-Friendly", "Free Breakfast"],
+      tags: ["Hot Tub", "Hotels in San Francisco With Hhot Tub in Room", "Pet-Friendly", "Free Breakfast"],
       amenities: [
         "Daily Breakfast",
         "Outdoor Spa Tub",
@@ -79,7 +80,7 @@ const hotels: Hotel[] = [
   hours: "24/7",  // Added the 'hours' property
   amenities: ["Breakfast included", "Free airport shuttle", "Hot Tub", "Gym", "Parking available", "Housekeeping"],
   reviews: 1005,
-  tags: ["Hot Tubes", "Free airport shuttle", "Hot Tub"],
+  tags: ["Hot Tubes", "Hotels in San Francisco With Hhot Tub in Room", "Hot Tub"],
   link: "https://expedia.com/affiliates/san-francisco-hotels-holiday-inn-express-san-francisco-airport-north.AhfYCnR"
 },
   {
@@ -91,9 +92,9 @@ const hotels: Hotel[] = [
     address: "100 Boyes Boulevard, North San Francisco, CA, 95416",
     description: "Discover the finest of California Wine Country at Fairmont Sonoma Mission Inn & Spa, a top luxury resort in Sonoma. Just an hour north of San Francisco, it offers an unforgettable experience.",
     hours: "24/7",  // Added the 'hours' property
-    amenities: ["Spa", "Pool", "Hot Tub", "Restaurant", "Breakfast available", "Bar"],
+    amenities: ["Spa", "Pool", "Hot Tub", "Restaurant", "Hotels in San Francisco With Hhot Tub in Room", "Bar"],
     reviews: 1000,
-    tags: ["Spa", "Pool", "Hot Tub"],
+    tags: ["Spa", "Pool", "Hot Tub", "Hotels in San Francisco With Hhot Tub in Room"],
     link: "https://expedia.com/affiliates/sonoma-hotels-fairmont-sonoma-mission-inn-spa.on9UmAB"
   },
   {
@@ -105,9 +106,9 @@ const hotels: Hotel[] = [
         address: "7871 River Road, San Francisco, CA, 95436",
         description: "The Farmhouse in San Francisco Sonoma County's Russian River Valley offers a luxurious, intimate wine country retreat with 25 rooms, a Michelin-starred restaurant, and a Farm-to-Table Spa, surrounded by vineyards, redwood forests, and the stunning Sonoma Coast.",
         hours: "24/7",
-        amenities: ["Breakfast available", "Pool", "Room service", "Spa", "24/7 front desk", "Housekeeping"],
+        amenities: ["Hotels in San Francisco With Hhot Tub in Room", "Pool", "Room service", "Spa", "24/7 front desk", "Housekeeping"],
         reviews: 60,
-        tags: ["Hot Tub", "Spa", "Pool"],
+        tags: ["Hot Tub", "Spa", "Pool", "Hotels in San Francisco With Hhot Tub in Room"],
         link: "https://expedia.com/affiliates/forestville-hotels-farmhouse-inn.gQ3yQdB"
       },
   // Chicago
@@ -138,7 +139,7 @@ const hotels: Hotel[] = [
       reviews: 998,
       tags: ["Hot tub", "Spa", "Downtown Chicago"],
       link: "https://expedia.com/affiliates/chicago-hotels-the-langham.TLKl1W3",
-      googlePlaceId: "ChIJa8l-R64sDogREysrVzDMWTQ" // Example Google Place ID
+      googlePlaceId: "ChIJa8l-R64sDogREysrVzDMWTQ" // Google Place ID for The Langham, Chicago
   },
   {
       id: 9,
@@ -237,7 +238,7 @@ const hotels: Hotel[] = [
       reviews: 2962,
       tags: ["Luxury", "Shopping", "City Center", "Rooftop", "Pet Friendly", "Hot Tub", "Restaurant"],
       link: "https://expedia.com/affiliates/miami-hotels-east-miami.oKqd8tm",
-      googlePlaceId: "ChIJhwGwQG622YgRYJnQW9o91Gg" // Example Google Place ID
+      googlePlaceId: "ChIJhwGwQG622YgRYJnQW9o91Gg" // Google Place ID for EAST Miami
   },
   {
       id: 16,

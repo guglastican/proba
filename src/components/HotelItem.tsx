@@ -104,7 +104,10 @@ export default function HotelItem({ hotel }: HotelItemProps) {
         {hotel.googlePlaceId && (
           <div className="mt-6 border-t border-gray-200 pt-4">
             <Suspense fallback={<div className="text-center">Loading reviews...</div>}>
-              <GoogleReviews placeId={hotel.googlePlaceId} />
+              <GoogleReviews 
+                placeId={hotel.googlePlaceId} 
+                useMock={process.env.NODE_ENV === 'development'} 
+              />
             </Suspense>
           </div>
         )}

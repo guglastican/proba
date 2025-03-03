@@ -3,57 +3,111 @@
 import { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { GoogleReview } from '@/types/review';
-import { Star } from 'lucide-react';
+import { Star, RefreshCcw, AlertCircle } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 interface GoogleReviewsProps {
   placeId: string;
+  useMock?: boolean;
 }
 
-export default function GoogleReviews({ placeId }: GoogleReviewsProps) {
+export default function GoogleReviews({ placeId, useMock = false }: GoogleReviewsProps) {
   const [reviews, setReviews] = useState<GoogleReview[]>([]);
+  const [hotelName, setHotelName] = useState<string>("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [retryCount, setRetryCount] = useState(0);
+
+  async function fetchReviews() {
+    try {
+      setLoading(true);
+      setError(null);
+      
+      // Add mock parameter if useMock is true
+      const url = useMock 
+        ? `/api/google-reviews?placeId=${placeId}&mock=true` 
+        : `/api/google-reviews?placeId=${placeId}`;
+      
+      console.log(`Fetching reviews from: ${url}`);
+      const response = await fetch(url);
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      
+      const data = await response.json();
+      console.log('Review data received:', data);
+      
+      if (data.error) {
+        throw new Error(data.error);
+      }
+      
+      // Handle different response formats
+      if (data.reviews) {
+        setReviews(data.reviews);
+        setHotelName(data.name || "");
+      } else if (Array.isArray(data)) {
+        // Handle case where response is an array of reviews directly
+        setReviews(data);
+      } else {
+        console.warn('Unexpected response format:', data);
+        setError('Unexpected response format');
+      }
+    } catch (err) {
+      console.error('Error fetching reviews:', err);
+      setError('Could not load reviews. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  }
 
   useEffect(() => {
-    async function fetchReviews() {
-      try {
-        setLoading(true);
-        const response = await fetch(`/api/google-reviews?placeId=${placeId}`);
-        
-        if (!response.ok) {
-          throw new Error('Failed to fetch reviews');
-        }
-        
-        const data = await response.json();
-        setReviews(data.reviews || []);
-      } catch (err) {
-        setError('Could not load reviews');
-        console.error(err);
-      } finally {
-        setLoading(false);
-      }
-    }
-
     if (placeId) {
       fetchReviews();
     }
-  }, [placeId]);
+  }, [placeId, retryCount, useMock]);
+
+  const handleRetry = () => {
+    setRetryCount(prev => prev + 1);
+  };
 
   if (loading) {
-    return <div className="mt-4 text-center">Loading reviews...</div>;
+    return (
+      <div className="mt-4 text-center py-8">
+        <div className="animate-spin mb-2 mx-auto">
+          <RefreshCcw className="h-6 w-6 text-primary" />
+        </div>
+        <p>Loading reviews...</p>
+      </div>
+    );
   }
 
   if (error) {
-    return <div className="mt-4 text-center text-red-500">{error}</div>;
+    return (
+      <div className="mt-4 text-center py-6 border border-red-200 rounded-md bg-red-50">
+        <AlertCircle className="h-6 w-6 text-red-500 mx-auto mb-2" />
+        <p className="text-red-500 mb-3">{error}</p>
+        <Button 
+          variant="outline" 
+          size="sm" 
+          onClick={handleRetry}
+          className="mx-auto"
+        >
+          <RefreshCcw className="h-4 w-4 mr-2" /> Try Again
+        </Button>
+      </div>
+    );
   }
 
   if (reviews.length === 0) {
-    return <div className="mt-4 text-center">No reviews available</div>;
+    return <div className="mt-4 text-center py-6">No reviews available for this hotel</div>;
   }
 
   return (
     <div className="mt-6 space-y-4">
-      <h3 className="text-xl font-semibold">Google Reviews</h3>
+      <h3 className="text-xl font-semibold">
+        {hotelName ? `Reviews for ${hotelName}` : 'Google Reviews'}
+      </h3>
       {reviews.map((review, index) => (
         <Card key={index} className="overflow-hidden">
           <CardHeader className="pb-2">
