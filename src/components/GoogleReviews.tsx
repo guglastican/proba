@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
+import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { GoogleReview } from '@/types/review';
 import { Star, RefreshCcw, AlertCircle } from 'lucide-react';
@@ -18,7 +19,7 @@ export default function GoogleReviews({ placeId, useMock = false }: GoogleReview
   const [error, setError] = useState<string | null>(null);
   const [retryCount, setRetryCount] = useState(0);
 
-  async function fetchReviews() {
+  const fetchReviews = useCallback(async () => {
     try {
       setLoading(true);
       setError(null);
@@ -59,13 +60,13 @@ export default function GoogleReviews({ placeId, useMock = false }: GoogleReview
     } finally {
       setLoading(false);
     }
-  }
+  }, [placeId, useMock]);
 
   useEffect(() => {
     if (placeId) {
       fetchReviews();
     }
-  }, [placeId, retryCount, useMock]);
+  }, [placeId, fetchReviews, retryCount]);
 
   const handleRetry = () => {
     setRetryCount(prev => prev + 1);
@@ -113,9 +114,11 @@ export default function GoogleReviews({ placeId, useMock = false }: GoogleReview
           <CardHeader className="pb-2">
             <div className="flex items-center gap-2">
               {review.profile_photo_url && (
-                <img 
+                <Image 
                   src={review.profile_photo_url} 
                   alt={review.author_name}
+                  width={32}
+                  height={32}
                   className="h-8 w-8 rounded-full"
                 />
               )}
@@ -141,9 +144,11 @@ export default function GoogleReviews({ placeId, useMock = false }: GoogleReview
         </Card>
       ))}
       <div className="flex items-center justify-center">
-        <img 
+        <Image 
           src="https://developers.google.com/static/maps/documentation/images/powered_by_google_on_white.png" 
           alt="Powered by Google"
+          width={120}
+          height={24}
           className="h-6"
         />
       </div>

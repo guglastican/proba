@@ -9,14 +9,43 @@ interface SchemaReviewsProps {
   reviews: GoogleReview[];
 }
 
+interface SchemaData {
+  '@context': string;
+  '@type': string;
+  name: string;
+  image: string;
+  address: {
+    '@type': string;
+    streetAddress: string;
+  };
+  aggregateRating: {
+    '@type': string;
+    ratingValue: number;
+    reviewCount: number;
+  };
+  review: Array<{
+    '@type': string;
+    author: {
+      '@type': string;
+      name: string;
+    };
+    datePublished: string;
+    reviewRating: {
+      '@type': string;
+      ratingValue: number;
+    };
+    reviewBody: string;
+  }>;
+}
+
 export default function SchemaReviews({ hotel, reviews }: SchemaReviewsProps) {
-  const [schemaData, setSchemaData] = useState<any>(null);
+  const [schemaData, setSchemaData] = useState<SchemaData | null>(null);
 
   useEffect(() => {
     // Only generate schema data on the client side to avoid hydration errors
     if (typeof window !== 'undefined' && reviews.length > 0) {
       try {
-        const data = {
+        const data: SchemaData = {
           '@context': 'https://schema.org',
           '@type': 'Hotel',
           name: hotel.name,
