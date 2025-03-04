@@ -11,7 +11,7 @@ const formatString = (str: string) => {
     .replace(/\s+/g, '-')    // Replace spaces with dashes
     .replace(/,/g, '-')      // Replace commas with dashes
     .replace(/-+/g, '-')     // Replace multiple consecutive dashes with a single dash
-    .trim();                 // Trim leading and trailing spaces
+    .trim();                 // Trim leading and trailing space
 };
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
