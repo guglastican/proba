@@ -21,42 +21,54 @@ export default function GoogleReviews({ placeId, useMock = false }: GoogleReview
 
   const fetchReviews = useCallback(async () => {
     try {
+      // Validate placeId
+      if (!placeId || typeof placeId !== 'string') {
+        throw new Error('Invalid place ID');
+      }
+
       setLoading(true);
       setError(null);
       
       // Add mock parameter if useMock is true
       const url = useMock 
-        ? `/api/google-reviews?placeId=${placeId}&mock=true` 
-        : `/api/google-reviews?placeId=${placeId}`;
+        ? `/api/google-reviews?placeId=${encodeURIComponent(placeId)}&mock=true` 
+        : `/api/google-reviews?placeId=${encodeURIComponent(placeId)}`;
       
       console.log(`Fetching reviews from: ${url}`);
-      const response = await fetch(url);
+      const response = await fetch(url, {
+        method: 'GET',
+        headers: {
+          'Accept': 'application/json',
+        }
+      });
       
       if (!response.ok) {
-        throw new Error(`HTTP error: ${response.status}`);
+        const errorText = await response.text();
+        throw new Error(`HTTP error: ${response.status} - ${errorText}`);
       }
       
       const data = await response.json();
       console.log('Review data received:', data);
       
-      if (data.error) {
-        throw new Error(data.error);
-      }
-      
-      // Handle different response formats
-      if (data.reviews) {
-        setReviews(data.reviews);
-        setHotelName(data.name || "");
-      } else if (Array.isArray(data)) {
-        // Handle case where response is an array of reviews directly
-        setReviews(data);
+      // More robust type checking
+      const processedReviews = Array.isArray(data?.reviews) 
+        ? data.reviews 
+        : Array.isArray(data) 
+          ? data 
+          : [];
+
+      if (processedReviews.length === 0) {
+        setError('No reviews found');
       } else {
-        console.warn('Unexpected response format:', data);
-        setError('Unexpected response format');
+        setReviews(processedReviews);
+        setHotelName(data.name || "");
       }
     } catch (err) {
       console.error('Error fetching reviews:', err);
-      setError('Could not load reviews. Please try again.');
+      setError(err instanceof Error 
+        ? err.message 
+        : 'Could not load reviews. Please try again.'
+      );
     } finally {
       setLoading(false);
     }
