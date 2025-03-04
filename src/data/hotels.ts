@@ -83,7 +83,7 @@ const hotels: Hotel[] = [
   reviews: 1005,
   tags: ["Hot Tubes", "Hotels in San Francisco With Hot Tub in Room", "Hot Tub"],
   link: "https://expedia.com/affiliates/san-francisco-hotels-holiday-inn-express-san-francisco-airport-north.AhfYCnR",
-  googlePlaceId: "ChIJyZqebzl-j4ARQNJ9IscV_JU" // Google Place ID for Inn San Francisco 
+    googlePlaceId: "ChIJvVXXhYKBhYARwPBM-Dw1P2s" // Google Place ID for Holiday Inn Express SFO
 },
   {
     id: 5,
@@ -98,7 +98,7 @@ const hotels: Hotel[] = [
     reviews: 1000,
     tags: ["Spa", "Pool", "Hot Tub", "Hotels in San Francisco With Hot Tub in Room"],
     link: "https://expedia.com/affiliates/sonoma-hotels-fairmont-sonoma-mission-inn-spa.on9UmAB",
-    googlePlaceId: "ChIJfayGP1CshYARn_G8bmSC2BQ" // Google Place ID for Inn San Francisco 
+    googlePlaceId: "ChIJfayGP1CshYARn_G8bmSC2BQ" // Google Place ID for Fairmont Sonoma Mission Inn & Spa
   },
   {
     id: 6,
@@ -113,7 +113,7 @@ const hotels: Hotel[] = [
         reviews: 60,
         tags: ["Hot Tub", "Spa", "Pool", "Hotels in San Francisco With Hot Tub in Room"],
         link: "https://expedia.com/affiliates/forestville-hotels-farmhouse-inn.gQ3yQdB",
-        googlePlaceId: "ChIJyZqebzl-j4ARQNJ9IscV_JU" // Google Place ID for Inn San Francisco 
+        googlePlaceId: "ChIJVVVVhYKBhYARwPBM-Dw1P2s" // Google Place ID for Farmhouse Inn
       },
   // Chicago
   {
@@ -129,7 +129,7 @@ const hotels: Hotel[] = [
     reviews: 1002,
     tags: ["Convention Center", "Pool", "Hot Tub"],
     link: "https://expedia.com/affiliates/chicago-hotels-renaissance-schaumburg-convention-center-hotel.Q08el92",
-    googlePlaceId: "ChIJZ3QZ-oevD4gRxc0-8O37cQ0" // Google Place ID for Inn San Francisco 
+    googlePlaceId: "ChIJZ3QZ-oevD4gRxc0-8O37cQ0" // Google Place ID for Renaissance Schaumburg
   },
   {
       id: 8,

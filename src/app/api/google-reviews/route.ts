@@ -1,5 +1,29 @@
 import { NextResponse } from 'next/server';
 
+// Types for Google Places API response
+interface GooglePlacesReview {
+  authorName?: string;
+  authorPhoto?: {
+    uri?: string;
+  };
+  rating?: number;
+  relativePublishTimeDescription?: string;
+  text?: string;
+  publishTime?: string;
+}
+
+interface GooglePlacesResponse {
+  id?: string;
+  displayName?: {
+    text?: string;
+  };
+  rating?: number;
+  reviews?: GooglePlacesReview[];
+  error?: {
+    message?: string;
+  };
+}
+
 // Mock data for fallback when API fails or for development
 const MOCK_REVIEWS = [
   {
@@ -27,6 +51,16 @@ const MOCK_REVIEWS = [
     time: 1706745600 // February 1, 2024
   }
 ];
+
+// Error messages for common Places API errors
+const ERROR_MESSAGES = {
+  INVALID_REQUEST: 'The Place ID provided is invalid.',
+  NOT_FOUND: 'This Place ID no longer exists or has been updated.',
+  OVER_QUERY_LIMIT: 'The API request quota has been exceeded.',
+  REQUEST_DENIED: 'The API request was denied. Please check your API key configuration.',
+  ZERO_RESULTS: 'No reviews found for this location.',
+  UNKNOWN_ERROR: 'An unexpected error occurred while fetching reviews.'
+};
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -57,34 +91,69 @@ export async function GET(request: Request) {
   try {
     console.log(`Fetching reviews for place ID: ${placeId}`);
     
+    // Using the new Places API endpoint
     const response = await fetch(
-      `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=name,rating,reviews&key=${apiKey}`
+      `https://places.googleapis.com/v1/places/${placeId}?fields=id,displayName,rating,reviews&key=${apiKey}`,
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Goog-Api-Key': apiKey,
+          'X-Goog-FieldMask': 'id,displayName,rating,reviews'
+        }
+      }
     );
     
     if (!response.ok) {
-      console.error(`HTTP error: ${response.status} ${response.statusText}`);
-      throw new Error(`HTTP error: ${response.status}`);
+      const errorData = await response.json().catch(() => ({}));
+      const status = response.status;
+      
+      // Handle specific error cases
+      if (status === 404) {
+        console.error('Place not found:', placeId);
+        return NextResponse.json({ error: ERROR_MESSAGES.NOT_FOUND }, { status: 404 });
+      }
+      
+      if (status === 400) {
+        console.error('Invalid Place ID:', placeId);
+        return NextResponse.json({ error: ERROR_MESSAGES.INVALID_REQUEST }, { status: 400 });
+      }
+      
+      if (status === 429) {
+        console.error('API quota exceeded');
+        return NextResponse.json({ error: ERROR_MESSAGES.OVER_QUERY_LIMIT }, { status: 429 });
+      }
+      
+      if (status === 403) {
+        console.error('API request denied');
+        return NextResponse.json({ error: ERROR_MESSAGES.REQUEST_DENIED }, { status: 403 });
+      }
+      
+      throw new Error(errorData.error?.message || `HTTP error: ${status}`);
     }
     
-    const data = await response.json();
-    console.log('Google Places API response status:', data.status);
+    const data: GooglePlacesResponse = await response.json();
     
-    if (data.status !== 'OK') {
-      console.error('Google Places API error:', data.error_message || data.status);
-      throw new Error(data.error_message || `Failed with status: ${data.status}`);
-    }
+    // Format the response to match our expected structure
+    const formattedResult = {
+      name: data.displayName?.text || "Hotel",
+      rating: data.rating || 0,
+      reviews: data.reviews?.map((review: GooglePlacesReview) => ({
+        author_name: review.authorName || "Anonymous",
+        profile_photo_url: review.authorPhoto?.uri || "",
+        rating: review.rating || 0,
+        relative_time_description: review.relativePublishTimeDescription || "",
+        text: review.text || "",
+        time: review.publishTime ? new Date(review.publishTime).getTime() / 1000 : Date.now() / 1000
+      })) || []
+    };
     
-    // Handle case where result exists but has no reviews
-    if (!data.result.reviews || data.result.reviews.length === 0) {
+    // If no reviews are available, use mock data
+    if (!formattedResult.reviews.length) {
       console.log('No reviews found for this place, using mock data');
-      return NextResponse.json({
-        name: data.result.name || "Hotel",
-        rating: data.result.rating || 4.0,
-        reviews: MOCK_REVIEWS
-      });
+      formattedResult.reviews = MOCK_REVIEWS;
     }
     
-    return NextResponse.json(data.result);
+    return NextResponse.json(formattedResult);
   } catch (error) {
     console.error('Error fetching Google reviews:', error);
     
@@ -93,7 +162,8 @@ export async function GET(request: Request) {
     return NextResponse.json({ 
       name: "Example Hotel",
       rating: 4.5,
-      reviews: MOCK_REVIEWS 
+      reviews: MOCK_REVIEWS,
+      error: ERROR_MESSAGES.UNKNOWN_ERROR
     });
   }
 }
