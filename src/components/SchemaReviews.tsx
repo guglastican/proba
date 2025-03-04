@@ -41,6 +41,26 @@ interface SchemaData {
 export default function SchemaReviews({ hotel, reviews }: SchemaReviewsProps) {
   const [schemaData, setSchemaData] = useState<SchemaData | null>(null);
 
+  // Extract review processing to a typed function
+  const processReview = (review: GoogleReview): SchemaData['review'][0] => {
+    // Ensure time is a valid number
+    const timestamp = typeof review.time === 'number' ? review.time * 1000 : Date.now();
+    
+    return {
+      '@type': 'Review',
+      author: {
+        '@type': 'Person',
+        name: review.author_name || 'Anonymous'
+      },
+      datePublished: new Date(timestamp).toISOString(),
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: review.rating || 5
+      },
+      reviewBody: review.text || ''
+    };
+  };
+
   useEffect(() => {
     // Only generate schema data on the client side to avoid hydration errors
     if (typeof window !== 'undefined' && reviews.length > 0) {
@@ -59,29 +79,13 @@ export default function SchemaReviews({ hotel, reviews }: SchemaReviewsProps) {
             ratingValue: hotel.rating,
             reviewCount: hotel.reviews
           },
-          review: reviews.map(review => {
-            // Ensure time is a valid number
-            const timestamp = typeof review.time === 'number' ? review.time * 1000 : Date.now();
-            
-            return {
-              '@type': 'Review',
-              author: {
-                '@type': 'Person',
-                name: review.author_name || 'Anonymous'
-              },
-              datePublished: new Date(timestamp).toISOString(),
-              reviewRating: {
-                '@type': 'Rating',
-                ratingValue: review.rating || 5
-              },
-              reviewBody: review.text || ''
-            };
-          })
+          review: reviews.map(processReview)
         };
         
         setSchemaData(data);
-      } catch (error) {
-        console.error('Error generating schema data:', error);
+      } catch (error: unknown) {
+        const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+        console.error('Error generating schema data:', errorMessage);
       }
     }
   }, [hotel, reviews]);
