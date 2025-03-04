@@ -120,7 +120,8 @@ export default function GoogleReviews({ placeId, useMock = false }: GoogleReview
                   width={32}
                   height={32}
                   className="h-8 w-8 rounded-full"
-                  unoptimized
+                  quality={85}
+                  sizes="32px"
                 />
               )}
               <div>
@@ -151,7 +152,8 @@ export default function GoogleReviews({ placeId, useMock = false }: GoogleReview
           width={120}
           height={24}
           className="h-6"
-          unoptimized
+          quality={85}
+          sizes="120px"
         />
       </div>
     </div>

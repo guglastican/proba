@@ -1,5 +1,6 @@
 {
-  "name": "nextjs-programmatic-seo",
+  "type": "module",
+  "name": "nextjs-programmatic-seo", 
   "version": "0.1.0",
   "private": true,
   "scripts": {
