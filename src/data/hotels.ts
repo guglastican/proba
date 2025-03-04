@@ -29,7 +29,7 @@ const hotels: Hotel[] = [
     tags: ["hot tub", "Spa", "Hotels in San Francisco With Hot Tub in Room", "Waterfront"],
     amenities: ["Full-service Spa", "Bar", "Free WiFi", "Hot Tub", "Air Conditioning", "Terrace/Patio"],
     link: "https://expedia.com/affiliates/san-francisco-hotels-1-hotel-san-francisco.nmthOWh",
-    googlePlaceId: "ChIJFUBxSWSAhYAR_-OXjzMVCrA" // Google Place ID for 1 Hotel San Francisco
+    googlePlaceId: "ChIJg7PyJ3GBhYARO29J0nraSd0" // Google Place ID for 1 Hotel San Francisco
   },
   {
     id: 2,
@@ -44,7 +44,7 @@ const hotels: Hotel[] = [
   tags: ["hot tub", "Hotels in San Francisco With Hhot Tub in Room", "Convention Center", "Fine Dining"],
   amenities: ["2 Restaurants", "Indoor Pool", "24-Hour Gym", "Hot Tub", "Room Service", "Breakfast Available"],
   link: "https://expedia.com/affiliates/san-francisco-hotels-intercontinental-san-francisco.XFQqP4Y",
-  googlePlaceId: "ChIJ0cDhRYSAhYARLN5_xPGX-j0" // Google Place ID for InterContinental San Francisco
+  googlePlaceId: "ChIJF1lX2oaAhYARuyWPqjE12Oo" // Google Place ID for InterContinental San Francisco
   },
   {
     id: 3,
@@ -67,7 +67,8 @@ const hotels: Hotel[] = [
         "Pet-Friendly Rooms",
         "Individually Decorated Rooms"
       ],
-      link: "https://expedia.com/affiliates/san-francisco-hotels-inn-san-francisco.DCgJfcE"
+      link: "https://expedia.com/affiliates/san-francisco-hotels-inn-san-francisco.DCgJfcE",
+  googlePlaceId: "ChIJyZqebzl-j4ARQNJ9IscV_JU" // Google Place ID for Inn San Francisco 
   },
   {
   id: 4,
@@ -81,7 +82,8 @@ const hotels: Hotel[] = [
   amenities: ["Breakfast included", "Free airport shuttle", "Hot Tub", "Gym", "Parking available", "Housekeeping"],
   reviews: 1005,
   tags: ["Hot Tubes", "Hotels in San Francisco With Hot Tub in Room", "Hot Tub"],
-  link: "https://expedia.com/affiliates/san-francisco-hotels-holiday-inn-express-san-francisco-airport-north.AhfYCnR"
+  link: "https://expedia.com/affiliates/san-francisco-hotels-holiday-inn-express-san-francisco-airport-north.AhfYCnR",
+  googlePlaceId: "ChIJyZqebzl-j4ARQNJ9IscV_JU" // Google Place ID for Inn San Francisco 
 },
   {
     id: 5,
@@ -95,7 +97,8 @@ const hotels: Hotel[] = [
     amenities: ["Spa", "Pool", "Hot Tub", "Restaurant", "Hotels in San Francisco With Hot Tub in Room", "Bar"],
     reviews: 1000,
     tags: ["Spa", "Pool", "Hot Tub", "Hotels in San Francisco With Hot Tub in Room"],
-    link: "https://expedia.com/affiliates/sonoma-hotels-fairmont-sonoma-mission-inn-spa.on9UmAB"
+    link: "https://expedia.com/affiliates/sonoma-hotels-fairmont-sonoma-mission-inn-spa.on9UmAB",
+    googlePlaceId: "ChIJfayGP1CshYARn_G8bmSC2BQ" // Google Place ID for Inn San Francisco 
   },
   {
     id: 6,
@@ -109,7 +112,8 @@ const hotels: Hotel[] = [
         amenities: ["Hotels in San Francisco With Hot Tub in Room", "Pool", "Room service", "Spa", "24/7 front desk", "Housekeeping"],
         reviews: 60,
         tags: ["Hot Tub", "Spa", "Pool", "Hotels in San Francisco With Hot Tub in Room"],
-        link: "https://expedia.com/affiliates/forestville-hotels-farmhouse-inn.gQ3yQdB"
+        link: "https://expedia.com/affiliates/forestville-hotels-farmhouse-inn.gQ3yQdB",
+        googlePlaceId: "ChIJyZqebzl-j4ARQNJ9IscV_JU" // Google Place ID for Inn San Francisco 
       },
   // Chicago
   {
@@ -124,7 +128,8 @@ const hotels: Hotel[] = [
     amenities: ["Pool", "Hot Tub", "Restaurant", "Parking available", "Bar"],
     reviews: 1002,
     tags: ["Convention Center", "Pool", "Hot Tub"],
-    link: "https://expedia.com/affiliates/chicago-hotels-renaissance-schaumburg-convention-center-hotel.Q08el92"
+    link: "https://expedia.com/affiliates/chicago-hotels-renaissance-schaumburg-convention-center-hotel.Q08el92",
+    googlePlaceId: "ChIJZ3QZ-oevD4gRxc0-8O37cQ0" // Google Place ID for Inn San Francisco 
   },
   {
       id: 8,
@@ -153,7 +158,8 @@ const hotels: Hotel[] = [
       amenities: ["Spa", "Pool", "Restaurant", "Gym", "Hot Tub", "Housekeeping", "Free Wi-Fi"],
       reviews: 1001,
       tags: ["Hot Tub", "Downtown Chicago", "Spa", "Indoor Pool"],
-      link: "https://expedia.com/affiliates/chicago-hotels-jw-marriott-chicago.ctu0tPJ"
+      link: "https://expedia.com/affiliates/chicago-hotels-jw-marriott-chicago.ctu0tPJ",
+      googlePlaceId: "ChIJESf9FrwsDogRg9RZOPtiZp8" // Google Place ID for JW Marriott Chicago, Chicago
   },
   {
       id: 10,
@@ -167,7 +173,8 @@ const hotels: Hotel[] = [
       amenities: ["Pool", "Hot Tub", "Bar", "Spa", "Breakfast Available", "Pet Friendly"],
       reviews: 1000,
       tags: ["Hot Tub", "Downtown Chicago", "Spa", "Pet Friendly"],
-      link: "https://expedia.com/affiliates/chicago-hotels-park-hyatt-chicago.fLsb72J"
+      link: "https://expedia.com/affiliates/chicago-hotels-park-hyatt-chicago.fLsb72J",
+      googlePlaceId: "ChIJeQOqg1PTD4gRc2VKeAYbq1M" // Google Place ID for Park Hyatt Chicago, Chicago
   },
   {
       id: 11,
@@ -181,7 +188,8 @@ const hotels: Hotel[] = [
       amenities: ["Pool", "Parking Available", "Room Service", "Bar", "Housekeeping", "Laundry"],
       reviews: 1000,
       tags: ["Hot Tub", "Spa", "Downtown Chicago", "Pet Friendly"],
-      link: "https://expedia.com/affiliates/chicago-hotels-waldorf-astoria-chicago.5y1tbwo"
+      link: "https://expedia.com/affiliates/chicago-hotels-waldorf-astoria-chicago.5y1tbwo",
+      googlePlaceId: "ChIJ6wr9GlLTD4gRQ_i8UgKu6W0" // Google Place ID for Waldorf Astoria Chicago, Chicago
   },
   {
       id: 12,
@@ -195,7 +203,8 @@ const hotels: Hotel[] = [
       amenities: ["Pool", "Restaurant", "Gym", "Room Service", "Housekeeping", "Breakfast Available"],
       reviews: 1011,
       tags: ["Luxury", "Downtown Chicago", "Pet Friendly", "Restaurants", "Seasonal Pool"],
-      link: "https://expedia.com/affiliates/chicago-hotels-viceroy-chicago.j3TIKar"
+      link: "https://expedia.com/affiliates/chicago-hotels-viceroy-chicago.j3TIKar",
+      googlePlaceId: "ChIJh_G21VHTD4gRoxM2FR9qB-I" // Google Place ID for Viceroy Chicago, Chicago
   },
   {
       id: 13,
@@ -209,7 +218,8 @@ const hotels: Hotel[] = [
       amenities: ["2 Outdoor Swimming Pools", "Restaurant", "Gym", "Hot Tub", "Breakfast Available", "Pet Friendly"],
       reviews: 1000,
       tags: ["Hot Tubs", "Downtown Miami", "Pet Friendly", "Swimming Pools", "Restaurant", "Hot Tub"],
-      link: "https://expedia.com/affiliates/miami-hotels-the-gabriel-miami.bcBMhFf"
+      link: "https://expedia.com/affiliates/miami-hotels-the-gabriel-miami.bcBMhFf",
+      googlePlaceId: "ChIJH3sx21u32YgR4AFUjoHgRIQ" // Google Place ID for The Grayson Miami Downtown, Chicago
   },
   {
       id: 14,
@@ -223,7 +233,8 @@ const hotels: Hotel[] = [
       amenities: ["3 Outdoor Pools", "Spa", "Restaurant", "Bar", "Hot Tub", "Parking Available", "Housekeeping"],
       reviews: 531,
       tags: ["Luxury", "Beachfront", "Pools", "Spa", "Family Friendly", "Restaurant", "Hot Tub"],
-      link: "https://expedia.com/affiliates/miami-hotels-acqualina-resort-residences-on-the-beach.4dr761K"
+      link: "https://expedia.com/affiliates/miami-hotels-acqualina-resort-residences-on-the-beach.4dr761K",
+      googlePlaceId: "ChIJXbbXCuCs2YgRzbV-thyE3NA" // Google Place ID for Acqualina Resort & Residences On The Miami Beach, Chicago
   },
   {
       id: 15,
@@ -238,7 +249,8 @@ const hotels: Hotel[] = [
       reviews: 2962,
       tags: ["Luxury", "Shopping", "City Center", "Rooftop", "Pet Friendly", "Hot Tub", "Restaurant"],
       link: "https://expedia.com/affiliates/miami-hotels-east-miami.oKqd8tm",
-      googlePlaceId: "ChIJhwGwQG622YgRYJnQW9o91Gg" // Google Place ID for EAST Miami
+      googlePlaceId: "ChIJMUSwboO22YgRDFlX6qQGxrE" // Google Place ID for EAST Miami,
+      
   },
   {
       id: 16,
@@ -252,7 +264,8 @@ const hotels: Hotel[] = [
       amenities: ["Breakfast Included", "Restaurant", "Hot Tub", "Gym", "Bar", "Housekeeping"],
       reviews: 4231,
       tags: ["Convenient", "City Center", "Restaurants", "Breakfast Included", "Gym", "Hot Tub", "Bar"],
-      link: "https://expedia.com/affiliates/miami-hotels-hampton-inn-suites-miamibrickell-downtown.THG9rMr"
+      link: "https://expedia.com/affiliates/miami-hotels-hampton-inn-suites-miamibrickell-downtown.THG9rMr",
+      googlePlaceId: "ChIJn-2Oo4a22YgR-fOW2Yuryjo" // Google Place ID for Hampton Inn & Suites Miami/Brickell-Downtown, Chicago
   },
   {
       id: 17,
@@ -267,6 +280,7 @@ const hotels: Hotel[] = [
       reviews: 1709,
       tags: ["Luxury", "Downtown Miami", "Hut Tub", "Spa", "Outdoor Pool", "Pet Friendly"],
       link: "https://expedia.com/affiliates/miami-hotels-kimpton-epic-hotel.ZNrsbxq",
+      googlePlaceId: "ChIJlWF1Gp222YgRkg_v_MAt_Sc" // Google Place ID for Kimpton EPIC Hotel by IHG, Chicago
   },
   {
       id: 18,
@@ -280,7 +294,8 @@ const hotels: Hotel[] = [
       amenities: ["Pool", "Restaurant", "Bar", "Spa", "Room Service", "Breakfast Available", "Hot Tub"],
       reviews: 282,
       tags: ["Luxury", "Downtown Miami", "Restaurant", "Spa", "Pool", "Bar"],
-      link: "https://expedia.com/affiliates/miami-hotels-hotel-beaux-arts.s9Nwwe8"
+      link: "https://expedia.com/affiliates/miami-hotels-hotel-beaux-arts.s9Nwwe8",
+      googlePlaceId: "ChIJx0AED5222YgRzaTCEcXOqQ8" // Google Place ID for Hotel Beaux Arts, Autograph Collection, Chicago
   }
 
   
