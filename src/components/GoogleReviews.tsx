@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import dynamic from 'next/dynamic';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { GoogleReview } from '@/types/review';
@@ -24,11 +24,6 @@ const GoogleReviews: React.FC<GoogleReviewsProps> = ({ placeId, useMock = false 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [retryCount, setRetryCount] = useState(0);
-
-  // Memoize critical values to prevent unnecessary re-renders
-  const safeReviews = useMemo(() => {
-    return Array.isArray(reviews) ? reviews : [];
-  }, [reviews]);
 
   // Fallback for missing or invalid data
   const sanitizeReview = useCallback((review: Partial<GoogleReview>): GoogleReview => ({
