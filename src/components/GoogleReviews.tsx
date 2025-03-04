@@ -1,23 +1,44 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
-import Image from 'next/image';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import dynamic from 'next/dynamic';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { GoogleReview } from '@/types/review';
 import { Star, RefreshCcw, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+
+// Dynamically import Image to prevent SSR issues
+const Image = dynamic(() => import('next/image'), { 
+  ssr: false,
+  loading: () => <div className="h-8 w-8 bg-gray-200 rounded-full" />
+});
 
 interface GoogleReviewsProps {
   placeId: string;
   useMock?: boolean;
 }
 
-export default function GoogleReviews({ placeId, useMock = false }: GoogleReviewsProps) {
+const GoogleReviews: React.FC<GoogleReviewsProps> = ({ placeId, useMock = false }) => {
   const [reviews, setReviews] = useState<GoogleReview[]>([]);
   const [hotelName, setHotelName] = useState<string>("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [retryCount, setRetryCount] = useState(0);
+
+  // Memoize critical values to prevent unnecessary re-renders
+  const safeReviews = useMemo(() => {
+    return Array.isArray(reviews) ? reviews : [];
+  }, [reviews]);
+
+  // Fallback for missing or invalid data
+  const sanitizeReview = useCallback((review: Partial<GoogleReview>): GoogleReview => ({
+    author_name: review.author_name || 'Anonymous',
+    rating: review.rating || 0,
+    text: review.text || 'No review text available',
+    profile_photo_url: review.profile_photo_url || '',
+    relative_time_description: review.relative_time_description || 'Unknown time',
+    time: review.time || Date.now(), // Add missing time property
+  }), []);
 
   const fetchReviews = useCallback(async () => {
     try {
@@ -52,9 +73,9 @@ export default function GoogleReviews({ placeId, useMock = false }: GoogleReview
       
       // More robust type checking
       const processedReviews = Array.isArray(data?.reviews) 
-        ? data.reviews 
+        ? data.reviews.map(sanitizeReview)
         : Array.isArray(data) 
-          ? data 
+          ? data.map(sanitizeReview)
           : [];
 
       if (processedReviews.length === 0) {
@@ -72,7 +93,7 @@ export default function GoogleReviews({ placeId, useMock = false }: GoogleReview
     } finally {
       setLoading(false);
     }
-  }, [placeId, useMock]);
+  }, [placeId, useMock, sanitizeReview]);
 
   useEffect(() => {
     if (placeId) {
@@ -81,7 +102,7 @@ export default function GoogleReviews({ placeId, useMock = false }: GoogleReview
   }, [placeId, fetchReviews, retryCount, useMock]);
 
   const handleRetry = () => {
-    setRetryCount(prev => prev + 1);
+    setRetryCount((prev: number) => prev + 1);
   };
 
   if (loading) {
@@ -121,7 +142,7 @@ export default function GoogleReviews({ placeId, useMock = false }: GoogleReview
       <h3 className="text-xl font-semibold">
         {hotelName ? `Reviews for ${hotelName}` : 'Google Reviews'}
       </h3>
-      {reviews.map((review, index) => (
+      {reviews.map((review: GoogleReview, index: number) => (
         <Card key={index} className="overflow-hidden">
           <CardHeader className="pb-2">
             <div className="flex items-center gap-2">
@@ -170,4 +191,6 @@ export default function GoogleReviews({ placeId, useMock = false }: GoogleReview
       </div>
     </div>
   );
-}
+};
+
+export default GoogleReviews;
