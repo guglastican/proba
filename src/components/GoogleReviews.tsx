@@ -1,3 +1,4 @@
+// src/components/GoogleReviews.tsx
 'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
@@ -7,7 +8,6 @@ import { GoogleReview } from '@/types/review';
 import { Star, RefreshCcw, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-// Dynamic import for Image to prevent SSR issues
 const Image = dynamic(() => import('next/image'), {
   ssr: false,
   loading: () => <div className="h-8 w-8 bg-gray-200 rounded-full animate-pulse" />,
@@ -25,23 +25,21 @@ const GoogleReviews: React.FC<GoogleReviewsProps> = ({ placeId, useMock = false 
   const [error, setError] = useState<string | null>(null);
   const [retryCount, setRetryCount] = useState<number>(0);
 
-  // Sanitize review data with fallback values
-  const sanitizeReview = useCallback(
-    (review: Partial<GoogleReview>): GoogleReview => ({
+  const sanitizeReview = useCallback((review: Partial<GoogleReview>): GoogleReview => {
+    return {
       author_name: review.author_name || 'Anonymous',
       rating: review.rating || 0,
       text: review.text || 'No review text available',
       profile_photo_url: review.profile_photo_url || '',
       relative_time_description: review.relative_time_description || 'Unknown time',
-      time: review.time || Date.now(),
-    }),
-    []
-  );
+      time: review.time || Math.floor(Date.now() / 1000),
+    };
+  }, []);
 
-  // Fetch reviews from the API
   const fetchReviews = useCallback(async () => {
     if (!placeId || typeof placeId !== 'string') {
-      setError('Invalid place ID');
+      console.error('Invalid placeId:', placeId);
+      setError('Invalid place ID provided');
       setLoading(false);
       return;
     }
@@ -54,55 +52,47 @@ const GoogleReviews: React.FC<GoogleReviewsProps> = ({ placeId, useMock = false 
       : `/api/google-reviews?placeId=${encodeURIComponent(placeId)}`;
 
     try {
+      console.log('Fetching reviews from:', url);
       const response = await fetch(url, {
         method: 'GET',
         headers: { Accept: 'application/json' },
-        cache: 'no-store', // Prevent stale data
+        cache: 'no-store',
       });
 
       if (!response.ok) {
-        const errorText = await response.text();
-        throw new Error(`Failed to fetch reviews: ${response.status} - ${errorText}`);
+        const errorData = await response.json().catch(() => ({ error: `HTTP error: ${response.status}` }));
+        console.error('API fetch failed:', errorData);
+        throw new Error(errorData.error || 'Failed to fetch reviews');
       }
 
       const data = await response.json();
+      console.log('API response:', data);
 
-      // Handle different possible response structures
-      const processedReviews = Array.isArray(data?.reviews)
-        ? data.reviews.map(sanitizeReview)
-        : Array.isArray(data)
-          ? data.map(sanitizeReview)
-          : [];
-
-      if (processedReviews.length === 0) {
-        setError('No reviews found for this location');
-      } else {
-        setReviews(processedReviews);
-        setHotelName(data.name || 'Unnamed Location');
+      // Handle the response safely
+      setReviews(Array.isArray(data.reviews) ? data.reviews.map(sanitizeReview) : []);
+      setHotelName(typeof data.name === 'string' ? data.name : 'Unnamed Location');
+      
+      if (data.error) {
+        setError(data.error);
+      } else if (!data.reviews?.length) {
+        setError('No reviews available for this location');
       }
     } catch (err) {
-      console.error('Error fetching reviews:', err);
-      setError(
-        err instanceof Error
-          ? err.message
-          : 'Could not load reviews. Please try again later.'
-      );
+      console.error('Error in fetchReviews:', err);
+      setError(err instanceof Error ? err.message : 'An unexpected error occurred');
     } finally {
       setLoading(false);
     }
   }, [placeId, useMock, sanitizeReview]);
 
-  // Fetch reviews on mount or when dependencies change
   useEffect(() => {
     fetchReviews();
   }, [fetchReviews, retryCount]);
 
-  // Retry handler
   const handleRetry = () => {
     setRetryCount((prev) => prev + 1);
   };
 
-  // Loading state
   if (loading) {
     return (
       <div className="mt-4 text-center py-8">
@@ -112,7 +102,6 @@ const GoogleReviews: React.FC<GoogleReviewsProps> = ({ placeId, useMock = false 
     );
   }
 
-  // Error state
   if (error) {
     return (
       <div className="mt-4 text-center py-6 border border-red-200 rounded-md bg-red-50">
@@ -125,65 +114,59 @@ const GoogleReviews: React.FC<GoogleReviewsProps> = ({ placeId, useMock = false 
     );
   }
 
-  // No reviews state
-  if (reviews.length === 0) {
-    return (
-      <div className="mt-4 text-center py-6 text-muted-foreground">
-        No reviews available for this location
-      </div>
-    );
-  }
-
-  // Success state: Render reviews
   return (
     <div className="mt-6 space-y-6">
       <h3 className="text-xl font-semibold text-gray-900">
         {hotelName ? `Reviews for ${hotelName}` : 'Google Reviews'}
       </h3>
-      <div className="space-y-4">
-        {reviews.map((review, index) => (
-          <Card key={`${review.time}-${index}`} className="overflow-hidden shadow-sm">
-            <CardHeader className="pb-2">
-              <div className="flex items-center gap-3">
-                {review.profile_photo_url && (
-                  <Image
-                    src={review.profile_photo_url}
-                    alt={`${review.author_name}'s profile`}
-                    width={32}
-                    height={32}
-                    className="h-8 w-8 rounded-full object-cover"
-                    quality={85}
-                    sizes="32px"
-                  />
-                )}
-                <div>
-                  <CardTitle className="text-sm font-medium text-gray-800">
-                    {review.author_name}
-                  </CardTitle>
-                  <div className="flex items-center gap-1">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <Star
-                        key={i}
-                        className={`h-3 w-3 ${
-                          i < review.rating
-                            ? 'fill-yellow-400 text-yellow-400'
-                            : 'text-gray-300'
-                        }`}
-                      />
-                    ))}
-                    <span className="ml-2 text-xs text-muted-foreground">
-                      {review.relative_time_description}
-                    </span>
+      {reviews.length === 0 ? (
+        <p className="text-center text-muted-foreground">No reviews available</p>
+      ) : (
+        <div className="space-y-4">
+          {reviews.map((review, index) => (
+            <Card key={`${review.time}-${index}`} className="overflow-hidden shadow-sm">
+              <CardHeader className="pb-2">
+                <div className="flex items-center gap-3">
+                  {review.profile_photo_url && (
+                    <Image
+                      src={review.profile_photo_url}
+                      alt={`${review.author_name}'s profile`}
+                      width={32}
+                      height={32}
+                      className="h-8 w-8 rounded-full object-cover"
+                      quality={85}
+                      sizes="32px"
+                    />
+                  )}
+                  <div>
+                    <CardTitle className="text-sm font-medium text-gray-800">
+                      {review.author_name}
+                    </CardTitle>
+                    <div className="flex items-center gap-1">
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <Star
+                          key={i}
+                          className={`h-3 w-3 ${
+                            i < review.rating
+                              ? 'fill-yellow-400 text-yellow-400'
+                              : 'text-gray-300'
+                          }`}
+                        />
+                      ))}
+                      <span className="ml-2 text-xs text-muted-foreground">
+                        {review.relative_time_description}
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </CardHeader>
-            <CardContent className="pt-0">
-              <p className="text-sm text-gray-700">{review.text}</p>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
+              </CardHeader>
+              <CardContent className="pt-0">
+                <p className="text-sm text-gray-700">{review.text}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      )}
       <div className="flex justify-center mt-4">
         <Image
           src="https://developers.google.com/static/maps/documentation/images/powered_by_google_on_white.png"
