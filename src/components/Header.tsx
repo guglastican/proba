@@ -35,6 +35,17 @@ export default function Header({ q, location }: HeaderProps) {
               Hotels With Hotube
             </span>
           </Link>
+          <nav className="flex space-x-4 mt-4">
+            <Link href="/search" className="text-primary-foreground hover:underline">
+              Search
+            </Link>
+            <Link href="/about" className="text-primary-foreground hover:underline">
+              About
+            </Link>
+            <Link href="/author" className="text-primary-foreground hover:underline">
+              Author
+            </Link>
+          </nav>
           <form
             action="/"
             onSubmit={handleSubmit}
