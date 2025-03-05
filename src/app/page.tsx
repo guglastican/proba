@@ -1,4 +1,4 @@
-import banner from "@/assets/C:/hotels-with-hot-tub.jpg";
+import banner from "@/assets/hotels-with-hot-tub.jpg";
 import Header from "@/components/Header";
 import Image from "next/image";
 import { Metadata } from "next";
