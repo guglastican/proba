@@ -12,7 +12,6 @@ import {
 import { Hotel } from "@/data/hotels";
 import { Clock, MapPin, Star, StarHalf, Building, Type } from "lucide-react";
 import Image from "next/image";
-import { Suspense } from "react";
 
 interface HotelItemProps {
   hotel: Hotel;
