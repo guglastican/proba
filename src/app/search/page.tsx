@@ -2,7 +2,6 @@ import Header from "@/components/Header";
 import HotelItem from "@/components/HotelItem";
 import { Skeleton } from "@/components/ui/skeleton";
 import { locations, searchHotels } from "@/data/hotels";
-import { redirect } from "next/navigation";
 import { Suspense } from "react";
 
 interface PageProps {

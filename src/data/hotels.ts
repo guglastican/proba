@@ -14,7 +14,7 @@ export interface Hotel {
   googlePlaceId?: string; // Google Place ID for fetching reviews
 }
 
-const hotels: Hotel[] = [
+export const hotels: Hotel[] = [
   {
     id: 1,
     name: "1 Hotel San Francisco",
@@ -297,7 +297,7 @@ const hotels: Hotel[] = [
   }
 ];
 
-export async function searchHotels(q: string, location: string) {
+export async function searchHotels(q: string, _location: string) {
   await new Promise((resolve) => setTimeout(resolve, 1500));
 
   const searchWords = q?.split(" ").filter(Boolean) || [];

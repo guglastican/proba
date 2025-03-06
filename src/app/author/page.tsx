@@ -60,10 +60,10 @@ export default function AuthorPage() {
               John began his career as a travel writer for prestigious publications including Travel + Leisure and Condé Nast Traveler. His passion for luxury accommodations with exceptional wellness facilities led him to specialize in reviewing hotels with premium hot tub and spa experiences.
             </p>
             <p className="mb-4 text-gray-700">
-              After earning his Master's degree in Hospitality Management from Cornell University, John worked with several luxury hotel chains to develop their wellness programs before launching this website to share his expertise with travelers seeking the perfect hot tub getaway.
+              After earning his Master&apos;s degree in Hospitality Management from Cornell University, John worked with several luxury hotel chains to develop their wellness programs before launching this website to share his expertise with travelers seeking the perfect hot tub getaway.
             </p>
             <p className="text-gray-700">
-              Today, John continues to travel the world in search of exceptional hot tub experiences, from private in-room jacuzzis with panoramic views to exclusive rooftop infinity hot tubs in the world's most luxurious hotels.
+              Today, John continues to travel the world in search of exceptional hot tub experiences, from private in-room jacuzzis with panoramic views to exclusive rooftop infinity hot tubs in the world&apos;s most luxurious hotels.
             </p>
           </div>
           
@@ -80,7 +80,7 @@ export default function AuthorPage() {
               <li>Overall hotel quality, service, and value</li>
             </ul>
             <p className="text-gray-700">
-              Only hotels that meet John's exacting standards are featured on this site, ensuring you can book with confidence.
+              Only hotels that meet John&apos;s exacting standards are featured on this site, ensuring you can book with confidence.
             </p>
           </div>
           

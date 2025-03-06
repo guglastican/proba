@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import { Metadata } from "next";
-import { categoriesByCountry, locationCategories } from "@/data/categories";
+import { categoriesByCountry } from "@/data/categories";
 import Link from "next/link";
 
 export const metadata: Metadata = {

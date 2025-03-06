@@ -2,7 +2,7 @@ import banner from "@/assets/restaurant-banner.jpg";
 import Header from "@/components/Header";
 import Image from "next/image";
 import { Metadata } from "next";
-import { categoriesByCountry, locationCategories } from "@/data/categories";
+import { categoriesByCountry } from "@/data/categories";
 import Link from "next/link";
 
 // Add the metadata for Google Search Console verification
