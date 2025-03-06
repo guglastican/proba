@@ -314,7 +314,7 @@ export async function searchHotels(q: string, _location: string) {
     )
   );
 
-  // Always include San Francisco hotels, regardless of the location parameter
+  // Always include San Francisco hotels, regardless of the location paramete
   const sanFranciscoHotels = filteredByQuery.filter((hotel) =>
     hotel.address.toLowerCase().includes("san francisco")
   );
