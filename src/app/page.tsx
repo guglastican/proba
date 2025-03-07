@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import { Metadata } from "next";
 import { getAllCountries } from "@/data/categories";
@@ -22,7 +21,7 @@ export default function HomePage() {
             Browse our extensive collection of hotels around the world by location or category.
           </p>
         </section>
-        
+
         <section className="mb-12">
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-2xl font-bold">Browse by Location</h2>
@@ -30,7 +29,7 @@ export default function HomePage() {
               View all locations
             </Link>
           </div>
-          
+
           <div className="space-y-8">
             {countries.map((country) => (
               <div key={country.slug} className="border rounded-lg p-6 shadow-sm">
@@ -42,7 +41,19 @@ export default function HomePage() {
                       key={city.slug}
                       className="block p-3 bg-gray-50 hover:bg-gray-100 rounded-md transition"
                     >
-                      {city.name}
+                      <div className="flex flex-col items-center gap-2">
+                        <div className="w-12 h-12 rounded-full overflow-hidden">
+                          <img 
+                            src={`/images/${city.slug}.jpg`} 
+                            alt={city.name}
+                            className="w-full h-full object-cover"
+                            onError={(e) => {
+                              e.currentTarget.src = `https://placehold.co/100x100/e2e8f0/64748b?text=${city.name.charAt(0)}`;
+                            }}
+                          />
+                        </div>
+                        <span>{city.name}</span>
+                      </div>
                     </Link>
                   ))}
                 </div>
@@ -60,7 +71,7 @@ export default function HomePage() {
             ))}
           </div>
         </section>
-        
+
         <section className="text-center">
           <Link 
             href="/categories"
