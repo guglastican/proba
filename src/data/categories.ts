@@ -41,3 +41,43 @@ export const getAllCategoryCombinations = () => {
   
   return combinations;
 };
+import { searchHotels } from './hotels';
+import categoriesJson from './categories.json';
+import { cache } from 'react';
+
+export function getAllCountries() {
+  return categoriesJson.countries;
+}
+
+export function getAllCategoryCombinations() {
+  const combinations = [];
+  
+  for (const country of categoriesJson.countries) {
+    for (const city of country.cities) {
+      combinations.push({
+        country: country.slug,
+        city: city.slug
+      });
+    }
+  }
+  
+  return combinations;
+}
+
+export function getCityDetails(countrySlug: string, citySlug: string) {
+  const country = categoriesJson.countries.find(c => c.slug === countrySlug);
+  if (!country) return null;
+  
+  const city = country.cities.find(c => c.slug === citySlug);
+  if (!city) return null;
+  
+  return {
+    name: city.name,
+    slug: city.slug,
+    countryName: country.name,
+    countrySlug: country.slug,
+    getHotels: cache(async () => {
+      return await searchHotels("Hotel", city.name);
+    })
+  };
+}
