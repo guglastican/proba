@@ -43,15 +43,33 @@ export default function HomePage() {
                       className="block p-3 bg-gray-50 hover:bg-gray-100 rounded-md transition"
                     >
                       <div className="flex flex-col items-center gap-2">
-                        <div className="w-20 h-20 rounded-lg overflow-hidden">
-                          <FallbackImage 
-                            src={`https://unsplash.com/photos/aerial-photography-of-buildings-3CQQlwWpn70${city.name}`}
-                            alt={city.name}
-                            className="w-full h-full object-cover"
-                            fallbackSrc={`https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=200&q=160&fit=crop&auto=format&${city.name}`}
-                          />
+                        <div className="w-36 h-24 rounded-lg overflow-hidden shadow-md">
+                          {city.name === "San Francisco" && (
+                            <FallbackImage 
+                              src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=500&h=300&fit=crop&q=80"
+                              alt={city.name}
+                              className="w-full h-full object-cover"
+                              fallbackSrc="https://images.unsplash.com/photo-1534050359320-02900022671e?w=500&h=300&fit=crop&q=80"
+                            />
+                          )}
+                          {city.name === "Chicago" && (
+                            <FallbackImage 
+                              src="https://images.unsplash.com/photo-1494522855154-9297ac14b55f?w=500&h=300&fit=crop&q=80"
+                              alt={city.name}
+                              className="w-full h-full object-cover"
+                              fallbackSrc="https://images.unsplash.com/photo-1581373449483-37449f962b6c?w=500&h=300&fit=crop&q=80"
+                            />
+                          )}
+                          {city.name === "Miami" && (
+                            <FallbackImage 
+                              src="https://images.unsplash.com/photo-1533106497176-45ae19e68ba2?w=500&h=300&fit=crop&q=80"
+                              alt={city.name}
+                              className="w-full h-full object-cover"
+                              fallbackSrc="https://images.unsplash.com/photo-1535498730771-e735b998cd64?w=500&h=300&fit=crop&q=80"
+                            />
+                          )}
                         </div>
-                        <span>{city.name}</span>
+                        <span className="font-medium">{city.name}</span>
                       </div>
                     </Link>
                   ))}
