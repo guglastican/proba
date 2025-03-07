@@ -1,5 +1,6 @@
 import { getAllTags, locations } from "@/data/hotels";
 import { MetadataRoute } from "next";
+import { getAllCategoryCombinations } from "@/data/categories";
 
 // Provide a default base URL with a fallback
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'example.com';
@@ -28,6 +29,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         }))
       )
       .flat() as MetadataRoute.Sitemap;
+      
+    // Get category pages
+    const categoryCombinations = getAllCategoryCombinations();
+    const categoryPages = categoryCombinations.map(combo => ({
+      url: `https://${baseUrl}/category/${combo.country}/${combo.city}/`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    })) as MetadataRoute.Sitemap;
 
     return [
       // Insert your other pages:
@@ -39,6 +49,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       },
       // Our pSEO pages:
       ...searchLandingPages,
+      // Category pages:
+      ...categoryPages,
     ];
   } catch (error) {
     console.error('Error generating sitemap:', error);
