@@ -1,30 +1,30 @@
+
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import { getAllCategoryCombinations, getCityDetails } from "@/data/categories";
-import HotelCard from "@/components/HotelCard";
 import Link from "next/link";
 
-// Define the PageProps interface correctly
-type PageProps = {
-  params: {
-    country: string;
-    city: string;
-  };
+type PageParams = {
+  country: string;
+  city: string;
+};
+
+type Props = {
+  params: PageParams;
 };
 
 export const revalidate = 86400; // Refresh cached pages once every 24 hours
 
 export async function generateStaticParams() {
   const combinations = getAllCategoryCombinations();
-
   return combinations.map(combo => ({
     country: combo.country,
     city: combo.city,
   }));
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { country, city } = params;
   const cityDetails = getCityDetails(country, city);
 
@@ -41,15 +41,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default async function CategoryCityPage({ params }: PageProps) {
+export default function Page({ params }: Props) {
   const { country, city } = params;
   const cityDetails = getCityDetails(country, city);
 
   if (!cityDetails) {
     notFound();
   }
-
-  const hotels = await cityDetails.getHotels();
 
   return (
     <div>
@@ -63,9 +61,13 @@ export default async function CategoryCityPage({ params }: PageProps) {
         </section>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {hotels.map((hotel) => (
+          {/* We'll need to update this once you create the HotelCard component */}
+          {/* {hotels.map((hotel) => (
             <HotelCard key={hotel.id} hotel={hotel} />
-          ))}
+          ))} */}
+          <div className="p-4 border rounded-lg shadow-md">
+            <p className="text-lg font-semibold">Hotel listings coming soon</p>
+          </div>
         </div>
 
         <div className="mt-12 text-center">
