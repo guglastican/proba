@@ -3,6 +3,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
+    domains: ["source.unsplash.com", "images.unsplash.com", "images.trvl-media.com", "lh3.googleusercontent.com", "developers.google.com"],
     remotePatterns: [
       {
         protocol: "https",
@@ -25,6 +26,7 @@ const nextConfig: NextConfig = {
         hostname: "developers.google.com",
       },
     ],
+    unoptimized: true,
   },
   // Add hostname configuration for Replit
   hostname: "0.0.0.0",
