@@ -45,7 +45,7 @@ export default function HomePage() {
                       <div className="flex flex-col items-center gap-2">
                         <div className="w-20 h-20 rounded-lg overflow-hidden">
                           <FallbackImage 
-                            src={`https://unsplash.com/photos/aerial-photography-of-buildings-3CQQlwWpn70?${city.name},travel,city`}
+                            src={`https://source.unsplash.com/featured/?${city.name},travel,city`}
                             alt={city.name}
                             className="w-full h-full object-cover"
                             fallbackSrc={`https://source.unsplash.com/random/?${city.name},landmark`}
