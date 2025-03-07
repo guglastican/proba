@@ -23,64 +23,77 @@ export default function HomePage() {
           </p>
         </section>
 
-        <section className="mb-12">
-          <div className="flex justify-between items-center mb-6">
-            <h2 className="text-2xl font-bold">Browse by Location</h2>
-            <Link href="/categories" className="text-blue-600 hover:underline">
-              View all locations
+        <section className="mb-16">
+          <div className="flex justify-between items-center mb-8 border-b pb-4">
+            <h2 className="text-3xl font-bold text-gray-800">Browse by Location</h2>
+            <Link href="/categories" className="text-blue-600 hover:text-blue-800 flex items-center group">
+              <span>View all locations</span>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1 transition-transform group-hover:translate-x-1" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
             </Link>
           </div>
 
           <div className="space-y-8">
             {countries.map((country) => (
-              <div key={country.slug} className="border rounded-lg p-6 shadow-sm">
-                <h3 className="text-xl font-bold mb-4">{country.name}</h3>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              <div key={country.slug} className="border rounded-lg p-6 shadow-sm bg-white">
+                <h3 className="text-2xl font-bold mb-6 text-gray-800 flex items-center">
+                  {country.name}
+                  <div className="h-1 w-12 bg-blue-600 ml-4 rounded-full"></div>
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                   {country.cities.slice(0, 4).map((city) => (
                     <Link 
                       href={`/category/${country.slug}/${city.slug}`} 
                       key={city.slug}
-                      className="block p-3 bg-gray-50 hover:bg-gray-100 rounded-md transition"
+                      className="block overflow-hidden rounded-lg shadow-md transition-transform hover:scale-[1.02] hover:shadow-lg group"
                     >
-                      <div className="flex flex-col items-center gap-2">
-                        <div className="w-56 h-32 overflow-hidden">
-                          {city.name === "San Francisco" && (
-                            <FallbackImage 
-                              src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=800&h=600&fit=crop&q=80"
-                              alt={city.name}
-                              className="w-full h-full object-cover"
-                              fallbackSrc="https://images.unsplash.com/photo-1534050359320-02900022671e?w=800&h=600&fit=crop&q=80"
-                            />
-                          )}
-                          {city.name === "Chicago" && (
-                            <FallbackImage 
-                              src="https://images.unsplash.com/photo-1494522855154-9297ac14b55f?w=800&h=600&fit=crop&q=80"
-                              alt={city.name}
-                              className="w-full h-full object-cover"
-                              fallbackSrc="https://images.unsplash.com/photo-1581373449483-37449f962b6c?w=800&h=600&fit=crop&q=80"
-                            />
-                          )}
-                          {city.name === "Miami" && (
-                            <FallbackImage 
-                              src="https://images.unsplash.com/photo-1533106497176-45ae19e68ba2?w=800&h=600&fit=crop&q=80"
-                              alt={city.name}
-                              className="w-full h-full object-cover"
-                              fallbackSrc="https://images.unsplash.com/photo-1535498730771-e735b998cd64?w=800&h=600&fit=crop&q=80"
-                            />
-                          )}
+                      <div className="relative w-full h-48">
+                        {city.name === "San Francisco" && (
+                          <FallbackImage 
+                            src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=800&h=600&fit=crop&q=80"
+                            alt={city.name}
+                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                            fallbackSrc="https://images.unsplash.com/photo-1534050359320-02900022671e?w=800&h=600&fit=crop&q=80"
+                          />
+                        )}
+                        {city.name === "Chicago" && (
+                          <FallbackImage 
+                            src="https://images.unsplash.com/photo-1494522855154-9297ac14b55f?w=800&h=600&fit=crop&q=80"
+                            alt={city.name}
+                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                            fallbackSrc="https://images.unsplash.com/photo-1581373449483-37449f962b6c?w=800&h=600&fit=crop&q=80"
+                          />
+                        )}
+                        {city.name === "Miami" && (
+                          <FallbackImage 
+                            src="https://images.unsplash.com/photo-1533106497176-45ae19e68ba2?w=800&h=600&fit=crop&q=80"
+                            alt={city.name}
+                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                            fallbackSrc="https://images.unsplash.com/photo-1535498730771-e735b998cd64?w=800&h=600&fit=crop&q=80"
+                          />
+                        )}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <h3 className="absolute bottom-3 left-3 text-white font-semibold text-xl drop-shadow-md">
+                          {city.name}
+                        </h3>
+                        <div className="absolute top-3 right-3 bg-white/90 text-xs font-medium px-2 py-1 rounded-full shadow-sm">
+                          View Hotels
                         </div>
-                        <span className="font-medium">{city.name}</span>
                       </div>
                     </Link>
                   ))}
                 </div>
                 {country.cities.length > 4 && (
-                  <div className="mt-4 text-right">
+                  <div className="mt-6 text-right">
                     <Link 
                       href={`/categories#${country.slug}`}
-                      className="text-blue-600 hover:underline text-sm"
+                      className="text-blue-600 hover:text-blue-800 text-sm flex items-center justify-end group"
                     >
-                      View all {country.name} cities
+                      <span>View all {country.name} cities</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1 transition-transform group-hover:translate-x-1" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                      </svg>
                     </Link>
                   </div>
                 )}
@@ -89,12 +102,15 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="text-center">
+        <section className="text-center mt-16">
           <Link 
             href="/categories"
-            className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition"
+            className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition-all shadow-md hover:shadow-lg group"
           >
-            Explore All Categories
+            <span>Explore All Categories</span>
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 transition-transform group-hover:translate-x-1" viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+            </svg>
           </Link>
         </section>
       </main>
