@@ -1,6 +1,7 @@
 import banner from "@/assets/hotels-with-hot-tub.jpg";
 import Header from "@/components/Header";
 import Image from "next/image";
+import Link from "next/link";
 import { Metadata } from "next";
 
 // Add the metadata for Google Search Console verification
@@ -117,21 +118,21 @@ export default async function Home() {
             <div className="hidden" itemScope itemType="https://schema.org/ItemList">
               <h2 itemProp="name">Popular Hot Tub Hotel Locations</h2>
               <div itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-                <a href="/search?location=London" itemProp="url">
+                <Link href="/search?location=London" itemProp="url">
                   <span itemProp="name">London Hotels with Hot Tubs</span>
-                </a>
+                </Link>
                 <meta itemProp="position" content="1" />
               </div>
               <div itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-                <a href="/search?location=Paris" itemProp="url">
+                <Link href="/search?location=Paris" itemProp="url">
                   <span itemProp="name">Paris Hotels with Private Jacuzzis</span>
-                </a>
+                </Link>
                 <meta itemProp="position" content="2" />
               </div>
               <div itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-                <a href="/search?location=New+York" itemProp="url">
+                <Link href="/search?location=New+York" itemProp="url">
                   <span itemProp="name">New York Jacuzzi Suites</span>
-                </a>
+                </Link>
                 <meta itemProp="position" content="3" />
               </div>
             </div>
