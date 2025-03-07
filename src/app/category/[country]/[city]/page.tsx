@@ -5,19 +5,13 @@ import { getAllCategoryCombinations, getCityDetails } from "@/data/categories";
 import HotelCard from "@/components/HotelCard";
 import Link from "next/link";
 
-interface PageProps {
+// Define the PageProps interface correctly
+type PageProps = {
   params: {
     country: string;
     city: string;
   };
-}
-
-interface PageProps {
-  params: {
-    country: string;
-    city: string;
-  };
-}
+};
 
 export const revalidate = 86400; // Refresh cached pages once every 24 hours
 
@@ -59,36 +53,29 @@ export default async function CategoryCityPage({ params }: PageProps) {
 
   return (
     <div>
-      <Header q={cityDetails.name.replace(/'/g, "&apos;")} location={cityDetails.name.replace(/'/g, "&apos;")} />
-      <main className="container mx-auto px-4 py-8">
-        <section className="mb-10">
-          <h1 className="text-3xl font-bold mb-4">Hotels in {cityDetails.name.replace(/'/g, "&apos;")}</h1>
-          <p className="text-gray-600 max-w-3xl">
-            Discover the best places to stay in {cityDetails.name.replace(/'/g, "&apos;")}. Browse our selection of top-rated hotels,
-            from luxury accommodations to cozy boutique stays.
+      <Header q={cityDetails.name} location="All Locations" />
+      <main className="container mx-auto space-y-8 px-4 py-8">
+        <section className="text-center mb-12">
+          <h1 className="text-4xl font-bold mb-4">Hotels in {cityDetails.name}</h1>
+          <p className="text-lg max-w-2xl mx-auto">
+            Browse our selection of the best hotels in {cityDetails.name}. Perfect accommodations for your trip.
           </p>
         </section>
 
-        {hotels.length === 0 ? (
-          <div className="text-center py-10">
-            <h2 className="text-2xl font-semibold mb-4">No hotels found</h2>
-            <p className="text-gray-600 mb-6">
-              We couldn&apos;t find any hotels in {cityDetails.name.replace(/'/g, "&apos;")} matching your criteria.
-            </p>
-            <Link 
-              href="/"
-              className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors"
-            >
-              Return to Homepage
-            </Link>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {hotels.map((hotel) => (
-              <HotelCard key={hotel.id} hotel={hotel} />
-            ))}
-          </div>
-        )}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {hotels.map((hotel) => (
+            <HotelCard key={hotel.id} hotel={hotel} />
+          ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <Link 
+            href={`/`}
+            className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-all shadow-md hover:shadow-lg group"
+          >
+            <span>Back to Home</span>
+          </Link>
+        </div>
       </main>
     </div>
   );
