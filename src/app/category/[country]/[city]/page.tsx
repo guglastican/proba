@@ -12,6 +12,13 @@ interface PageProps {
   };
 }
 
+interface PageProps {
+  params: {
+    country: string;
+    city: string;
+  };
+}
+
 export const revalidate = 86400; // Refresh cached pages once every 24 hours
 
 export async function generateStaticParams() {
