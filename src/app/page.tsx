@@ -1,8 +1,8 @@
-import Image from "next/image";
+
 import Link from "next/link";
+import { Metadata } from "next";
 import { getAllCountries } from "@/data/categories";
 import Header from "@/components/Header";
-import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Hotel Directory - Find Top Hotels Worldwide",
@@ -22,7 +22,7 @@ export default function HomePage() {
             Browse our extensive collection of hotels around the world by location or category.
           </p>
         </section>
-
+        
         <section className="mb-12">
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-2xl font-bold">Browse by Location</h2>
@@ -30,7 +30,7 @@ export default function HomePage() {
               View all locations
             </Link>
           </div>
-
+          
           <div className="space-y-8">
             {countries.map((country) => (
               <div key={country.slug} className="border rounded-lg p-6 shadow-sm">
@@ -60,7 +60,7 @@ export default function HomePage() {
             ))}
           </div>
         </section>
-
+        
         <section className="text-center">
           <Link 
             href="/categories"
