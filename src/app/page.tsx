@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { getAllCountries } from "@/data/categories";
 import Header from "@/components/Header";
+import FallbackImage from "@/components/FallbackImage";
 
 export const metadata: Metadata = {
   title: "Hotel Directory - Find Top Hotels Worldwide",
@@ -43,13 +44,11 @@ export default function HomePage() {
                     >
                       <div className="flex flex-col items-center gap-2">
                         <div className="w-12 h-12 rounded-full overflow-hidden">
-                          <img 
+                          <FallbackImage 
                             src={`/images/${city.slug}.jpg`} 
                             alt={city.name}
                             className="w-full h-full object-cover"
-                            onError={(e) => {
-                              e.currentTarget.src = `https://placehold.co/100x100/e2e8f0/64748b?text=${city.name.charAt(0)}`;
-                            }}
+                            fallbackSrc={`https://placehold.co/100x100/e2e8f0/64748b?text=${city.name.charAt(0)}`}
                           />
                         </div>
                         <span>{city.name}</span>
