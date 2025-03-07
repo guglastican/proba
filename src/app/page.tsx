@@ -43,7 +43,7 @@ export default function HomePage() {
                       className="block p-3 bg-gray-50 hover:bg-gray-100 rounded-md transition"
                     >
                       <div className="flex flex-col items-center gap-2">
-                        <div className="w-56 h-32 rounded-lg overflow-hidden shadow-md">
+                        <div className="w-56 h-32 overflow-hidden">
                           {city.name === "San Francisco" && (
                             <FallbackImage 
                               src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=800&h=600&fit=crop&q=80"
