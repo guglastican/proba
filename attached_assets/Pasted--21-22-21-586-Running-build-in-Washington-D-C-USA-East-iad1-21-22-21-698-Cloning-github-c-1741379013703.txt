@@ -1,0 +1,39 @@
+[21:22:21.586] Running build in Washington, D.C., USA (East) – iad1
+[21:22:21.698] Cloning github.com/guglastican/proba (Branch: Finished, Commit: 710cf91)
+[21:22:24.954] Cloning completed: 3.256s
+[21:22:28.438] Restored build cache from previous deployment (7kcVixFW2mFHRtwEu2mAnZCgndWv)
+[21:22:28.509] Running "vercel build"
+[21:22:28.873] Vercel CLI 41.2.2
+[21:22:29.328] Running "install" command: `npm install --lagacy-peer-deps`...
+[21:22:31.173] 
+[21:22:31.174] up to date, audited 639 packages in 1s
+[21:22:31.174] 
+[21:22:31.174] 161 packages are looking for funding
+[21:22:31.174]   run `npm fund` for details
+[21:22:31.175] 
+[21:22:31.175] found 0 vulnerabilities
+[21:22:31.210] Detected Next.js version: 15.1.7
+[21:22:31.215] Running "npm run build"
+[21:22:31.323] 
+[21:22:31.324] > nextjs-programmatic-seo@0.1.0 build
+[21:22:31.324] > next build
+[21:22:31.324] 
+[21:22:31.963]  ⚠ Invalid next.config.ts options detected: 
+[21:22:31.963]  ⚠     Unrecognized key(s) in object: 'hostname', 'port'
+[21:22:31.963]  ⚠ See more info here: https://nextjs.org/docs/messages/invalid-next-config
+[21:22:32.092]    ▲ Next.js 15.1.7
+[21:22:32.092]    - Environments: .env.local, .env
+[21:22:32.093] 
+[21:22:32.133]    Creating an optimized production build ...
+[21:22:40.331]  ✓ Compiled successfully
+[21:22:40.335]    Linting and checking validity of types ...
+[21:22:46.715] Failed to compile.
+[21:22:46.716] 
+[21:22:46.717] src/app/category/[country]/[city]/page.tsx
+[21:22:46.717] Type error: Type 'PageProps' does not satisfy the constraint 'import("/vercel/path0/.next/types/app/category/[country]/[city]/page").PageProps'.
+[21:22:46.720]   Types of property 'params' are incompatible.
+[21:22:46.720]     Type '{ country: string; city: string; }' is missing the following properties from type 'Promise<any>': then, catch, finally, [Symbol.toStringTag]
+[21:22:46.720] 
+[21:22:46.739] Next.js build worker exited with code: 1 and signal: null
+[21:22:46.758] Error: Command "npm run build" exited with 1
+[21:22:47.071] 
