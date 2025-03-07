@@ -45,10 +45,10 @@ export default function HomePage() {
                       <div className="flex flex-col items-center gap-2">
                         <div className="w-20 h-20 rounded-lg overflow-hidden">
                           <FallbackImage 
-                            src={`https://images.unsplash.com/photo-1580655653885-65763b2597d0?w=100&q=80&fit=crop&auto=format&${city.name}`}
+                            src={`https://unsplash.com/photos/aerial-photography-of-buildings-3CQQlwWpn70${city.name}`}
                             alt={city.name}
                             className="w-full h-full object-cover"
-                            fallbackSrc={`https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=100&q=80&fit=crop&auto=format&${city.name}`}
+                            fallbackSrc={`https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=200&q=160&fit=crop&auto=format&${city.name}`}
                           />
                         </div>
                         <span>{city.name}</span>
