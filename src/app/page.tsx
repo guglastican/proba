@@ -43,12 +43,12 @@ export default function HomePage() {
                       className="block p-3 bg-gray-50 hover:bg-gray-100 rounded-md transition"
                     >
                       <div className="flex flex-col items-center gap-2">
-                        <div className="w-12 h-12 rounded-full overflow-hidden">
+                        <div className="w-20 h-20 rounded-lg overflow-hidden">
                           <FallbackImage 
-                            src={`/images/${city.slug}.jpg`} 
+                            src={`https://source.unsplash.com/featured/?${city.name},travel,city`}
                             alt={city.name}
                             className="w-full h-full object-cover"
-                            fallbackSrc={`https://placehold.co/100x100/e2e8f0/64748b?text=${city.name.charAt(0)}`}
+                            fallbackSrc={`https://source.unsplash.com/random/?${city.name},landmark`}
                           />
                         </div>
                         <span>{city.name}</span>
