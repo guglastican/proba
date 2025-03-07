@@ -11,9 +11,9 @@ type PageParams = {
   city: string;
 };
 
-interface Props {
+type Props = {
   params: PageParams;
-}
+};
 
 export const revalidate = 86400; // Refresh cached pages once every 24 hours
 
@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function Page({ params }: Props) {
+export default async function Page({ params }: Props) {
   const { country, city } = params;
   const cityDetails = getCityDetails(country, city);
 
@@ -50,40 +50,31 @@ export default function Page({ params }: Props) {
     notFound();
   }
 
-  // Use hotels from city details
-  const hotels = cityDetails.getHotels ? cityDetails.getHotels() : [];
+  const hotels = await cityDetails.getHotels();
 
   return (
     <div>
-      <Header q={cityDetails.name} location={country} />
-      <main className="container mx-auto px-4 py-8 space-y-8">
-        <section className="text-center space-y-3">
-          <h1 className="text-3xl font-bold text-gray-800">
-            Hotels in {cityDetails.name}
-          </h1>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Browse our selection of the best hotels in {cityDetails.name}.
+      <Header q={cityDetails.name} location="All Locations" />
+      <main className="container mx-auto space-y-8 px-4 py-8">
+        <section className="text-center mb-12">
+          <h1 className="text-4xl font-bold mb-4">Hotels in {cityDetails.name}</h1>
+          <p className="text-lg max-w-2xl mx-auto">
+            Browse our selection of the best hotels in {cityDetails.name}. Perfect accommodations for your trip.
           </p>
         </section>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {Array.isArray(hotels) && hotels.length > 0 ? (
-            hotels.map(hotel => (
-              <HotelCard key={hotel.id} hotel={hotel} />
-            ))
-          ) : (
-            <div className="col-span-full text-center py-8">
-              <p className="text-gray-500">No hotels found for this city.</p>
-            </div>
-          )}
+          {hotels.map((hotel) => (
+            <HotelCard key={hotel.id} hotel={hotel} />
+          ))}
         </div>
 
-        <div className="text-center mt-8">
-          <Link
+        <div className="mt-12 text-center">
+          <Link 
             href="/"
-            className="inline-flex items-center text-blue-600 hover:text-blue-800"
+            className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition-all shadow-md hover:shadow-lg group"
           >
-            ← Back to all locations
+            <span>Return to Home</span>
           </Link>
         </div>
       </main>
