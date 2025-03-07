@@ -1,4 +1,3 @@
-
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
@@ -12,7 +11,7 @@ type PageParams = {
 };
 
 type Props = {
-  params: PageParams;
+  params: Promise<PageParams>;
 };
 
 export const revalidate = 86400; // Refresh cached pages once every 24 hours
@@ -26,7 +25,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { country, city } = params;
+  const { country, city } = await params;
   const cityDetails = getCityDetails(country, city);
 
   if (!cityDetails) {
@@ -43,7 +42,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function Page({ params }: Props) {
-  const { country, city } = params;
+  const { country, city } = await params;
   const cityDetails = getCityDetails(country, city);
 
   if (!cityDetails) {
