@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import { getAllCategoryCombinations, getCityDetails } from "@/data/categories";
+import HotelCard from "@/components/HotelCard";
 import Link from "next/link";
 
 type PageParams = {
@@ -41,13 +42,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function Page({ params }: Props) {
+export default async function Page({ params }: Props) {
   const { country, city } = params;
   const cityDetails = getCityDetails(country, city);
 
   if (!cityDetails) {
     notFound();
   }
+
+  const hotels = await cityDetails.getHotels();
 
   return (
     <div>
@@ -61,21 +64,17 @@ export default function Page({ params }: Props) {
         </section>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* We'll need to update this once you create the HotelCard component */}
-          {/* {hotels.map((hotel) => (
+          {hotels.map((hotel) => (
             <HotelCard key={hotel.id} hotel={hotel} />
-          ))} */}
-          <div className="p-4 border rounded-lg shadow-md">
-            <p className="text-lg font-semibold">Hotel listings coming soon</p>
-          </div>
+          ))}
         </div>
 
         <div className="mt-12 text-center">
           <Link 
-            href={`/`}
-            className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-all shadow-md hover:shadow-lg group"
+            href="/"
+            className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition-all shadow-md hover:shadow-lg group"
           >
-            <span>Back to Home</span>
+            <span>Return to Home</span>
           </Link>
         </div>
       </main>
