@@ -22,7 +22,7 @@ export default function CategoriesPage() {
         
         <div className="space-y-8">
           {countries.map((country) => (
-            <div key={country.slug} className="border rounded-lg p-6 shadow-sm">
+            <div id={country.slug} key={country.slug} className="border rounded-lg p-6 shadow-sm">
               <h2 className="text-2xl font-bold mb-4">{country.name}</h2>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {country.cities.map((city) => (
