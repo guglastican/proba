@@ -10,7 +10,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Hotel } from "@/data/hotels";
-import { Clock, MapPin, Star, StarHalf, Building } from "lucide-react";
+import { Clock, MapPin, Star } from "lucide-react";
 import Image from "next/image";
 
 interface HotelCardProps {
