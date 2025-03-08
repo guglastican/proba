@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
 import { GoogleTagManager } from "@next/third-parties/google";
+import Footer from "@/components/Footer"; // Added import for Footer component
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,7 +27,12 @@ export default function RootLayout({
     <html lang="en">
       {/* Add Google Tag Manager */}
       <GoogleTagManager gtmId="GTM-KQ7B5BL5" />
-      <body className={`${geistSans.className} antialiased`}>{children}</body>
+      <body className={`${geistSans.className} antialiased flex flex-col`}> {/* Added flexbox classes */}
+        <div className="flex-grow">
+          {children}
+        </div>
+        <Footer /> {/* Added Footer component */}
+      </body>
     </html>
   );
 }
