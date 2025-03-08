@@ -17,7 +17,7 @@ export default function HomePage() {
   return (
     <div>
       <Canonical />
-      <Header q="Home" location="All Locations" />
+      <Header q="Type: Hot Tub" location="All Locations" />
       <main className="container mx-auto space-y-8 px-4 py-8">
         <section className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4">Find Your Perfect Hotel</h1>
