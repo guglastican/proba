@@ -64,3 +64,42 @@ function ResultsLoadingSkeleton() {
     </div>
   );
 }
+import Header from "@/components/Header";
+import HotelItem from "@/components/HotelItem";
+import { Skeleton } from "@/components/ui/skeleton";
+import { locations, searchHotels } from "@/data/hotels";
+import { redirect } from "next/navigation";
+import { Suspense } from "react";
+import Canonical from "@/components/Canonical";
+import { Metadata } from "next";
+
+interface PageProps {
+  searchParams: Promise<{ q?: string; location?: string }>;
+}
+
+export const metadata: Metadata = {
+  title: "Search Hotels - Find Your Perfect Stay",
+  description: "Search for hotels by location and amenities",
+  alternates: {
+    canonical: '/search',
+  },
+};
+
+export default async function Page({ searchParams }: PageProps) {
+  const { q, location } = await searchParams;
+
+  if (!q) redirect("/");
+
+  // In a real app, a missing location param could automatically search close to the user's location (That's how Yelp does it)
+  const userLocation = location || locations[0];
+
+  return (
+    <div>
+      <Canonical />
+      <Header q={q} location={userLocation} />
+      <Suspense fallback={<ResultsLoadingSkeleton />} key={`${q}-${location}`}>
+        <Results q={q} location={userLocation} />
+      </Suspense>
+    </div>
+  );
+}
