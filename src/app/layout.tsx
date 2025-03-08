@@ -11,6 +11,10 @@ const geistSans = Geist({
 export const metadata: Metadata = {
   title: "Hotel With Hot Tubs ",
   description: "Find the best hotels near you",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://hotelswithottubs.com'),
+  alternates: {
+    canonical: '/',
+  },
 };
 
 export default function RootLayout({

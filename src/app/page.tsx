@@ -9,11 +9,14 @@ export const metadata: Metadata = {
   description: "Browse our comprehensive directory of hotels by location and category",
 };
 
+import Canonical from '@/components/Canonical';
+
 export default function HomePage() {
   const countries = getAllCountries();
 
   return (
     <div>
+      <Canonical />
       <Header q="Home" location="All Locations" />
       <main className="container mx-auto space-y-8 px-4 py-8">
         <section className="text-center mb-12">
