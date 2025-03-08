@@ -1,0 +1,114 @@
+The error message you’ve encountered during the npm run build process in your Next.js application indicates a problem with collecting configuration or page data for the /_not-found route, which corresponds to the not-found page (typically used for handling 404 errors). Here’s a breakdown of the issue and how to resolve it:
+
+Understanding the Error
+The core issue is a TypeError: Invalid URL, triggered by an attempt to process the string 'romantic-vacations-destinations.com\n' as a URL. This error originates in the built file .next/server/app/_not-found/page.js at line 1, column 5824, during the build process. The specific error code ERR_INVALID_URL and the input 'romantic-vacations-destinations.com\n' reveal that the string includes a newline character (\n), which makes it an invalid URL. In JavaScript, for example, attempting new URL('romantic-vacations-destinations.com\n') would throw this exact error because URLs cannot contain newline characters.
+
+The subsequent error, "Failed to collect page data for /_not-found", and the exit code 1 from npm run build confirm that this invalid URL prevents Next.js from successfully building the application, specifically when handling the not-found page.
+
+Why This Happens
+In Next.js, the /_not-found route is an internal representation of the not-found page, which can be customized via a file like app/not-found.js (in the App Router) or pages/404.js (in the Pages Router). During the build process, Next.js collects configuration and data for all pages, including this special route. The presence of an invalid URL suggests that somewhere in your project—likely related to the not-found page—a string intended as a URL is malformed due to the trailing newline character.
+
+This could occur in various places:
+
+Code: A variable or constant containing the URL might inadvertently include a newline, e.g., a typo in a string literal or a failure to trim input.
+Configuration: A setting in next.config.js, an environment variable, or a data file (like JSON) might list this URL with an extra newline.
+Data Source: If the not-found page fetches or processes data (e.g., via getStaticProps), the data might include this malformed URL.
+Steps to Fix the Issue
+To resolve this error, you need to identify where 'romantic-vacations-destinations.com\n' is introduced and correct it. Here’s how to proceed:
+
+Locate the URL in Your Project
+Use a code editor or terminal command (e.g., grep -r "romantic-vacations-destinations.com" .) to search your entire codebase, including source files (app/, pages/, components, utilities), configuration files (next.config.js), and data files (e.g., JSON, text files).
+Check for the exact string 'romantic-vacations-destinations.com' and inspect whether it’s followed by a newline, either explicitly (e.g., a line break in the code) or implicitly (e.g., from a file read operation).
+Inspect the Not-Found Page
+If using the App Router, look for a not-found.js file in the app/ directory. If using the Pages Router, check for a pages/404.js file. These files define the custom not-found page.
+Examine the code for any references to URLs, such as links (<a> tags or next/link), redirects, or API calls. For example:
+javascript
+
+Collapse
+
+Wrap
+
+Copy
+const url = 'romantic-vacations-destinations.com'; // Check if this has a newline
+If it’s dynamically generated, trace its source.
+Check Configuration and Environment Variables
+Open next.config.js and look for any URL-related settings (e.g., basePath, rewrites, redirects) that might include this domain.
+Review your .env files or environment variables (e.g., SITE_URL) to ensure no values end with a newline. For instance:
+text
+
+Collapse
+
+Wrap
+
+Copy
+SITE_URL=romantic-vacations-destinations.com\n
+Should be corrected to:
+text
+
+Collapse
+
+Wrap
+
+Copy
+SITE_URL=romantic-vacations-destinations.com
+Examine Data Sources
+If your not-found page uses data (e.g., via getStaticProps or an API call), check the data source. For example, a JSON file like:
+json
+
+Collapse
+
+Wrap
+
+Copy
+{
+  "domains": ["romantic-vacations-destinations.com\n"]
+}
+Should be fixed to:
+json
+
+Collapse
+
+Wrap
+
+Copy
+{
+  "domains": ["romantic-vacations-destinations.com"]
+}
+If reading from a text file, ensure lines are trimmed (e.g., using .trim() in JavaScript).
+Correct the URL
+Once found, remove the newline character. If it’s in code, ensure proper string handling:
+javascript
+
+Collapse
+
+Wrap
+
+Copy
+const url = someVariable.trim(); // Removes trailing newlines and whitespace
+new URL(url);
+If it’s in a file, edit it to eliminate the extra newline.
+Test the Build
+Run npm run build again to verify the fix. If the error persists, enable verbose output (e.g., npm run build -- --debug) to get more details, or check the full build log for additional clues.
+Preventing Future Issues
+To avoid similar problems:
+
+Add validation for URLs in your code:
+javascript
+
+Collapse
+
+Wrap
+
+Copy
+function validateUrl(url) {
+  try {
+    new URL(url.trim());
+    return true;
+  } catch (e) {
+    console.error(`Invalid URL detected: ${url}`);
+    throw e;
+  }
+}
+When reading from files or external sources, always trim strings to remove unwanted characters.
+Conclusion
+The error stems from an invalid URL string, 'romantic-vacations-destinations.com\n', used in the configuration or code related to the /_not-found page, causing the Next.js build to fail. By searching your project for this string, correcting its formatting to remove the newline, and ensuring proper URL handling, you can resolve the issue and successfully complete the build process.
