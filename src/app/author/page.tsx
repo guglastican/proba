@@ -1,6 +1,15 @@
 
 import Header from '@/components/Header';
 import Canonical from '@/components/Canonical';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "About the Author - Hotel Reviews and Recommendations",
+  description: "Learn more about our travel writer and hotel reviewer",
+  alternates: {
+    canonical: '/author',
+  },
+};
 
 export default function AuthorPage() {
   return (
