@@ -12,7 +12,7 @@ export interface Hotel {
   tags: string[];
   amenities: string[];
   link: string;
-  googlePlaceId?: string; // Google Place ID for fetching reviews
+  googlePlaceId?: string; // Google Place ID for fetching review
 }
 
 const hotels: Hotel[] = [
