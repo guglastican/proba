@@ -36,7 +36,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
               <p>&copy; {currentYear} Hotels With Hot Tubs. All rights reserved.</p>
-              <p className="text-sm mt-2">Find the perfect hotel with amenities you'll love.</p>
+              <p className="text-sm mt-2">Find the perfect hotel with amenities you&apos;ll love.</p>
             </div>
             
             {/* Schema.org structured data for local business (hidden from users, visible to search engines) */}
