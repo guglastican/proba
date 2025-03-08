@@ -6,7 +6,7 @@ import Script from 'next/script';
 
 export default function Canonical() {
   const pathname = usePathname();
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://hotelswithottubs.com';
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ? process.env.NEXT_PUBLIC_BASE_URL.trim() : 'https://hotelswithottubs.com';
   const canonicalUrl = `${baseUrl}${pathname}`;
 
   return (
