@@ -5,7 +5,8 @@ run = "undo website"
 channel = "stable-24_05"
 
 [deployment]
-run = ["sh", "-c", "undo website"]
+run = ["sh", "-c", "npm start"]
+build = ["sh", "-c", "npm run build"]
 
 [workflows]
 runButton = "Dev"
