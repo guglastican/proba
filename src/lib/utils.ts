@@ -9,5 +9,14 @@ export function cn(...inputs: ClassValue[]) {
 // Add a utility function to sanitize URLs
 export function sanitizeUrl(url: string | undefined): string {
   if (!url) return '';
-  return url.trim().replace(/\n/g, '');
+  
+  // Remove any whitespace and newlines
+  const trimmedUrl = url.trim().replace(/\n/g, '');
+  
+  // Ensure the URL has a protocol
+  if (!trimmedUrl.match(/^https?:\/\//)) {
+    return `https://${trimmedUrl}`;
+  }
+  
+  return trimmedUrl;
 }
