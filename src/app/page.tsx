@@ -17,23 +17,18 @@ interface City {
   name: string;
 }
 
-// Define props type for HomePage
-interface HomePageProps {
-  canonicalUrl: string;
-}
-
 // Metadata for SEO
 export const metadata: Metadata = {
   title: "Hotel Directory - Find Top Hotels Worldwide",
   description: "Browse our comprehensive directory of hotels by location and category",
 };
 
-export default function HomePage({ canonicalUrl }: HomePageProps) {
+export default function HomePage() {
   const countries: Country[] = getAllCountries();
 
   return (
     <div>
-      <Canonical url={canonicalUrl} />
+      <Canonical />
       <Header q="Type: Hot Tub" location="All Locations" />
       <main className="container mx-auto space-y-8 px-4 py-8">
         <section className="text-center mb-12">
