@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
-import Canonical from '@/components/Canonical';
 
 export const metadata: Metadata = {
   title: "Page Not Found - 404 Error",
@@ -13,7 +12,6 @@ export const metadata: Metadata = {
 export default function NotFoundPage() {
   return (
     <div className="min-h-screen flex items-center justify-center px-4">
-      <Canonical />
       <div className="text-center space-y-6">
         <h1 className="text-5xl font-bold text-gray-800">404</h1>
         <h2 className="text-2xl font-semibold text-gray-700">Page Not Found</h2>
