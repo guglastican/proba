@@ -25,7 +25,7 @@ export default function AuthorPage() {
             </p>
             <div className="mt-6">
               <h3 className="text-xl font-semibold mb-2">Contact</h3>
-              <p className="text-gray-600">Email: john@hotelswithottubs.com</p>
+              <p className="text-gray-600">Email: john@romantic-vacations-destinations.com</p>
               <p className="text-gray-600">Twitter: @johntravels</p>
             </div>
           </div>
