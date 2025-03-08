@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Metadata } from "next";
+import { headers } from "next/headers";
 import { getAllCountries } from "@/data/categories";
 import Header from "@/components/Header";
 import FallbackImage from "@/components/FallbackImage";
@@ -24,6 +25,8 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
+  // Force this page to be SSR by using headers
+  headers();
   const countries: Country[] = getAllCountries();
 
   return (
