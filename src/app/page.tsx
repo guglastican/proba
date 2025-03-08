@@ -108,7 +108,7 @@ export default function HomePage() {
         <section className="text-center mt-16">
           <Link 
             href="/categories"
-            className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition-all shadow-md hover:shadow-lg group"
+            className="inline-flex items-center bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-lg transition-all shadow-md hover:shadow-lg group"
           >
             <span>Explore All Categories</span>
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 transition-transform group-hover:translate-x-1" viewBox="0 0 20 20" fill="currentColor">
