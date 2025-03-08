@@ -1,0 +1,96 @@
+Steps to Fix It
+1. Check Where the URL Is Used
+Search your code for any use of new URL(...). If you’re constructing a URL, make sure it includes http:// or https://.
+
+Example issue:
+
+ts
+Copy
+Edit
+const url = new URL("romantic-vacations-destinations.com"); // ❌ ERROR
+✅ Fix it by adding a protocol:
+
+ts
+Copy
+Edit
+const url = new URL("https://romantic-vacations-destinations.com"); // ✅ CORRECT
+2. Fix Environment Variables (If Used)
+If you're using an environment variable for a base URL (NEXT_PUBLIC_SITE_URL or similar), check its value.
+
+Run:
+
+sh
+Copy
+Edit
+echo $NEXT_PUBLIC_SITE_URL
+If it’s missing https://, update your .env file:
+
+ini
+Copy
+Edit
+NEXT_PUBLIC_SITE_URL=https://romantic-vacations-destinations.com
+Then restart the build:
+
+sh
+Copy
+Edit
+rm -rf .next
+npm run build
+3. Validate getServerSideProps (or API Fetch)
+If the error happens on a dynamic route (/[location]/[q]), check if getServerSideProps or an API request is constructing an invalid URL.
+
+Example issue:
+
+ts
+Copy
+Edit
+export async function getServerSideProps(context) {
+  const { location, q } = context.params;
+  const apiUrl = new URL(`/api/search?query=${q}&location=${location}`, process.env.NEXT_PUBLIC_SITE_URL); // ❌ ERROR if missing https://
+  
+  const res = await fetch(apiUrl);
+  const data = await res.json();
+
+  return { props: { data } };
+}
+✅ Fix it by ensuring NEXT_PUBLIC_SITE_URL has https://
+
+ts
+Copy
+Edit
+const apiUrl = new URL(`/api/search?query=${q}&location=${location}`, process.env.NEXT_PUBLIC_SITE_URL!);
+4. Check next.config.js (if using redirects or rewrites)
+If you have redirects or rewrites in next.config.js, make sure all URLs are properly formatted.
+
+Example issue:
+
+js
+Copy
+Edit
+module.exports = {
+  async redirects() {
+    return [
+      {
+        source: "/old",
+        destination: "romantic-vacations-destinations.com", // ❌ MISSING https://
+        permanent: true,
+      },
+    ];
+  },
+};
+✅ Fix it by adding https://
+
+js
+Copy
+Edit
+destination: "https://romantic-vacations-destinations.com",
+Final Steps
+Fix any invalid URLs in your code.
+Update .env variables if needed.
+Clear the Next.js cache and rebuild:
+sh
+Copy
+Edit
+rm -rf .next
+npm run build
+If the error persists, let me know which file contains the new URL(...) usage, and I can debug furth
