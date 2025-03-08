@@ -4,7 +4,6 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { locations, searchHotels } from "@/data/hotels";
 import { redirect } from "next/navigation";
 import { Suspense } from "react";
-import Canonical from "@/components/Canonical";
 import { Metadata } from "next";
 
 interface PageProps {
@@ -82,7 +81,6 @@ export default async function Page({ searchParams }: PageProps) {
 
   return (
     <div>
-      <Canonical />
       <Header q={q} location={userLocation} />
       <Suspense fallback={<ResultsLoadingSkeleton />} key={`${q}-${location}`}>
         <Results q={q} location={userLocation} />

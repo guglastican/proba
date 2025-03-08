@@ -4,7 +4,6 @@ import { headers } from "next/headers";
 import { getAllCountries } from "@/data/categories";
 import Header from "@/components/Header";
 import FallbackImage from "@/components/FallbackImage";
-import Canonical from "@/components/Canonical";
 
 // Define types for the data structure
 interface Country {
@@ -31,7 +30,6 @@ export default function HomePage() {
 
   return (
     <div>
-      <Canonical />
       <Header q="Type: Hot Tub" location="All Locations" />
       <main className="container mx-auto space-y-8 px-4 py-8">
         <section className="text-center mb-12">
