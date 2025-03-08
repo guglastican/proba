@@ -2,23 +2,21 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import Head from 'next/head';
+import Script from 'next/script';
 
-interface CanonicalProps {
-  path?: string;
-}
-
-export default function Canonical({ path }: CanonicalProps) {
+export default function Canonical() {
   const pathname = usePathname();
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://hotelswithottubs.com';
-  
-  // Use provided path or current pathname
-  const canonicalPath = path || pathname;
-  const canonicalUrl = `${baseUrl}${canonicalPath}`;
+  const canonicalUrl = `${baseUrl}${pathname}`;
 
   return (
-    <Head>
-      <link rel="canonical" href={canonicalUrl} />
-    </Head>
+    <Script id="canonical-tag" strategy="afterInteractive">
+      {`
+        const link = document.createElement('link');
+        link.rel = 'canonical';
+        link.href = '${canonicalUrl}';
+        document.head.appendChild(link);
+      `}
+    </Script>
   );
 }
