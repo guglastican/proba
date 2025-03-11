@@ -5,13 +5,12 @@ import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
+  CardFooter,
 } from "@/components/ui/card";
 import { Hotel } from "@/data/hotels";
-import { Clock, MapPin, Star, StarHalf, Building, Type } from "lucide-react";
+import { MapPin, Star, StarHalf } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface HotelItemProps {
   hotel: Hotel;
@@ -19,65 +18,75 @@ interface HotelItemProps {
 
 export default function HotelItem({ hotel }: HotelItemProps) {
   return (
-    <Card className="overflow-hidden transition-shadow hover:shadow-lg">
-      <Image
-        src={hotel.image}
-        alt={hotel.name}
-        width={1200}
-        height={600}
-        className="h-64 w-full object-cover"
-      />
-      <CardHeader>
-        <div className="flex items-start justify-between">
-          <div>
-            <CardTitle className="text-xl">{hotel.name}</CardTitle>
-            <CardDescription>
-              {hotel.name} • {hotel.price}
-            </CardDescription>
-          </div>
-          <div className="flex items-center">
-            <div className="mr-2 flex">
-              <StarRating rating={hotel.rating} />
-            </div>
-            <span className="text-sm text-muted-foreground">
-              ({hotel.reviews})
-            </span>
-          </div>
+    <Card 
+      className="overflow-hidden border border-gray-200 rounded-lg shadow-sm"
+      itemScope 
+      itemType="https://schema.org/Hotel"
+    >
+      <div className="relative">
+        <Image
+          src={hotel.image}
+          alt={hotel.name}
+          width={1200}
+          height={600}
+          className="h-64 w-full object-cover"
+          itemProp="image"
+        />
+        <div className="absolute top-3 right-3 bg-white px-3 py-1 rounded-full text-sm font-semibold shadow-md">
+          ${hotel.price}
         </div>
-      </CardHeader>
-      <CardContent>
-        <div className="space-y-2">
-          <div className="flex items-center text-muted-foreground">
-            <MapPin className="mr-2 h-4 w-4" />
-            <span className="text-sm">{hotel.address}</span>
-          </div>
-          <div className="flex items-center text-muted-foreground">
-           <Type className="mr-2 h-4 w-4" /> {/* Text icon */}
-           <span className="text-sm">{hotel.description}</span>
-          </div>
-          <div className="flex items-center text-muted-foreground">
-            <Clock className="mr-2 h-4 w-4" />
-            <span className="text-sm">{hotel.hours}</span>
-          </div>
-          <div className="mt-3 flex flex-wrap gap-2">
-            {hotel.tags.map((tag) => (
-              <Badge key={tag} variant="secondary">
-                {tag}
-              </Badge>
-            ))}
-          </div>
-          <div className="mt-4">
-            <a href={hotel.link} target="_blank" rel="noopener noreferrer">
-              <Button className="w-full" variant="default">
-                <Building />
-                Book Hotel
-              </Button>
-            </a>
-          </div>
+      </div>
+      
+      <CardContent className="p-4">
+        <h3 className="text-xl font-bold mb-1" itemProp="name">{hotel.name}</h3>
+        
+        <div className="flex items-center text-gray-500 mb-2">
+          <MapPin className="h-4 w-4 mr-1 flex-shrink-0" />
+          <span className="text-sm truncate" itemProp="address">{hotel.address}</span>
         </div>
         
+        <div className="flex items-center mb-3">
+          <div className="flex mr-2" itemProp="aggregateRating" itemScope itemType="https://schema.org/AggregateRating">
+            <StarRating rating={hotel.rating} />
+            <meta itemProp="ratingValue" content={hotel.rating.toString()} />
+            <meta itemProp="reviewCount" content={hotel.reviews.toString()} />
+          </div>
+          <span className="text-sm text-gray-500">
+            {hotel.rating} ({hotel.reviews} reviews)
+          </span>
+        </div>
+        
+        <p className="text-sm text-gray-600 mb-4 line-clamp-2" itemProp="description">
+          {hotel.description}
+        </p>
+        
+        <div className="flex flex-wrap gap-2 mb-4">
+          {hotel.tags.slice(0, 3).map((tag) => (
+            <Badge 
+              key={tag} 
+              variant="secondary"
+              className="bg-gray-100 text-gray-700 hover:bg-gray-200 border-0"
+            >
+              {tag}
+            </Badge>
+          ))}
+        </div>
       </CardContent>
       
+      <CardFooter className="px-4 pb-4 pt-0">
+        <Link 
+          href={hotel.link} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="w-full"
+        >
+          <Button 
+            className="w-full bg-green-600 hover:bg-green-700 text-white"
+          >
+            View Details
+          </Button>
+        </Link>
+      </CardFooter>
     </Card>
   );
 }
@@ -91,19 +100,31 @@ function StarRating({ rating }: StarRatingProps) {
   const hasHalfStar = rating % 1 !== 0;
 
   return (
-    <div className="flex items-center">
-      {Array.from({ length: fullStars }).map((_, i) => (
-        <Star
-          key={`star-${i}`}
-          className="h-4 w-4 fill-yellow-400 text-yellow-400"
-        />
-      ))}
-      {hasHalfStar && (
-        <StarHalf
-          key="half-star"
-          className="h-4 w-4 fill-yellow-400 text-yellow-400"
-        />
-      )}
+    <div className="flex items-center" role="img" aria-label={`Rating: ${rating} out of 5 stars`}>
+      {Array.from({ length: 5 }).map((_, i) => {
+        if (i < fullStars) {
+          return (
+            <Star
+              key={`star-${i}`}
+              className="h-4 w-4 fill-yellow-400 text-yellow-400"
+            />
+          );
+        }
+        if (i === fullStars && hasHalfStar) {
+          return (
+            <StarHalf
+              key="half-star"
+              className="h-4 w-4 fill-yellow-400 text-yellow-400"
+            />
+          );
+        }
+        return (
+          <Star
+            key={`empty-star-${i}`}
+            className="h-4 w-4 text-gray-300"
+          />
+        );
+      })}
     </div>
   );
 }
