@@ -1,14 +1,15 @@
 modules = ["nodejs-20", "web"]
-run = "npm run dev"
+run = "undo website"
 
 [nix]
 channel = "stable-24_05"
 
 [deployment]
-run = ["sh", "-c", "npm run dev"]
+run = ["sh", "-c", "npm start"]
+build = ["sh", "-c", "npm run build"]
 
 [workflows]
-runButton = "Run"
+runButton = "Dev"
 
 [[workflows.workflow]]
 name = "Run"
@@ -17,3 +18,23 @@ author = 36014909
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "npm run dev"
+
+[[workflows.workflow]]
+name = "Dev"
+author = 36014909
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd $(pwd) && npm run dev -- -H 0.0.0.0"
+
+[[ports]]
+localPort = 3000
+externalPort = 80
+
+[[ports]]
+localPort = 3001
+externalPort = 3001
+
+[[ports]]
+localPort = 3002
+externalPort = 3002

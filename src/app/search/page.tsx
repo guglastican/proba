@@ -20,33 +20,15 @@ export async function generateMetadata(
 
   return {
     title: `${q ? `Hotels With ${q}` : 'Hotels With'} in ${location}`,
-    description: `Discover the best ${q}  hotels in ${location}. Luxurious accommodations with private ${q} for a relaxing getaway.`,
+    description: `Discover the best ${q} hotels in ${location}. Luxurious accommodations with private ${q} for a relaxing getaway.`,
+    alternates: {
+      canonical: '/search',
+    },
     openGraph: {
       title: `${q ? `Hotels With ${q}` : 'Hotels With'} in ${location}`,
-      description: `Discover the best ${q}  hotels in ${location}. Luxurious accommodations with private ${q} for a relaxing getaway.`,
+      description: `Discover the best ${q} hotels in ${location}. Luxurious accommodations with private ${q} for a relaxing getaway.`,
     },
   };
-}
-
-export default async function Page({ searchParams }: Props) {
-  const q = searchParams.q || '';
-  const location = searchParams.location || locations[0];
-
-  if (!q) redirect("/");
-
-  return (
-    <div className="min-h-screen bg-gray-50">
-      <Header q={q} location={location} />
-      <Suspense fallback={<ResultsLoadingSkeleton />} key={`${q}-${location}`}>
-        <Results q={q} location={location} />
-      </Suspense>
-    </div>
-  );
-}
-
-interface ResultsProps {
-  q: string;
-  location: string;
 }
 
 function LocationDescription({ location }: { location: string }) {
@@ -102,8 +84,19 @@ function LocationDescription({ location }: { location: string }) {
   ) : null;
 }
 
-async function Results({ q, location }: ResultsProps) {
+async function Results({ q, location }: { q: string; location: string }) {
   const results = await searchHotels(q, location);
+
+  if (results.length === 0) {
+    return (
+      <div className="text-center py-12">
+        <h2 className="text-2xl font-semibold mb-2">No results found</h2>
+        <p className="text-gray-600">
+          Try a different search term or location
+        </p>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -127,13 +120,40 @@ async function Results({ q, location }: ResultsProps) {
 
 function ResultsLoadingSkeleton() {
   return (
-    <div className="container mx-auto space-y-8 px-4 py-8">
-      <Skeleton className="mx-auto h-7 w-[380px]" />
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {Array.from({ length: 6 }).map((_, i) => (
-          <Skeleton key={i} className="h-[420px] w-full" />
-        ))}
-      </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-6">
+      {Array.from({ length: 6 }).map((_, i) => (
+        <div
+          key={i}
+          className="border rounded-lg p-4 space-y-4 shadow-sm bg-white"
+        >
+          <Skeleton className="h-48 w-full rounded-md" />
+          <div className="space-y-2">
+            <Skeleton className="h-4 w-2/3" />
+            <Skeleton className="h-4 w-full" />
+            <Skeleton className="h-4 w-full" />
+            <div className="flex gap-2 pt-2">
+              <Skeleton className="h-8 w-16 rounded-full" />
+              <Skeleton className="h-8 w-16 rounded-full" />
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default async function Page({ searchParams }: Props) {
+  const q = searchParams.q || '';
+  const location = searchParams.location || locations[0];
+
+  if (!q) redirect("/");
+
+  return (
+    <div className="min-h-screen bg-gray-50">
+      <Header q={q} location={location} />
+      <Suspense fallback={<ResultsLoadingSkeleton />} key={`${q}-${location}`}>
+        <Results q={q} location={location} />
+      </Suspense>
     </div>
   );
 }

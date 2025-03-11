@@ -3,6 +3,7 @@ import { Geist } from "next/font/google";
 import "./globals.css";
 import { GoogleTagManager } from "@next/third-parties/google";
 import Footer from "@/components/Footer";
+import { sanitizeUrl } from "@/lib/utils";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -10,8 +11,12 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Hotel With Hot Tubs ",
+  title: "Hotel With Hot Tubs",
   description: "Find the best hotels near you",
+  metadataBase: new URL(sanitizeUrl(process.env.NEXT_PUBLIC_BASE_URL) || 'https://romantic-vacations-destinations.com'),
+  alternates: {
+    canonical: '/',
+  },
 };
 
 export default function RootLayout({

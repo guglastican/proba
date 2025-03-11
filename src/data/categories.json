@@ -1,0 +1,23 @@
+
+{
+  "countries": [
+    {
+      "name": "United States",
+      "slug": "united-states",
+      "cities": [
+        {
+          "name": "San Francisco",
+          "slug": "san-francisco"
+        },
+        {
+          "name": "Chicago",
+          "slug": "chicago"
+        },
+        {
+          "name": "Miami",
+          "slug": "miami"
+        }
+      ]
+    }
+  ]
+}

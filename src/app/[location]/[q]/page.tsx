@@ -28,6 +28,7 @@ export async function generateStaticParams() {
 
 const getHotels = cache(searchHotels);
 
+// Make sure we're not using the Canonical component or URL strings with newlines
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
@@ -41,6 +42,7 @@ export async function generateMetadata({
   return {
     title: `Top ${results.length} ${qDecoded} near ${locationDecoded} - Updated ${new Date().getFullYear()}`,
     description: `Find the best ${qDecoded} near ${locationDecoded}`,
+    // No canonical URL to avoid newline issues
   };
 }
 

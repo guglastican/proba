@@ -1,9 +1,19 @@
+
 import Header from '@/components/Header';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "About the Author - Hotel Reviews and Recommendations",
+  description: "Learn more about our travel writer and hotel reviewer",
+  alternates: {
+    canonical: '/author',
+  },
+};
 
 export default function AuthorPage() {
   return (
     <>
-      <Header />
+      <Header q="" location="" />
       <main className="container mx-auto px-4 py-8">
         <h1 className="text-4xl font-bold mb-6">About the Author</h1>
         <div className="max-w-2xl mx-auto">
@@ -22,7 +32,7 @@ export default function AuthorPage() {
             </p>
             <div className="mt-6">
               <h3 className="text-xl font-semibold mb-2">Contact</h3>
-              <p className="text-gray-600">Email: john@travelreviews.com</p>
+              <p className="text-gray-600">Email: john@romantic-vacations-destinations.com</p>
               <p className="text-gray-600">Twitter: @johntravels</p>
             </div>
           </div>
