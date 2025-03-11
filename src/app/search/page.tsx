@@ -7,15 +7,16 @@ import { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { Suspense } from "react";
 
-type Props = {
-  searchParams: { q?: string; location?: string };
+type PageProps = {
+  searchParams: Promise<{ q?: string; location?: string }>;
 };
 
 export async function generateMetadata(
-  { searchParams }: Props
+  { searchParams }: PageProps
 ): Promise<Metadata> {
-  const q = searchParams.q || '';
-  const location = searchParams.location || locations[0];
+  const params = await searchParams;
+  const q = params.q || '';
+  const location = params.location || locations[0];
 
   return {
     title: `${q ? `Hotels With ${q}` : 'Hotels With'} in ${location}`,
@@ -141,9 +142,10 @@ function ResultsLoadingSkeleton() {
   );
 }
 
-export default async function Page({ searchParams }: Props) {
-  const q = searchParams.q || '';
-  const location = searchParams.location || locations[0];
+export default async function Page({ searchParams }: PageProps) {
+  const params = await searchParams;
+  const q = params.q || '';
+  const location = params.location || locations[0];
 
   if (!q) redirect("/");
 
