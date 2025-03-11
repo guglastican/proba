@@ -1,59 +1,24 @@
-import { getAllTags, locations } from "@/data/hotels";
-import { MetadataRoute } from "next";
-import { getAllCategoryCombinations } from "@/data/categories";
+import { MetadataRoute } from 'next'
 
-// Provide a default base URL with a fallback
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'example.com';
-
-// Function to format the location and tag to ensure no consecutive dashes
-const formatString = (str: string) => {
-  if (!str) return '';
-  return str
-    .replace(/\s+/g, '-')    // Replace spaces with dashes
-    .replace(/,/g, '-')      // Replace commas with dashes
-    .replace(/-+/g, '-')     // Replace multiple consecutive dashes with a single dash
-    .trim();                 // Trim leading and trailing space
-};
-
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  try {
-    const allTags = await getAllTags();
-
-    const searchLandingPages = allTags
-      .map((tag) =>
-        locations.map((location) => ({
-          url: `https://${baseUrl}/${formatString(location)}/${formatString(tag)}/`,
-          lastModified: new Date(),
-          changeFrequency: "weekly",
-          priority: 1,
-        }))
-      )
-      .flat() as MetadataRoute.Sitemap;
-      
-    // Get category pages
-    const categoryCombinations = getAllCategoryCombinations();
-    const categoryPages = categoryCombinations.map(combo => ({
-      url: `https://${baseUrl}/category/${combo.country}/${combo.city}/`,
+export default function sitemap(): MetadataRoute.Sitemap {
+  return [
+    {
+      url: 'https://www.romantic-vacations-destinations.com/',
       lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    })) as MetadataRoute.Sitemap;
-
-    return [
-      // Insert your other pages:
-      {
-        url: `https://${baseUrl}/about`,
-        lastModified: "2024-12-31",
-        changeFrequency: "yearly",
-        priority: 0.8,
-      },
-      // Our pSEO pages:
-      ...searchLandingPages,
-      // Category pages:
-      ...categoryPages,
-    ];
-  } catch (error) {
-    console.error('Error generating sitemap:', error);
-    return []; // Return an empty sitemap if there's an error
-  }
+      changeFrequency: 'weekly',
+      priority: 1,
+    },
+    {
+      url: 'https://www.romantic-vacations-destinations.com//search',
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.8,
+    },
+    {
+      url: 'https://www.romantic-vacations-destinations.com//about',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.5,
+    }
+  ]
 }

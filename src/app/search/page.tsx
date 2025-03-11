@@ -12,8 +12,7 @@ type Props = {
 };
 
 export async function generateMetadata(
-  { searchParams }: Props,
-  parent: ResolvingMetadata
+  { searchParams }: Props
 ): Promise<Metadata> {
   const q = searchParams.q || '';
   const location = searchParams.location || locations[0];

@@ -3,7 +3,7 @@
 import LocationInput from "@/components/LocationInput";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Search, MapPin, Hotel } from "lucide-react";
+import { Search, Hotel } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
@@ -28,7 +28,7 @@ export default function Header({ q, location }: HeaderProps) {
   }
 
   return (
-    <header className="bg-white shadow-sm border-b border-gray-100">
+    <header className="bg-gradient-to-br from-white via-gray-50 to-white shadow-sm border-b border-gray-100">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center justify-center py-6 space-y-4">
           <Link 
@@ -76,11 +76,11 @@ export default function Header({ q, location }: HeaderProps) {
 
             <div className="mt-2 flex justify-center space-x-2">
               {[
-                { name: "Hot Tub", color: "bg-red-100 text-red-700" },
-                { name: "Spa", color: "bg-blue-100 text-blue-700" },
-                { name: "Pool", color: "bg-green-100 text-green-700" },
-                { name: "Luxury", color: "bg-purple-100 text-purple-700" },
-                { name: "Romantic", color: "bg-pink-100 text-pink-700" }
+                { name: "hot tub", color: "bg-red-100 text-red-700" },
+                { name: "spa", color: "bg-blue-100 text-blue-700" },
+                { name: "pool", color: "bg-green-100 text-green-700" },
+                { name: "luxury", color: "bg-purple-100 text-purple-700" },
+                { name: "romantic", color: "bg-pink-100 text-pink-700" }
               ].map(({ name, color }) => (
                 <button
                   key={name}
