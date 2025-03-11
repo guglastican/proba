@@ -29,14 +29,14 @@ export default function LocationInput({
   const [input, setInput] = useState(defaultValue || "");
 
   return (
-    <div className="space-y-2">
+    <div className="w-full">
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild>
           <div className="flex w-full items-center gap-2 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2">
             <input
               type="text"
-              placeholder="Filter location..."
-              className="flex-1 bg-transparent outline-none"
+              placeholder="Select location"
+              className="flex-1 w-full bg-transparent outline-none text-base sm:text-sm"
               value={input || ""}
               onChange={(e) => setInput(e.target.value)}
               onFocus={() => setOpen(true)}
@@ -45,7 +45,7 @@ export default function LocationInput({
           </div>
         </PopoverTrigger>
         <input type="hidden" name={name} value={input} />
-        <PopoverContent className="w-[300px] p-0">
+        <PopoverContent className="w-full sm:w-[300px] p-0">
           <Command>
             <CommandInput placeholder="Search locations..." />
             <CommandList>
@@ -59,6 +59,7 @@ export default function LocationInput({
                       setInput(currentValue === input ? "" : currentValue);
                       setOpen(false);
                     }}
+                    className="cursor-pointer"
                   >
                     <Check
                       className={cn(

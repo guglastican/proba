@@ -49,32 +49,37 @@ export default function Header({ q, location }: HeaderProps) {
           >
             <form 
               onSubmit={handleSubmit} 
-              className="flex items-center space-x-2 bg-gray-50 rounded-full p-2"
+              className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-2 bg-gray-50 rounded-xl p-2"
             >
-              <div className="relative flex-grow">
+              <div className="relative flex-grow w-full">
                 <Input
                   name="q"
                   placeholder="Find your perfect hot tub getaway..."
                   defaultValue={q}
                   type="search"
                   required
-                  className="w-full pl-10 pr-4 py-2 bg-transparent border-none focus:outline-none"
+                  className="w-full pl-10 pr-4 py-2 bg-transparent border-none focus:outline-none text-base sm:text-sm"
                 />
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
               </div>
 
-              <LocationInput name="location" defaultValue={location} />
+              <div className="w-full sm:w-auto">
+                <LocationInput 
+                  name="location" 
+                  defaultValue={location} 
+                />
+              </div>
 
               <Button
                 type="submit"
-                className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-full 
+                className="w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-full 
                   transition-colors duration-300 ease-in-out transform hover:scale-105 active:scale-95"
               >
                 Search
               </Button>
             </form>
 
-            <div className="mt-2 flex justify-center space-x-2">
+            <div className="mt-2 flex flex-wrap justify-center gap-2">
               {[
                 { name: "hot tub", color: "bg-red-100 text-red-700" },
                 { name: "spa", color: "bg-blue-100 text-blue-700" },
