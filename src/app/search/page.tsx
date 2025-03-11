@@ -3,7 +3,7 @@ import HotelItem from "@/components/HotelItem";
 import { Skeleton } from "@/components/ui/skeleton";
 import { locations, searchHotels } from "@/data/hotels";
 import { locationDescriptions } from "@/data/location-descriptions";
-import { Metadata, ResolvingMetadata } from "next";
+import { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { Suspense } from "react";
 
