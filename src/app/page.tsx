@@ -1,23 +1,141 @@
 import Header from "@/components/Header";
 import { Metadata } from "next";
+import Link from "next/link";
+import { Hotel, Search, MapPin, Star } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Hot Tub Hotels - Find Your Perfect Getaway",
-  description: "Discover hotels with hot tubs for your perfect relaxation",
+  title: "HotTubFinder: Discover Luxurious Hotels with Hot Tubs",
+  description: "Find the perfect hotel with hot tubs across the United States. Explore romantic getaways, spa experiences, and luxury accommodations with private hot tubs.",
+  keywords: [
+    "hot tub hotels", 
+    "luxury accommodations", 
+    "romantic getaways", 
+    "spa hotels", 
+    "private hot tubs"
+  ],
+  openGraph: {
+    title: "HotTubFinder: Luxurious Hotels with Hot Tubs",
+    description: "Discover the most relaxing and romantic hotels with hot tubs across the USA.",
+    type: "website",
+    images: [
+      {
+        url: "/hotels-with-hot-tub.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Luxurious hotel with hot tub"
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "HotTubFinder: Luxurious Hotels with Hot Tubs",
+    description: "Discover the most relaxing and romantic hotels with hot tubs across the USA.",
+    images: ["/hotels-with-hot-tub.jpg"]
+  }
 };
 
-export default function HomePage() {
+export default function Home() {
+  const featuredLocations = [
+    { name: "San Francisco, CA", hotels: 42, description: "Discover stunning hot tub hotels with Bay Area views" },
+    { name: "Miami, FL", hotels: 35, description: "Tropical hot tub escapes in the Sunshine State" },
+    { name: "Las Vegas, NV", hotels: 50, description: "Luxurious hot tub experiences in the Entertainment Capital" },
+    { name: "New York, NY", hotels: 28, description: "Urban hot tub retreats in the city that never sleeps" }
+  ];
+
+  const features = [
+    {
+      icon: Search,
+      title: "Easy Search",
+      description: "Find your perfect hot tub hotel with our intuitive search"
+    },
+    {
+      icon: MapPin,
+      title: "Nationwide Coverage",
+      description: "Explore hot tub hotels across the United States"
+    },
+    {
+      icon: Star,
+      title: "Curated Selection",
+      description: "Handpicked hotels with the best hot tub experiences"
+    }
+  ];
+
   return (
-    <div>
-      <Header q="" location="All Locations" />
-      <main className="container mx-auto space-y-8 px-4 py-8">
-        <section className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-4">Find Your Perfect Hot Tub Hotel</h1>
-          <p className="text-lg max-w-2xl mx-auto">
-            Discover luxurious accommodations with private hot tubs for the ultimate relaxation experience.
+    <div className="min-h-screen bg-gray-50">
+      <Header />
+      
+      <main>
+        <section className="container mx-auto px-4 py-16 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Find Your Perfect Hot Tub Getaway
+          </h1>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-10">
+            Discover luxurious hotels with private hot tubs across the United States. 
+            Relax, unwind, and create unforgettable memories.
           </p>
+          <Link 
+            href="/search" 
+            className="bg-primary text-white px-8 py-3 rounded-full text-lg hover:bg-primary-dark transition-colors"
+          >
+            Start Searching
+          </Link>
+        </section>
+
+        <section className="bg-white py-16">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center mb-12">Featured Locations</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {featuredLocations.map((location) => (
+                <Link 
+                  key={location.name} 
+                  href={`/search?location=${encodeURIComponent(location.name)}&q=hot tub`}
+                  className="bg-gray-100 rounded-lg p-6 text-center hover:bg-gray-200 transition-colors group"
+                >
+                  <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+                    {location.name}
+                  </h3>
+                  <p className="text-gray-600 mb-2">{location.hotels} Hot Tub Hotels</p>
+                  <p className="text-sm text-gray-500 italic">{location.description}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="container mx-auto px-4 py-16">
+          <h2 className="text-3xl font-bold text-center mb-12">Why Choose HotTubFinder</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {features.map((feature) => (
+              <div 
+                key={feature.title} 
+                className="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow"
+              >
+                <feature.icon className="mx-auto h-12 w-12 text-primary mb-4" />
+                <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
+                <p className="text-gray-600">{feature.description}</p>
+              </div>
+            ))}
+          </div>
         </section>
       </main>
+
+      <script 
+        type="application/ld+json" 
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "HotTubFinder",
+            "url": "https://hotelswithottubs.com",
+            "description": "Find the perfect hotel with hot tubs across the United States",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://hotelswithottubs.com/search?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          })
+        }} 
+      />
     </div>
   );
 }
