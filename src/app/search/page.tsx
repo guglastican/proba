@@ -32,7 +32,7 @@ export async function generateMetadata(
 }
 
 function LocationDescription({ location }: { location: string }) {
-  const locationData = locationDescriptions[location];
+  const locationData = locationDescriptions[location as keyof typeof locationDescriptions];
   
   return locationData ? (
     <section className="container mx-auto px-4 py-12 bg-white">
@@ -42,7 +42,7 @@ function LocationDescription({ location }: { location: string }) {
         <article>
           <h3 className="text-2xl font-semibold text-gray-800 mb-4">Must-Visit Attractions</h3>
           <ul className="space-y-4 text-gray-600">
-            {locationData.attractions.map((attraction, index) => (
+            {locationData.attractions.map((attraction: { title: string; description: string }, index: number) => (
               <li key={index} className="flex items-start">
                 <span className="mr-3 text-blue-600 font-bold">{attraction.title}</span>
                 <p>{attraction.description}</p>
@@ -54,7 +54,7 @@ function LocationDescription({ location }: { location: string }) {
         <article>
           <h3 className="text-2xl font-semibold text-gray-800 mb-4">Culinary Experiences</h3>
           <ul className="space-y-4 text-gray-600">
-            {locationData.dining.map((restaurant, index) => (
+            {locationData.dining.map((restaurant: { title: string; description: string }, index: number) => (
               <li key={index} className="flex items-start">
                 <span className="mr-3 text-blue-600 font-bold">{restaurant.title}</span>
                 <p>{restaurant.description}</p>
@@ -66,7 +66,7 @@ function LocationDescription({ location }: { location: string }) {
         <article>
           <h3 className="text-2xl font-semibold text-gray-800 mb-4">Hot Tub Hotel Recommendations</h3>
           <ul className="space-y-4 text-gray-600">
-            {locationData.hotTubHotels.map((hotel, index) => (
+            {locationData.hotTubHotels.map((hotel: { title: string; description: string }, index: number) => (
               <li key={index} className="flex items-start">
                 <span className="mr-3 text-blue-600 font-bold">{hotel.title}</span>
                 <p>{hotel.description}</p>

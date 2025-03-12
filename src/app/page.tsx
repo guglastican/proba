@@ -125,12 +125,12 @@ export default function Home() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebSite",
-            "name": "HotTubFinder",
-            "url": "https://hotelswithottubs.com",
+            "name": "Hot Tub Finder",
+            "url": "https://www.romantic-vacations-destinations.com/",
             "description": "Find the perfect hotel with hot tubs across the United States",
             "potentialAction": {
               "@type": "SearchAction",
-              "target": "https://hotelswithottubs.com/search?q={search_term_string}",
+              "target": "https://www.romantic-vacations-destinations.com//search?q={search_term_string}",
               "query-input": "required name=search_term_string"
             }
           })
