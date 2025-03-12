@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import { Metadata } from "next";
 import Link from "next/link";
-import { Hotel, Search, MapPin, Star } from "lucide-react";
+import { Search, MapPin, Star } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "HotTubFinder: Discover Luxurious Hotels with Hot Tubs",
