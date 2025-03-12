@@ -56,7 +56,7 @@ export default function HotelItem({ hotel }: HotelItemProps) {
           </span>
         </div>
         
-        <p className="text-sm text-gray-600 mb-4 line-clamp-2" itemProp="description">
+        <p className="text-sm text-gray-600 mb-4 line-clamp-4" itemProp="description">
           {hotel.description}
         </p>
         

@@ -37,7 +37,7 @@ export default function Header({ q, location }: HeaderProps) {
           >
             <Hotel className="h-8 w-8 text-primary" />
             <span className="text-2xl font-bold text-gray-900">
-              HotTubFinder
+             Hotels With Hot Tub 
             </span>
           </Link>
 

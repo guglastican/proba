@@ -293,10 +293,136 @@ const hotels: Hotel[] = [
       hours: "24/7",
       amenities: ["Pool", "Restaurant", "Bar", "Spa", "Room Service", "Breakfast Available", "Hot Tub"],
       reviews: 282,
-      tags: ["Luxury", "Downtown Miami", "Restaurant", "Spa", "Pool", "Bar"],
+      tags: ["Luxury", "Downtown Miami", "Hotels with Hot Tubs in Miami", "Spa", "Pool", "Bar"],
       link: "https://expedia.com/affiliates/miami-hotels-hotel-beaux-arts.s9Nwwe8",
       googlePlaceId: "ChIJx0AED5222YgRzaTCEcXOqQ8" // Google Place ID for Hotel Beaux Arts, Autograph Collection, Chicago
-  }
+  },
+  {
+    id: 19,
+    name: "The Londoner",
+    image: "https://images.trvl-media.com/lodging/46000000/45870000/45864400/45864335/5bc17f32.jpg",
+    rating: 4.7,
+    price: "$497",
+    address: "38 Leicester Square, London, England, WC2H 7LL",
+    description: "Luxury hotel in the heart of London offering a full-service spa, fitness center, indoor pool, and multiple dining options. Ideal for both relaxation and exploration.",
+    hours: "24/7",
+    amenities: ["Spa", "Gym", "Pool", "Restaurant", "Breakfast Available", "Hot Tub"],
+    reviews: 728,
+    tags: ["Luxury", "Central London", "Spa", "Fitness Center", "Hot Tub", "Hotels with Hot Tubs in London"],
+    link: "https://expedia.com/affiliates/london-hotels-the-londoner.Ga1bnEj"
+  },
+  {
+    id: 20,
+    name: "Jumeirah Carlton Tower London",
+    image: "https://images.trvl-media.com/lodging/1000000/860000/858400/858368/4fbefee1.jpg",
+    rating: 4.7,
+    price: "$662",
+    address: "On Cadogan Place, London, England, SW1X 9PY",
+    description: "Luxury hotel in Knightsbridge offering a full-service spa, health club, indoor pool, and multiple dining options. Perfect for relaxation and exploring nearby attractions like Harrods and Hyde Park.",
+    hours: "24/7",
+    amenities: ["Pool", "Hot Tub", "Spa", "Bar", "Parking available", "Pet friendly"],
+    reviews: 26,
+    tags: ["Luxury", "Hot Tub", "Spa", "Hotels with Hot Tubs in London", "Dining", "Pet Friendly"],
+    link: "https://expedia.com/affiliates/london-hotels-the-carlton-tower-jumeirah.uwgkESe"
+  },
+  {
+  id: 21,
+  name: "Four Seasons Hotel London at Park Lane",
+  image: "https://images.trvl-media.com/lodging/1000000/30000/20100/20098/d4a07b84.jpg",
+  rating: 5.0,
+  price: "$662",
+  address: "Hamilton Place, Park Lane, London, England, W1J 7DR",
+  description: "Luxury hotel in Park Lane featuring a full-service spa with couples treatment rooms, hot tub, sauna, and steam room. Offers premium accommodations with minibar, in-room safe, and terrace options. Ideally located steps from Hyde Park and Buckingham Palace.",
+  hours: "24/7",
+  amenities: ["Hot Tub", "Spa", "Bar", "Parking available", "Gym", "Room service"],
+  reviews: 302,
+  tags: ["Luxury", "Spa", "Hot Tub", "Park Lane", "Fitness Center", "Hotels with Hot Tubs in London"],
+  link: "https://expedia.com/affiliates/london-hotels-four-seasons-hotel-london-at-park-lane.U6FEqCw"
+  },
+  {
+  id: 22,
+  name: "St. James' Court, A Taj Hotel, London",
+  image: "https://images.trvl-media.com/lodging/1000000/590000/582600/582514/9fc6e34e.jpg",
+  rating: 4.0,
+  price: "$662",
+  address: "54 Buckingham Gate, London, England, SW1E 6AF",
+  description: "Luxury hotel in London City Centre featuring 4 restaurants, a full-service spa with couples treatment rooms, sauna, and steam room. Situated steps from Buckingham Palace and Westminster Abbey, it offers a serene garden, courtyard, and 24/7 front desk. Perfect for exploring landmarks like Big Ben and the London Eye.",
+  hours: "24/7",
+  amenities: ["Breakfast available", "Spa", "Restaurant", "Gym", "Housekeeping", "Parking available"],
+  reviews: 1475,
+  tags: ["Luxury", "Spa", "Hotels with Hot Tubs in London", "Historic", "Fine Dining", "Hot Tub"],
+  link: "https://expedia.com/affiliates/london-hotels-st-james-court.0REEqRe"
+  },
+  {
+    id: 23,
+    name: "The Landmark London",
+    image: "https://images.trvl-media.com/lodging/1000000/440000/438700/438653/fd3b7326.jpg",
+    rating: 5.0,
+    price: "$662",
+    address: "222 Marylebone Road, London, England, NW1 6JQ",
+    description: "Luxury 5-star hotel in London's historical district featuring 2 restaurants, a full-service spa, indoor pool, and hot tub. Ideally located near Hyde Park, Marble Arch, and Baker Street. Offers family-friendly amenities including a children's pool and cribs.",
+    hours: "24/7",
+    amenities: ["Breakfast available", "Spa", "Pool", "Hot Tub", "Bar", "Gym"],
+    reviews: 1002,
+    tags: ["Luxury", "Spa", "Hotels with Hot Tubs in London", "Family Friendly", "Hot Tub", "Fine Dining"],
+    link: "https://expedia.com/affiliates/london-hotels-the-landmark-london.EDafs2W"
+  },
+  {
+    id: 24,
+    name: "Jumeirah Carlton Tower London",
+    image: "https://images.trvl-media.com/lodging/1000000/860000/858400/858368/4fbefee1.jpg",
+    rating: 5.0,
+    price: "$662",
+    address: "On Cadogan Place, London, England, SW1X 9PY",
+    description: "Luxury 5-star hotel in Knightsbridge featuring a full-service spa with Ayurvedic treatments, steam room, and hot tub. Boasts a health club, indoor pool, and pet-friendly accommodations. Steps from Hyde Park and Buckingham Palace, with fine dining options and premium suites.",
+    hours: "24/7",
+    amenities: ["Pool", "Hot Tub", "Spa", "Bar", "Parking available", "Pet friendly"],
+    reviews: 26,
+    tags: ["Luxury", "Spa", "Hot Tub", "Hotels with Hot Tubs in London", "Indoor Pool", "Pet Friendly"],
+    link: "https://expedia.com/affiliates/london-hotels-the-carlton-tower-jumeirah.DMngRTI"
+  },
+  {
+    id: 25,
+    name: "The Westin London City",
+    image: "https://images.trvl-media.com/lodging/70000000/69280000/69271800/69271708/81cb7c17.jpg",
+    rating: 5.0,
+    price: "$662",
+    address: "60 Upper Thames Street, London, England",
+    description: "Luxury 5-star hotel connected to a convention center, featuring a full-service spa with hot stone massages, aromatherapy treatments, steam room, and sauna. Offers an indoor pool, pet-friendly accommodations, and local cuisine dining. Prime location near Tower of London and Tower Bridge.",
+    hours: "24/7",
+    amenities: ["Spa", "Breakfast available", "Gym", "Pool", "Bar", "Pet friendly"],
+    reviews: 267,
+    tags: ["Luxury", "Spa", "Hot Tub", "Pet Friendly", "Indoor Pool", "Hotels with Hot Tubs in London"],
+    link: "https://expedia.com/affiliates/london-hotels-the-westin-london-city.fk015eR"
+  },
+  {
+    id: 26,
+    name: "Hotel Cafe Royal, London",
+    image: "https://images.trvl-media.com/lodging/6000000/5350000/5349200/5349114/fbd15f0b.jpg",
+    rating: 5.0,
+    price: "$662",
+    address: "68 Regent Street, London, England, W1B 4DY",
+    description: "Luxury 5-star hotel in London's historic district featuring 4 restaurants, a full-service spa with Ayurvedic treatments, indoor pool, and rooftop terrace. Offers pet-friendly accommodations with premium bedding and Egyptian cotton sheets. Steps from Piccadilly Circus and Trafalgar Square.",
+    hours: "24/7",
+    amenities: ["Pool", "Spa", "Bar", "Parking available", "Pet friendly", "Gym"],
+    reviews: 506,
+    tags: ["Luxury", "Spa", "Hot Tub", "Pet Friendly", "Indoor Pool", "Hotels with Hot Tubs in London"],
+    link: "https://images.trvl-media.com/lodging/6000000/5350000/5349200/5349114/bc3fede3.jpg"
+  },
+  {
+    id: 27,
+    name: "Karma Sanctum Soho",
+    image: "https://images.trvl-media.com/lodging/3000000/2550000/2543900/2543847/744dea60.jpg",
+    rating: 4.5,
+    price: "$662",
+    address: "20 Warwick Street, Soho, London, England, W1B 5NF",
+    description: "Experience luxury at this boutique hotel in the heart of London City Centre. Enjoy a rooftop terrace, a relaxing hot tub, and a 24/7 front desk for seamless service. This pet-friendly retreat features plush Egyptian cotton sheets and hypoallergenic bedding for ultimate comfort. Ideally situated near Piccadilly Circus and The British Museum, it also offers all-day dining options for a delightful culinary experience.",
+    hours: "24/7",
+    amenities: ["Breakfast available", "Restaurant", "Hot Tub", "Bar", "Pet friendly", "24/7 front desk"],
+    reviews: 1000,
+    tags: ["Hot Tub", "Rooftop Terrace", "Downtown", "Pet Friendly", "Hotels with Hot Tubs in London"],
+    link: "https://expedia.com/affiliates/london-hotels-karma-sanctum-soho.YF1VIvu"
+  },
 
   
 
@@ -331,7 +457,7 @@ export async function searchHotels(q: string, location: string) {
     .sort((a, b) => b.rating - a.rating);
 }
 
-export const locations = ["San Francisco, CA", "Chicago, IL", "Miami, FL"];
+export const locations = ["San Francisco, CA", "Chicago, IL", "Miami, FL", "London"];
 
 export async function getAllTags({ limit }: { limit?: number } = {}) {
   await new Promise((resolve) => setTimeout(resolve, 1500));

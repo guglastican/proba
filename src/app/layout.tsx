@@ -3,6 +3,7 @@ import { Geist } from "next/font/google";
 import "./globals.css";
 import { GoogleTagManager } from "@next/third-parties/google";
 import { sanitizeUrl } from "@/lib/utils";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,8 +28,11 @@ export default function RootLayout({
     <html lang="en">
       {/* Add Google Tag Manager */}
       <GoogleTagManager gtmId="GTM-KQ7B5BL5" />
-      <body className={`${geistSans.className} antialiased`}>
-        {children}
+      <body className={`${geistSans.className} antialiased flex flex-col min-h-screen`}>
+        <div className="flex-grow">
+          {children}
+        </div>
+        <Footer />
       </body>
     </html>
   );

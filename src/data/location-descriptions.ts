@@ -1,194 +1,276 @@
-export interface LocationDescription {
-  overview: string;
-  attractions: { title: string, description: string }[];
-  dining: { title: string, description: string }[];
-  hotTubHotels: { title: string, description: string }[];
-  nearbyDestinations: string;
-}
-
-export const locationDescriptions: { [key: string]: LocationDescription } = {
-  "San Francisco": {
-    overview: "Discover San Francisco: A Premier Destination for Relaxation and Adventure",
-    attractions: [
-      {
-        title: "Golden Gate Bridge",
-        description: "An iconic landmark offering breathtaking views of the bay. Walking or biking across provides a memorable experience with stunning panoramic vistas."
-      },
-      {
-        title: "Fisherman's Wharf",
-        description: "A vibrant waterfront area perfect for enjoying fresh seafood, watching sea lions at Pier 39, and exploring unique souvenir shops."
-      },
-      {
-        title: "Alcatraz Island",
-        description: "A historic site offering fascinating guided tours of the legendary former prison, providing deep insights into San Francisco's rich history."
-      }
-    ],
-    dining: [
-      {
-        title: "Gary Danko",
-        description: "An award-winning fine-dining restaurant perfect for a romantic evening, offering exquisite cuisine and an unforgettable culinary experience."
-      },
-      {
-        title: "Tadich Grill",
-        description: "One of the oldest seafood restaurants in the city, serving incredible flavors and traditional San Francisco dining."
-      },
-      {
-        title: "Bourbon & Branch",
-        description: "A hidden speakeasy with expertly crafted cocktails, ideal for those seeking a unique and intimate night out."
-      }
-    ],
-    hotTubHotels: [
-      {
-        title: "Fairmont San Francisco",
-        description: "A romantic escape featuring elegant suites with private hot tubs and stunning city views."
-      },
-      {
-        title: "Travelodge by Wyndham",
-        description: "A budget-friendly option offering comfortable accommodations with in-room hot tub options."
-      },
-      {
-        title: "The Donatello",
-        description: "A family-friendly choice with spacious rooms, a relaxing hot tub, and a prime downtown location."
-      }
-    ],
-    nearbyDestinations: "Explore beyond San Francisco with nearby hot tub destinations like Oakland and San Jose, each offering unique experiences and luxurious accommodations."
-  },
+export const locationDescriptions = {
   "San Francisco, CA": {
-    overview: "Discover San Francisco: A Premier Destination for Relaxation and Adventure",
+    overview: "San Francisco: A Coastal Haven of Luxury and Hot Tub Retreats",
     attractions: [
       {
         title: "Golden Gate Bridge",
-        description: "An iconic landmark offering breathtaking views of the bay. Walking or biking across provides a memorable experience with stunning panoramic vistas."
-      },
-      {
-        title: "Fisherman's Wharf",
-        description: "A vibrant waterfront area perfect for enjoying fresh seafood, watching sea lions at Pier 39, and exploring unique souvenir shops."
+        description: "Iconic landmark with stunning views of the bay and city skyline"
       },
       {
         title: "Alcatraz Island",
-        description: "A historic site offering fascinating guided tours of the legendary former prison, providing deep insights into San Francisco's rich history."
+        description: "Historic prison turned national landmark, offering fascinating tours"
+      },
+      {
+        title: "Fisherman's Wharf",
+        description: "Vibrant waterfront area with seafood restaurants and street performers"
       }
     ],
     dining: [
       {
-        title: "Gary Danko",
-        description: "An award-winning fine-dining restaurant perfect for a romantic evening, offering exquisite cuisine and an unforgettable culinary experience."
+        title: "Napa Valley Wineries",
+        description: "World-renowned wine region just a short drive from the city"
       },
       {
-        title: "Tadich Grill",
-        description: "One of the oldest seafood restaurants in the city, serving incredible flavors and traditional San Francisco dining."
+        title: "Michelin-Starred Restaurants",
+        description: "Culinary destination with some of the world's best dining experiences"
       },
       {
-        title: "Bourbon & Branch",
-        description: "A hidden speakeasy with expertly crafted cocktails, ideal for those seeking a unique and intimate night out."
+        title: "Chinatown Cuisine",
+        description: "Authentic and diverse Asian culinary scene"
       }
     ],
     hotTubHotels: [
       {
-        title: "Fairmont San Francisco",
-        description: "A romantic escape featuring elegant suites with private hot tubs and stunning city views."
+        title: "Claremont Club & Spa",
+        description: "Luxury resort with panoramic bay views and exceptional hot tub facilities"
       },
       {
-        title: "Travelodge by Wyndham",
-        description: "A budget-friendly option offering comfortable accommodations with in-room hot tub options."
+        title: "Cavallo Point",
+        description: "Stunning lodge with hot tubs overlooking the Golden Gate Bridge"
       },
       {
-        title: "The Donatello",
-        description: "A family-friendly choice with spacious rooms, a relaxing hot tub, and a prime downtown location."
+        title: "The Ritz-Carlton, Half Moon Bay",
+        description: "Oceanfront resort with luxurious hot tub experiences"
       }
     ],
-    nearbyDestinations: "Explore beyond San Francisco with nearby hot tub destinations like Oakland and San Jose, each offering unique experiences and luxurious accommodations."
+    nearbyDestinations: "Explore wine country, coastal beaches, and the stunning Silicon Valley landscape"
   },
-  "Chicago": {
-    overview: "Discover Chicago: A Premier Destination for Relaxation and Adventure",
+  "Miami, FL": {
+    overview: "Miami: Tropical Paradise of Hot Tub Luxury and Vibrant Culture",
     attractions: [
       {
-        title: "Millennium Park",
-        description: "A must-see urban oasis. Take a selfie at Cloud Gate (The Bean) and enjoy the beautiful green space that defines Chicago's modern landscape."
+        title: "South Beach",
+        description: "Iconic beach destination with Art Deco architecture and vibrant nightlife"
       },
       {
-        title: "Navy Pier",
-        description: "A lively waterfront destination perfect for entertainment. Ride the Ferris wheel, catch live performances, and explore diverse waterfront dining options."
+        title: "Wynwood Walls",
+        description: "Open-air museum showcasing world-class street art and murals"
       },
       {
-        title: "Willis Tower Skydeck",
-        description: "Offers breathtaking city views from 1,353 feet up. Step onto The Ledge for a thrilling, glass-floored perspective of Chicago's stunning skyline."
+        title: "Vizcaya Museum and Gardens",
+        description: "Stunning Renaissance-style villa with beautiful historic gardens"
       }
     ],
     dining: [
       {
-        title: "Alinea",
-        description: "A world-renowned dining experience that pushes the boundaries of culinary art, perfect for a special and unforgettable night out."
+        title: "Little Havana",
+        description: "Authentic Cuban cuisine and cultural experiences"
       },
       {
-        title: "Lou Malnati's",
-        description: "Famous for its legendary deep-dish pizza, this restaurant is a must-visit for any food lover exploring Chicago's culinary scene."
+        title: "Design District",
+        description: "Gourmet restaurants and high-end culinary experiences"
       },
       {
-        title: "The Aviary",
-        description: "A high-end cocktail bar offering creative and innovative drinks in a sleek, modern setting that epitomizes Chicago's sophisticated nightlife."
+        title: "Seafood Restaurants",
+        description: "Fresh seafood with ocean views and tropical flavors"
       }
     ],
     hotTubHotels: [
       {
-        title: "The Peninsula Chicago",
-        description: "A luxurious romantic escape featuring elegant suites with private hot tubs and breathtaking skyline views."
+        title: "Fontainebleau Miami Beach",
+        description: "Iconic resort with luxurious hot tub and spa facilities"
       },
       {
-        title: "Comfort Suites Michigan Avenue",
-        description: "A budget-friendly option offering comfortable accommodations with convenient in-room hot tub options."
+        title: "The Setai",
+        description: "Zen-inspired luxury hotel with oceanfront hot tubs"
       },
       {
-        title: "The Langham",
-        description: "A family-friendly choice with spacious rooms, a relaxing hot tub, and a prime location near top Chicago attractions."
+        title: "W South Beach",
+        description: "Modern luxury hotel with stunning hot tub experiences"
       }
     ],
-    nearbyDestinations: "Explore beyond Chicago with nearby hot tub destinations like Evanston and Oak Brook, each offering unique experiences and luxurious accommodations."
+    nearbyDestinations: "Explore the Florida Keys, Everglades National Park, and vibrant Caribbean-influenced culture"
   },
-  "Chicago, IL": {
-    overview: "Discover Chicago: A Premier Destination for Relaxation and Adventure",
+  "Las Vegas, NV": {
+    overview: "Las Vegas: Entertainment Capital with Luxurious Hot Tub Escapes",
     attractions: [
       {
-        title: "Millennium Park",
-        description: "A must-see urban oasis. Take a selfie at Cloud Gate (The Bean) and enjoy the beautiful green space that defines Chicago's modern landscape."
+        title: "The Strip",
+        description: "World-famous boulevard with iconic hotels and entertainment"
       },
       {
-        title: "Navy Pier",
-        description: "A lively waterfront destination perfect for entertainment. Ride the Ferris wheel, catch live performances, and explore diverse waterfront dining options."
+        title: "Red Rock Canyon",
+        description: "Stunning natural landscape perfect for hiking and scenic drives"
       },
       {
-        title: "Willis Tower Skydeck",
-        description: "Offers breathtaking city views from 1,353 feet up. Step onto The Ledge for a thrilling, glass-floored perspective of Chicago's stunning skyline."
+        title: "Fremont Street Experience",
+        description: "Historic downtown area with vibrant light shows and street performances"
       }
     ],
     dining: [
       {
-        title: "Alinea",
-        description: "A world-renowned dining experience that pushes the boundaries of culinary art, perfect for a special and unforgettable night out."
+        title: "Celebrity Chef Restaurants",
+        description: "Michelin-starred dining experiences from world-renowned chefs"
       },
       {
-        title: "Lou Malnati's",
-        description: "Famous for its legendary deep-dish pizza, this restaurant is a must-visit for any food lover exploring Chicago's culinary scene."
+        title: "Buffet Experiences",
+        description: "Legendary all-you-can-eat dining with incredible variety"
       },
       {
-        title: "The Aviary",
-        description: "A high-end cocktail bar offering creative and innovative drinks in a sleek, modern setting that epitomizes Chicago's sophisticated nightlife."
+        title: "Rooftop Bars",
+        description: "Stunning views and craft cocktails above the city"
       }
     ],
     hotTubHotels: [
       {
-        title: "The Peninsula Chicago",
-        description: "A luxurious romantic escape featuring elegant suites with private hot tubs and breathtaking skyline views."
+        title: "Aria Resort & Casino",
+        description: "Modern luxury with state-of-the-art hot tub and spa facilities"
       },
       {
-        title: "Comfort Suites Michigan Avenue",
-        description: "A budget-friendly option offering comfortable accommodations with convenient in-room hot tub options."
+        title: "Bellagio",
+        description: "Iconic resort with luxurious hot tub experiences"
       },
       {
-        title: "The Langham",
-        description: "A family-friendly choice with spacious rooms, a relaxing hot tub, and a prime location near top Chicago attractions."
+        title: "Wynn Las Vegas",
+        description: "Opulent resort with world-class hot tub and wellness amenities"
       }
     ],
-    nearbyDestinations: "Explore beyond Chicago with nearby hot tub destinations like Evanston and Oak Brook, each offering unique experiences and luxurious accommodations."
-  }
+    nearbyDestinations: "Visit Hoover Dam, Grand Canyon, and explore the stunning Nevada desert landscape"
+  },
+  "New York, NY": {
+    overview: "New York City: Urban Luxury and Hot Tub Retreats in the City That Never Sleeps",
+    attractions: [
+      {
+        title: "Central Park",
+        description: "Iconic urban park with walking trails, lakes, and cultural attractions"
+      },
+      {
+        title: "Statue of Liberty",
+        description: "Historic monument symbolizing freedom and American heritage"
+      },
+      {
+        title: "Broadway",
+        description: "World-famous theater district with top-tier performances"
+      }
+    ],
+    dining: [
+      {
+        title: "Michelin-Starred Restaurants",
+        description: "Culinary capital with diverse and innovative dining experiences"
+      },
+      {
+        title: "Ethnic Neighborhoods",
+        description: "Authentic cuisines from around the world in neighborhoods like Chinatown"
+      },
+      {
+        title: "Rooftop Dining",
+        description: "Stunning city views with gourmet meals"
+      }
+    ],
+    hotTubHotels: [
+      {
+        title: "1 Hotel Central Park",
+        description: "Eco-friendly luxury hotel with urban hot tub experiences"
+      },
+      {
+        title: "The William Vale",
+        description: "Brooklyn hotel with panoramic city views and hot tub suites"
+      },
+      {
+        title: "Equinox Hotel Hudson Yards",
+        description: "Modern luxury hotel with wellness-focused hot tub amenities"
+      }
+    ],
+    nearbyDestinations: "Explore the Hamptons, Hudson Valley, and take day trips to historic New England towns"
+  },
+  "London": {
+    overview: "Discover the best hotels with hot tubs in London, blending luxury, comfort, and relaxation.",
+    attractions: [
+      {
+        title: "London Eye",
+        description: "An iconic observation wheel offering panoramic city views."
+      },
+      {
+        title: "Buckingham Palace",
+        description: "The royal residence and a historic London landmark."
+      },
+      {
+        title: "Tower of London",
+        description: "A centuries-old fortress home to the Crown Jewels."
+      }
+    ],
+    dining: [
+      {
+        title: "Michelin-Starred Restaurants",
+        description: "Experience world-class dining from renowned chefs."
+      },
+      {
+        title: "Traditional English Pubs",
+        description: "Enjoy classic British dishes and local ales."
+      },
+      {
+        title: "Afternoon Tea Spots",
+        description: "Indulge in a quintessential British afternoon tea experience."
+      }
+    ],
+    hotTubHotels: [
+      {
+        title: "The Shangri-La at The Shard",
+        description: "Luxury hotel offering select suites with private hot tubs and breathtaking skyline views."
+      },
+      {
+        title: "Corinthia London",
+        description: "An opulent hotel featuring an award-winning spa with a vitality pool and massage jets."
+      },
+      {
+        title: "The Standard, London",
+        description: "Trendy hotel with a rooftop hot tub overlooking St Pancras Station."
+      },
+      {
+        title: "The Exhibitionist Hotel",
+        description: "Boutique hotel in South Kensington with private terrace hot tubs in select suites."
+      },
+      {
+        title: "Richmond Harbour Hotel",
+        description: "A wellness-focused retreat featuring outdoor hot tubs in a secret garden spa."
+      }
+    ],
+    benefits: [
+      "Stress relief and relaxation after a long day of sightseeing.",
+      "Muscle relaxation and improved circulation for wellness benefits.",
+      "Ideal for romantic getaways with private jacuzzi options.",
+      "Luxury amenities and spa facilities for ultimate comfort."
+    ],
+    bookingTips: [
+      "Confirm if the hot tub is private or shared in a spa facility.",
+      "Book in advance, especially during peak seasons.",
+      "Check guest reviews for cleanliness and maintenance of hot tubs.",
+      "Look for package deals that include spa access and other perks."
+    ],
+    neighborhoods: [
+      {
+        title: "Central London",
+        description: "Stay close to iconic landmarks like Big Ben and Trafalgar Square."
+      },
+      {
+        title: "Kensington",
+        description: "An upscale district near museums and cultural attractions."
+      },
+      {
+        title: "South Bank",
+        description: "A vibrant area with scenic river views and modern amenities."
+      },
+      {
+        title: "Covent Garden",
+        description: "Lively district with great shopping, dining, and entertainment."
+      },
+      {
+        title: "King’s Cross",
+        description: "A trendy, well-connected area with stylish hotels."
+      }
+    ],
+    nearbyDestinations: "Explore Windsor Castle, the Cotswolds, and Brighton Beach for additional excursions."
+  },
+  
+
 };
