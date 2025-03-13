@@ -1,4 +1,4 @@
-import { getAllTags, locations } from "@/data/hotels";
+import { getAllTags, locations } from "@/data/hotels"; "@/data/location-descriptions";
 import { MetadataRoute } from "next";
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
@@ -9,7 +9,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const searchLandingPages = allTags
     .map((tag) =>
       locations.map((location) => ({
-        url:`https://${baseUrl}/${location}/${tag}`,
+        url:`${baseUrl}/${location}/${tag}`,
         lastModified: new Date(),
         changeFrequency: "weekly",
         priority: 1,
@@ -25,7 +25,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "yearly",
       priority: 0.8,
     },
-    // Our pSEO pages:
+      // Our pSEO pages:
     ...searchLandingPages,
   ];
 }
