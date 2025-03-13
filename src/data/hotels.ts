@@ -1,4 +1,5 @@
 
+
 export interface Hotel {
   id: number;
   name: string;
@@ -423,8 +424,7 @@ const hotels: Hotel[] = [
     tags: ["Hot Tub", "Rooftop Terrace", "Downtown", "Pet Friendly", "Hotels with Hot Tubs in London"],
     link: "https://expedia.com/affiliates/london-hotels-karma-sanctum-soho.YF1VIvu"
   },
-
-  
+    
 
 
 

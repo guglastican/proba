@@ -9,7 +9,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const searchLandingPages = allTags
     .map((tag) =>
       locations.map((location) => ({
-        url: `https://${baseUrl}/${location}/${tag}`,
+        url:`https://${baseUrl}/${location}/${tag}`,
         lastModified: new Date(),
         changeFrequency: "weekly",
         priority: 1,
