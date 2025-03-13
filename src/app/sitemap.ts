@@ -1,24 +1,31 @@
-import { MetadataRoute } from 'next'
+import { getAllTags, locations } from "@/data/hotels";
+import { MetadataRoute } from "next";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const allTags = await getAllTags();
+
+  const searchLandingPages = allTags
+    .map((tag) =>
+      locations.map((location) => ({
+        url: `${baseUrl}/${location}/${tag}`,
+        lastModified: new Date(),
+        changeFrequency: "weekly",
+        priority: 1,
+      })),
+    )
+    .flat() as MetadataRoute.Sitemap;
+
   return [
+    // Insert your other pages:
     {
-      url: 'https://www.romantic-vacations-destinations.com/',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1,
-    },
-    {
-      url: 'https://www.romantic-vacations-destinations.com//search',
-      lastModified: new Date(),
-      changeFrequency: 'daily',
+      url: `${baseUrl}/about`,
+      lastModified: "2024-12-31",
+      changeFrequency: "yearly",
       priority: 0.8,
     },
-    {
-      url: 'https://www.romantic-vacations-destinations.com//about',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.5,
-    }
-  ]
+    // Our pSEO pages:
+    ...searchLandingPages,
+  ];
 }
