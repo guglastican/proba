@@ -1,7 +1,7 @@
 import { getAllTags, locations } from "@/data/hotels";
 import { MetadataRoute } from "next";
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://romantic-vacations-destinations.com';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const allTags = await getAllTags();
@@ -9,7 +9,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const searchLandingPages = allTags
     .map((tag) =>
       locations.map((location) => ({
-        url:`${baseUrl}/${location}/${tag}`,
+        url: `${baseUrl}/${location}/${tag}`,
         lastModified: new Date(),
         changeFrequency: "weekly",
         priority: 1,

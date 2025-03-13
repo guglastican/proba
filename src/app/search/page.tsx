@@ -11,6 +11,8 @@ type PageProps = {
   searchParams: Promise<{ q?: string; location?: string }>;
 };
 
+export const dynamic = 'force-dynamic';
+
 export async function generateMetadata(
   { searchParams }: PageProps
 ): Promise<Metadata> {
