@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Search, MapPin, Star } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "HotTubFinder: Discover Luxurious Hotels with Hot Tubs",
+  title: "Hot Tub Finder: Discover Luxurious Hotels with Hot Tubs",
   description: "Find the perfect hotel with hot tubs across the United States. Explore romantic getaways, spa experiences, and luxury accommodations with private hot tubs.",
   keywords: [
     "hot tub hotels", 
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     "private hot tubs"
   ],
   openGraph: {
-    title: "HotTubFinder: Luxurious Hotels with Hot Tubs",
+    title: "Hot Tub Finder: Luxurious Hotels with Hot Tubs",
     description: "Discover the most relaxing and romantic hotels with hot tubs across the USA.",
     type: "website",
     images: [
@@ -39,7 +39,8 @@ export default function Home() {
     { name: "San Francisco, CA", hotels: 42, description: "Discover stunning hot tub hotels with Bay Area views" },
     { name: "Miami, FL", hotels: 35, description: "Tropical hot tub escapes in the Sunshine State" },
     { name: "Las Vegas, NV", hotels: 50, description: "Luxurious hot tub experiences in the Entertainment Capital" },
-    { name: "New York, NY", hotels: 28, description: "Urban hot tub retreats in the city that never sleeps" }
+    { name: "New York, NY", hotels: 28, description: "Urban hot tub retreats in the city that never sleeps" },
+    { name: "Chicago, IL", hotels: 28, description: "Urban hot tub retreats in the city that never sleeps" },
   ];
 
   const features = [
