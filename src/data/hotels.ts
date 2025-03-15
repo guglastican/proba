@@ -660,7 +660,7 @@ export async function searchHotels(q: string, location: string) {
     .sort((a, b) => b.rating - a.rating);
 }
 
-export const locations = ["San Francisco, CA", "Chicago, IL", "Miami, FL", "London"];
+export const locations = ["San Francisco, CA", "Chicago, IL", "Miami, FL", "New York, NY", "London"];
 
 export async function getAllTags({ limit }: { limit?: number } = {}) {
   await new Promise((resolve) => setTimeout(resolve, 1500));

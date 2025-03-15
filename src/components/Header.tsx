@@ -81,11 +81,11 @@ export default function Header({ q, location }: HeaderProps) {
 
             <div className="mt-2 flex flex-wrap justify-center gap-2">
               {[
-                { name: "hot tub", color: "bg-red-100 text-red-700" },
-                { name: "spa", color: "bg-blue-100 text-blue-700" },
-                { name: "pool", color: "bg-green-100 text-green-700" },
-                { name: "luxury", color: "bg-purple-100 text-purple-700" },
-                { name: "romantic", color: "bg-pink-100 text-pink-700" }
+                { name: "Hot Tub", color: "bg-red-100 text-red-700" },
+                { name: "Spa", color: "bg-blue-100 text-blue-700" },
+                { name: "Pool", color: "bg-green-100 text-green-700" },
+                { name: "Luxury", color: "bg-purple-100 text-purple-700" },
+                { name: "Romantic", color: "bg-pink-100 text-pink-700" }
               ].map(({ name, color }) => (
                 <button
                   key={name}
