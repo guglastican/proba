@@ -37,8 +37,26 @@ function LocationDescription({ location }: { location: string }) {
   const locationData = locationDescriptions[location as keyof typeof locationDescriptions];
   
   return locationData ? (
-    <section className="container mx-auto px-4 py-12 bg-white">
+    <section className="container mx-auto px-4 py-12 bg-gray">
       <div className="max-w-4xl mx-auto space-y-8">
+        {locationData.author && (
+          <div className="bg-white-50 p-6 rounded-lg mb-8">
+            <div className="flex items-center space-x-4">
+              {locationData.author.photo && (
+                <img 
+                  src={locationData.author.photo}
+                  alt={locationData.author.name}
+                  className="w-16 h-16 rounded-full object-cover"
+                />
+              )}
+              <div className="flex-1">
+                <h3 className="text-lg font-semibold text-gray-900">{locationData.author.name}</h3>
+                <p className="text-sm text-gray-600">{locationData.author.title}</p>
+                <p className="mt-2 text-sm text-gray-600">{locationData.author.bio}</p>
+              </div>
+            </div>
+          </div>
+        )}
         <h2 className="text-3xl font-bold text-gray-900 mb-6">{locationData.overview}</h2>
         
         <article>

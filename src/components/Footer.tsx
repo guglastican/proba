@@ -11,6 +11,18 @@ export default function Footer() {
         </div>
         <nav className="flex space-x-4">
           <Link 
+            href="/about" 
+            className="text-sm text-gray-600 hover:text-primary transition-colors"
+          >
+            About
+          </Link>
+          <Link 
+            href="/author" 
+            className="text-sm text-gray-600 hover:text-primary transition-colors"
+          >
+            Author
+          </Link>
+          <Link 
             href="/privacy-policy" 
             className="text-sm text-gray-600 hover:text-primary transition-colors"
           >

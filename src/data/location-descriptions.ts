@@ -1,5 +1,11 @@
 export const locationDescriptions = {
   "San Francisco, CA": {
+    author: {
+      name: "Emma Caldwell",
+      title: "Travel Writer & Reviewer",
+      bio: "With over a decade of experience in travel journalism, Emma specializes in authentic local experiences and hotel reviews. Her work has been featured in numerous international publications. If you love the idea of unwinding in a private hot tub after a long day of sightseeing, enjoying a romantic getaway, or simply indulging in a luxurious hotel experience, you're in the right place!",
+      photo: "/Emma-Caldwell.png"
+    },
     overview: "San Francisco: A Coastal Haven of Luxury and Hot Tub Retreats",
     attractions: [
       {
@@ -46,6 +52,12 @@ export const locationDescriptions = {
     nearbyDestinations: "Explore wine country, coastal beaches, and the stunning Silicon Valley landscape"
   },
   "Miami, FL": {
+    author: {
+      name: "Emma Caldwell",
+      title: "Travel Writer & Reviewer",
+      bio: "With over a decade of experience in travel journalism, Emma specializes in authentic local experiences and hotel reviews. Her work has been featured in numerous international publications. If you love the idea of unwinding in a private hot tub after a long day of sightseeing, enjoying a romantic getaway, or simply indulging in a luxurious hotel experience, you're in the right place!",
+      photo: "/Emma-Caldwell.png"
+    },
     overview: "Miami: Tropical Paradise of Hot Tub Luxury and Vibrant Culture",
     attractions: [
       {
@@ -92,6 +104,12 @@ export const locationDescriptions = {
     nearbyDestinations: "Explore the Florida Keys, Everglades National Park, and vibrant Caribbean-influenced culture"
   },
   "Las Vegas, NV": {
+    author: {
+      name: "Emma Caldwell",
+      title: "Travel Writer & Reviewer",
+      bio: "With over a decade of experience in travel journalism, Emma specializes in authentic local experiences and hotel reviews. Her work has been featured in numerous international publications. If you love the idea of unwinding in a private hot tub after a long day of sightseeing, enjoying a romantic getaway, or simply indulging in a luxurious hotel experience, you're in the right place!",
+      photo: "/Emma-Caldwell.png"
+    },
     overview: "Las Vegas: Entertainment Capital with Luxurious Hot Tub Escapes",
     attractions: [
       {
@@ -138,6 +156,12 @@ export const locationDescriptions = {
     nearbyDestinations: "Visit Hoover Dam, Grand Canyon, and explore the stunning Nevada desert landscape"
   },
   "New York, NY": {
+    author: {
+      name: "Emma Caldwell",
+      title: "Travel Writer & Reviewer",
+      bio: "With over a decade of experience in travel journalism, Emma specializes in authentic local experiences and hotel reviews. Her work has been featured in numerous international publications. If you love the idea of unwinding in a private hot tub after a long day of sightseeing, enjoying a romantic getaway, or simply indulging in a luxurious hotel experience, you're in the right place!",
+      photo: "/Emma-Caldwell.png"
+    },
     overview: "New York City: Urban Luxury and Hot Tub Retreats in the City That Never Sleeps",
     attractions: [
       {
@@ -184,6 +208,12 @@ export const locationDescriptions = {
     nearbyDestinations: "Explore the Hamptons, Hudson Valley, and take day trips to historic New England towns"
   },
   "London": {
+    author: {
+      name: "Emma Caldwell",
+      title: "Travel Writer & Reviewer",
+      bio: "With over a decade of experience in travel journalism, Emma specializes in authentic local experiences and hotel reviews. Her work has been featured in numerous international publications. If you love the idea of unwinding in a private hot tub after a long day of sightseeing, enjoying a romantic getaway, or simply indulging in a luxurious hotel experience, you're in the right place!",
+      photo: "/Emma-Caldwell.png"
+    },
     overview: "Discover the best hotels with hot tubs in London, blending luxury, comfort, and relaxation.",
     attractions: [
       {
@@ -270,7 +300,5 @@ export const locationDescriptions = {
       }
     ],
     nearbyDestinations: "Explore Windsor Castle, the Cotswolds, and Brighton Beach for additional excursions."
-  },
-  
-
+  }
 };

@@ -11,20 +11,22 @@ export default function AboutPage() {
     <div>
       <Header />
       <main className="container mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold text-center mb-8">About Our Hotel Directory</h1>
+        <h1 className="text-4xl font-bold text-center mb-8">About Us – Booking Hotels with Hot Tubs</h1>
         
         <section className="max-w-3xl mx-auto space-y-6">
           <p className="text-lg">
-            Welcome to the premier destination for discovering and booking exceptional hotels worldwide. 
-            Our mission is to simplify travel planning by providing comprehensive, up-to-date information 
-            on hotels, resorts, and accommodations.
+          Welcome to Booking Hotels with Hot Tubs, your ultimate guide to finding the perfect hotel stay with the luxury of a private hot tub. Whether you're planning a romantic getaway, a relaxing retreat, or a special occasion, we make it easy to discover hotels that offer the comfort and indulgence you deserve.
+          </p>
+          <h2 className="text-4xl font-bold text-center mb-8">Why Choose Us?</h2>
+          <p className="text-lg">
+          We specialize in helping travelers find hotels that feature hot tubs in-room or hot tubs on private balconies, ensuring a truly relaxing experience. Our carefully curated listings highlight the best accommodations, so you don’t have to spend hours searching for the perfect stay.
           </p>
 
           <div className="bg-gray-50 p-6 rounded-lg">
             <h2 className="text-2xl font-semibold mb-4">What We Offer</h2>
             <ul className="list-disc pl-6 space-y-3">
-              <li>Detailed hotel profiles with photos and amenities</li>
-              <li>Real-time pricing and availability checks</li>
+              <li>We specialize in helping travelers find hotels that feature hot tubs in-room or hot tubs on private balconies, ensuring a truly relaxing experience. Our carefully curated listings highlight the best accommodations, so you don’t have to spend hours searching for the perfect stay.</li>
+              <li>Easy Booking – Find and book your dream stay quickly and effortlessly.</li>
               <li>Verified guest reviews and ratings</li>
               <li>Expert travel tips and local recommendations</li>
             </ul>
