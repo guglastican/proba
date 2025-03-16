@@ -61,7 +61,7 @@ export default function HotelItem({ hotel }: HotelItemProps) {
         </p>
         
         <div className="flex flex-wrap gap-2 mb-4">
-          {hotel.tags.slice(0, 3).map((tag) => (
+          {hotel.tags.slice(0, 7).map((tag) => (
             <Badge 
               key={tag} 
               variant="secondary"

@@ -309,7 +309,7 @@ const hotels: Hotel[] = [
     hours: "24/7",
     amenities: ["Spa", "Gym", "Pool", "Restaurant", "Breakfast Available", "Hot Tub"],
     reviews: 728,
-    tags: ["Luxury", "Central London", "Spa", "Fitness Center", "Hot Tub", "Hotels with Hot Tubs in London"],
+    tags: ["hotel with hot tub in the room​", "Hot Tub", "hotels with hot tub", "hotels in london with hot tub​", "hotel with hot tub in room near me", "hotel with jacuzzi", "hotels with jacuzzi in room​"],
     link: "https://expedia.com/affiliates/london-hotels-the-londoner.Ga1bnEj"
   },
   {
@@ -323,7 +323,7 @@ const hotels: Hotel[] = [
     hours: "24/7",
     amenities: ["Pool", "Hot Tub", "Spa", "Bar", "Parking available", "Pet friendly"],
     reviews: 26,
-    tags: ["Luxury", "Hot Tub", "Spa", "Hotels with Hot Tubs in London", "Dining", "Pet Friendly"],
+    tags: ["hotel with hot tub in the room​", "Hot Tub", "hotels with hot tub", "hotels in london with hot tub​", "hotel with hot tub in room near me", "hotel with jacuzzi", "hotels with jacuzzi in room​"],
     link: "https://expedia.com/affiliates/london-hotels-the-carlton-tower-jumeirah.uwgkESe"
   },
   {
@@ -337,7 +337,7 @@ const hotels: Hotel[] = [
   hours: "24/7",
   amenities: ["Hot Tub", "Spa", "Bar", "Parking available", "Gym", "Room service"],
   reviews: 302,
-  tags: ["Luxury", "Spa", "Hot Tub", "Park Lane", "Fitness Center", "Hotels with Hot Tubs in London"],
+  tags: ["hotel with hot tub in the room​", "Hot Tub", "hotels with hot tub", "hotels in london with hot tub​", "hotel with hot tub in room near me", "hotel with jacuzzi", "hotels with jacuzzi in room​"],
   link: "https://expedia.com/affiliates/london-hotels-four-seasons-hotel-london-at-park-lane.U6FEqCw"
   },
   {
@@ -351,7 +351,7 @@ const hotels: Hotel[] = [
   hours: "24/7",
   amenities: ["Breakfast available", "Spa", "Restaurant", "Gym", "Housekeeping", "Parking available"],
   reviews: 1475,
-  tags: ["Luxury", "Spa", "Hotels with Hot Tubs in London", "Historic", "Fine Dining", "Hot Tub"],
+  tags: ["hotel with hot tub in the room​", "Hot Tub", "hotels with hot tub", "hotels in london with hot tub​", "hotel with hot tub in room near me", "hotel with jacuzzi", "hotels with jacuzzi in room​"],
   link: "https://expedia.com/affiliates/london-hotels-st-james-court.0REEqRe"
   },
   {
@@ -365,7 +365,7 @@ const hotels: Hotel[] = [
     hours: "24/7",
     amenities: ["Breakfast available", "Spa", "Pool", "Hot Tub", "Bar", "Gym"],
     reviews: 1002,
-    tags: ["Luxury", "Spa", "Hotels with Hot Tubs in London", "Family Friendly", "Hot Tub", "Fine Dining"],
+    tags: ["hotel with hot tub in the room​", "Hot Tub", "hotels with hot tub", "hotels in london with hot tub​", "hotel with hot tub in room near me", "hotel with jacuzzi", "hotels with jacuzzi in room​"],
     link: "https://expedia.com/affiliates/london-hotels-the-landmark-london.EDafs2W"
   },
   {
@@ -379,7 +379,7 @@ const hotels: Hotel[] = [
     hours: "24/7",
     amenities: ["Pool", "Hot Tub", "Spa", "Bar", "Parking available", "Pet friendly"],
     reviews: 26,
-    tags: ["Luxury", "Spa", "Hot Tub", "Hotels with Hot Tubs in London", "Indoor Pool", "Pet Friendly"],
+    tags: ["hotel with hot tub in the room​", "Hot Tub", "hotels with hot tub", "hotels in london with hot tub​", "hotel with hot tub in room near me", "hotel with jacuzzi", "hotels with jacuzzi in room​"],
     link: "https://expedia.com/affiliates/london-hotels-the-carlton-tower-jumeirah.DMngRTI"
   },
   {
@@ -393,7 +393,7 @@ const hotels: Hotel[] = [
     hours: "24/7",
     amenities: ["Spa", "Breakfast available", "Gym", "Pool", "Bar", "Pet friendly"],
     reviews: 267,
-    tags: ["Luxury", "Spa", "Hot Tub", "Pet Friendly", "Indoor Pool", "Hotels with Hot Tubs in London"],
+    tags: ["hotel with hot tub in the room​", "Hot Tub", "hotels with hot tub", "hotels in london with hot tub​", "hotel with hot tub in room near me", "hotel with jacuzzi", "hotels with jacuzzi in room​"],
     link: "https://expedia.com/affiliates/london-hotels-the-westin-london-city.fk015eR"
   },
   {
@@ -407,7 +407,7 @@ const hotels: Hotel[] = [
     hours: "24/7",
     amenities: ["Pool", "Spa", "Bar", "Parking available", "Pet friendly", "Gym"],
     reviews: 506,
-    tags: ["Luxury", "Spa", "Hot Tub", "Pet Friendly", "Indoor Pool", "Hotels with Hot Tubs in London"],
+    tags: ["hotel with hot tub in the room​", "Hot Tub", "hotels with hot tub", "hotels in london with hot tub​", "hotel with hot tub in room near me", "hotel with jacuzzi", "hotels with jacuzzi in room​"],
     link: "https://images.trvl-media.com/lodging/6000000/5350000/5349200/5349114/bc3fede3.jpg"
   },
   {
@@ -421,7 +421,7 @@ const hotels: Hotel[] = [
     hours: "24/7",
     amenities: ["Breakfast available", "Restaurant", "Hot Tub", "Bar", "Pet friendly", "24/7 front desk"],
     reviews: 1000,
-    tags: ["Hot Tub", "Rooftop Terrace", "Downtown", "Pet Friendly", "Hotels with Hot Tubs in London"],
+    tags: ["hotel with hot tub in the room​", "Hot Tub", "hotels with hot tub", "hotels in london with hot tub​", "hotel with hot tub in room near me", "hotel with jacuzzi", "hotels with jacuzzi in room​"],
     link: "https://expedia.com/affiliates/las-vegas-hotels-hampton-inn-suites-las-vegas-convention-center.vqRL5D8"
   },
   {
@@ -631,7 +631,7 @@ const hotels: Hotel[] = [
     hours: "24/7",
     amenities: ["Premium Bedding", "24-Hour Fitness Center", "On-Site Bar", "Pet-Friendly Rooms", "Laundry Services", "24/7 Front Desk", "Business Center", "Down Comforters", "Pillowtop Beds"],
     reviews: 1004,
-    tags: ["new york hotel with hot tub in the room​", "Hot Tub", "hotels in new york city with hot tub in room", "hotels in new york with hot tub​", "NY Stock Exchange", "One World Trade Center", "Business Travel", "Modern Design"],
+    tags: ["hotel with hot tub in the room​", "Hot Tub", "hotels with hot tub", "hotels in new york with hot tub​", "hotel with hot tub in room near me", "hotel with jacuzzi", "hotels with jacuzzi in room​"],
     link: "https://expedia.com/affiliates/new-york-hotels-hyatt-centric-wall-street-new-york.jDCsGAV"
   }
 
