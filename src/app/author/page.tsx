@@ -34,19 +34,19 @@ export default function AuthorPage() {
           </div>
           <div className="space-y-4">
             <p className="text-gray-800">
-              With over a decade of experience in travel journalism, Emma specializes in authentic local experiences and hotel reviews. Her work has been featured in numerous international publications. If you love the idea of unwinding in a private hot tub after a long day of sightseeing, enjoying a romantic getaway, or simply indulging in a luxurious hotel experience, you're in the right place!
+              With over a decade of experience in travel journalism, Emma specializes in authentic local experiences and hotel reviews. Her work has been featured in numerous international publications. If you love the idea of unwinding in a private hot tub after a long day of sightseeing, enjoying a romantic getaway, or simply indulging in a luxurious hotel experience, you&apos;re in the right place!
             </p>
             <div>
               <h2 className="text-2xl font-semibold">Why I Created This Website</h2>
               <p className="text-gray-800">My passion for travel and comfortable accommodations inspired me to create Booking Hotels with Hot Tubs. I realized that finding the perfect hotel with a private hot tub, jetted suite, or spa-like amenities was often difficult and time-consuming. Many hotel booking sites list thousands of options, but very few focus specifically on hot tub hotels—which is where I come in.</p>
             </div>
             <div className="bg-gray-50 p-6 rounded-lg">
-              <h2 className="text-2xl font-semibold mb-4">What You'll Find on This Website</h2>
+              <h2 className="text-2xl font-semibold mb-4">What You&apos;ll Find on This Website</h2>
               <ul className="list-disc pl-6 space-y-3">
                 <li><strong>✔ Handpicked Hot Tub Hotels</strong> – I personally research and select the best hotels that feature private hot tubs, whirlpool baths, and jetted suites so you can book with confidence.</li>
-                <li><strong>✔ Destination Guides</strong> – Whether you're looking for the best hot tub hotels in major cities, beach resorts, mountain getaways, or countryside retreats, I cover it all.</li>
+                <li><strong>✔ Destination Guides</strong> – Whether you&apos;re looking for the best hot tub hotels in major cities, beach resorts, mountain getaways, or countryside retreats, I cover it all.</li>
                 <li><strong>✔ Exclusive Travel Tips</strong> – From finding the best deals to maximizing your hot tub experience, I share expert tips to help you make the most of your stay.</li>
-                <li><strong>✔ Romantic Getaway Ideas</strong> – Planning a honeymoon, anniversary, or couples' retreat? I highlight the most romantic hotels with hot tubs for an unforgettable experience.</li>
+                <li><strong>✔ Romantic Getaway Ideas</strong> – Planning a honeymoon, anniversary, or couples&apos; retreat? I highlight the most romantic hotels with hot tubs for an unforgettable experience.</li>
                 <li><strong>✔ Luxury & Budget Options</strong> – No matter your budget, I help you find the best affordable and luxury hot tub hotels, ensuring you get value for your money.</li>
               </ul>
             </div>
@@ -56,10 +56,10 @@ export default function AuthorPage() {
             </div>
             <div>
               <h2 className="text-2xl font-semibold">My Mission: Helping You Book the Perfect Stay</h2>
-              <p className="text-gray-800">At Booking Hotels with Hot Tubs, my mission is to make luxurious and relaxing travel experiences accessible to everyone. Whether you're looking for a secluded cabin with a hot tub, a beachfront jetted suite, or a five-star spa resort, I strive to bring you the best options at the best prices.</p>
+              <p className="text-gray-800">At Booking Hotels with Hot Tubs, my mission is to make luxurious and relaxing travel experiences accessible to everyone. Whether you&apos;re looking for a secluded cabin with a hot tub, a beachfront jetted suite, or a five-star spa resort, I strive to bring you the best options at the best prices.</p>
             </div>
             <div className="mt-6">
-              <h3 className="text-xl font-semibold mb-2">Let's Connect!</h3>
+              <h3 className="text-xl font-semibold mb-2">Let&apos;s Connect!</h3>
               <p className="text-gray-800">I love hearing from fellow travelers! Whether you need hotel recommendations, travel advice, or have a question about a specific destination, feel free to reach out.</p>
               <p className="text-gray-800">📩 Email: admin@romantic-vacations-destinations.com</p>
               <p className="text-gray-800">🌍 Instagram: @hotelswithbalcony</p>
