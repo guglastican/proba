@@ -631,7 +631,7 @@ const hotels: Hotel[] = [
     hours: "24/7",
     amenities: ["Premium Bedding", "24-Hour Fitness Center", "On-Site Bar", "Pet-Friendly Rooms", "Laundry Services", "24/7 Front Desk", "Business Center", "Down Comforters", "Pillowtop Beds"],
     reviews: 1004,
-    tags: ["Wall Street", "Hot Tub", "Luxury Accommodations", "Pet-Friendly Hotel", "NY Stock Exchange", "One World Trade Center", "Business Travel", "Modern Design"],
+    tags: ["new york hotel with hot tub in the room​", "Hot Tub", "hotels in new york city with hot tub in room", "hotels in new york with hot tub​", "NY Stock Exchange", "One World Trade Center", "Business Travel", "Modern Design"],
     link: "https://expedia.com/affiliates/new-york-hotels-hyatt-centric-wall-street-new-york.jDCsGAV"
   }
 
