@@ -561,7 +561,7 @@ const hotels: Hotel[] = [
     hours: "24/7",
     amenities: ["Full-Service Spa", "24/7 Room Service", "Spanish Restaurant", "Pet-Friendly Rooms", "Free WiFi", "Hot Tub", "Steam Room", "Mud Baths", "Hydrotherapy", "Fitness Center"],
     reviews: 992,
-    tags: ["hotel with hot tub in the room​", "Hot Tub", "hotels with hot tub", "hotel with hot tub in room near me", "hotel with jacuzzi", "hotels with jacuzzi in room​"],
+    tags: ["hotel with hot tub in the room​"],
     link: "https://expedia.com/affiliates/new-york-hotels-hotel-chelsea.xxMoztw"
   },
   {
@@ -575,7 +575,7 @@ const hotels: Hotel[] = [
     hours: "24/7",
     amenities: ["Luxury Spa", "Rooftop Bar", "Indoor Pool", "24/7 Room Service", "Premium Bedding", "Minibar", "Valet Parking", "3 Bars/Lounges", "Steam Room", "Couples Treatments"],
     reviews: 1002,
-    tags: ["hotel with hot tub in the room​", "Hot Tub", "hotels with hot tub", "hotel with hot tub in room near me", "hotel with jacuzzi", "hotels with jacuzzi in room​"],
+    tags: ["Hot Tub"],
     link: "https://expedia.com/affiliates/new-york-hotels-the-peninsula-new-york.hHCJwUk"
   },
   {
@@ -589,7 +589,7 @@ const hotels: Hotel[] = [
     hours: "24/7",
     amenities: ["Indoor Pool", "Luxury Spa", "24-Hour Fitness", "Sky Terrace Suites", "Couples Treatments", "Deep Soaking Tubs", "Steam Room", "24/7 Room Service", "On-Site Dining", "Valet Parking"],
     reviews: 315,
-    tags: ["hotel with hot tub in the room​", "Hot Tub", "hotels with hot tub", "hotel with hot tub in room near me", "hotel with jacuzzi", "hotels with jacuzzi in room​"],
+    tags: ["hotels with hot tub"],
     link: "https://expedia.com/affiliates/new-york-hotels-park-hyatt-new-york.3iiDYqE"
   },
   {
@@ -603,7 +603,7 @@ const hotels: Hotel[] = [
     hours: "24/7",
     amenities: ["Luxury Spa", "Seasonal Pools", "Rooftop Terrace", "24/7 Fitness Center", "Pet-Friendly Rooms", "Valet Parking", "Steam Room", "Couples Treatments", "On-Site Dining", "Ayurvedic Therapies"],
     reviews: 619,
-    tags: ["hotel with hot tub in the room​", "Hot Tub", "hotels with hot tub", "hotel with hot tub in room near me", "hotel with jacuzzi", "hotels with jacuzzi in room​"],
+    tags: ["hotel with hot tub in room near me"],
     link: "https://expedia.com/affiliates/new-york-hotels-equinox-hotel-new-york.u2PoxKA"
   },
   {
@@ -617,7 +617,7 @@ const hotels: Hotel[] = [
     hours: "24/7",
     amenities: ["Free Breakfast", "Jetted Tub Suites", "Free Parking", "24/7 Front Desk", "Air Conditioning", "Free WiFi", "Housekeeping", "On-Site Dining", "Elevator Access"],
     reviews: 1008,
-    tags: ["hotel with hot tub in the room​", "Hot Tub", "hotels with hot tub", "hotel with hot tub in room near me", "hotel with jacuzzi", "hotels with jacuzzi in room​"],
+    tags: ["hotel with jacuzzi"],
     link: "https://expedia.com/affiliates/new-york-hotels-ramada-by-wyndham-bronx.mI1iqjg"
   },
   {
@@ -631,7 +631,7 @@ const hotels: Hotel[] = [
     hours: "24/7",
     amenities: ["Premium Bedding", "24-Hour Fitness Center", "On-Site Bar", "Pet-Friendly Rooms", "Laundry Services", "24/7 Front Desk", "Business Center", "Down Comforters", "Pillowtop Beds"],
     reviews: 1004,
-    tags: ["hotel with hot tub in the room​", "Hot Tub", "hotels with hot tub", "hotel with hot tub in room near me", "hotel with jacuzzi", "hotels with jacuzzi in room​"],
+    tags: ["hotels with jacuzzi in room​"],
     link: "https://expedia.com/affiliates/new-york-hotels-hyatt-centric-wall-street-new-york.jDCsGAV"
   }
 
