@@ -5,10 +5,14 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://romantic-vacations-
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const allTags = await getAllTags();
+  
+  // Get unique tags and locations
+  const uniqueTags = [...new Set(allTags)];
+  const uniqueLocations = [...new Set(locations)];
 
-  const searchLandingPages = allTags
+  const searchLandingPages = uniqueTags
     .map((tag) =>
-      locations.map((location) => ({
+      uniqueLocations.map((location) => ({
         url: `${baseUrl}/${location}/${tag}`,
         lastModified: new Date(),
         changeFrequency: "weekly",
