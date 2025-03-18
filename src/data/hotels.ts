@@ -42,7 +42,7 @@ const hotels: Hotel[] = [
   description: "4-star hotel in Downtown San Francisco featuring 2 restaurants and walking distance to Moscone Convention Center. Offers modern rooms with premium bedding, city views, and convenient access to cultural attractions.",
   hours: "24/7",
   reviews: 1006,
-  tags: ["hot tub", "Hotels in San Francisco With Hot Tub in Room", "Convention Center", "Fine Dining"],
+  tags: ["Hot Tub", "Pool"],
   amenities: ["Indoor Pool", "24-Hour Gym", "Hot Tub"],
   link: "https://expedia.com/affiliates/san-francisco-hotels-intercontinental-san-francisco.XFQqP4Y",
   googlePlaceId: "ChIJF1lX2oaAhYARuyWPqjE12Oo" // Google Place ID for InterContinental San Francisco
@@ -82,7 +82,7 @@ const hotels: Hotel[] = [
   hours: "24/7",  // Added the 'hours' property
   amenities: ["Breakfast included", "Free airport shuttle", "Hot Tub", "Gym", "Parking available", "Housekeeping"],
   reviews: 1005,
-  tags: ["Hot Tube"],
+  tags: ["Hot Tube", "hotel with jet tub in room near me"],
   link: "https://expedia.com/affiliates/san-francisco-hotels-holiday-inn-express-san-francisco-airport-north.AhfYCnR",
     googlePlaceId: "ChIJvVXXhYKBhYARwPBM-Dw1P2s" // Google Place ID for Holiday Inn Express SFO
 },
