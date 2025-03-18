@@ -27,8 +27,8 @@ const hotels: Hotel[] = [
     description: "Luxury San Francisco hotel in Downtown San Francisco with a full-service spa. Enjoy modern amenities, eco-friendly design, and stunning waterfront views. Offers couples treatment rooms, hydrotherapy, and premium bedding in sophisticated suites.",
     hours: "24/7",
     reviews: 367,
-    tags: ["hot tub", "Spa", "Hotels in San Francisco With Hot Tub in Room", "Waterfront"],
-    amenities: ["Full-service Spa", "Bar", "Free WiFi", "Hot Tub", "Air Conditioning", "Terrace/Patio"],
+    tags: ["Hot Tub", "Spa", "Hotels With Hot Tub in Room", "Waterfront"],
+    amenities: ["Spa", "Hot Tub", "Terrace/Patio"],
     link: "https://expedia.com/affiliates/san-francisco-hotels-1-hotel-san-francisco.nmthOWh",
     googlePlaceId: "ChIJg7PyJ3GBhYARO29J0nraSd0" // Google Place ID for 1 Hotel San Francisco
   },
@@ -42,8 +42,8 @@ const hotels: Hotel[] = [
   description: "4-star hotel in Downtown San Francisco featuring 2 restaurants and walking distance to Moscone Convention Center. Offers modern rooms with premium bedding, city views, and convenient access to cultural attractions.",
   hours: "24/7",
   reviews: 1006,
-  tags: ["hot tub", "Hotels in San Francisco With Hhot Tub in Room", "Convention Center", "Fine Dining"],
-  amenities: ["2 Restaurants", "Indoor Pool", "24-Hour Gym", "Hot Tub", "Room Service", "Breakfast Available"],
+  tags: ["hot tub", "Hotels in San Francisco With Hot Tub in Room", "Convention Center", "Fine Dining"],
+  amenities: ["Indoor Pool", "24-Hour Gym", "Hot Tub"],
   link: "https://expedia.com/affiliates/san-francisco-hotels-intercontinental-san-francisco.XFQqP4Y",
   googlePlaceId: "ChIJF1lX2oaAhYARuyWPqjE12Oo" // Google Place ID for InterContinental San Francisco
   },
@@ -57,7 +57,7 @@ const hotels: Hotel[] = [
       description: "Charming Mission District bed & breakfast featuring a rooftop terrace and Victorian-era charm. Offers individually decorated rooms with historic character, free breakfast, and easy access to Castro Street attractions.",
       hours: "24/7",
       reviews: 514,
-      tags: ["Hot Tub", "Hotels in San Francisco With Hot Tub in Room", "Pet-Friendly", "Free Breakfast"],
+      tags: ["Hot Tub", "Romantic"],
       amenities: [
         "Daily Breakfast",
         "Outdoor Spa Tub",
@@ -82,7 +82,7 @@ const hotels: Hotel[] = [
   hours: "24/7",  // Added the 'hours' property
   amenities: ["Breakfast included", "Free airport shuttle", "Hot Tub", "Gym", "Parking available", "Housekeeping"],
   reviews: 1005,
-  tags: ["Hot Tubes", "Hotels in San Francisco With Hot Tub in Room", "Hot Tub"],
+  tags: ["Hot Tube"],
   link: "https://expedia.com/affiliates/san-francisco-hotels-holiday-inn-express-san-francisco-airport-north.AhfYCnR",
     googlePlaceId: "ChIJvVXXhYKBhYARwPBM-Dw1P2s" // Google Place ID for Holiday Inn Express SFO
 },
@@ -97,7 +97,7 @@ const hotels: Hotel[] = [
     hours: "24/7",  // Added the 'hours' property
     amenities: ["Spa", "Pool", "Hot Tub", "Restaurant", "Hotels in San Francisco With Hot Tub in Room", "Bar"],
     reviews: 1000,
-    tags: ["Spa", "Pool", "Hot Tub", "Hotels in San Francisco With Hot Tub in Room"],
+    tags: ["Spa", "Pool", "Hot Tub"],
     link: "https://expedia.com/affiliates/sonoma-hotels-fairmont-sonoma-mission-inn-spa.on9UmAB",
     googlePlaceId: "ChIJfayGP1CshYARn_G8bmSC2BQ" // Google Place ID for Fairmont Sonoma Mission Inn & Spa
   },
@@ -112,7 +112,7 @@ const hotels: Hotel[] = [
         hours: "24/7",
         amenities: ["Hotels in San Francisco With Hot Tub in Room", "Pool", "Room service", "Spa", "24/7 front desk", "Housekeeping"],
         reviews: 60,
-        tags: ["Hot Tub", "Spa", "Pool", "Hotels in San Francisco With Hot Tub in Room"],
+        tags: ["Hot Tub", "Spa", "Pool"],
         link: "https://expedia.com/affiliates/forestville-hotels-farmhouse-inn.gQ3yQdB",
         googlePlaceId: "ChIJVVVVhYKBhYARwPBM-Dw1P2s" // Google Place ID for Farmhouse Inn
       },
@@ -128,7 +128,7 @@ const hotels: Hotel[] = [
     hours: "24/7",
     amenities: ["Pool", "Hot Tub", "Restaurant", "Parking available", "Bar"],
     reviews: 1002,
-    tags: ["Convention Center", "Pool", "Hot Tub"],
+    tags: ["Pool", "Hot Tub"],
     link: "https://expedia.com/affiliates/chicago-hotels-renaissance-schaumburg-convention-center-hotel.Q08el92",
     googlePlaceId: "ChIJZ3QZ-oevD4gRxc0-8O37cQ0" // Google Place ID for Renaissance Schaumburg
   },
@@ -143,7 +143,7 @@ const hotels: Hotel[] = [
       hours: "24/7",
       amenities: ["Spa", "Pool", "Restaurant", "Gym", "Hot Tub", "Free Wi-Fi"],
       reviews: 998,
-      tags: ["Hot tub", "Spa", "Downtown Chicago"],
+      tags: ["Hot tub", "Spa"],
       link: "https://expedia.com/affiliates/chicago-hotels-the-langham.TLKl1W3",
       googlePlaceId: "ChIJa8l-R64sDogREysrVzDMWTQ" // Google Place ID for The Langham, Chicago
   },
@@ -158,7 +158,7 @@ const hotels: Hotel[] = [
       hours: "24/7",
       amenities: ["Spa", "Pool", "Restaurant", "Gym", "Hot Tub", "Housekeeping", "Free Wi-Fi"],
       reviews: 1001,
-      tags: ["Hot Tub", "Downtown Chicago", "Spa", "Indoor Pool"],
+      tags: ["Hot Tub", "Spa", "Indoor Pool"],
       link: "https://expedia.com/affiliates/chicago-hotels-jw-marriott-chicago.ctu0tPJ",
       googlePlaceId: "ChIJESf9FrwsDogRg9RZOPtiZp8" // Google Place ID for JW Marriott Chicago, Chicago
   },
@@ -173,7 +173,7 @@ const hotels: Hotel[] = [
       hours: "24/7",
       amenities: ["Pool", "Hot Tub", "Bar", "Spa", "Breakfast Available", "Pet Friendly"],
       reviews: 1000,
-      tags: ["Hot Tub", "Downtown Chicago", "Spa", "Pet Friendly"],
+      tags: ["Hot Tub", "Spa", "Pet Friendly"],
       link: "https://expedia.com/affiliates/chicago-hotels-park-hyatt-chicago.fLsb72J",
       googlePlaceId: "ChIJeQOqg1PTD4gRc2VKeAYbq1M" // Google Place ID for Park Hyatt Chicago, Chicago
   },
@@ -188,7 +188,7 @@ const hotels: Hotel[] = [
       hours: "24/7",
       amenities: ["Pool", "Parking Available", "Room Service", "Bar", "Housekeeping", "Laundry"],
       reviews: 1000,
-      tags: ["Hot Tub", "Spa", "Downtown Chicago", "Pet Friendly"],
+      tags: ["Hot Tub", "Spa"],
       link: "https://expedia.com/affiliates/chicago-hotels-waldorf-astoria-chicago.5y1tbwo",
       googlePlaceId: "ChIJ6wr9GlLTD4gRQ_i8UgKu6W0" // Google Place ID for Waldorf Astoria Chicago, Chicago
   },
@@ -203,7 +203,7 @@ const hotels: Hotel[] = [
       hours: "24/7",
       amenities: ["Pool", "Restaurant", "Gym", "Room Service", "Housekeeping", "Breakfast Available"],
       reviews: 1011,
-      tags: ["Luxury", "Downtown Chicago", "Pet Friendly", "Restaurants", "Seasonal Pool"],
+      tags: ["Luxury", "Pet Friendly", "Seasonal Pool"],
       link: "https://expedia.com/affiliates/chicago-hotels-viceroy-chicago.j3TIKar",
       googlePlaceId: "ChIJh_G21VHTD4gRoxM2FR9qB-I" // Google Place ID for Viceroy Chicago, Chicago
   },
@@ -218,7 +218,7 @@ const hotels: Hotel[] = [
       hours: "24/7",
       amenities: ["2 Outdoor Swimming Pools", "Restaurant", "Gym", "Hot Tub", "Breakfast Available", "Pet Friendly"],
       reviews: 1000,
-      tags: ["Hot Tubs", "Downtown Miami", "Pet Friendly", "Swimming Pools", "Restaurant", "Hot Tub"],
+      tags: ["Hot Tubs", "Swimming Pools", "Restaurant", "Hot Tub"],
       link: "https://expedia.com/affiliates/miami-hotels-the-gabriel-miami.bcBMhFf",
       googlePlaceId: "ChIJH3sx21u32YgR4AFUjoHgRIQ" // Google Place ID for The Grayson Miami Downtown, Chicago
   },
@@ -233,7 +233,7 @@ const hotels: Hotel[] = [
       hours: "24/7",
       amenities: ["3 Outdoor Pools", "Spa", "Restaurant", "Bar", "Hot Tub", "Parking Available", "Housekeeping"],
       reviews: 531,
-      tags: ["Luxury", "Beachfront", "Pools", "Spa", "Family Friendly", "Restaurant", "Hot Tub"],
+      tags: ["Luxury", "Beachfront", "Pools", "Spa", "Restaurant", "Hot Tub"],
       link: "https://expedia.com/affiliates/miami-hotels-acqualina-resort-residences-on-the-beach.4dr761K",
       googlePlaceId: "ChIJXbbXCuCs2YgRzbV-thyE3NA" // Google Place ID for Acqualina Resort & Residences On The Miami Beach, Chicago
   },
@@ -248,7 +248,7 @@ const hotels: Hotel[] = [
       hours: "24/7",
       amenities: ["Restaurant", "Pool", "Gym", "Hot Tub", "Bar", "Pet Friendly"],
       reviews: 2962,
-      tags: ["Luxury", "Shopping", "City Center", "Rooftop", "Pet Friendly", "Hot Tub", "Restaurant"],
+      tags: ["Luxury", "Rooftop", "Pet Friendly", "Hot Tub"],
       link: "https://expedia.com/affiliates/miami-hotels-east-miami.oKqd8tm",
       googlePlaceId: "ChIJMUSwboO22YgRDFlX6qQGxrE" // Google Place ID for EAST Miami,
       
@@ -264,7 +264,7 @@ const hotels: Hotel[] = [
       hours: "24/7",
       amenities: ["Breakfast Included", "Restaurant", "Hot Tub", "Gym", "Bar", "Housekeeping"],
       reviews: 4231,
-      tags: ["Convenient", "City Center", "Restaurants", "Breakfast Included", "Gym", "Hot Tub", "Bar"],
+      tags: ["Hot Tub"],
       link: "https://expedia.com/affiliates/miami-hotels-hampton-inn-suites-miamibrickell-downtown.THG9rMr",
       googlePlaceId: "ChIJn-2Oo4a22YgR-fOW2Yuryjo" // Google Place ID for Hampton Inn & Suites Miami/Brickell-Downtown, Chicago
   },
@@ -279,7 +279,7 @@ const hotels: Hotel[] = [
       hours: "24/7",
       amenities: ["Pool", "Restaurant", "Pet Friendly", "Spa", "Bar", "Breakfast Available"],
       reviews: 1709,
-      tags: ["Luxury", "Downtown Miami", "Hut Tub", "Spa", "Outdoor Pool", "Pet Friendly"],
+      tags: ["Luxury", "Hut Tub", "Spa", "Outdoor Pool", "Pet Friendly"],
       link: "https://expedia.com/affiliates/miami-hotels-kimpton-epic-hotel.ZNrsbxq",
       googlePlaceId: "ChIJlWF1Gp222YgRkg_v_MAt_Sc" // Google Place ID for Kimpton EPIC Hotel by IHG, Chicago
   },
@@ -294,7 +294,7 @@ const hotels: Hotel[] = [
       hours: "24/7",
       amenities: ["Pool", "Restaurant", "Bar", "Spa", "Room Service", "Breakfast Available", "Hot Tub"],
       reviews: 282,
-      tags: ["Luxury", "Downtown Miami", "Hotels with Hot Tubs in Miami", "Spa", "Pool", "Bar"],
+      tags: ["Luxury", "Spa", "Pool"],
       link: "https://expedia.com/affiliates/miami-hotels-hotel-beaux-arts.s9Nwwe8",
       googlePlaceId: "ChIJx0AED5222YgRzaTCEcXOqQ8" // Google Place ID for Hotel Beaux Arts, Autograph Collection, Chicago
   },
@@ -309,7 +309,7 @@ const hotels: Hotel[] = [
     hours: "24/7",
     amenities: ["Spa", "Gym", "Pool", "Restaurant", "Breakfast Available", "Hot Tub"],
     reviews: 728,
-    tags: ["hotel with hot tub in the room​", "Hot Tub", "hotels with hot tub", "hotels in london with hot tub​", "hotel with hot tub in room near me", "hotel with jacuzzi", "hotels with jacuzzi in room​"],
+    tags: ["Hot Tub", "hotels with hot tub"],
     link: "https://expedia.com/affiliates/london-hotels-the-londoner.Ga1bnEj"
   },
   {
@@ -323,7 +323,7 @@ const hotels: Hotel[] = [
     hours: "24/7",
     amenities: ["Pool", "Hot Tub", "Spa", "Bar", "Parking available", "Pet friendly"],
     reviews: 26,
-    tags: ["hotel with hot tub in the room​", "Hot Tub", "hotels with hot tub", "hotels in london with hot tub​", "hotel with hot tub in room near me", "hotel with jacuzzi", "hotels with jacuzzi in room​"],
+    tags: ["hotel with hot tub in the room​", "Hot Tub"],
     link: "https://expedia.com/affiliates/london-hotels-the-carlton-tower-jumeirah.uwgkESe"
   },
   {
@@ -337,7 +337,7 @@ const hotels: Hotel[] = [
   hours: "24/7",
   amenities: ["Hot Tub", "Spa", "Bar", "Parking available", "Gym", "Room service"],
   reviews: 302,
-  tags: ["hotel with hot tub in the room​", "Hot Tub", "hotels with hot tub", "hotels in london with hot tub​", "hotel with hot tub in room near me", "hotel with jacuzzi", "hotels with jacuzzi in room​"],
+  tags: ["hotel with hot tub in the room​", "Hot Tub"],
   link: "https://expedia.com/affiliates/london-hotels-four-seasons-hotel-london-at-park-lane.U6FEqCw"
   },
   {
@@ -351,7 +351,7 @@ const hotels: Hotel[] = [
   hours: "24/7",
   amenities: ["Breakfast available", "Spa", "Restaurant", "Gym", "Housekeeping", "Parking available"],
   reviews: 1475,
-  tags: ["hotel with hot tub in the room​", "Hot Tub", "hotels with hot tub", "hotels in london with hot tub​", "hotel with hot tub in room near me", "hotel with jacuzzi", "hotels with jacuzzi in room​"],
+  tags: ["hotel with hot tub in the room​", "Hot Tub", "hotels with hot tub",],
   link: "https://expedia.com/affiliates/london-hotels-st-james-court.0REEqRe"
   },
   {
@@ -365,7 +365,7 @@ const hotels: Hotel[] = [
     hours: "24/7",
     amenities: ["Breakfast available", "Spa", "Pool", "Hot Tub", "Bar", "Gym"],
     reviews: 1002,
-    tags: ["hotel with hot tub in the room​", "Hot Tub", "hotels with hot tub", "hotels in london with hot tub​", "hotel with hot tub in room near me", "hotel with jacuzzi", "hotels with jacuzzi in room​"],
+    tags: ["hotel with hot tub in the room​", "Hot Tub", "hotel with jacuzzi", "hotels with jacuzzi in room​"],
     link: "https://expedia.com/affiliates/london-hotels-the-landmark-london.EDafs2W"
   },
   {
@@ -379,7 +379,7 @@ const hotels: Hotel[] = [
     hours: "24/7",
     amenities: ["Pool", "Hot Tub", "Spa", "Bar", "Parking available", "Pet friendly"],
     reviews: 26,
-    tags: ["hotel with hot tub in the room​", "Hot Tub", "hotels with hot tub", "hotels in london with hot tub​", "hotel with hot tub in room near me", "hotel with jacuzzi", "hotels with jacuzzi in room​"],
+    tags: ["hotel with hot tub in the room​", "Hot Tub", "hotels with hot tub", "hotels with jacuzzi in room​"],
     link: "https://expedia.com/affiliates/london-hotels-the-carlton-tower-jumeirah.DMngRTI"
   },
   {
@@ -393,7 +393,7 @@ const hotels: Hotel[] = [
     hours: "24/7",
     amenities: ["Spa", "Breakfast available", "Gym", "Pool", "Bar", "Pet friendly"],
     reviews: 267,
-    tags: ["hotel with hot tub in the room​", "Hot Tub", "hotels with hot tub", "hotels in london with hot tub​", "hotel with hot tub in room near me", "hotel with jacuzzi", "hotels with jacuzzi in room​"],
+    tags: ["hotel with hot tub in the room​", "Hot Tub", "hotels with hot tub", "hotel with hot tub in room near me", "hotel with jacuzzi", "hotels with jacuzzi in room​"],
     link: "https://expedia.com/affiliates/london-hotels-the-westin-london-city.fk015eR"
   },
   {
@@ -407,7 +407,7 @@ const hotels: Hotel[] = [
     hours: "24/7",
     amenities: ["Pool", "Spa", "Bar", "Parking available", "Pet friendly", "Gym"],
     reviews: 506,
-    tags: ["hotel with hot tub in the room​", "Hot Tub", "hotels with hot tub", "hotels in london with hot tub​", "hotel with hot tub in room near me", "hotel with jacuzzi", "hotels with jacuzzi in room​"],
+    tags: ["Hot Tub", "hotels with hot tub", "hotel with jacuzzi", "hotels with jacuzzi in room​"],
     link: "https://images.trvl-media.com/lodging/6000000/5350000/5349200/5349114/bc3fede3.jpg"
   },
   {
@@ -421,7 +421,7 @@ const hotels: Hotel[] = [
     hours: "24/7",
     amenities: ["Breakfast available", "Restaurant", "Hot Tub", "Bar", "Pet friendly", "24/7 front desk"],
     reviews: 1000,
-    tags: ["hotel with hot tub in the room​", "Hot Tub", "hotels with hot tub", "hotels in london with hot tub​", "hotel with hot tub in room near me", "hotel with jacuzzi", "hotels with jacuzzi in room​"],
+    tags: ["Hot Tub", "hotel with jacuzzi", "hotels with jacuzzi in room​"],
     link: "https://expedia.com/affiliates/las-vegas-hotels-hampton-inn-suites-las-vegas-convention-center.vqRL5D8"
   },
   {
@@ -435,7 +435,7 @@ const hotels: Hotel[] = [
     hours: "24/7",
     amenities: ["Free Breakfast", "Bar", "Hot Tub", "Terrace/Patio", "Free WiFi", "LCD TV"],
     reviews: 31,
-    tags: ["Hot Tub", "No Resort Fee", "Convention Center", "Free Breakfast", "Hotels with Hot Tubs in Las Vegas"],
+    tags: ["Hot Tub", "Jetted Tub In Room"],
     link: "https://www.expedia.com/Las-Vegas-Hotels-Hampton-Inn-Suites-Las-Vegas-Convention-Center.h42574390.Hotel-Information"
   },
   {
@@ -449,7 +449,7 @@ const hotels: Hotel[] = [
     hours: "24/7",
     amenities: [ "Full-Service Spa", "Seasonal Outdoor Pool", "Hot Tub", "Pet Friendly", "Free Valet Parking", "Bar (On Property)","Wheelchair Accessible Facilities"],
     reviews: 1000,
-    tags: ["Spa", "Pool", "Hot Tub", "Pet Friendly", "Las Vegas Strip","Luxury Hotels in Las Vegas"],
+    tags: ["Spa", "Pool", "Hot Tub", "hotels with jetted tubs in room"],
     link: "https://expedia.com/affiliates/las-vegas-hotels-jet-luxury-at-the-vdara-condo-hotel.qp48dgq"
   },
   {
@@ -463,7 +463,7 @@ const hotels: Hotel[] = [
     hours: "24/7",
     amenities: ["Dual Hot Tubs", "Seasonal Rooftop Pool", "Art Deco Design", "Direct Shopping Access", "55-inch Smart TVs", "24/7 Concierge", "Wheelchair Accessible Facilities"],
     reviews: 210,
-    tags: ["Hot Tub", "Shopping Access", "Rooftop Pool", "Family-Friendly", "Las Vegas Strip","Luxury Suites in Las Vegas"],
+    tags: ["Hot Tub", "Romantic", "Rooftop Pool", "hotel with jetted tub in room"],
     link: "https://expedia.com/affiliates/las-vegas-hotels-hilton-club-elara-las-vegas.Tb6WRKQ"
   },
   {
@@ -477,7 +477,7 @@ const hotels: Hotel[] = [
     hours: "24/7",
     amenities: ["Two Hot Tubs", "Outdoor Pool", "Bellagio Fountain Views", "24/7 Room Service", "Two Restaurants", "Complimentary Parking", "Pet-Friendly Accommodations"],
     reviews: 94,
-    tags: ["Luxury Hotel", "Las Vegas Strip", "Hot Tub", "Pet Friendly", "City Views", "Suite Accommodations", "Upscale Dining"],
+    tags: ["Luxury Hotel", "Hot Tub", "hotels with jetted tub in room"],
     link: "https://expedia.com/affiliates/las-vegas-hotels-secret-suites-at-vdara.PrNpGng"
   },
   {
@@ -491,7 +491,7 @@ const hotels: Hotel[] = [
     hours: "24/7",
     amenities: ["Luxury Spa", "Seasonal Outdoor Pool", "24/7 Room Service", "Pet-Friendly Rooms", "On-Site Dining", "Steam Room", "Hot Stone Massages", "Concierge Services"],
     reviews: 1001,
-    tags: ["Caesars Palace", "Hot Tub", "Luxury Spa", "Pool Cabanas", "5-Star Dining", "Entertainment District", "Premium Casino Hotel"],
+    tags: ["Hot Tub", "Luxury Spa", "hotels with jetted tubs"],
     link: "https://expedia.com/affiliates/las-vegas-hotels-nobu-hotel-at-caesars-palace.zqz0dJv"
   },
   {
@@ -505,7 +505,7 @@ const hotels: Hotel[] = [
     hours: "24/7",
     amenities: ["Luxury Suites", "Two Hot Tubs", "Free Valet Parking", "On-Site Dining", "Pool", "24/7 Housekeeping", "Pillowtop Beds", "Business Center"],
     reviews: 1755,
-    tags: ["Hot Tub", "Las Vegas Strip", "All-Suite Hotel", "Free Parking", "Hot Tub", "Casino Access", "Luxury Accommodations"],
+    tags: ["Hot Tub", "hotel with jetted tub in room near me"],
     link: "https://expedia.com/affiliates/las-vegas-hotels-the-signature-at-mgm-grand.4VBZyGv"
   },
   {
@@ -519,7 +519,7 @@ const hotels: Hotel[] = [
     hours: "24/7",
     amenities: ["Private Kitchen Villas", "Outdoor Pool", "Hot Tub", "BBQ/Picnic Area", "Pet-Friendly Rooms", "24-Hour Front Desk", "Laundry Facilities", "Air Conditioning", "Flat-Screen TV", "Fitness Center"],
     reviews: 1003,
-    tags: ["Hot Tub", "Villa Accommodations", "Casino Access", "Pet-Friendly Hotel", "Family-Friendly", "Full Kitchen Units", "Las Vegas Resorts"],
+    tags: ["Hot Tub", "hotels with jetted tubs near me"],
     link: "https://expedia.com/affiliates/las-vegas-hotels-westgate-flamingo-bay-resort.zITcLDW"
   },
   {
@@ -533,7 +533,7 @@ const hotels: Hotel[] = [
     hours: "24/7",
     amenities: ["Luxury Sky Suites", "Three Outdoor Pools", "Full-Service Spa", "14 Restaurants", "24/7 Room Service", "Hot Tub", "Italian Cuisine", "Concierge Services", "In-Room Minibar"],
     reviews: 11,
-    tags: ["Hot Tub", "Luxury Spa", "Casino Hotel", "Upscale Dining", "Pool Cabanas", "5-Star Accommodations", "Sky Suites", "Premium Amenities"],
+    tags: ["Hot Tub", "Luxury Spa", "hotel with jet tub in room"],
     link: "https://expedia.com/affiliates/las-vegas-hotels-aria-sky-suites.RrIWyk7"
   },
   {
@@ -547,7 +547,7 @@ const hotels: Hotel[] = [
     hours: "24/7",
     amenities: ["Full-Service Spa", "10 Restaurants", "Outdoor Pool", "Hot Tub", "6 Bars/Lounges", "Free Parking", "Fitness Center", "Poolside Bar", "Casino Access", "24/7 Front Desk"],
     reviews: 1659,
-    tags: ["Suburban Retreat", "Luxury Spa", "Casino Resort", "Family-Friendly", "Pool Complex", "Fine Dining", "Hot Tub", "5-Star Amenities"],
+    tags: ["Suburban Retreat", "Luxury Spa", "Pool", "Hot Tub", "hotels with jetted tubs in room near me"],
     link: "https://expedia.com/affiliates/las-vegas-hotels-green-valley-ranch-resort-and-spa.nKkr0EB"
   },
   {
@@ -575,7 +575,7 @@ const hotels: Hotel[] = [
     hours: "24/7",
     amenities: ["Luxury Spa", "Rooftop Bar", "Indoor Pool", "24/7 Room Service", "Premium Bedding", "Minibar", "Valet Parking", "3 Bars/Lounges", "Steam Room", "Couples Treatments"],
     reviews: 1002,
-    tags: ["Hot Tub"],
+    tags: ["Hot Tub", "Luxury"],
     link: "https://expedia.com/affiliates/new-york-hotels-the-peninsula-new-york.hHCJwUk"
   },
   {
@@ -617,7 +617,7 @@ const hotels: Hotel[] = [
     hours: "24/7",
     amenities: ["Free Breakfast", "Jetted Tub Suites", "Free Parking", "24/7 Front Desk", "Air Conditioning", "Free WiFi", "Housekeeping", "On-Site Dining", "Elevator Access"],
     reviews: 1008,
-    tags: ["hotel with jacuzzi"],
+    tags: ["hotel with jacuzzi","Luxury"],
     link: "https://expedia.com/affiliates/new-york-hotels-ramada-by-wyndham-bronx.mI1iqjg"
   },
   {
@@ -629,9 +629,9 @@ const hotels: Hotel[] = [
     address: "75 Wall Street, New York, NY 10005",
     description: "Luxury hotel in the Financial District featuring premium bedding, 24/7 services, and prime proximity to Wall Street attractions. Offers pet-friendly accommodations and modern business amenities.",
     hours: "24/7",
-    amenities: ["Premium Bedding", "24-Hour Fitness Center", "On-Site Bar", "Pet-Friendly Rooms", "Laundry Services", "24/7 Front Desk", "Business Center", "Down Comforters", "Pillowtop Beds"],
+    amenities: ["Premium Bedding", "24-Hour Fitness Center", "On-Site Bar", "Pet-Friendly Rooms", "Hot Tub", "24/7 Front Desk", "Business Center", "Down Comforters", "Pillowtop Beds"],
     reviews: 1004,
-    tags: ["hotels with jacuzzi in room​"],
+    tags: ["hotels with jacuzzi in room​", "Hot Tub"],
     link: "https://expedia.com/affiliates/new-york-hotels-hyatt-centric-wall-street-new-york.jDCsGAV"
   }
 
