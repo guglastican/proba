@@ -1,6 +1,5 @@
 import Header from "@/components/Header";
 import HotelItem from "@/components/HotelItem";
-import RestaurantItem from "@/components/HotelItem";
 import { getAllTags, locations, searchHotels } from "@/data/hotels";
 import { Metadata } from "next";
 import { cache } from "react";
