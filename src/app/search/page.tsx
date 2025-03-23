@@ -2,180 +2,62 @@ import Header from "@/components/Header";
 import HotelItem from "@/components/HotelItem";
 import { Skeleton } from "@/components/ui/skeleton";
 import { locations, searchHotels } from "@/data/hotels";
-import { locationDescriptions } from "@/data/location-descriptions";
-import { buildSearchCanonicalUrl } from "@/lib/canonical";
-import { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { Suspense } from "react";
 
-type PageProps = {
+interface PageProps {
   searchParams: Promise<{ q?: string; location?: string }>;
-};
-
-export const dynamic = 'force-dynamic';
-
-export async function generateMetadata(
-  { searchParams }: PageProps
-): Promise<Metadata> {
-  const params = await searchParams;
-  const q = params.q || '';
-  const location = params.location || locations[0];
-
-  return {
-    title: `${q ? `Hotels With ${q}` : 'Hotels With'} in ${location}`,
-    description: `Discover the best ${q} hotels in ${location}. Luxurious accommodations with private ${q} for a relaxing getaway.`,
-    alternates: {
-      canonical: buildSearchCanonicalUrl(q, location),
-    },
-    openGraph: {
-      title: `${q ? `Hotels With ${q}` : 'Hotels With'} in ${location}`,
-      description: `Discover the best ${q} hotels in ${location}. Luxurious accommodations with private ${q} for a relaxing getaway.`,
-    },
-  };
 }
 
-function LocationDescription({ location }: { location: string }) {
-  const locationData = locationDescriptions[location as keyof typeof locationDescriptions];
-  
-  return locationData ? (
-    <section className="container mx-auto px-4 py-12 bg-gray">
-      <div className="max-w-4xl mx-auto space-y-8">
-        {locationData.author && (
-          <div className="bg-white-50 p-6 rounded-lg mb-8">
-            <div className="flex items-center space-x-4">
-              {locationData.author.photo && (
-                <img 
-                  src={locationData.author.photo}
-                  alt={locationData.author.name}
-                  className="w-16 h-16 rounded-full object-cover"
-                />
-              )}
-              <div className="flex-1">
-                <h3 className="text-lg font-semibold text-gray-900">{locationData.author.name}</h3>
-                <p className="text-sm text-gray-600">{locationData.author.title}</p>
-                <p className="mt-2 text-sm text-gray-600">{locationData.author.bio}</p>
-              </div>
-            </div>
-          </div>
-        )}
-        <h2 className="text-3xl font-bold text-gray-900 mb-6">{locationData.overview}</h2>
-        
-        <article>
-          <h3 className="text-2xl font-semibold text-gray-800 mb-4">Must-Visit Attractions</h3>
-          <ul className="space-y-4 text-gray-600">
-            {locationData.attractions.map((attraction: { title: string; description: string }, index: number) => (
-              <li key={index} className="flex items-start">
-                <span className="mr-3 text-blue-600 font-bold">{attraction.title}</span>
-                <p>{attraction.description}</p>
-              </li>
-            ))}
-          </ul>
-        </article>
+export default async function Page({ searchParams }: PageProps) {
+  const { q, location } = await searchParams;
 
-        <article>
-          <h3 className="text-2xl font-semibold text-gray-800 mb-4">Culinary Experiences</h3>
-          <ul className="space-y-4 text-gray-600">
-            {locationData.dining.map((restaurant: { title: string; description: string }, index: number) => (
-              <li key={index} className="flex items-start">
-                <span className="mr-3 text-blue-600 font-bold">{restaurant.title}</span>
-                <p>{restaurant.description}</p>
-              </li>
-            ))}
-          </ul>
-        </article>
+  if (!q) redirect("/");
 
-        <article>
-          <h3 className="text-2xl font-semibold text-gray-800 mb-4">Hot Tub Hotel Recommendations</h3>
-          <ul className="space-y-4 text-gray-600">
-            {locationData.hotTubHotels.map((hotel: { title: string; description: string }, index: number) => (
-              <li key={index} className="flex items-start">
-                <span className="mr-3 text-blue-600 font-bold">{hotel.title}</span>
-                <p>{hotel.description}</p>
-              </li>
-            ))}
-          </ul>
-        </article>
-
-        <article>
-          <h3 className="text-2xl font-semibold text-gray-800 mb-4">Explore Nearby</h3>
-          <p className="text-gray-600">{locationData.nearbyDestinations}</p>
-        </article>
-      </div>
-    </section>
-  ) : null;
-}
-
-async function Results({ q, location }: { q: string; location: string }) {
-  const results = await searchHotels(q, location);
-
-  if (results.length === 0) {
-    return (
-      <div className="text-center py-12">
-        <h2 className="text-2xl font-semibold mb-2">No results found</h2>
-        <p className="text-gray-600">
-          Try a different search term or location
-        </p>
-      </div>
-    );
-  }
+  // In a real app, a missing location param could automatically search close to the user's location (That's how Yelp does it)
+  const userLocation = location || locations[0];
 
   return (
-    <>
-      <main className="container mx-auto space-y-8 px-4 py-8">
-        <p className="text-center font-semibold">
-          Showing {results.length} results for {`"${q}"`} near {location}
-        </p>
-        <h1 className="text-center text-3xl font-bold mt-4 mb-6">
-          Hotels With {`"${q}"`} in {location}
-        </h1>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {results.map((hotel) => (
-            <HotelItem key={hotel.id} hotel={hotel} />
-          ))}
-        </div>
-      </main>
-      <LocationDescription location={location} />
-    </>
+    <div>
+      <Header q={q} location={userLocation} />
+      <Suspense fallback={<ResultsLoadingSkeleton />} key={`${q}-${location}`}>
+        <Results q={q} location={userLocation} />
+      </Suspense>
+    </div>
+  );
+}
+
+interface ResultsProps {
+  q: string;
+  location: string;
+}
+
+async function Results({ q, location }: ResultsProps) {
+  const results = await searchHotels(q, location);
+
+  return (
+    <main className="container mx-auto space-y-8 px-4 py-8">
+      <p className="text-center font-semibold">
+        Showing {results.length} results for {`"${q}"`} near {location}
+      </p>
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {results.map((hotel) => (
+          <HotelItem key={hotel.id} hotel={hotel} />
+        ))}
+      </div>
+    </main>
   );
 }
 
 function ResultsLoadingSkeleton() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-6">
-      {Array.from({ length: 6 }).map((_, i) => (
-        <div
-          key={i}
-          className="border rounded-lg p-4 space-y-4 shadow-sm bg-white"
-        >
-          <Skeleton className="h-48 w-full rounded-md" />
-          <div className="space-y-2">
-            <Skeleton className="h-4 w-2/3" />
-            <Skeleton className="h-4 w-full" />
-            <Skeleton className="h-4 w-full" />
-            <div className="flex gap-2 pt-2">
-              <Skeleton className="h-8 w-16 rounded-full" />
-              <Skeleton className="h-8 w-16 rounded-full" />
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-export default async function Page({ searchParams }: PageProps) {
-  const params = await searchParams;
-  const q = params.q || '';
-  const location = params.location || locations[0];
-
-  if (!q) redirect("/");
-
-  return (
-    <div className="min-h-screen bg-gray-50">
-      <Header q={q} location={location} />
-      <Suspense fallback={<ResultsLoadingSkeleton />} key={`${q}-${location}`}>
-        <Results q={q} location={location} />
-      </Suspense>
+    <div className="container mx-auto space-y-8 px-4 py-8">
+      <Skeleton className="mx-auto h-7 w-[380px]" />
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {Array.from({ length: 6 }).map((_, i) => (
+          <Skeleton key={i} className="h-[420px] w-full" />
+        ))}
+      </div>
     </div>
   );
 }
