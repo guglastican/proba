@@ -21,10 +21,13 @@ export default function Header({ q, location }: HeaderProps) {
     const formData = new FormData(event.currentTarget);
     const q = formData.get("q") as string;
     const location = formData.get("location") as string;
-    const newSearchParams = new URLSearchParams();
-    newSearchParams.set("q", q);
-    if (location) newSearchParams.set("location", location);
-    router.push(`/search?${newSearchParams.toString()}`);
+    
+    // Manually create the URL with + for spaces instead of using URLSearchParams
+    // to ensure it matches the canonical URL format
+    const encodedQ = encodeURIComponent(q.trim()).replace(/%20/g, '+');
+    const encodedLocation = encodeURIComponent(location.trim());
+    
+    router.push(`/search?q=${encodedQ}&location=${encodedLocation}`);
   }
 
   return (
