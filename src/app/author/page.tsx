@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "About the Author - Hotel Reviews and Recommendations",
   description: "Learn more about our travel writer and hotel reviewer",
   alternates: {
-    canonical: '/author',
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.romantic-vacations-destinations.com'}/author`,
   },
 };
 

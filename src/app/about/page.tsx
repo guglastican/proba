@@ -4,6 +4,9 @@ import Header from '@/components/Header';
 export const metadata: Metadata = {
   title: 'About Our Hotel Directory Service',
   description: 'Learn about our mission to provide the most comprehensive hotel listings and travel information',
+  alternates: {
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.romantic-vacations-destinations.com'}/about`
+  }
 };
 
 export default function AboutPage() {

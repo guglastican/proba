@@ -13,6 +13,9 @@ export const metadata: Metadata = {
     "spa hotels", 
     "private hot tubs"
   ],
+  alternates: {
+    canonical: process.env.NEXT_PUBLIC_BASE_URL || 'https://www.romantic-vacations-destinations.com'
+  },
   openGraph: {
     title: "Hot Tub Finder: Luxurious Hotels with Hot Tubs",
     description: "Discover the most relaxing and romantic hotels with hot tubs across the USA.",

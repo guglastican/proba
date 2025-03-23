@@ -3,6 +3,7 @@ import HotelItem from "@/components/HotelItem";
 import { Skeleton } from "@/components/ui/skeleton";
 import { locations, searchHotels } from "@/data/hotels";
 import { locationDescriptions } from "@/data/location-descriptions";
+import { buildSearchCanonicalUrl } from "@/lib/canonical";
 import { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { Suspense } from "react";
@@ -24,7 +25,7 @@ export async function generateMetadata(
     title: `${q ? `Hotels With ${q}` : 'Hotels With'} in ${location}`,
     description: `Discover the best ${q} hotels in ${location}. Luxurious accommodations with private ${q} for a relaxing getaway.`,
     alternates: {
-      canonical: '/search',
+      canonical: buildSearchCanonicalUrl(q, location),
     },
     openGraph: {
       title: `${q ? `Hotels With ${q}` : 'Hotels With'} in ${location}`,
