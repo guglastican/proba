@@ -1,7 +1,7 @@
 import { getAllTags, locations } from "@/data/hotels";
 import { MetadataRoute } from "next";
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://romantic-vacations-destinations.com';
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.romantic-vacations-destinations.com';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const allTags = await getAllTags();

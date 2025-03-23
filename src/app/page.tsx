@@ -41,7 +41,6 @@ export default function Home() {
     { name: "Las Vegas, NV", hotels: 50, description: "Luxurious hot tub experiences in the Entertainment Capital" },
     { name: "New York, NY", hotels: 28, description: "Luxurious hot tub getaways in the iconic city that never sleeps" },
     { name: "Chicago, IL", hotels: 28, description: "Urban hot tub getaways in a timeless, bustling cosmopolitan hub" },
-    { name: "London", hotels: 8, description: "Luxurious hot tub getaways in a world-class capital of culture and charm" },
   ];
 
   const features = [
@@ -132,7 +131,7 @@ export default function Home() {
             "description": "Find the perfect hotel with hot tubs across the United States",
             "potentialAction": {
               "@type": "SearchAction",
-              "target": "https://www.romantic-vacations-destinations.com//search?q={search_term_string}",
+              "target": "https://www.romantic-vacations-destinations.com/search?q={search_term_string}",
               "query-input": "required name=search_term_string"
             }
           })

@@ -305,7 +305,7 @@ const hotels: Hotel[] = [
     rating: 4.7,
     price: "$497",
     address: "38 Leicester Square, London, England, WC2H 7LL",
-    description: "Luxury hotel in the heart of London offering a full-service spa, fitness center, indoor pool, and multiple dining options. Ideal for both relaxation and exploration.",
+    description: `Luxury hotel in the heart of London offering a full-service spa, fitness center, indoor pool, and multiple dining options. Ideal for both relaxation and exploration.`,
     hours: "24/7",
     amenities: ["Spa", "Gym", "Pool", "Restaurant", "Breakfast Available", "Hot Tub"],
     reviews: 728,
@@ -660,7 +660,7 @@ export async function searchHotels(q: string, location: string) {
     .sort((a, b) => b.rating - a.rating);
 }
 
-export const locations = ["San Francisco, CA", "Chicago, IL", "Miami, FL", "New York, NY", "London"];
+export const locations = ["San Francisco, CA", "Chicago, IL", "Miami, FL", "New York, NY"];
 
 export async function getAllTags({ limit }: { limit?: number } = {}) {
   await new Promise((resolve) => setTimeout(resolve, 1500));
