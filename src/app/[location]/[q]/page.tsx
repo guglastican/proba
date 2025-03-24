@@ -34,7 +34,7 @@ export async function generateMetadata({
 
   const encodedLocation = encodeURIComponent(locationDecoded);
   const encodedQ = encodeURIComponent(qDecoded);
-  const canonicalUrl = `https://www.romantic-vacations-destinations.com//${encodedLocation}/${encodedQ}`;
+  const canonicalUrl = `https://www.romantic-vacations-destinations.com/${locationDecoded.replace(/,/g, "").replace(/\s+/g, "-")}/${qDecoded.replace(/,/g, "").replace(/\s+/g, "-")}`;
 
   return {
     title: `Top ${results.length} ${qDecoded} near ${locationDecoded} - Updated ${new Date().getFullYear()}`,
