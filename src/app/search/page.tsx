@@ -2,7 +2,6 @@ import Header from "@/components/Header";
 import HotelItem from "@/components/HotelItem";
 import { Skeleton } from "@/components/ui/skeleton";
 import { locations, searchHotels } from "@/data/hotels";
-import { buildSearchCanonicalUrl } from "@/lib/canonical";
 import { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { Suspense } from "react";
@@ -19,10 +18,7 @@ export async function generateMetadata({ searchParams }: PageProps): Promise<Met
   return {
     title: `${q ? `Hotels With ${q}` : 'Hotels With'} in ${location}`,
     description: `Discover the best ${q} hotels in ${location}. Luxurious accommodations with private ${q} for a relaxing getaway.`,
-    alternates: {
-      canonical: buildSearchCanonicalUrl(q, location)
-    }
-  };
+    };
 }
 
 export default async function Page({ searchParams }: PageProps) {

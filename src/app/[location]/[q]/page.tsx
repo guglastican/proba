@@ -1,7 +1,6 @@
 import Header from "@/components/Header";
 import HotelItem from "@/components/HotelItem";
 import { getAllTags, locations, searchHotels } from "@/data/hotels";
-import { buildCanonicalUrl } from "@/lib/canonical";
 import { Metadata } from "next";
 import { cache } from "react";
 
@@ -42,9 +41,6 @@ export async function generateMetadata({
   return {
     title: `Top ${results.length} ${qDecoded} near ${locationDecoded} - Updated ${new Date().getFullYear()}`,
     description: `Find the best ${qDecoded} near ${locationDecoded}`,
-    alternates: {
-      canonical: buildCanonicalUrl(location, q)
-    }
   };
 }
 
