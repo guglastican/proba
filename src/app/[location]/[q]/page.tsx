@@ -32,8 +32,7 @@ export async function generateMetadata({
   const locationDecoded = decodeURIComponent(location);
   const results = await getHotels(qDecoded, locationDecoded);
 
-  const encodedLocation = encodeURIComponent(locationDecoded);
-  const encodedQ = encodeURIComponent(qDecoded);
+  // Properly format the canonical URL
   const canonicalUrl = `https://www.romantic-vacations-destinations.com/${locationDecoded.replace(/,/g, "").replace(/\s+/g, "-")}/${qDecoded.replace(/,/g, "").replace(/\s+/g, "-")}`;
 
   return {
@@ -44,6 +43,7 @@ export async function generateMetadata({
     },
   };
 }
+
 
 export default async function Page({ params }: PageProps) {
   const { q, location } = await params;
