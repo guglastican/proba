@@ -26,8 +26,8 @@ export async function generateMetadata({ searchParams }: PageProps): Promise<Met
   const canonicalUrl = `${baseUrl}/search?${queryParams}`;
 
   return {
-    title: `${q ? `Hotels With ${q}` : 'Hotels With'} in ${location}`,
-    description: `Discover the best ${q} hotels in ${location}. Luxurious accommodations with private ${q} for a relaxing getaway.`,
+    title: `${q ? `Best ${q}` : 'Best'} in ${location}`,
+    description: `Discover the best ${q} in ${location}. Luxurious accommodations with private ${q} for a relaxing getaway.`,
     alternates: {
       canonical: canonicalUrl,
     },
