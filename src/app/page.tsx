@@ -4,10 +4,10 @@ import Link from "next/link";
 import { Search, MapPin, Star } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Hot Tub Finder: Discover Luxurious Hotels with Hot Tubs",
+  title: "Hot Tub Finder: Discover Luxurious Hotels with Hot Tub",
   description: "Find the perfect hotel with hot tubs across the United States. Explore romantic getaways, spa experiences, and luxury accommodations with private hot tubs.",
   keywords: [
-    "hot tub hotels", 
+    "hotels with hot tub", 
     "luxury accommodations", 
     "romantic getaways", 
     "spa hotels", 
@@ -72,7 +72,7 @@ export default function Home() {
       <main>
         <section className="container mx-auto px-4 py-16 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Find Your Perfect Hot Tub Getaway
+            Find Your Perfect Hotels With Hot Tub 
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-10">
             Discover luxurious hotels with private hot tubs across the United States. 

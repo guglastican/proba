@@ -3,6 +3,7 @@ import HotelItem from "@/components/HotelItem";
 import { getAllTags, locations, searchHotels } from "@/data/hotels";
 import { Metadata } from "next";
 import { cache } from "react";
+import Image from "next/image";
 
 interface PageProps {
   params: Promise<{ location: string; q: string }>;
@@ -72,6 +73,27 @@ export default async function Page({ params }: PageProps) {
           ))}
         </div>
       </main>
+      <section className="container mx-auto px-4 py-12">
+        <div className="flex flex-col items-center justify-center md:flex-row gap-8">
+          <div className="w-32 h-32 rounded-full overflow-hidden">
+            <Image
+              src="/Emma-Caldwell.jpg"
+              alt="Emma Caldwell"
+              width={128}
+              height={128}
+              className="object-cover w-full h-full"
+            />
+          </div>
+          <div className="max-w-md text-center md:text-left">
+            <h2 className="text-2xl font-bold mb-2">About the Author</h2>
+            <p className="text-gray-600">
+              Emma Caldwell is a travel writer specializing in romantic getaways and luxury hotels. 
+              With over 10 years of experience, she helps couples find the perfect destinations 
+              for their dream vacations.
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

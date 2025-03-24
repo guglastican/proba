@@ -20,7 +20,7 @@ export default function AuthorPage() {
           <div className="flex items-center gap-6 mb-8">
             <div className="w-32 h-32 rounded-full overflow-hidden">
               <Image
-                src="/Emma-Caldwell.png"
+                src="/Emma-Caldwell.jpg"
                 alt="Emma Caldwell"
                 width={128}
                 height={128}
