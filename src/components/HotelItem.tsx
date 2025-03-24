@@ -71,6 +71,18 @@ export default function HotelItem({ hotel }: HotelItemProps) {
             </Badge>
           ))}
         </div>
+        
+        <div className="flex flex-wrap gap-2 mb-4">
+          {hotel.amenities.slice(0, 7).map((amenity) => (
+            <Badge 
+              key={amenity} 
+              variant="secondary"
+              className="bg-blue-100 text-blue-700 hover:bg-blue-200 border-0"
+            >
+              {amenity}
+            </Badge>
+          ))}
+        </div>
       </CardContent>
       
       <CardFooter className="px-4 pb-4 pt-0">

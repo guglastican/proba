@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     "private hot tubs"
   ],
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}`
+    canonical: process.env.NEXT_PUBLIC_BASE_URL || 'https://www.romantic-vacations-destinations.com'
   },
   openGraph: {
     title: "Hot Tub Finder: Luxurious Hotels with Hot Tubs",
@@ -92,7 +92,7 @@ export default function Home() {
               {featuredLocations.map((location) => (
                 <Link 
                   key={location.name} 
-                  href={`/${encodeURIComponent(location.name)}/hot tub`}
+                  href={`/${encodeURIComponent(location.name)}/pools`}
                   className="bg-gray-100 rounded-lg p-6 text-center hover:bg-gray-200 transition-colors group"
                 >
                   <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
