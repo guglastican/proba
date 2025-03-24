@@ -8,14 +8,10 @@ interface PageProps {
   params: Promise<{ location: string; q: string }>;
 }
 
-export const revalidate = 86400; // Refresh cached pages once every 24 
+export const revalidate = 86400;
 
 export async function generateStaticParams() {
-  const allTags = await getAllTags({
-    // If you have very many pages, you can only render a subset at compile-time. The rest will be rendered & cached at first access.
-    // limit: 10
-  });
-
+  const allTags = await getAllTags({});
   return allTags
     .map((tag) =>
       locations.map((location) => ({
@@ -32,24 +28,27 @@ export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
   const { q, location } = await params;
-
   const qDecoded = decodeURIComponent(q);
   const locationDecoded = decodeURIComponent(location);
-
   const results = await getHotels(qDecoded, locationDecoded);
+
+  const encodedLocation = encodeURIComponent(locationDecoded);
+  const encodedQ = encodeURIComponent(qDecoded);
+  const canonicalUrl = `https://www.romantic-vacations-destinations.com//${encodedLocation}/${encodedQ}`;
 
   return {
     title: `Top ${results.length} ${qDecoded} near ${locationDecoded} - Updated ${new Date().getFullYear()}`,
     description: `Find the best ${qDecoded} near ${locationDecoded}`,
+    alternates: {
+      canonical: canonicalUrl,
+    },
   };
 }
 
 export default async function Page({ params }: PageProps) {
   const { q, location } = await params;
-
   const qDecoded = decodeURIComponent(q);
   const locationDecoded = decodeURIComponent(location);
-
   const results = await getHotels(qDecoded, locationDecoded);
 
   return (
