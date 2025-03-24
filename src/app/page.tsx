@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     "private hot tubs"
   ],
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}/San%20Francisco,%20CA/hot%20tub`
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}`
   },
   openGraph: {
     title: "Hot Tub Finder: Luxurious Hotels with Hot Tubs",
