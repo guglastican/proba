@@ -63,6 +63,9 @@ export default async function Page({ params }: PageProps) {
         <h1 className="text-center text-3xl font-bold">
           Top {results.length} {qDecoded} near {locationDecoded}
         </h1>
+        <p className="text-center text-lg text-gray-600 mt-4">
+  Discover the top {results.length} hotels with private balconies in {locationDecoded}. Whether you're looking for stunning ocean views, cityscapes, or a peaceful retreat, these accommodations offer the perfect blend of comfort and scenery. Book your stay today and enjoy the ultimate getaway experience.
+</p>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {results.map((hotel) => (
             <HotelItem key={hotel.id} hotel={hotel} />
