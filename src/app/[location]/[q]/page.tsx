@@ -9,7 +9,7 @@ interface PageProps {
   params: Promise<{ location: string; q: string }>;
 }
 
-export const revalidate = 86400; // Refresh cached pages once every 24 hours
+export const revalidate = 86400; // Refresh cached pages once every 24 
 
 export async function generateStaticParams() {
   const allTags = await getAllTags({

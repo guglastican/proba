@@ -18,7 +18,7 @@ export function buildSearchCanonicalUrl(q: string, location: string): string {
   const normalizedQ = q.trim().replace(/\s+/g, ' ');
   const normalizedLocation = location.trim().replace(/\s+/g, ' ');
   
-  // Use + for spaces in query parameters to match browser URL encoding
+  // Use + for spaces in query parameters to match browser URL 
   const encodedQ = encodeURIComponent(normalizedQ).replace(/%20/g, '+');
   const encodedLocation = encodeURIComponent(normalizedLocation).replace(/%20/g, '+');
   
