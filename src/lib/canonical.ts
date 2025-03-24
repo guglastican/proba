@@ -7,16 +7,16 @@ export function normalizeUrlParams(param: string): string {
 
 export function buildCanonicalUrl(location: string, tag: string): string {
   // Ensure consistent encoding by normalizing spaces and special characters
-  const normalizedLocation = location.trim().replace(/\s+/g, ' ').replace(/,/g, '');
-  const normalizedTag = tag.trim().toLowerCase().replace(/\s+/g, ' ');
+  const normalizedLocation = location.trim().replace(/%20/g, '+');
+  const normalizedTag = tag.trim().toLowerCase().replace(/%20/g, '+');
   
   return `${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.romantic-vacations-destinations.com'}/${encodeURIComponent(normalizedLocation)}/${encodeURIComponent(normalizedTag)}`;
 }
 
 export function buildSearchCanonicalUrl(q: string, location: string): string {
-  // Ensure consistent encoding by normalizing spaces and special characters
-  const normalizedQ = q.trim().replace(/\s+/g, ' ');
-  const normalizedLocation = location.trim().replace(/\s+/g, ' ');
+  // Normalize parameters first
+  const normalizedQ = q.trim().toLowerCase().replace(/\s+/g, ' ');
+  const normalizedLocation = location.trim().replace(/\s+/g, ' ').replace(/,/g, '');
   
   // Use + for spaces in query parameters to match browser URL 
   const encodedQ = encodeURIComponent(normalizedQ).replace(/%20/g, '+');
