@@ -44,6 +44,7 @@ export default function Home() {
     { name: "Las Vegas, NV", hotels: 50, description: "Luxurious hot tub experiences in the Entertainment Capital" },
     { name: "New York, NY", hotels: 28, description: "Luxurious hot tub getaways in the iconic city that never sleeps" },
     { name: "Chicago, IL", hotels: 28, description: "Urban hot tub getaways in a timeless, bustling cosmopolitan hub" },
+    { name: "London", hotels: 28, description: "Urban hot tub getaways in a timeless, bustling cosmopolitan hub" },
   ];
 
   const features = [
@@ -77,12 +78,6 @@ export default function Home() {
             Discover luxurious hotels with private hot tubs across the United States. 
             Relax, unwind, and create unforgettable memories.
           </p>
-          <Link 
-            href="/search" 
-            className="bg-primary text-white px-8 py-3 rounded-full text-lg hover:bg-primary-dark transition-colors"
-          >
-            Start Searching
-          </Link>
         </section>
 
         <section className="bg-white py-16">
