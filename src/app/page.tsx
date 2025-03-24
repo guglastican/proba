@@ -1,7 +1,6 @@
 import Header from "@/components/Header";
 import { Metadata } from "next";
 import Link from "next/link";
-import { buildCanonicalUrl } from "@/lib/canonical";
 import { Search, MapPin, Star } from "lucide-react";
 
 export const metadata: Metadata = {
