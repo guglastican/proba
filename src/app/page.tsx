@@ -92,7 +92,7 @@ export default function Home() {
               {featuredLocations.map((location) => (
                 <Link 
                   key={location.name} 
-                  href={`/${encodeURIComponent(location.name)}/pools`}
+                  href={`/${encodeURIComponent(location.name)}/hot%20tub`}
                   className="bg-gray-100 rounded-lg p-6 text-center hover:bg-gray-200 transition-colors group"
                 >
                   <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
