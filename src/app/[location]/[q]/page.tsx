@@ -40,8 +40,8 @@ export async function generateMetadata({
   const canonicalUrl = `https://www.romantic-vacations-destinations.com/${formattedLocation}/${formattedQ}`;
 
   return {
-    title: `Top ${results.length} ${qDecoded} near ${locationDecoded} - Updated ${new Date().getFullYear()}`,
-    description: `Find the best ${qDecoded} near ${locationDecoded}`,
+    title: `Best ${results.length} hotels with ${qDecoded} near ${locationDecoded} - Updated ${new Date().getFullYear()}`,
+    description: `Find the best hotels with ${qDecoded} near ${locationDecoded}`,
     alternates: {
       canonical: canonicalUrl,
     },
