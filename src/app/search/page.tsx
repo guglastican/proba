@@ -12,13 +12,26 @@ interface PageProps {
 
 export async function generateMetadata({ searchParams }: PageProps): Promise<Metadata> {
   const params = await searchParams;
-  const q = params.q || '';
-  const location = params.location || locations[0];
+  const q = params.q || ''; // q is always present due to redirect in Page
+  const location = params.location || locations[0]; // Default to first location if not provided
+  const baseUrl = 'https://www.romantic-vacations-destinations.com/'; // Replace with your actual domain, e.g., process.env.SITE_URL
+
+  // Build the query string with q and effective location
+  const queryParams = new URLSearchParams({
+    q,
+    location,
+  }).toString();
+
+  // Construct the canonical URL
+  const canonicalUrl = `${baseUrl}/search?${queryParams}`;
 
   return {
     title: `${q ? `Hotels With ${q}` : 'Hotels With'} in ${location}`,
     description: `Discover the best ${q} hotels in ${location}. Luxurious accommodations with private ${q} for a relaxing getaway.`,
-    };
+    alternates: {
+      canonical: canonicalUrl,
+    },
+  };
 }
 
 export default async function Page({ searchParams }: PageProps) {
