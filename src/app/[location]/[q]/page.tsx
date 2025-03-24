@@ -32,11 +32,11 @@ export async function generateMetadata({
   const locationDecoded = decodeURIComponent(location);
   const results = await getHotels(qDecoded, locationDecoded);
 
-  // Encode location and query to use %20 for spaces and keep commas
-  const formattedLocation = encodeURIComponent(locationDecoded);
-  const formattedQ = encodeURIComponent(qDecoded);
+  // Encode spaces as %20 but keep commas
+  const formattedLocation = encodeURI(locationDecoded);
+  const formattedQ = encodeURI(qDecoded);
 
-  // Generate canonical URL with encoded values
+  // Generate canonical URL with correct encoding
   const canonicalUrl = `https://www.romantic-vacations-destinations.com/${formattedLocation}/${formattedQ}`;
 
   return {
