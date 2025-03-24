@@ -32,8 +32,12 @@ export async function generateMetadata({
   const locationDecoded = decodeURIComponent(location);
   const results = await getHotels(qDecoded, locationDecoded);
 
-  // Properly format the canonical URL
-  const canonicalUrl = `https://www.romantic-vacations-destinations.com/${locationDecoded.replace(/,/g, "").replace(/\s+/g, "-")}/${qDecoded.replace(/,/g, "").replace(/\s+/g, "-")}`;
+  // Encode location and query to use %20 for spaces and keep commas
+  const formattedLocation = encodeURIComponent(locationDecoded);
+  const formattedQ = encodeURIComponent(qDecoded);
+
+  // Generate canonical URL with encoded values
+  const canonicalUrl = `https://www.romantic-vacations-destinations.com/${formattedLocation}/${formattedQ}`;
 
   return {
     title: `Top ${results.length} ${qDecoded} near ${locationDecoded} - Updated ${new Date().getFullYear()}`,
@@ -43,6 +47,7 @@ export async function generateMetadata({
     },
   };
 }
+
 
 
 export default async function Page({ params }: PageProps) {
