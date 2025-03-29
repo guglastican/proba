@@ -65,7 +65,7 @@ export default async function Page({ params }: PageProps) {
           Top {results.length} {qDecoded} near {locationDecoded}
         </h1>
         <p className="text-center text-lg text-gray-600 mt-4">
-  Discover the top {results.length} hotels with private balconies in {locationDecoded}. Whether you&#39;re looking for stunning ocean views, cityscapes, or a peaceful retreat, these accommodations offer the perfect blend of comfort and scenery. Book your stay today and enjoy the ultimate getaway experience.
+        Experience the best of {locationDecoded} by staying at one of our top {results.length} hotels featuring private balconies. Discover other amazing options like <a href={`/${encodeURIComponent('Paris')}/${encodeURIComponent('Romantic')}`} className="text-blue-600 hover:underline">romantic getaways in Paris</a>, <a href={`/${encodeURIComponent('Miami')}/${encodeURIComponent('Beachfront')}`} className="text-blue-600 hover:underline">beachfront stays in Miami</a>, or <a href={`/${encodeURIComponent('Miami')}/${encodeURIComponent('hot tub')}`} className="text-blue-600 hover:underline">modern hotels in Tokyo</a>. Enjoy breathtaking ocean views, vibrant cityscapes, or serene retreats, all while indulging in the ultimate comfort and scenic beauty. Book your dream getaway today and discover why these hotels are the perfect choice for travelers seeking unforgettable experiences.
 </p>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {results.map((hotel) => (
