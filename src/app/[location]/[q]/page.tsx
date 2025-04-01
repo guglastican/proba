@@ -33,9 +33,9 @@ export async function generateMetadata({
   const locationDecoded = decodeURIComponent(location);
   const results = await getHotels(qDecoded, locationDecoded);
 
-  // Encode spaces as %20 but keep commas
-  const formattedLocation = encodeURI(locationDecoded);
-  const formattedQ = encodeURI(qDecoded);
+  // Encode URL components properly
+  const formattedLocation = encodeURIComponent(locationDecoded);
+  const formattedQ = encodeURIComponent(qDecoded);
 
   // Generate canonical URL with correct encoding
   const canonicalUrl = `https://www.romantic-vacations-destinations.com/${formattedLocation}/${formattedQ}`;
@@ -52,16 +52,17 @@ export async function generateMetadata({
 // Function to generate a related link based on location
 function generateRelatedLinks(location: string) {
   // Choose a popular tag for the related link
-  const popularTag = "spa"; "Spa";
+  const popularTag = "Spa";
   
   // Create the URL-friendly versions of the location and tag
+  // Using encodeURIComponent to ensure consistency with canonical URLs
   const formattedLocation = encodeURIComponent(location);
   const formattedTag = encodeURIComponent(popularTag);
   
-  // Return the JSX for the link
+  // Return the JSX for the link with the #overview anchor
   return (
     <a
-      href={`/${formattedLocation}/${formattedTag}`}
+      href={`/${formattedLocation}/${formattedTag}#overview`}
       className="text-blue-600 hover:underline"
     >
       {popularTag}
