@@ -49,7 +49,25 @@ export async function generateMetadata({
   };
 }
 
-
+// Function to generate a related link based on location
+function generateRelatedLinks(location: string) {
+  // Choose a popular tag for the related link
+  const popularTag = "spa"; "Spa";
+  
+  // Create the URL-friendly versions of the location and tag
+  const formattedLocation = encodeURIComponent(location);
+  const formattedTag = encodeURIComponent(popularTag);
+  
+  // Return the JSX for the link
+  return (
+    <a
+      href={`/${formattedLocation}/${formattedTag}`}
+      className="text-blue-600 hover:underline"
+    >
+      {popularTag}
+    </a>
+  );
+}
 
 export default async function Page({ params }: PageProps) {
   const { q, location } = await params;
@@ -64,9 +82,9 @@ export default async function Page({ params }: PageProps) {
         <h1 className="text-center text-3xl font-bold">
           Top {results.length} {qDecoded} near {locationDecoded}
         </h1>
-        <p className="text-center text-lg text-gray-600 mt-4">
-        Experience the best of {locationDecoded} by staying at one of our top {results.length} hotels featuring private balconies. Discover other amazing options like <a href={`/${encodeURIComponent('Paris')}/${encodeURIComponent('Romantic')}`} className="text-blue-600 hover:underline">romantic getaways in Paris</a>, <a href={`/${encodeURIComponent('Miami')}/${encodeURIComponent('Beachfront')}`} className="text-blue-600 hover:underline">beachfront stays in Miami</a>, or <a href={`/${encodeURIComponent('Tokyo')}/${encodeURIComponent('Modern')}`} className="text-blue-600 hover:underline">modern hotels in Tokyo</a>. Enjoy breathtaking ocean views, vibrant cityscapes, or serene retreats, all while indulging in the ultimate comfort and scenic beauty. Book your dream getaway today and discover why these hotels are the perfect choice for travelers seeking unforgettable experiences.
-</p>
+        <p id="overview" className="text-center text-lg text-gray-600 mt-4">
+        Experience the best of {locationDecoded} by staying at one of our top {results.length} hotels featuring private balconies. Discover other amazing options like {generateRelatedLinks(locationDecoded)}. Enjoy breathtaking ocean views, vibrant cityscapes, or serene retreats, all while indulging in the ultimate comfort and scenic beauty. Book your dream getaway today and discover why these hotels are the perfect choice for travelers seeking unforgettable experiences.
+        </p>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {results.map((hotel) => (
             <HotelItem key={hotel.id} hotel={hotel} />
