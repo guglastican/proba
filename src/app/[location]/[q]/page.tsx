@@ -81,7 +81,7 @@ export default async function Page({ params }: PageProps) {
       <Header q={qDecoded} location={locationDecoded} />
       <main className="container mx-auto space-y-8 px-4 py-8">
         <h1 className="text-center text-3xl font-bold">
-          Top {results.length} {qDecoded} near {locationDecoded}
+          Top {results.length} {qDecoded} in {locationDecoded}
         </h1>
         <p id="overview" className="text-center text-lg text-gray-600 mt-4">
         Experience the best of {locationDecoded} by staying at one of our top {results.length} hotels featuring private balconies. Discover other amazing options like {generateRelatedLinks(locationDecoded)}. Enjoy breathtaking ocean views, vibrant cityscapes, or serene retreats, all while indulging in the ultimate comfort and scenic beauty. Book your dream getaway today and discover why these hotels are the perfect choice for travelers seeking unforgettable experiences.

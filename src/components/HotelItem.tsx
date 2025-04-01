@@ -38,7 +38,7 @@ export default function HotelItem({ hotel }: HotelItemProps) {
       </div>
       
       <CardContent className="p-4">
-        <h3 className="text-xl font-bold mb-1" itemProp="name">{hotel.name}</h3>
+        <h2 className="text-xl font-bold mb-1" itemProp="name">{hotel.name}</h2>
         
         <div className="flex items-center text-gray-500 mb-2">
           <MapPin className="h-4 w-4 mr-1 flex-shrink-0" />
