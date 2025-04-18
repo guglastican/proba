@@ -45,6 +45,7 @@ export default function Home() {
     { name: "New York, NY", hotels: 28, description: "Luxurious hot tub getaways in the iconic city that never sleeps" },
     { name: "Chicago, IL", hotels: 28, description: "Urban hot tub getaways in a timeless, bustling cosmopolitan hub" },
     { name: "London", hotels: 28, description: "Urban hot tub getaways in a timeless, bustling cosmopolitan hub" },
+    { name: "Atlanta", hotels: 8, description: "Indulge in ultimate relaxation with a soothing hot tub experience. " },
   ];
 
   const features = [
