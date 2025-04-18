@@ -633,8 +633,119 @@ const hotels: Hotel[] = [
     reviews: 1004,
     tags: ["hotels with jacuzzi in room​", "Hot Tub"],
     link: "https://expedia.com/affiliates/new-york-hotels-hyatt-centric-wall-street-new-york.jDCsGAV"
-  }
-
+  },
+  {
+    id: 43, // Extracted from the URL fragment ".h3348."
+    name: "Hilton Suites Atlanta Perimeter",
+    image: "https://images.trvl-media.com/lodging/1000000/10000/3400/3348/8fc8030f.jpg?impolicy=resizecrop&rw=1200&ra=fit", // Using the first image provided (Reception)
+    rating: 3.5, // Explicitly stated as "3.5 star property"
+    price: "139", 
+    address: "6120 Peachtree Dunwoody Rd Ne, Atlanta, GA, 30328",
+    description: "The Hilton Atlanta Perimeter Suites, located in Atlanta’s premier business district near Perimeter Mall and Dunwoody MARTA station, offers spacious two-room suites with modern amenities, an Executive Lounge, and easy access to major highways, downtown, and the airport. Guests can enjoy an outdoor pool, fitness center, on-site dining, and a complimentary shuttle, with nearby attractions including Stone Mountain Park, the Georgia Aquarium, and Buckhead shopping.", // Summarized from "About this property"
+    hours: "24/7", // Assuming standard hotel front desk hours, though not explicitly stated
+    amenities: ["Restaurant", "Parking included", "Breakfast available", "Pool", "Bar", "Room service", "Premium bedding"], // Listed under "About this property" and inferred from image captions
+    reviews: 1261, // Number of reviews provided
+    tags: ["Hotel With Tub", "Hot Tub", "Spa"], // Derived from location and features
+    link: "https://expedia.com/affiliates/atlanta-hotels-hilton-suites-atlanta-perimeter.9z7rbAh" // Base URL for the hotel on Expedia
+  },
+  {
+    id: 44, // Extracted from the URL fragment ".h78356405."
+    name: "Kimpton Shane Hotel by IHG",
+    image: "https://images.trvl-media.com/lodging/79000000/78360000/78356500/78356405/f3dfe341.jpg", // Using the first image provided (Room)
+    rating: 4.0, // Explicitly stated as "4.0 star property"
+    price: "294", // Price information was not available in the provided text for the specified dates
+    address: "1340 W.Peachtree Street NW., Atlanta, GA, 30309",
+    description: "Immerse yourself in the vibrant culture of Midtown Atlanta at the brand-new Kimpton Shane Hotel. This stylish boutique hotel, nestled in the energetic Midtown Union neighborhood, captures the city's artistic spirit with its modern design and thoughtful details.", // Summarized from "About this property" and features
+    hours: "24/7", // Explicitly mentioned "24/7 front desk"
+    amenities: ["Restaurant", "Bars", "Breakfast available", "Pet friendly", "Gym", "Room service", "24/7 front desk", "Frette Italian sheets", "Premium bedding", "Pillowtop beds", "Minibar"], // Combined from "About this property" and image captions
+    reviews: 1100, // Number of reviews provided
+    tags: ["Hotel With Tub", "Hot Tub", "Spa"], // Derived from location, features, and VIP Access status
+    link: "https://expedia.com/affiliates/atlanta-hotels-kimpton-shane-hotel.E2njhtz" // Base URL for the hotel on Expedia
+  },
+  {
+    id: 45, // Extracted from the URL fragment ".h1889141."
+    name: "Waldorf Astoria Atlanta Buckhead",
+    image: "https://images.trvl-media.com/lodging/2000000/1890000/1889200/1889141/c01b8764.jpg", // Using the first image provided (Indoor pool)
+    rating: 5.0, // Explicitly stated as "5.0 star property"
+    price: "500", // Price information was not available in the provided text for the specified dates
+    address: "3376 Peachtree Rd Ne, Atlanta, GA, 30326",
+    description: "Indulge in tranquility at our on-site spa, featuring 13 treatment rooms, some designed for couples. 1  Experience a variety of massages including deep-tissue and hot stone, or enjoy in-room and prenatal options. Choose from aromatherapy, body scrubs, and detox wraps for ultimate rejuvenation. Enhance your relaxation with our steam room and sauna facilities", // Summarized from "About this property" and Spa details
+    hours: "24/7", // Assuming standard hotel hours; fitness center confirmed 24-hour
+    amenities: ["Full-service spa", "Indoor pool", "Restaurant", "Free WiFi", "24-hour fitness center", "Cooked-to-order breakfast available", "Valet parking available", "Sauna", "Steam room", "Hot tub", "Couples treatment rooms", "Meeting facility", "Lounge"], // Combined from "About this property", Spa details, and image captions
+    reviews: 751, // Number of reviews provided
+    tags: ["Hotel With Tub", "Hot Tub", "Spa"], // Derived from features, location, and description
+    link: "https://expedia.com/affiliates/atlanta-hotels-waldorf-astoria-atlanta-buckhead.EUuglQO" // Base URL for the hotel on Expedia
+  },
+  {
+    id: 46, // Extracted from the URL fragment ".h3412214."
+    name: "Loews Atlanta Hotel", // Name from heading and photo gallery title
+    image: "https://images.trvl-media.com/lodging/4000000/3420000/3412300/3412214/9fc2914b.jpg", // Using the first image provided (Exterior)
+    rating: 4.5, // Explicitly stated as "4.5 star property"
+    price: "280", // Price information was not available in the provided text for the specified dates (June 18-21, 2025)
+    address: "1065 Peachtree St NE, Atlanta, GA, 30309",
+    description: "Unwind and rejuvenate at the renowned Exhale Spa, located within the Loews Atlanta Hotel. While the hotel itself doesn't explicitly mention a hot tub, the Exhale Spa offers a comprehensive wellness experience. Guests can also enjoy the modern fitness center and yoga classes for a holistic approach to well-being. While a traditional hot tub might not be on-site, the extensive spa facilities at Loews Atlanta Hotel provide ample opportunities for warm, soothing relaxation.", // Summarized from "About this property" and location info
+    hours: "24/7", // Explicitly mentioned "24/7 front desk"
+    amenities: ["Full-service spa", "Health club", "Bar", "Room service", "Pet friendly", "Parking available", "24/7 front desk", "Egyptian cotton sheets", "Premium bedding", "Pillowtop beds", "Minibar"], // Combined from "About this property" and image captions
+    reviews: 1000, // Number of reviews provided
+    tags: ["Hotel With Tub", "Hot Tub", "Spa"], // Derived from features, location, and VIP Access status
+    link: "https://expedia.com/affiliates/atlanta-hotels-loews-atlanta-hotel.N8Dmvij" // Base URL for the hotel on Expedia
+  },
+  {
+    id: 47, // Extracted from the URL fragment ".h2452497."
+    name: "The St. Regis Atlanta", // Name from heading and photo gallery title
+    image: "https://images.trvl-media.com/lodging/3000000/2460000/2452500/2452497/3067f41c.jpg", // Using the first image provided (Exterior)
+    rating: 5.0, // Explicitly stated as "5.0 star property"
+    price: "732", // Price information was not available in the provided text for the specified dates (June 18-21, 2025)
+    address: "Eighty-Eight West Paces Ferry Road, Atlanta, GA, 30305",
+    description: "The St. Regis Atlanta offers both a dedicated, full-service luxury spa for treatments and pampering, and a beautiful outdoor Pool Piazza featuring a large swimming pool and an accompanying hot tub/whirlpool for guests to relax and enjoy. Access to the pool and hot tub is generally complimentary for hotel guests, while spa treatments require advance booking and are charged separately.", // Summarized from "About this property" and location info
+    hours: "24/7", // Assuming standard hotel hours; health club confirmed 24-hour
+    amenities: ["Full-service spa", "Outdoor pool", "American restaurant", "Free WiFi", "24-hour health club", "Continental breakfast available", "Self-parking available", "Couples spa treatment rooms", "Hot stone massages", "Manicures and pedicures", "Frette Italian sheets", "Premium bedding", "Pillowtop beds", "Minibar"], // Combined from "About this property", Spa details, and image captions
+    reviews: 205, // Number of reviews provided
+    tags: ["Hotel With Tub", "Hot Tub", "Spa"], // Derived from features, location, and description
+    link: "https://expedia.com/affiliates/atlanta-hotels-the-st-regis-atlanta.z3Zi7rW" // Base URL for the hotel on Expedia
+  },
+  {
+    id: 48, // Extracted from the URL fragment ".h20315."
+    name: "Hyatt Centric Midtown Atlanta", // Name from heading and photo gallery title
+    image: "https://images.trvl-media.com/lodging/1000000/30000/20400/20315/a2d7e43f.jpg", // Using the first image provided (Reception)
+    rating: 4.0, // Explicitly stated as "4.0 star property"
+    price: "1087", // Price information was not available in the provided text for the specified dates (June 18-21, 2025)
+    address: "125 10th Street NE, Atlanta, GA, 30309",
+    description: "Discover the vibrant energy of Atlanta from the perfect home base at Hyatt Centric Midtown Atlanta. Located in the city's cultural epicenter, this modern hotel places you steps away from world-class attractions, thriving nightlife, beautiful green spaces, and dynamic business hubs.", // Summarized from "About this property" and location info
+    hours: "24/7", // Explicitly mentioned "24/7 front desk" and "24-hour fitness center"
+    amenities: ["Indoor pool", "Restaurant", "Breakfast available", "Bar", "24/7 front desk", "Parking available", "24-hour fitness center", "Premium bedding", "Pillowtop beds", "In-room safe"], // Combined from "About this property" and image captions
+    reviews: 1001, // Number of reviews provided
+    tags: ["Hotel With Tub", "Hot Tub", "Spa"], // Derived from features and location
+    link: "https://expedia.com/affiliates/atlanta-hotels-hyatt-centric-midtown-atlanta.Qm8NYZi" // Base URL for the hotel on Expedia
+  },
+  {
+    id: 49, // Extracted from the URL fragment ".h3219."
+    name: "Grand Hyatt Atlanta in Buckhead",
+    image: "https://images.trvl-media.com/lodging/1000000/10000/3300/3219/b616be33.jpg", // Using the first image provided (Exterior)
+    rating: 4.5, // Explicitly stated as "4.5 star property"
+    price: "389", // Price information was not available in the provided text for the specified dates (June 18-21, 2025)
+    address: "3300 Peachtree Road NE, Atlanta, GA, 30305",
+    description: "4.5-star luxury VIP Access hotel in Buckhead offering 2 restaurants, a seasonal outdoor pool, spa, bar, and area shuttle service. Situated within walking distance of Lenox Square.", // Summarized from "About this property" and location info
+    hours: "24/7", // Assuming standard hotel front desk hours, although not explicitly stated
+    amenities: ["2 Restaurants", "Seasonal outdoor pool", "Spa", "Bar", "Area shuttle service", "Breakfast available", "Housekeeping", "Premium bedding", "Down comforters", "Pillowtop beds", "In-room safe"], // Combined from "About this property" and image captions
+    reviews: 1002, // Number of reviews provided
+    tags: ["Hotel With Tub", "Hot Tub", "Spa", "Bathtub"], // Derived from features, location, and VIP Access status
+    link: "https://expedia.com/affiliates/atlanta-hotels-grand-hyatt-atlanta-in-buckhead.2cZB6Mb" // Base URL for the hotel on Expedia
+  },
+  {
+    id: 50, // Extracted from the URL fragment ".h1152203."
+    name: "InterContinental Buckhead Atlanta by IHG", // Name from heading and photo gallery title
+    image: "https://images.trvl-media.com/lodging/2000000/1160000/1152300/1152203/b4d295cf.jpg", // Using the first image provided (View from room)
+    rating: 5.0, // Explicitly stated as "5.0 star property"
+    price: "340", // Price information was not available in the provided text for the specified dates (June 18-21, 2025)
+    address: "3315 Peachtree Rd Ne, Atlanta, GA, 30326",
+    description: "Indulge in ultimate relaxation at the InterContinental Buckhead Atlanta with a soothing hot tub experience. Located on the hotel’s stunning rooftop, the heated saltwater whirlpool offers a serene escape with breathtaking views of the Buckhead skyline. Whether unwinding after a day of exploring Atlanta or easing tired muscles from business meetings, the hot tub provides the perfect retreat. Open seasonally, the rooftop pool and whirlpool area features plush lounge seating, cabanas, and attentive poolside service—making it an ideal spot for both intimate moments and leisurely afternoons.", // Summarized from "About this property", Spa details, and location info
+    hours: "24/7", // Assuming standard hotel hours; health club confirmed 24-hour
+    amenities: ["Full-service spa", "Hot Tub", "Pool", "Bar", "24-hour health club", "Breakfast available", "Pet friendly", "In-room massages", "Body treatments", "Body scrubs", "Body wraps", "Facials", "Egyptian cotton sheets", "Premium bedding", "Minibar", "In-room safe"], // Combined from "About this property", Spa details, and image captions
+    reviews: 1001, // Number of reviews provided
+    tags: ["Luxury", "Spa", "Hotel", "Atlanta", "Buckhead", "Outdoor Pool", "Hot Tub", "Pet Friendly", "Health Club", "VIP Access"], // Derived from features, location, VIP Access status, and search context (Hot Tub)
+    link: "https://expedia.com/affiliates/atlanta-hotels-intercontinental-buckhead-atlanta.nnzWgd9" // Base URL for the hotel on Expedia
+  },
 
 ];
 
@@ -660,7 +771,7 @@ export async function searchHotels(q: string, location: string) {
     .sort((a, b) => b.rating - a.rating);
 }
 
-export const locations = ["San Francisco, CA", "Chicago, IL", "Miami, FL", "New York, NY", "London"];
+export const locations = ["San Francisco, CA", "Chicago, IL", "Miami, FL", "New York, NY", "London", "Atlanta"];
 
 export async function getAllTags({ limit }: { limit?: number } = {}) {
   await new Promise((resolve) => setTimeout(resolve, 1500));
