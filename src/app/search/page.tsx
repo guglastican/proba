@@ -22,8 +22,9 @@ export async function generateMetadata({ searchParams }: PageProps): Promise<Met
     location,
   }).toString();
 
-  // Construct the canonical URL
-  const canonicalUrl = `${baseUrl}/search?${queryParams}`;
+  // Construct the canonical URL - Ensure no double slash if baseUrl ends with /
+  const searchPath = 'search';
+  const canonicalUrl = `${baseUrl.endsWith('/') ? baseUrl : baseUrl + '/'}${searchPath}?${queryParams}`;
 
   return {
     title: `${q ? `Best ${q}` : 'Best'} in ${location}`,
