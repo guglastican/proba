@@ -28,7 +28,7 @@ export default function NotFound() {
           Redirecting to homepage shortly...
         </p>
         <Link 
-          href="/" 
+          href="https://www.romantic-vacations-destinations.com/" 
           className="inline-block bg-primary text-white px-6 py-3 rounded-md hover:bg-primary/90 transition-colors"
         >
           Return to Homepage Now
