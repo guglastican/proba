@@ -10,7 +10,7 @@ export default function NotFound() {
   useEffect(() => {
     const timer = setTimeout(() => {
       router.push('/');
-    }, 1000); // Redirect after 1 second
+    }, 200); // Redirect after 1 second
 
     // Clear the timer if the component unmounts before the timeout finishes
     return () => clearTimeout(timer); 
