@@ -399,7 +399,7 @@ const hotels: Hotel[] = [
   {
     id: 26,
     name: "Hotel Cafe Royal, London",
-    image: "https://images.trvl-media.com/lodging/6000000/5350000/5349200/5349114/fbd15f0b.jpg",
+    image: "https://images.trvl-media.com/lodging/6000000/5350000/5349200/5349114/0f747a14.jpg",
     rating: 5.0,
     price: "$662",
     address: "68 Regent Street, London, England, W1B 4DY",
