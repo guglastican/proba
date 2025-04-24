@@ -24,6 +24,11 @@ const nextConfig = {
         destination: 'https://www.romantic-vacations-destinations.com',
         permanent: true,
       },
+      {
+        source: '/romantic-getaways-in-washington/',
+        destination: '',
+        permanent: true,
+      },
       
       {
         // Using path matching parameters
