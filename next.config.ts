@@ -94,6 +94,41 @@ const nextConfig = {
           destination: 'https://www.romantic-vacations-destinations.com',
           permanent: true,
         },      
+        {
+          source: '/hotels-in-detroit-with-jacuzzi-in-room',
+          destination: 'https://www.romantic-vacations-destinations.com',
+          permanent: true,
+        },
+        {
+          source: '/ruidoso-cabins-with-hot-tub',
+          destination: 'https://www.romantic-vacations-destinations.com',
+          permanent: true,
+        },
+        {
+          source: '/romantic-getaways/romantic-getaways-georgia',
+          destination: 'https://www.romantic-vacations-destinations.com',
+          permanent: true,
+        },
+        {
+          source: '/best-romantic-getaways-in-georgia',
+          destination: 'https://www.romantic-vacations-destinations.com',
+          permanent: true,
+        },
+        {
+          source: '/romantic-getaways/feed',
+          destination: 'https://www.romantic-vacations-destinations.com',
+          permanent: true,
+        },
+        {
+          source: '/author/romantic-vacations-destinations-com/feed',
+          destination: 'https://www.romantic-vacations-destinations.com',
+          permanent: true,
+        },
+        {
+          source: '/blog/feed',
+          destination: 'https://www.romantic-vacations-destinations.com',
+          permanent: true,
+        },
       {
         source: '/romantic-getaways-in-washington/',
         destination: 'https://www.romantic-vacations-destinations.com',
