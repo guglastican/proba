@@ -96,7 +96,7 @@ const nextConfig = {
         },      
       {
         source: '/romantic-getaways-in-washington/',
-        destination: '/',
+        destination: 'https://www.romantic-vacations-destinations.com',
         permanent: true,
       },
       
