@@ -20,9 +20,8 @@ const nextConfig = {
         permanent: true,
       },
       {
-        // Source: https://romantic-vacations-destinations.com/romantic-getaways-in-eureka-springs-arkansas/
-        source: '/romantic-getaways-in-eureka-springs-arkansas/',
-        destination: '/', // Redirecting to homepage
+        source: '/romantic-getaways-in-eureka-springs-arkansas',
+        destination: '',
         permanent: true,
       },
       {
