@@ -24,6 +24,76 @@ const nextConfig = {
         destination: 'https://www.romantic-vacations-destinations.com',
         permanent: true,
       },
+        {
+          source: '/hotels-with-jacuzzi-in-room-tucson',
+          destination: 'https://www.romantic-vacations-destinations.com',
+          permanent: true,
+        },
+        {
+          source: '/romantic-getaways-in-georgia-with-hot-tub',
+          destination: 'https://www.romantic-vacations-destinations.com',
+          permanent: true,
+        },
+        {
+          source: '/romantic-getaways-ontario',
+          destination: 'https://www.romantic-vacations-destinations.com',
+          permanent: true,
+        },
+        {
+          source: '/search/{search_term_string}/feed/rss2',
+          destination: 'https://www.romantic-vacations-destinations.com',
+          permanent: true,
+        },
+        {
+          source: '/blog/page/2',
+          destination: 'https://www.romantic-vacations-destinations.com',
+          permanent: true,
+        },
+        {
+          source: '/yankee-stadium',
+          destination: 'https://www.romantic-vacations-destinations.com',
+          permanent: true,
+        },
+        {
+          source: '/tips-to-spend-your-leisure-in-summer',
+          destination: 'https://www.romantic-vacations-destinations.com',
+          permanent: true,
+        },
+        {
+          source: '/hotel-with-jacuzzi-in-room-tulsa',
+          destination: 'https://www.romantic-vacations-destinations.com',
+          permanent: true,
+        },
+        {
+          source: '/traverse-city-hotels-with-jacuzzi-in-room',
+          destination: 'https://www.romantic-vacations-destinations.com',
+          permanent: true,
+        },
+        {
+          source: '/romantic-getaways-in-washington',
+          destination: 'https://www.romantic-vacations-destinations.com',
+          permanent: true,
+        },
+        {
+          source: '/romantic-picnic-ideas',
+          destination: 'https://www.romantic-vacations-destinations.com',
+          permanent: true,
+        },
+        {
+          source: '/safety-tips-for-travellers',
+          destination: 'https://www.romantic-vacations-destinations.com',
+          permanent: true,
+        },
+        {
+          source: '/oklahoma',
+          destination: 'https://www.romantic-vacations-destinations.com',
+          permanent: true,
+        },
+        {
+          source: '/bronx-zoo',
+          destination: 'https://www.romantic-vacations-destinations.com',
+          permanent: true,
+        },      
       {
         source: '/romantic-getaways-in-washington/',
         destination: '/',
