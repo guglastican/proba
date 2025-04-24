@@ -10,7 +10,7 @@ export default function NotFound() {
   useEffect(() => {
     const timer = setTimeout(() => {
       router.push('/');
-    }, 50); // Redirect after 1 second
+    }, 400); // Redirect after 1 second
 
     // Clear the timer if the component unmounts before the timeout finishes
     return () => clearTimeout(timer); 
@@ -28,7 +28,7 @@ export default function NotFound() {
           Redirecting to homepage shortly...
         </p>
         <Link 
-          href="https://www.romantic-vacations-destinations.com/" 
+          href="https://www.romantic-vacations-destinations.com" 
           className="inline-block bg-primary text-white px-6 py-3 rounded-md hover:bg-primary/90 transition-colors"
         >
           Return to Homepage Now
