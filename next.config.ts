@@ -26,7 +26,7 @@ const nextConfig = {
       },
       {
         source: '/romantic-getaways-in-washington/',
-        destination: ' ',
+        destination: '/',
         permanent: true,
       },
       
