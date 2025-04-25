@@ -43,9 +43,10 @@ export default function Home() {
     { name: "Miami, FL", hotels: 35, description: "Tropical hot tub escapes in the Sunshine State" },
     { name: "Las Vegas, NV", hotels: 50, description: "Luxurious hot tub experiences in the Entertainment Capital" },
     { name: "New York, NY", hotels: 28, description: "Luxurious hot tub getaways in the iconic city that never sleeps" },
-    { name: "Chicago, IL", hotels: 28, description: "Urban hot tub getaways in a timeless, bustling cosmopolitan hub" },
+    { name: "Chicago, IL", hotels: 28, description: "Experience pure bliss and unwind completely in our luxurious hot tub." },
     { name: "London", hotels: 28, description: "Urban hot tub getaways in a timeless, bustling cosmopolitan hub" },
     { name: "Atlanta", hotels: 8, description: "Indulge in ultimate relaxation with a soothing hot tub experience. " },
+    { name: "Indianapolis", hotels: 3, description: "Sink into tranquility and let the stresses melt away in the warm, bubbling hot tub." },
   ];
 
   const features = [

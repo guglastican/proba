@@ -743,9 +743,51 @@ const hotels: Hotel[] = [
     hours: "24/7", // Assuming standard hotel hours; health club confirmed 24-hour
     amenities: ["Full-service spa", "Hot Tub", "Pool", "Bar", "24-hour health club", "Breakfast available", "Pet friendly", "In-room massages", "Body treatments", "Body scrubs", "Body wraps", "Facials", "Egyptian cotton sheets", "Premium bedding", "Minibar", "In-room safe"], // Combined from "About this property", Spa details, and image captions
     reviews: 1001, // Number of reviews provided
-    tags: ["Luxury", "Spa", "Hotel", "Atlanta", "Buckhead", "Outdoor Pool", "Hot Tub", "Pet Friendly", "Health Club", "VIP Access"], // Derived from features, location, VIP Access status, and search context (Hot Tub)
+    tags: ["Hotel With Tub", "Hot Tub", "Spa"], // Derived from features, location, VIP Access status, and search context (Hot Tub)
     link: "https://expedia.com/affiliates/atlanta-hotels-intercontinental-buckhead-atlanta.nnzWgd9" // Base URL for the hotel on Expedia
   },
+  {
+    id: 51,
+    name: "Conrad Indianapolis",
+    image: "https://images.trvl-media.com/lodging/2000000/1290000/1287500/1287480/00318f88.jpg",
+    rating: 5.0,
+    price: "512",
+    address: "50 W Washington St, Indianapolis, IN 46204",
+    description: "Experience unparalleled luxury in the heart of downtown Indianapolis at the Conrad Indianapolis, seamlessly connected via skywalk to the city's key attractions. Immerse yourself in an art-inspired ambiance featuring a curated gallery, alongside refined amenities including a full-service spa and indoor pool. Indulge in exquisite dining and sophisticated surroundings for a truly memorable stay.",
+    hours: "Not specified",
+    reviews: 1001,
+    tags: ["Spa", "Indoor Pool", "Hot Tub"],
+    amenities: ["Indoor pool", "Full-service spa", "Hot Tub", "Fine-dining restaurant", "Free WiFi"],
+    link: "https://expedia.com/affiliates/indianapolis-hotels-conrad-indianapolis.hR9ux4X"
+   },
+   {
+    id: 52,
+    name: "Fairfield Inn and Suites by Marriott Indianapolis East",
+    image: "https://images.trvl-media.com/lodging/1000000/790000/789200/789172/4610326d.jpg",
+    rating: 3.5,
+    price: "211",
+    address: "7110 E 21st St, Indianapolis, IN 46219",
+    description: "Conveniently located off I-70 with easy access to downtown Indianapolis attractions, the Fairfield Inn & Suites Indianapolis East offers a comfortable stay. Guests can enjoy complimentary breakfast, an indoor pool, and a fitness center. The hotel provides a welcoming atmosphere with helpful staff and essential amenities for both business and leisure travelers.",
+    hours: "Not specified",
+    reviews: 797,
+    tags: ["Indoor Pool", "Hot Tub"],
+    amenities: ["Indoor pool", "Hot tub", "Free WiFi", "Free breakfast", "Fitness center"],
+    link: "https://expedia.com/affiliates/indianapolis-hotels-fairfield-inn-and-suites-by-marriott-indianapolis-east.E9YkYf5"
+   },
+   {
+    id: 53,
+    name: "Drury Inn & Suites Indianapolis Northeast",
+    image: "https://images.trvl-media.com/lodging/3000000/2010000/2005100/2005046/69295b69.jpg",
+    rating: 3.0,
+    price: "211",
+    address: "8180 N Shadeland Ave, Indianapolis, IN 46250",
+    description: "Enjoy a convenient stay at the Drury Inn & Suites Indianapolis Northeast, offering easy access to the interstate and local attractions. Guests can take advantage of generous free amenities including a hot breakfast and the evening 5:30 Kickback with hot food and cold beverages. Relax and unwind in the indoor/outdoor pools and hot tub or utilize the 24-hour fitness center.",
+    hours: "Not specified",
+    reviews: 1002,
+    tags: ["Indoor Pool", "Outdoor Pool", "Hot Tub"],
+    amenities: ["Hot Tub", "Indoor pool", "Outdoor pool", "Spa"],
+    link: "https://expedia.com/affiliates/indianapolis-hotels-drury-inn-suites-indianapolis-northeast.g3PZW86"
+   },
 
 ];
 
@@ -771,7 +813,7 @@ export async function searchHotels(q: string, location: string) {
     .sort((a, b) => b.rating - a.rating);
 }
 
-export const locations = ["San Francisco, CA", "Chicago, IL", "Miami, FL", "New York, NY", "London", "Atlanta"];
+export const locations = ["San Francisco, CA", "Chicago, IL", "Miami, FL", "New York, NY", "London", "Atlanta", "Indianapolis, IN"];
 
 export async function getAllTags({ limit }: { limit?: number } = {}) {
   await new Promise((resolve) => setTimeout(resolve, 1500));
