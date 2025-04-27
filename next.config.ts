@@ -134,7 +134,16 @@ const nextConfig = {
         destination: 'https://www.romantic-vacations-destinations.com',
         permanent: true,
       },
-      
+      {
+        source: '/hotels-in-the-bronx-with-jacuzzi/',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
+        source: '/new-mexico/',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
       {
         // Using path matching parameters
         source: '/blog/:slug',
