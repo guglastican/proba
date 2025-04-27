@@ -135,12 +135,12 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/hotels-in-the-bronx-with-jacuzzi/',
+        source: '/hotels-in-the-bronx-with-jacuzzi',
         destination: 'https://www.romantic-vacations-destinations.com',
         permanent: true,
       },
       {
-        source: '/new-mexico/',
+        source: '/new-mexico',
         destination: 'https://www.romantic-vacations-destinations.com',
         permanent: true,
       },
