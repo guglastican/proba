@@ -145,6 +145,31 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/search/%7Bsearch_term_string%7D/feed/rss2',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
+        source: '/arizona/hotels-with-jacuzzi-in-room-tucson/',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
+        source: '/michigan/traverse-city-hotels-with-jacuzzi-in-room/',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
+        source: '/romantic-getaways-in-eureka-springs-arkansas/',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
+        source: '/indiana/hotel-with-jacuzzi-in-room-south-bend/',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
         // Using path matching parameters
         source: '/blog/:slug',
         destination: '/articles/:slug',
