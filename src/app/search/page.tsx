@@ -67,8 +67,17 @@ async function Results({ q, location }: ResultsProps) {
         Showing {results.length} results for {`"${q}"`} near {location}
      </p>
     <h1 className="text-center text-3xl font-bold">
-      {results.length} Best {results.length === 1 ? 'Hotel' : 'Hotels'} With {`"${q}"`} in {location}
+      {results.length} Best {q} in {location}
     </h1>
+    
+      <p className="font-regular">
+      Dive into our carefully curated selection and discover top-rated hotels, motels, and resorts that offer the pinnacle of relaxation. Don't just fantasize about soaking away your stress in calming, bubbling waters; make it your reality.
+      Our intuitive search functionality allows you to effortlessly filter through numerous "hotels with hot tubs near me", ensuring you pinpoint the perfect sanctuary among the excellent choices available in {location}. If you find yourself searching online for "hotels with hot tubs near me" specifically in the {location} area, your search ends here! We are dedicated to connecting travelers like you with the perfect accommodation that includes this luxurious amenity.
+      </p>
+      <p>
+      We understand that finding that special feature, like an in-room Jacuzzi or a readily accessible hot tub, can truly elevate your travel experience from standard to exceptional. That's precisely why our platform focuses on highlighting properties renowned for these highly sought-after comforts. Currently, our database proudly features {results.length} outstanding options matching your specific search for {q} right here in beautiful {location}.
+     </p>
+
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {results.map((hotel) => (
           <HotelItem key={hotel.id} hotel={hotel} />
