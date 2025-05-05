@@ -27,7 +27,7 @@ export default function LocationInput({
   defaultValue,
 }: LocationInputProps) {
   const [open, setOpen] = useState(false);
-  const [input, setInput] = useState(defaultValue);
+  const [input, setInput] = useState(defaultValue || "");
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
