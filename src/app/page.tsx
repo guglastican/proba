@@ -39,14 +39,54 @@ export const metadata: Metadata = {
 
 export default function Home() {
   const featuredLocations = [
-    { name: "San Francisco, CA", hotels: 42, description: "Discover stunning hot tub hotels with Bay Area views" },
-    { name: "Miami, FL", hotels: 35, description: "Tropical hot tub escapes in the Sunshine State" },
-    { name: "Las Vegas, NV", hotels: 50, description: "Luxurious hot tub experiences in the Entertainment Capital" },
-    { name: "New York, NY", hotels: 28, description: "Luxurious hot tub getaways in the iconic city that never sleeps" },
-    { name: "Chicago, IL", hotels: 28, description: "Experience pure bliss and unwind completely in our luxurious hot tub." },
-    { name: "London", hotels: 28, description: "Urban hot tub getaways in a timeless, bustling cosmopolitan hub" },
-    { name: "Atlanta, GA", hotels: 8, description: "Indulge in ultimate relaxation with a soothing hot tub experience. " },
-    { name: "Indianapolis, IN", hotels: 3, description: "Sink into tranquility and let the stresses melt away in the warm, bubbling hot tub." },
+    { 
+      name: "San Francisco, CA", 
+      hotels: 42, 
+      description: "Discover stunning hot tub hotels with Bay Area views",
+      url: "/search?q=Hotels+With+Hot+Tub+in+Room&location=San+Francisco%2C+CA" 
+    },
+    { 
+      name: "Miami, FL", 
+      hotels: 35, 
+      description: "Tropical hot tub escapes in the Sunshine State",
+      url: "/search?q=Hotels+With+Hot+Tub+in+Room&location=Miami%2C+FL" 
+    },
+    { 
+      name: "Las Vegas, NV", 
+      hotels: 50, 
+      description: "Luxurious hot tub experiences in the Entertainment Capital",
+      url: "/search?q=Hotels+With+Hot+Tub+in+Room&location=Las+Vegas%2C+NV" 
+    },
+    { 
+      name: "New York, NY", 
+      hotels: 28, 
+      description: "Luxurious hot tub getaways in the iconic city that never sleeps",
+      url: "/search?q=Hotels+With+Hot+Tub+in+Room&location=New+York%2C+NY" 
+    },
+    { 
+      name: "Chicago, IL", 
+      hotels: 28, 
+      description: "Experience pure bliss and unwind completely in our luxurious hot tub.",
+      url: "/search?q=Hotels+With+Hot+Tub+in+Room&location=Chicago%2C+IL" 
+    },
+    { 
+      name: "London", 
+      hotels: 28, 
+      description: "Urban hot tub getaways in a timeless, bustling cosmopolitan hub",
+      url: "/search?q=Hotels+With+Hot+Tub+in+Room&location=London" 
+    },
+    { 
+      name: "Atlanta, GA", 
+      hotels: 8, 
+      description: "Indulge in ultimate relaxation with a soothing hot tub experience. ",
+      url: "/search?q=Hotels+With+Hot+Tub+in+Room&location=Atlanta%2C+GA" 
+    },
+    { 
+      name: "Indianapolis, IN", 
+      hotels: 3, 
+      description: "Sink into tranquility and let the stresses melt away in the warm, bubbling hot tub.",
+      url: "/search?q=Hotels+With+Hot+Tub+in+Room&location=Indianapolis%2C+IN" 
+    },
   ];
 
   const features = [
@@ -89,7 +129,7 @@ export default function Home() {
               {featuredLocations.map((location) => (
                 <Link 
                   key={location.name} 
-                  href={`/${encodeURIComponent(location.name)}/hot%20tub`}
+                  href={location.url}
                   className="bg-gray-100 rounded-lg p-6 text-center hover:bg-gray-200 transition-colors group"
                 >
                   <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
