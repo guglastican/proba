@@ -33,12 +33,15 @@ export async function generateMetadata({
   const locationDecoded = decodeURIComponent(location);
   const results = await getHotels(qDecoded, locationDecoded);
 
-  // Encode URL components properly
-  const formattedLocation = encodeURIComponent(locationDecoded);
-  const formattedQ = encodeURIComponent(qDecoded);
+  // For canonical URL, use lowercase versions before encoding
+  const canonicalLocationDecoded = locationDecoded.toLowerCase();
+  const canonicalQDecoded = qDecoded.toLowerCase();
+
+  const formattedCanonicalLocation = encodeURIComponent(canonicalLocationDecoded);
+  const formattedCanonicalQ = encodeURIComponent(canonicalQDecoded);
 
   // Generate canonical URL with correct encoding
-  const canonicalUrl = `https://www.romantic-vacations-destinations.com/${formattedLocation}/${formattedQ}`;
+  const canonicalUrl = `https://www.romantic-vacations-destinations.com/${formattedCanonicalLocation}/${formattedCanonicalQ}`;
 
   return {
     title: `Best ${results.length} ${qDecoded} near ${locationDecoded}`,
