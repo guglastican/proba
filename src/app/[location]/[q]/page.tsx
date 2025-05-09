@@ -59,7 +59,7 @@ function generateRelatedLinks(location: string) {
   
   // Create the URL-friendly versions of the location and tag
   // Using encodeURIComponent to ensure consistency with canonical URLs
-  const formattedLocation = encodeURIComponent(location); // location is already lowercased from params
+  const formattedLocation = encodeURIComponent(location.toLowerCase()); // Ensure location is lowercased
   const formattedTag = encodeURIComponent(popularTag.toLowerCase()); // Ensure popularTag is lowercased
   
   // Return the JSX for the link with the #overview anchor
