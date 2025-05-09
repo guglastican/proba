@@ -16,8 +16,8 @@ export async function generateStaticParams() {
   return allTags
     .map((tag) =>
       locations.map((location) => ({
-        location,
-        q: tag,
+        location: location.toLowerCase(),
+        q: tag.toLowerCase(),
       })),
     )
     .flat();
@@ -41,7 +41,7 @@ export async function generateMetadata({
   const canonicalUrl = `https://www.romantic-vacations-destinations.com/${formattedLocation}/${formattedQ}`;
 
   return {
-    title: `Best ${results.length} ${qDecoded} near ${locationDecoded} - Updated ${new Date().getFullYear()}`,
+    title: `Best ${results.length} ${qDecoded} near ${locationDecoded}`,
     description: `Find the best hotels with ${qDecoded} near ${locationDecoded}. Book your stay today and enjoy the ultimate getaway experience.`,
     alternates: {
       canonical: canonicalUrl,
@@ -56,8 +56,8 @@ function generateRelatedLinks(location: string) {
   
   // Create the URL-friendly versions of the location and tag
   // Using encodeURIComponent to ensure consistency with canonical URLs
-  const formattedLocation = encodeURIComponent(location);
-  const formattedTag = encodeURIComponent(popularTag);
+  const formattedLocation = encodeURIComponent(location); // location is already lowercased from params
+  const formattedTag = encodeURIComponent(popularTag.toLowerCase()); // Ensure popularTag is lowercased
   
   // Return the JSX for the link with the #overview anchor
   return (
