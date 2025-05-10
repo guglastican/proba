@@ -1,10 +1,9 @@
 import Header from "@/components/Header";
-import HotelItem from "@/components/HotelItem";
-import { getAllTags, locations, searchHotels, Hotel } from "@/data/hotels";
+import { getAllTags, locations, Hotel, searchHotels } from "@/data/hotels";
 import { Metadata } from "next";
 import { cache } from "react";
-import { useEffect, useState } from 'react';
 import CanonicalUrl from "@/components/CanonicalUrl";
+import HotelList from "@/components/HotelList";
 
 interface PageProps {
   params: { location: string; q: string };
@@ -28,8 +27,6 @@ export async function generateStaticParams() {
     .flat();
 }
 
-const getHotels = cache(searchHotels);
-
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
@@ -38,27 +35,19 @@ export async function generateMetadata({
   const qDecoded = decodeURIComponent(q);
   const locationDecoded = decodeURIComponent(location);
 
-  const results = await getHotels(qDecoded, locationDecoded);
+  const results = await searchHotels(qDecoded, locationDecoded);
 
   return {
-    title: `Top ${results.length} ${qDecoded} in ${locationDecoded}`,
-    description: `Find the best ${qDecoded} in ${locationDecoded}`,
+    title: `Top ${results.length} hotels in ${locationDecoded}`,
+    description: `Find the best hotels in ${locationDecoded}`,
   };
 }
 
 export default function Page({ params }: PageProps) {
   const { q, location } = params;
+
   const qDecoded = decodeURIComponent(q);
   const locationDecoded = decodeURIComponent(location);
-  const [results, setResults] = useState<Hotel[]>([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const hotels = await getHotels(qDecoded, locationDecoded);
-      setResults(hotels || []);
-    };
-    fetchData();
-  }, [qDecoded, locationDecoded]);
 
   return (
     <div>
@@ -66,13 +55,9 @@ export default function Page({ params }: PageProps) {
       <Header q={qDecoded} location={locationDecoded} />
       <main className="container mx-auto space-y-8 px-4 py-8">
         <h1 className="text-center text-3xl font-bold">
-          Top {results.length} {qDecoded} in {locationDecoded}
+          Top hotels in {locationDecoded}
         </h1>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {results.map((hotel) => (
-            <HotelItem key={hotel.id} hotel={hotel} />
-          ))}
-        </div>
+        <HotelList q={qDecoded} location={locationDecoded} />
       </main>
     </div>
   );
