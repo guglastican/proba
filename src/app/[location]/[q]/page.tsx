@@ -1,12 +1,10 @@
-"use client";
-
 import Header from "@/components/Header";
 import HotelItem from "@/components/HotelItem";
 import { getAllTags, locations, searchHotels, Hotel } from "@/data/hotels";
 import { Metadata } from "next";
 import { cache } from "react";
-import { useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import CanonicalUrl from "@/components/CanonicalUrl";
 
 interface PageProps {
   params: { location: string; q: string };
@@ -50,24 +48,6 @@ export async function generateMetadata({
 
 export default function Page({ params }: PageProps) {
   const { q, location } = params;
-  const searchParams = useSearchParams();
-
-  useEffect(() => {
-    const removeUtmParams = (url: string) => {
-      const urlObj = new URL(url);
-      urlObj.searchParams.delete('utm_source');
-      urlObj.searchParams.delete('utm_medium');
-      urlObj.searchParams.delete('utm_campaign');
-      urlObj.searchParams.delete('utm_term');
-      urlObj.searchParams.delete('utm_content');
-      return urlObj.toString();
-    };
-
-    const baseUrl = `${location}/${q}`;
-    const canonicalUrl = removeUtmParams(`${baseUrl}?${searchParams.toString()}`);
-    console.log("Canonical URL:", canonicalUrl);
-  }, [q, location, searchParams]);
-
   const qDecoded = decodeURIComponent(q);
   const locationDecoded = decodeURIComponent(location);
   const [results, setResults] = useState<Hotel[]>([]);
@@ -82,6 +62,7 @@ export default function Page({ params }: PageProps) {
 
   return (
     <div>
+      <CanonicalUrl location={location} q={q} />
       <Header q={qDecoded} location={locationDecoded} />
       <main className="container mx-auto space-y-8 px-4 py-8">
         <h1 className="text-center text-3xl font-bold">
