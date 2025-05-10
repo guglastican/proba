@@ -1,12 +1,11 @@
 import Header from "@/components/Header";
-import { getAllTags, locations, Hotel, searchHotels } from "@/data/hotels";
+import HotelItem from "@/components/HotelItem";
+import { getAllTags, locations, searchHotels } from "@/data/hotels";
 import { Metadata } from "next";
 import { cache } from "react";
-import CanonicalUrl from "@/components/CanonicalUrl";
-import HotelList from "@/components/HotelList";
 
 interface PageProps {
-  params: { location: string; q: string };
+  params: Promise<{ location: string; q: string }>;
 }
 
 export const revalidate = 86400; // Refresh cached pages once every 24 hours
@@ -27,6 +26,8 @@ export async function generateStaticParams() {
     .flat();
 }
 
+const getHotels = cache(searchHotels);
+
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
@@ -35,29 +36,34 @@ export async function generateMetadata({
   const qDecoded = decodeURIComponent(q);
   const locationDecoded = decodeURIComponent(location);
 
-  const results = await searchHotels(qDecoded, locationDecoded);
+  const results = await getHotels(qDecoded, locationDecoded);
 
   return {
-    title: `Top ${results.length} hotels in ${locationDecoded}`,
-    description: `Find the best hotels in ${locationDecoded}`,
+    title: `Top ${results.length} ${qDecoded} in ${locationDecoded}`,
+    description: `Find the best ${qDecoded} in ${locationDecoded}`,
   };
 }
 
-export default function Page({ params }: PageProps) {
-  const { q, location } = params;
+export default async function Page({ params }: PageProps) {
+  const { q, location } = await params;
 
   const qDecoded = decodeURIComponent(q);
   const locationDecoded = decodeURIComponent(location);
 
+  const results = await getHotels(qDecoded, locationDecoded);
+
   return (
     <div>
-      <CanonicalUrl location={location} q={q} />
       <Header q={qDecoded} location={locationDecoded} />
       <main className="container mx-auto space-y-8 px-4 py-8">
         <h1 className="text-center text-3xl font-bold">
-          Top hotels in {locationDecoded}
+          Top {results.length} {qDecoded} in {locationDecoded}
         </h1>
-        <HotelList q={qDecoded} location={locationDecoded} />
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {results.map((hotel) => (
+            <HotelItem key={hotel.id} hotel={hotel} />
+          ))}
+        </div>
       </main>
     </div>
   );
