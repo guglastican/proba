@@ -39,6 +39,7 @@ export async function generateMetadata({
 
   const results = await getHotels(q, location);
 
+  console.log(`Canonical URL: ${protocol}://${host}/${encodeURIComponent(location)}/${encodeURIComponent(q)}`);
   return {
     title: `Top ${results.length} ${q} in ${location}`,
     description: `Find the best ${q} in ${location}`,
