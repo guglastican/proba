@@ -37,17 +37,14 @@ export async function generateMetadata({
   const host = (await headers()).get('host');
   const protocol = process.env.NODE_ENV === "development" ? "http" : "https";
 
-  const qDecoded = decodeURIComponent(q);
-  const locationDecoded = decodeURIComponent(location);
-
-  const results = await getHotels(qDecoded, locationDecoded);
+  const results = await getHotels(q, location);
 
   return {
-    title: `Top ${results.length} ${qDecoded} in ${locationDecoded}`,
-    description: `Find the best ${qDecoded} in ${locationDecoded}`,
+    title: `Top ${results.length} ${q} in ${location}`,
+    description: `Find the best ${q} in ${location}`,
     metadataBase: new URL(`${protocol}://${host}`),
     alternates: {
-      canonical: `/${encodeURIComponent(decodeURIComponent(location))}/${encodeURIComponent(decodeURIComponent(q))}`,
+      canonical: `/${encodeURIComponent(location)}/${encodeURIComponent(q)}`,
     },
   };
 }
