@@ -1,13 +1,9 @@
-
-# robots.txt file for hotel directory website
-
-# Allow all web crawlers to access all content
 User-agent: *
 Allow: /
 
-# Sitemap location
-Sitemap: https://your-website-url.com/sitemap.xml
-
-# Disallow crawling of administrative or private areas
+# Disallow crawling of administrative areas
 Disallow: /api/
 Disallow: /admin/
+
+# Sitemap location (update to your actual URL)
+Sitemap: https://www.romantic-vacations-destinations.com/sitemap.xml
