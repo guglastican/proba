@@ -273,7 +273,7 @@ const nextConfig = {
     source: '/$',
     destination: 'https://www.romantic-vacations-destinations.com',
     permanent: true,
-  }
+  },
   {
     source: '/romantic-getaways-oregon-coast/',
     destination: 'https://www.romantic-vacations-destinations.com',
@@ -378,7 +378,7 @@ const nextConfig = {
     source: '/$',
     destination: 'https://www.romantic-vacations-destinations.com',
     permanent: true,
-  }
+  },
       {
         // Using path matching parameters
         source: '/blog/:slug',
