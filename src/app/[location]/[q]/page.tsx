@@ -37,7 +37,9 @@ export async function generateMetadata({
   const host = (await headers()).get('host');
   const protocol = process.env.NODE_ENV === "development" ? "http" : "https";
 
-  const results = await getHotels(q, location);
+  const qDecoded = decodeURIComponent(q);
+  const locationDecoded = decodeURIComponent(location);
+  const results = await getHotels(qDecoded, locationDecoded);
 
   console.log(`Canonical URL: ${protocol}://${host}/${encodeURIComponent(location)}/${encodeURIComponent(q)}`);
   return {
