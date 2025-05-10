@@ -47,7 +47,7 @@ export async function generateMetadata({
     description: `Find the best ${qDecoded} in ${locationDecoded}`,
     metadataBase: new URL(`${protocol}://${host}`),
     alternates: {
-      canonical: `/${location}/${q}`,
+      canonical: `/${encodeURIComponent(decodeURIComponent(location))}/${encodeURIComponent(decodeURIComponent(q))}`,
     },
   };
 }
