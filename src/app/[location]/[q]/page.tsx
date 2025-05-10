@@ -3,32 +3,13 @@ import HotelItem from "@/components/HotelItem";
 import { getAllTags, locations, searchHotels } from "@/data/hotels";
 import { Metadata } from "next";
 import { cache } from "react";
-import { notFound, redirect } from "next/navigation";
+import { headers } from 'next/headers'
 
 interface PageProps {
-  params: { location: string; q: string };
-  searchParams?: { [key: string]: string | string[] | undefined };
+  params: Promise<{ location: string; q: string }>;
 }
 
 export const revalidate = 86400; // Refresh cached pages once every 24 hours
-
-/**
- * Normalizes a URL parameter to a consistent format
- */
-function normalizeParam(param: string): string {
-  return param
-    .toLowerCase()
-    .trim()
-    .replace(/\s+/g, "-")
-    .replace(/[^\w-]/g, "");
-}
-
-/**
- * Converts a normalized parameter back to display format
- */
-function formatParamForDisplay(param: string): string {
-  return param.replace(/-/g, " ");
-}
 
 export async function generateStaticParams() {
   const allTags = await getAllTags({
@@ -39,8 +20,8 @@ export async function generateStaticParams() {
   return allTags
     .map((tag) =>
       locations.map((location) => ({
-        location: normalizeParam(location),
-        q: normalizeParam(tag),
+        location,
+        q: tag,
       })),
     )
     .flat();
@@ -51,53 +32,40 @@ const getHotels = cache(searchHotels);
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
-  const { q, location } = params;
+  const { q, location } = await params;
 
-  const results = await getHotels(q, location);
+  const host = (await headers()).get('host');
+  const protocol = process.env.NODE_ENV === "development" ? "http" : "https";
+
+  const qDecoded = decodeURIComponent(q);
+  const locationDecoded = decodeURIComponent(location);
+
+  const results = await getHotels(qDecoded, locationDecoded);
 
   return {
-    title: `Top ${results.length} ${formatParamForDisplay(q)} in ${formatParamForDisplay(location)}`,
-    description: `Find the best ${formatParamForDisplay(q)} in ${formatParamForDisplay(location)}`,
-    // Add canonical URL to prevent duplicate content issues
+    title: `Top ${results.length} ${qDecoded} in ${locationDecoded}`,
+    description: `Find the best ${qDecoded} in ${locationDecoded}`,
+    metadataBase: new URL(`${protocol}://${host}`),
     alternates: {
-      canonical: `/search/${location}/${q}`,
+      canonical: `/${encodeURIComponent(location)}/${encodeURIComponent(q)}`,
     },
   };
 }
 
 export default async function Page({ params }: PageProps) {
-  const { q, location } = params;
-  
-  // Check if the URL is in the canonical format
-  const canonicalQ = normalizeParam(decodeURIComponent(q));
-  const canonicalLocation = normalizeParam(decodeURIComponent(location));
-  
-  // If the URL is not in canonical form, redirect to the canonical version
-  if (q !== canonicalQ || location !== canonicalLocation) {
-    redirect(`/search/${canonicalLocation}/${canonicalQ}`);
-  }
-  
-  // Verify this is a valid location/tag combination
-  const validLocations = locations.map(loc => normalizeParam(loc));
-  const validTags = await getAllTags();
-  const normalizedTags = validTags.map(tag => normalizeParam(tag));
-  
-  if (!validLocations.includes(canonicalLocation) || !normalizedTags.includes(canonicalQ)) {
-    notFound();
-  }
+  const { q, location } = await params;
 
-  const results = await getHotels(q, location);
+  const qDecoded = decodeURIComponent(q);
+  const locationDecoded = decodeURIComponent(location);
 
-  // For display purposes, convert hyphenated format back to readable format
-  const displayQ = formatParamForDisplay(q);
-  const displayLocation = formatParamForDisplay(location);
+  const results = await getHotels(qDecoded, locationDecoded);
 
   return (
     <div>
-      <Header q={displayQ} location={displayLocation} />
+      <Header q={qDecoded} location={locationDecoded} />
       <main className="container mx-auto space-y-8 px-4 py-8">
         <h1 className="text-center text-3xl font-bold">
-          Top {results.length} {displayQ} in {displayLocation}
+          Top {results.length} {qDecoded} in {locationDecoded}
         </h1>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {results.map((hotel) => (
