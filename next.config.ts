@@ -375,12 +375,12 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/hotels-with-private-jacuzzi-in-room-indianapolis/',
+        source: '/hotels-with-private-jacuzzi-in-room-indianapolis',
         destination: '/search?q=Hotels+With+Hot+Tub+in+Room&location=Indianapolis%2C+IN',
         permanent: true,
       },
       {
-        source: '/romantic-getaways-oregon-coast/',
+        source: '/romantic-getaways-oregon-coast',
         destination: 'https://www.romantic-vacations-destinations.com',
         permanent: true,
       },
