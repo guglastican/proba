@@ -170,215 +170,215 @@ const nextConfig = {
         permanent: true,
       },
       {
-    source: '/romantic-getaways-oregon-coast/',
-    destination: 'https://www.romantic-vacations-destinations.com',
-    permanent: true,
-  },
-  {
-    source: '/honeymoon-spots.html',
-    destination: 'https://www.romantic-vacations-destinations.com',
-    permanent: true,
-  },
-  {
-    source: '/reasons-to-elope.html',
-    destination: 'https://www.romantic-vacations-destinations.com',
-    permanent: true,
-  },
-  {
-    source: '/elope-in-europe.html',
-    destination: 'https://www.romantic-vacations-destinations.com',
-    permanent: true,
-  },
-  {
-    source: '/colorado-train.html',
-    destination: 'https://www.romantic-vacations-destinations.com',
-    permanent: true,
-  },
-  {
-    source: '/maui-vacations.html',
-    destination: 'https://www.romantic-vacations-destinations.com',
-    permanent: true,
-  },
-  {
-    source: '/privacy-policy.html',
-    destination: 'https://www.romantic-vacations-destinations.com',
-    permanent: true,
-  },
-  {
-    source: '/elope-ideas.html',
-    destination: 'https://www.romantic-vacations-destinations.com',
-    permanent: true,
-  },
-  {
-    source: '/how-to-elope.html',
-    destination: 'https://www.romantic-vacations-destinations.com',
-    permanent: true,
-  },
-  {
-    source: '/index.html',
-    destination: 'https://www.romantic-vacations-destinations.com',
-    permanent: true,
-  },
-  {
-    source: '/romantic-honeymoon-destinations.html',
-    destination: 'https://www.romantic-vacations-destinations.com',
-    permanent: true,
-  },
-  {
-    source: '/costa-rica-vacations.html',
-    destination: 'https://www.romantic-vacations-destinations.com',
-    permanent: true,
-  },
-  {
-    source: '/us-travel-destinations.html',
-    destination: 'https://www.romantic-vacations-destinations.com',
-    permanent: true,
-  },
-  {
-    source: '/mexico-vacations.html',
-    destination: 'https://www.romantic-vacations-destinations.com',
-    permanent: true,
-  },
-  {
-    source: '/sitemap',
-    destination: '/sitemap.xml',
-    permanent: true,
-  },
-  {
-    source: '/romantic-picnic-ideas/',
-    destination: 'https://www.romantic-vacations-destinations.com',
-    permanent: true,
-  },
-  {
-    source: '/contact',
-    destination: 'https://www.romantic-vacations-destinations.com',
-    permanent: true,
-  },
-  {
-    source: '/european-vacations.html',
-    destination: 'https://www.romantic-vacations-destinations.com',
-    permanent: true,
-  },
-  {
-    source: '/faq',
-    destination: 'https://www.romantic-vacations-destinations.com',
-    permanent: true,
-  },
-  {
-    source: '/costa-rica-wedding-destination.html',
-    destination: 'https://www.romantic-vacations-destinations.com',
-    permanent: true,
-  },
-  {
-    source: '/$',
-    destination: 'https://www.romantic-vacations-destinations.com',
-    permanent: true,
-  },
-  {
-    source: '/romantic-getaways-oregon-coast/',
-    destination: 'https://www.romantic-vacations-destinations.com',
-    permanent: true,
-  },
-  {
-    source: '/honeymoon-spots.html',
-    destination: 'https://www.romantic-vacations-destinations.com',
-    permanent: true,
-  },
-  {
-    source: '/reasons-to-elope.html',
-    destination: 'https://www.romantic-vacations-destinations.com',
-    permanent: true,
-  },
-  {
-    source: '/elope-in-europe.html',
-    destination: 'https://www.romantic-vacations-destinations.com',
-    permanent: true,
-  },
-  {
-    source: '/colorado-train.html',
-    destination: 'https://www.romantic-vacations-destinations.com',
-    permanent: true,
-  },
-  {
-    source: '/maui-vacations.html',
-    destination: 'https://www.romantic-vacations-destinations.com',
-    permanent: true,
-  },
-  {
-    source: '/privacy-policy.html',
-    destination: '/privacy-policy',
-    permanent: true,
-  },
-  {
-    source: '/elope-ideas.html',
-    destination: 'https://www.romantic-vacations-destinations.com',
-    permanent: true,
-  },
-  {
-    source: '/how-to-elope.html',
-    destination: 'https://www.romantic-vacations-destinations.com',
-    permanent: true,
-  },
-  {
-    source: '/index.html',
-    destination: 'https://www.romantic-vacations-destinations.com',
-    permanent: true,
-  },
-  {
-    source: '/romantic-honeymoon-destinations.html',
-    destination: 'https://www.romantic-vacations-destinations.com',
-    permanent: true,
-  },
-  {
-    source: '/costa-rica-vacations.html',
-    destination: 'https://www.romantic-vacations-destinations.com',
-    permanent: true,
-  },
-  {
-    source: '/us-travel-destinations.html',
-    destination: 'https://www.romantic-vacations-destinations.com',
-    permanent: true,
-  },
-  {
-    source: '/mexico-vacations.html',
-    destination: 'https://www.romantic-vacations-destinations.com',
-    permanent: true,
-  },
-  {
-    source: '/sitemap',
-    destination: '/sitemap.xml',
-    permanent: true,
-  },
-  {
-    source: '/romantic-picnic-ideas/',
-    destination: 'https://www.romantic-vacations-destinations.com',
-    permanent: true,
-  },
-  {
-    source: '/contact',
-    destination: 'https://www.romantic-vacations-destinations.com',
-    permanent: true,
-  },
-  {
-    source: '/european-vacations.html',
-    destination: 'https://www.romantic-vacations-destinations.com',
-    permanent: true,
-  },
-  {
-    source: '/faq',
-    destination: 'https://www.romantic-vacations-destinations.com',
-    permanent: true,
-  },
-  {
-    source: '/costa-rica-wedding-destination.html',
-    destination: 'https://www.romantic-vacations-destinations.com',
-    permanent: true,
-  },
-  {
-    source: '/$',
-    destination: 'https://www.romantic-vacations-destinations.com',
-    permanent: true,
-  },
+        source: '/honeymoon-spots.html',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
+        source: '/reasons-to-elope.html',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
+        source: '/elope-in-europe.html',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
+        source: '/colorado-train.html',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
+        source: '/maui-vacations.html',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
+        source: '/privacy-policy.html',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
+        source: '/elope-ideas.html',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
+        source: '/how-to-elope.html',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
+        source: '/index.html',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
+        source: '/romantic-honeymoon-destinations.html',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
+        source: '/costa-rica-vacations.html',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
+        source: '/us-travel-destinations.html',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
+        source: '/mexico-vacations.html',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
+        source: '/sitemap',
+        destination: '/sitemap.xml',
+        permanent: true,
+      },
+      {
+        source: '/romantic-picnic-ideas/',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
+        source: '/contact',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
+        source: '/european-vacations.html',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
+        source: '/faq',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
+        source: '/costa-rica-wedding-destination.html',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
+        source: '/$',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
+        source: '/romantic-getaways-oregon-coast/',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
+        source: '/honeymoon-spots.html',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
+        source: '/reasons-to-elope.html',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
+        source: '/elope-in-europe.html',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
+        source: '/colorado-train.html',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
+        source: '/maui-vacations.html',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
+        source: '/privacy-policy.html',
+        destination: '/privacy-policy',
+        permanent: true,
+      },
+      {
+        source: '/elope-ideas.html',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
+        source: '/how-to-elope.html',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
+        source: '/index.html',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
+        source: '/romantic-honeymoon-destinations.html',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
+        source: '/costa-rica-vacations.html',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
+        source: '/us-travel-destinations.html',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
+        source: '/mexico-vacations.html',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
+        source: '/sitemap',
+        destination: '/sitemap.xml',
+        permanent: true,
+      },
+      {
+        source: '/romantic-picnic-ideas/',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
+        source: '/contact',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
+        source: '/european-vacations.html',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
+        source: '/faq',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
+        source: '/costa-rica-wedding-destination.html',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
+        source: '/$',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
+        source: '/hotels-with-private-jacuzzi-in-room-indianapolis/',
+        destination: '/search?q=Hotels+With+Hot+Tub+in+Room&location=Indianapolis%2C+IN',
+        permanent: true,
+      }
       {
         // Using path matching parameters
         source: '/blog/:slug',
