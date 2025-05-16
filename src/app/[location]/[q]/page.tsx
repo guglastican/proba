@@ -39,12 +39,12 @@ export async function generateMetadata({
 
   const qDecoded = decodeURIComponent(q);
   const locationDecoded = decodeURIComponent(location);
-  const results = await getHotels(qDecoded, locationDecoded);
+  
 
   console.log(`Canonical URL: ${protocol}://${host}/${encodeURIComponent(location)}/${encodeURIComponent(q)}`);
   return {
-    title: `Top ${results.length} ${q} in ${location}`,
-    description: `Find the best ${q} in ${location}`,
+    title: `Top ${qDecoded} near ${locationDecoded}`,
+    description: `Find the best ${qDecoded} near ${locationDecoded}`,
     metadataBase: new URL(`${protocol}://${host}`),
     alternates: {
       canonical: `${protocol}://${host}/${locationDecoded}/${qDecoded}`,
