@@ -67,6 +67,13 @@ export default async function Page({ params }: PageProps) {
         <h1 className="text-center text-3xl font-bold">
           Top {results.length} {qDecoded} in {locationDecoded}
         </h1>
+        <p className="font-regular">Discover the best {results.length} {qDecoded} in {locationDecoded} with our expertly curated list of top-rated accommodations. Whether you're planning a romantic escape, a rejuvenating weekend, or a luxurious getaway, we've got the perfect stay waiting for you. Our platform is designed to make your search seamless—filter effortlessly and find exactly what you need, from cozy rooms with private Jacuzzis to upscale hotels featuring relaxing hot tub suites.</p>
+         <p>
+If you've been tirelessly googling "{qDecoded} near me" and happen to be in the {locationDecoded} area, your search ends here. These hand-picked properties aren't just good—they're exceptional, offering comfort, privacy, and that extra touch of indulgence that turns an ordinary trip into an unforgettable experience.
+         </p>
+         <p>
+Right now, our listings highlight {results.length} standout options that meet your exact search for {qDecoded} in {locationDecoded}. Let us help you find the perfect place to unwind and soak the stress away.
+          </p>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {results.map((hotel) => (
             <HotelItem key={hotel.id} hotel={hotel} />
