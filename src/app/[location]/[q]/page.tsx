@@ -67,9 +67,9 @@ export default async function Page({ params }: PageProps) {
         <h1 className="text-center text-3xl font-bold">
           Top {results.length} {qDecoded} in {locationDecoded}
         </h1>
-        <p className="font-regular">Discover the best {results.length} {qDecoded} in {locationDecoded} with our expertly curated list of top-rated accommodations. Whether you're planning a romantic escape, a rejuvenating weekend, or a luxurious getaway, we've got the perfect stay waiting for you. Our platform is designed to make your search seamless—filter effortlessly and find exactly what you need, from cozy rooms with private Jacuzzis to upscale hotels featuring relaxing hot tub suites.</p>
+        <p className="font-regular">Discover the best {results.length} {qDecoded} in {locationDecoded} with our expertly curated list of top-rated accommodations. Whether you&apos;re planning a romantic escape, a rejuvenating weekend, or a luxurious getaway, we&apos;ve got the perfect stay waiting for you. Our platform is designed to make your search seamless—filter effortlessly and find exactly what you need, from cozy rooms with private Jacuzzis to upscale hotels featuring relaxing hot tub suites.</p>
          <p>
-If you've been tirelessly googling "{qDecoded} near me" and happen to be in the {locationDecoded} area, your search ends here. These hand-picked properties aren't just good—they're exceptional, offering comfort, privacy, and that extra touch of indulgence that turns an ordinary trip into an unforgettable experience.
+If you&apos;ve been tirelessly googling &quot;{qDecoded} near me&quot; and happen to be in the {locationDecoded} area, your search ends here. These hand-picked properties aren&apos;t just good—they&apos;re exceptional, offering comfort, privacy, and that extra touch of indulgence that turns an ordinary trip into an unforgettable experience.
          </p>
          <p>
 Right now, our listings highlight {results.length} standout options that meet your exact search for {qDecoded} in {locationDecoded}. Let us help you find the perfect place to unwind and soak the stress away.
