@@ -43,8 +43,8 @@ export async function generateMetadata({
 
   console.log(`Canonical URL: ${protocol}://${host}/${encodeURIComponent(location)}/${encodeURIComponent(q)}`);
   return {
-    title: `Top ${qDecoded} near ${locationDecoded}`,
-    description: `Find the best ${qDecoded} near ${locationDecoded}`,
+    title: `Top ${qDecoded} in ${locationDecoded}`,
+    description: `Find the best ${qDecoded} near ${locationDecoded}. Imagine stepping onto your private balcony in the heart of ${locationDecoded}.`,
     metadataBase: new URL(`${protocol}://${host}`),
     alternates: {
       canonical: `${protocol}://${host}/${locationDecoded}/${qDecoded}`,
