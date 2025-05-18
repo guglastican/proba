@@ -3,7 +3,7 @@ import HotelItem from "@/components/HotelItem";
 import { getAllTags, locations, searchHotels } from "@/data/hotels";
 import { Metadata } from "next";
 import { cache } from "react";
-import { headers } from 'next/headers'
+
 
 interface PageProps {
   params: Promise<{ location: string; q: string }>;
