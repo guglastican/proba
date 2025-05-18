@@ -41,13 +41,15 @@ export async function generateMetadata({
   const locationDecoded = decodeURIComponent(location);
   
 
-  console.log(`Canonical URL: ${protocol}://${host}/${encodeURIComponent(location)}/${encodeURIComponent(q)}`);
+  // Standardize URL format to use path segments without encoding spaces
+  const canonicalPath = `/${locationDecoded.replace(/, /g, ',')}/${qDecoded.replace(/ /g, '-')}`.toLowerCase();
+  console.log(`Canonical URL: ${protocol}://${host}${canonicalPath}`);
   return {
     title: `Top ${qDecoded} in ${locationDecoded}`,
     description: `Find the best ${qDecoded} near ${locationDecoded}. Imagine stepping onto your private balcony in the heart of ${locationDecoded}.`,
     metadataBase: new URL(`${protocol}://${host}`),
     alternates: {
-      canonical: `${protocol}://${host}/${locationDecoded}/${qDecoded}`,
+      canonical: `${protocol}://${host}${canonicalPath}`,
     },
   };
 }
