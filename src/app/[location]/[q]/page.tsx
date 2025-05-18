@@ -34,23 +34,16 @@ export async function generateMetadata({
 }: PageProps): Promise<Metadata> {
   const { q, location } = await params;
 
-  const host = (await headers()).get('host');
-  const protocol = process.env.NODE_ENV === "development" ? "http" : "https";
-
+  
   const qDecoded = decodeURIComponent(q);
   const locationDecoded = decodeURIComponent(location);
   
+    const results = await getHotels(qDecoded, locationDecoded);
 
-  // Standardize URL format to use path segments without encoding spaces
-  const canonicalPath = `/${locationDecoded.replace(/, /g, ',')}/${qDecoded.replace(/ /g, '-')}`.toLowerCase();
-  console.log(`Canonical URL: ${protocol}://${host}${canonicalPath}`);
   return {
-    title: `Top ${qDecoded} in ${locationDecoded}`,
+    title: `Top ${results.length}${qDecoded} in ${locationDecoded}`,
     description: `Find the best ${qDecoded} near ${locationDecoded}. Imagine stepping onto your private balcony in the heart of ${locationDecoded}.`,
-    metadataBase: new URL(`${protocol}://${host}`),
-    alternates: {
-      canonical: `${protocol}://${host}${canonicalPath}`,
-    },
+   
   };
 }
 
