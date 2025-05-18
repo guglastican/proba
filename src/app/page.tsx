@@ -40,7 +40,7 @@ export const metadata: Metadata = {
 export default function Home() {
   const featuredLocations = [
     { 
-      name: "San Francisco, CA", 
+      name: "San Francisco CA", 
       hotels: 42, 
       description: "Discover stunning hot tub hotels with Bay Area views",
       url: "/search?q=Hotels+With+Hot+Tub+in+Room&location=San+Francisco%2C+CA" 

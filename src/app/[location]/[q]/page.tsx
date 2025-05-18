@@ -43,9 +43,9 @@ export async function generateMetadata({
   const canonicalUrl = `${baseUrl}/${location}/${q}`;
 
   return {
-    title: `Top ${results.length} ${qDecoded} in ${locationDecoded}`,
+    title: `Top ${results.length}  ${qDecoded} in ${locationDecoded}`,
     description: `Find the best ${qDecoded} near ${locationDecoded}. Imagine stepping onto your private balcony in the heart of ${locationDecoded}.`,
-    alternates: {
+    alternates: {    
       canonical: canonicalUrl,
     },
   };
