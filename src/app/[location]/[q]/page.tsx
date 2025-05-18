@@ -4,7 +4,6 @@ import { getAllTags, locations, searchHotels } from "@/data/hotels";
 import { Metadata } from "next";
 import { cache } from "react";
 
-
 interface PageProps {
   params: Promise<{ location: string; q: string }>;
 }
@@ -33,17 +32,22 @@ export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
   const { q, location } = await params;
-
   
   const qDecoded = decodeURIComponent(q);
   const locationDecoded = decodeURIComponent(location);
   
-    const results = await getHotels(qDecoded, locationDecoded);
+  const results = await getHotels(qDecoded, locationDecoded);
+  
+  // Create canonical URL
+  const baseUrl = 'https://www.romantic-vacations-destinations.com';
+  const canonicalUrl = `${baseUrl}/${location}/${q}`;
 
   return {
-    title: `Top ${results.length}${qDecoded} in ${locationDecoded}`,
+    title: `Top ${results.length} ${qDecoded} in ${locationDecoded}`,
     description: `Find the best ${qDecoded} near ${locationDecoded}. Imagine stepping onto your private balcony in the heart of ${locationDecoded}.`,
-   
+    alternates: {
+      canonical: canonicalUrl,
+    },
   };
 }
 
@@ -89,7 +93,7 @@ Right now, our listings highlight {results.length} standout options that meet yo
                   "name": `What are the best ${results.length} ${qDecoded} in ${locationDecoded}?`,
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": `Based on our data, we&aposve found the top ${results.length} ${qDecoded} in ${locationDecoded}. Our results factor in user ratings, popularity, and quality metrics to ensure you get the best options available.`
+                    "text": `Based on our data, we've found the top ${results.length} ${qDecoded} in ${locationDecoded}. Our results factor in user ratings, popularity, and quality metrics to ensure you get the best options available.`
                   }
                 },
                 {
