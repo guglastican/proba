@@ -813,7 +813,7 @@ export async function searchHotels(q: string, location: string) {
     .sort((a, b) => b.rating - a.rating);
 }
 
-export const locations = ["San%20Francisco2C%20CA", "Chicago2C%20IL", "Las%20Vegas2C%20NV", "Miami2C%20FL", "New%20York2C%20NY", "London", "Atlanta2C%20GA", "Indianapolis2C%20IN"];
+export const locations = ["San Francisco CA", "Chicago IL", "Las Vegas NV", "Miami FL", "New York NY", "London", "Atlanta GA", "Indianapolis IN"];
 
 export async function getAllTags({ limit }: { limit?: number } = {}) {
   await new Promise((resolve) => setTimeout(resolve, 1500));
