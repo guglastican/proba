@@ -1,19 +1,15 @@
 import { getAllTags, locations } from "@/data/hotels";
 import { MetadataRoute } from "next";
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.romantic-vacations-destinations.com';
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const allTags = await getAllTags();
-  
-  // Get unique tags and locations
-  const uniqueTags = [...new Set(allTags.map(tag => tag.toLowerCase()))];
-  const uniqueLocations = [...new Set(locations)];
 
-  const searchLandingPages = uniqueTags
+  const searchLandingPages = allTags
     .map((tag) =>
-      uniqueLocations.map((location) => ({
-        url: `${baseUrl}/${location.replace(/, /g, ',').toLowerCase()}/${tag.replace(/ /g, '-').toLowerCase()}`,
+      locations.map((location) => ({
+        url: `${baseUrl}/${location}/${tag}`,
         lastModified: new Date(),
         changeFrequency: "weekly",
         priority: 1,
@@ -29,7 +25,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "yearly",
       priority: 0.8,
     },
-      // Our pSEO pages:
+    // Our pSEO pages:
     ...searchLandingPages,
   ];
 }
