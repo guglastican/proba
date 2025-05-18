@@ -13,7 +13,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const searchLandingPages = uniqueTags
     .map((tag) =>
       uniqueLocations.map((location) => ({
-        url: `${baseUrl}/${location.replace(/, /g, ',')}/${tag.toLowerCase().replace(/ /g, '-')}`,
+        url: `${baseUrl}/${location.replace(/, /g, ',').toLowerCase()}/${tag.replace(/ /g, '-').toLowerCase()}`,
         lastModified: new Date(),
         changeFrequency: "weekly",
         priority: 1,
