@@ -38,10 +38,13 @@ export async function generateMetadata({
   
   const results = await getHotels(qDecoded, locationDecoded);
   
-  // Create canonical URL
+   // Create canonical URL - use custom encoding to preserve commas
   const baseUrl = 'https://www.romantic-vacations-destinations.com';
-  const canonicalUrl = `${baseUrl}/${encodeURIComponent(locationDecoded)}/${encodeURIComponent(qDecoded)}`;
-
+  const encodeWithCommas = (str: string) => {
+    return encodeURIComponent(str).replace(/%2C/g, ',');
+  };
+  const canonicalUrl = `${baseUrl}/${encodeWithCommas(locationDecoded)}/${encodeWithCommas(qDecoded)}`;
+  
   return {
     title: `Top ${results.length}  ${qDecoded} in ${locationDecoded}`,
     description: `Find the best ${qDecoded} near ${locationDecoded}. Imagine stepping onto your private balcony in the heart of ${locationDecoded}.`,
