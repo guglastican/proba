@@ -23,11 +23,11 @@ const hotels: Hotel[] = [
     image: "https://images.trvl-media.com/lodging/2000000/1140000/1138300/1138217/e156f5e7.jpg",
     rating: 4.2,
     price: "931",
-    address: "8 Mission St, San Francisco, CA 94105",
+    address: "8 Mission St, San Francisco CA 94105",
     description: "Luxury San Francisco hotel in Downtown San Francisco with a full-service spa. Enjoy modern amenities, eco-friendly design, and stunning waterfront views. Offers couples treatment rooms, hydrotherapy, and premium bedding in sophisticated suites.",
     hours: "24/7",
     reviews: 367,
-tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
     amenities: ["Spa", "Hot Tub", "Terrace/Patio"],
     link: "https://expedia.com/affiliates/san-francisco-hotels-1-hotel-san-francisco.nmthOWh",
     googlePlaceId: "ChIJg7PyJ3GBhYARO29J0nraSd0" // Google Place ID for 1 Hotel San Francisco
