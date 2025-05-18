@@ -40,7 +40,7 @@ export async function generateMetadata({
   
   // Create canonical URL
   const baseUrl = 'https://www.romantic-vacations-destinations.com';
-  const canonicalUrl = `${baseUrl}/${location}/${q}`;
+  const canonicalUrl = `${baseUrl}/${encodeURIComponent(locationDecoded)}/${encodeURIComponent(qDecoded)}`;
 
   return {
     title: `Top ${results.length}  ${qDecoded} in ${locationDecoded}`,
