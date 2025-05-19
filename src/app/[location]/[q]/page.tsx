@@ -44,7 +44,7 @@ export async function generateMetadata({
     return encodeURIComponent(str).replace(/%2C/g, ',');
   };
   const canonicalUrl = `${baseUrl}/${encodeWithCommas(locationDecoded)}/${encodeWithCommas(qDecoded)}`;
-  
+
   return {
     title: `Top ${results.length}  ${qDecoded} in ${locationDecoded}`,
     description: `Find the best ${qDecoded} near ${locationDecoded}. Imagine stepping onto your private balcony in the heart of ${locationDecoded}.`,
@@ -67,7 +67,7 @@ export default async function Page({ params }: PageProps) {
       <Header q={qDecoded} location={locationDecoded} />
       <main className="container mx-auto space-y-8 px-4 py-8">
         <h1 className="text-center text-3xl font-bold">
-          Top {results.length} {qDecoded} in {locationDecoded}
+          Best {results.length} {locationDecoded} {qDecoded} 
         </h1>
         <p className="font-regular">Discover the best {results.length} {qDecoded} in {locationDecoded} with our expertly curated list of top-rated accommodations. Whether you&apos;re planning a romantic escape, a rejuvenating weekend, or a luxurious getaway, we&apos;ve got the perfect stay waiting for you. Our platform is designed to make your search seamless—filter effortlessly and find exactly what you need, from cozy rooms with private Jacuzzis to upscale hotels featuring relaxing hot tub suites.</p>
          <p>
