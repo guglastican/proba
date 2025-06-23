@@ -385,6 +385,21 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/romantic-getaways-in-colorado',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
+        source: '/hotel-with-jacuzzi-in-room-south-bend',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
+        source: '/hotel-with-jacuzzi-in-room-south-bend',
+        destination: 'https://www.romantic-vacations-destinations.com',
+        permanent: true,
+      },
+      {
         // Using path matching parameters
         source: '/blog/:slug',
         destination: '/articles/:slug',
