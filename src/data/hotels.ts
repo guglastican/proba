@@ -916,7 +916,7 @@ const hotels: Hotel[] = [
     "Laundry service",
     "Non-smoking hotel"
   ],
-  link: "https://images.trvl-media.com/lodging/1000000/980000/974900/974872/3c02ff4c.jpg"
+  link: "https://expedia.com/affiliates/seattle-hotels-eastgate-hotel.JJZFyo2"
 },
 {
   id: 60,
