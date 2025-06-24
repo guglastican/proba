@@ -798,7 +798,7 @@ const hotels: Hotel[] = [
   description: "Built in 1927, the Mayflower Park Hotel is a refined, European-influenced hotel located in downtown Seattle, just blocks from Pike Place Market and near the Space Needle via monorail. Guests enjoy elegant rooms with soaking tubs, a popular breakfast spot, Andaluca Restaurant, and classic cocktails at Oliver’s Lounge.",
   hours: "Check-in: 3 PM, Check-out: 12 PM",
   reviews: 2992,
-  tags: ["Historic Hotel", "Downtown Seattle", "Romantic Getaway", "Hotels with Restaurant"],
+  tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
   amenities: [
     "Free WiFi",
     "Fitness Center",
@@ -819,7 +819,7 @@ const hotels: Hotel[] = [
   description: "Located on the scenic south end of Lake Union, this top-rated hotel offers stunning waterfront views, a complimentary breakfast, and modern amenities just minutes from downtown Seattle and the University of Washington.",
   hours: "Check-in: 3:00 PM | Check-out: 12:00 PM",
   reviews: 2053,
-  tags: ["Lake View", "Free Breakfast", "Seattle Waterfront Hotels", "Hotels With Shuttle Service"],
+  tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
   amenities: [
     "Lakefront views",
     "Free breakfast",
@@ -843,7 +843,7 @@ const hotels: Hotel[] = [
   description: "Located across from T-Mobile Park and next to Lumen Field, this hotel is perfect for sports fans and city explorers alike. Enjoy the rooftop pool and hot tub, dine at Jimmy's On First, and walk to Pioneer Square, the Seattle Waterfront, and top attractions. All rooms were completely renovated in 2023.",
   hours: "24-hour front desk",
   reviews: 2055,
-  tags: ["Rooftop Pool", "Hotels Near Stadium", "Hotels With Hot Tub", "Hotels in Seattle"],
+  tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
   amenities: ["Rooftop pool", "Hot tub", "Fitness Center", "Restaurant", "Free WiFi", "Valet Parking", "Meeting rooms"],
   link: "https://expedia.com/affiliates/seattle-hotels-silver-cloud-inn-seattle-lake-union.IXZSU6J"
 },
@@ -853,11 +853,11 @@ const hotels: Hotel[] = [
   image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/32/16/38/king-jacuzzi-guestroom.jpg?w=900&h=500&s=1",
   rating: 4.7,
   price: "199",
-  address: "718 Front St, Mukilteo, WA 98275",
+  address: "718 Front St, , Seattle, WA 98275",
   description: "Located adjacent to the Mukilteo-Clinton Ferry, this is Mukilteo's only waterfront hotel. Most guestrooms feature panoramic waterfront views overlooking Possession Sound and Whidbey Island. Close to Boeing Everett Factory tours. Includes complimentary breakfast, microwaves, refrigerators, Aveda bath products, 55\" flat-screen TVs, and free WiFi.",
   hours: "24-hour front desk",
   reviews: 805,
-  tags: ["Waterfront Views", "Free Breakfast", "Ferry Access", "Boeing Factory Tours", "Hotels in Mukilteo"],
+  tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
   amenities: [
     "Free parking",
     "Free High Speed Internet (WiFi)",
@@ -876,11 +876,11 @@ const hotels: Hotel[] = [
   image: "https://images.trvl-media.com/lodging/1000000/540000/536600/536525/c0126cb2.jpg",
   rating: 4.7,
   price: "362",
-  address: "14580 NE 145th Street, Woodinville, WA 98072",
+  address: "14580 NE 145th Street, , Seattle WA 98072",
   description: "Upscale Pacific Northwest lodge located 30 minutes from Seattle surrounded by 130+ wineries and tasting rooms. Features acclaimed restaurants (Barking Frog and The Herbfarm), full-service spa, 5.5 acres of landscaped grounds, and 5,000 sq ft event space. Ideal for wine enthusiasts and luxury travelers.",
   hours: "24-hour front desk",
   reviews: 1625,
-  tags: ["Winery Hotels", "Luxury Spa", "Upscale Dining", "Pacific Northwest Lodge", "Pet Friendly"],
+  tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
   amenities: [
     "Free parking",
     "Free High Speed Internet (WiFi)",
@@ -899,11 +899,11 @@ const hotels: Hotel[] = [
   image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/30/27/3c/63/eastgate-hotel-best-western.jpg?w=900&h=500&s=1",
   rating: 4.3,
   price: "160",
-  address: "14632 SE Eastgate Way, Bellevue, WA 98007",
+  address: "14632 SE Eastgate Way, Seattle, WA 98007",
   description: "Located near the I-90 tech corridor and minutes from Bellevue Square, Eastgate Hotel offers modern rooms with 55” HDTVs, free WiFi, and convenient access to both Microsoft HQ and downtown Seattle. Ideal for business travelers and families.",
   hours: "24-hour front desk",
   reviews: 244,
-  tags: ["Business Friendly", "Family Hotel", "Near Microsoft", "Free Parking", "Affordable Stay"],
+  tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
   amenities: [
     "Free parking",
     "Free High Speed Internet (WiFi)",
@@ -924,11 +924,11 @@ const hotels: Hotel[] = [
   image: "https://images.trvl-media.com/lodging/1000000/330000/327300/327201/aa7bf7f0.jpg",
   rating: 4.2,
   price: "110",
-  address: "10210 Evergreen Way, Everett, WA 98204",
+  address: "10210 Evergreen Way, Seattle WA 98204",
   description: "Executive Residency By Best Western in Everett blends extended-stay comfort with hotel convenience. Enjoy kitchenettes, free breakfast, a heated indoor pool, and a fitness room—perfect for business and family travelers alike.",
   hours: "24-hour front desk",
   reviews: 1008,
-  tags: ["Extended Stay", "Business Friendly", "Pet Friendly", "Free Breakfast", "Indoor Pool"],
+  tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
   amenities: [
     "Free parking",
     "Free High Speed Internet (WiFi)",
@@ -955,11 +955,11 @@ const hotels: Hotel[] = [
   image: "https://images.trvl-media.com/lodging/2000000/1580000/1573400/1573306/3acae794.jpg",
   rating: 4.1,
   price: "236",
-  address: "1054 SW Camano Dr, Camano Island, WA 98282-8480",
+  address: "1054 SW Camano Dr, Seattle, WA 98282-8480",
   description: "Camano Island Inn offers a unique lodging experience with a serene ambiance, perfect for relaxation. This romantic bed and breakfast features ocean views, a hot tub, and complimentary breakfast, ideal for couples and travelers seeking a peaceful retreat.",
   hours: "Not specified",
   reviews: 250,
-  tags: ["Romantic", "Beachfront", "Free Breakfast", "Hot Tub", "Ocean View"],
+  tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
   amenities: [
     "Free parking",
     "Free High Speed Internet (WiFi)",
@@ -991,8 +991,170 @@ const hotels: Hotel[] = [
   ],
   link: "https://expedia.com/affiliates/camano-island-hotels-camano-island-inn.ChJFwNr"
 },
-
-
+{
+  id: 65,
+  name: "Embassy Suites by Hilton Seattle Downtown Pioneer Square",
+  image: "https://images.trvl-media.com/lodging/21000000/20130000/20123400/20123320/c6f7327a.jpg",
+  rating: 4.7,
+  price: "349", // Requires date input for pricing
+  address: "255 South King Street, Seattle, WA 98104", // Typical address (exact not provided)
+  description: "Modern all-suite hotel in historic Pioneer Square featuring complimentary made-to-order breakfast, evening receptions, and panoramic city views. Conveniently located near downtown attractions and public transportation.",
+  hours: "Check-in: 3 PM | Check-out: 12 PM",
+  reviews: 1932,
+  tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+  amenities: [
+    "Indoor pool",
+    "Fitness center",
+    "Restaurant",
+    "Bar/Lounge",
+    "Free WiFi",
+    "Business center",
+    "24-hour front desk",
+    "Meeting rooms",
+    "Accessible facilities"
+  ],
+  link: "https://expedia.com/affiliates/seattle-hotels-embassy-suites-by-hilton-seattle-downtown-pioneer-square.3PI1fFt"
+},
+{
+  id: 66,
+  name: "Four Seasons Hotel Seattle",
+  image: "https://images.trvl-media.com/lodging/3000000/2170000/2163100/2163007/db4ea702.jpg",
+  rating: 5.0,
+  price: "659", // Requires date input for pricing
+  address: "99 Union Street, Seattle, WA 98101", // Typical address
+  description: "Luxury bayside hotel with a full-service spa, infinity pool, and panoramic views of Elliott Bay and Puget Sound. Features sophisticated accommodations near Pike Place Market.",
+  hours: "Check-in: 3 PM | Check-out: 12 PM | Pool: 6:00 AM to 10:00 PM",
+  reviews: 850,
+  tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+  amenities: [
+    "Full-service spa",
+    "Infinity pool",
+    "24-hour fitness center",
+    "Restaurant",
+    "Bar",
+    "Hot tub",
+    "Room service",
+    "Valet parking",
+    "Business center",
+    "Meeting rooms",
+    "Concierge services"
+  ],
+  link: "https://expedia.com/affiliates/seattle-hotels-four-seasons-hotel-seattle.TZaAuTs"
+},
+{
+  id: 67,
+  name: "Kimpton Hotel Monaco Seattle by IHG",
+  image: "public\hotels with tub in seattle.jpg",
+  rating: 4.5,
+  price: "500", // Requires date input for pricing
+  address: "1101 4th Ave, Seattle, WA 98101",
+  description: "Boutique luxury hotel in downtown Seattle featuring stylish accommodations, a restaurant and bar. Offers pet-friendly services and a 24-hour fitness center. Steps from top attractions including Pike Place Market.",
+  hours: "24-hour front desk | Check-in: 3 PM | Check-out: 12 PM",
+  reviews: 1001,
+  tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+  amenities: [
+    "24-hour fitness center",
+    "Restaurant",
+    "Bar",
+    "Pet friendly",
+    "Room service",
+    "Housekeeping",
+    "Breakfast available",
+    "24-hour front desk",
+    "Business center",
+    "Meeting rooms",
+    "Concierge services"
+  ],
+  link: "https://expedia.com/affiliates/seattle-hotels-kimpton-hotel-monaco-seattle.4q7Jlag"
+},
+{
+  id: 68,
+  name: "Warwick Seattle",
+  image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/fe/64/48/photo5jpg.jpg",
+  rating: 4.0,
+  price: "234", // From highlighted deal price
+  address: "401 Lenora Street, Seattle, WA 98121",
+  description: "Classic hotel in Seattle's vibrant Belltown district featuring newly refurbished Premier Floors with sophisticated ambiance. Offers sweeping city skyline views from Juliet balconies, steps from iconic landmarks like Space Needle and Pike Place Market.",
+  hours: "24-hour front desk | Check-in: 3 PM | Check-out: 12 PM",
+  reviews: 2313,
+  tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+  amenities: [
+    "Indoor pool",
+    "Heated pool",
+    "Hot tub",
+    "Fitness Center with Gym / Workout Room",
+    "Restaurant",
+    "Bar / lounge",
+    "Free High Speed Internet (WiFi)",
+    "Valet parking",
+    "24-hour front desk",
+    "Business Center",
+    "Room service",
+    "Air conditioning",
+    "Flatscreen TV",
+    "Refrigerator",
+    "Coffee / tea maker"
+  ],
+  link: "https://expedia.com/affiliates/seattle-hotels-warwick-seattle.akBeQTx"
+},
+{
+  id: 69,
+  name: "Grand Hyatt Seattle",
+  image: "https://images.trvl-media.com/lodging/1000000/550000/546500/546475/w3837h2557x0y0-f5ee441f.jpg",
+  rating: 4.5,
+  price: "369", // Requires date input for pricing
+  address: "721 Pine Street, Seattle, WA 98101", // Typical address
+  description: "Luxury downtown hotel featuring 4 restaurants, a 24-hour fitness center, and sophisticated accommodations. Offers premium bedding and city views near Seattle's top attractions.",
+  hours: "24-hour front desk | Check-in: 3 PM | Check-out: 12 PM",
+  reviews: 1799,
+  tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+  amenities: [
+    "4 restaurants",
+    "24-hour fitness center",
+    "Hot tub",
+    "Room service",
+    "Bar",
+    "Breakfast available",
+    "Premium bedding",
+    "Pillowtop beds",
+    "In-room safe",
+    "Desk",
+    "Business center",
+    "Concierge services",
+    "Valet parking"
+  ],
+  link: "https://expedia.com/affiliates/seattle-hotels-grand-hyatt-seattle.JT8QGaK"
+},
+{
+  id: 70,
+  name: "Hyatt At Olive 8",
+  image: "https://images.trvl-media.com/lodging/3000000/2310000/2309400/2309333/27c549f8.jpg",
+  rating: 4.0,
+  price: "359", // Requires date input for pricing
+  address: "1635 8th Ave, Seattle, WA 98101", // Typical address
+  description: "Eco-certified hotel featuring a full-service spa, indoor pool, and 24-hour fitness center. Offers premium bedding and wellness amenities in a sustainable downtown setting near Seattle attractions.",
+  hours: "24-hour front desk | Check-in: 3 PM | Check-out: 12 PM | Spa hours: Vary",
+  reviews: 1623,
+  tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+  amenities: [
+    "Full-service spa",
+    "Indoor pool",
+    "24-hour fitness center",
+    "Hot tub",
+    "Sauna",
+    "Steam room",
+    "Body treatments",
+    "Hydrotherapy",
+    "Aromatherapy",
+    "Restaurant",
+    "Breakfast available",
+    "Premium bedding",
+    "Pillowtop beds",
+    "In-room safe",
+    "Desk"
+  ],
+  link: "https://expedia.com/affiliates/seattle-hotels-hyatt-at-olive-8.DzFrifo"
+},
 ];
 
 export async function searchHotels(q: string, location: string) {
@@ -1017,7 +1179,7 @@ export async function searchHotels(q: string, location: string) {
     .sort((a, b) => b.rating - a.rating);
 }
 
-export const locations = ["San Francisco, CA", "Chicago, IL", "Las Vegas, NV", "Miami, FL", "New York, NY", "London", "Atlanta, GA", "Indianapolis, IN"];
+export const locations = ["San Francisco, CA", "Chicago, IL", "Las Vegas, NV", "Miami, FL", "New York, NY", "London", "Atlanta, GA", "Indianapolis, IN","Seattle, WA"];
 
 export async function getAllTags({ limit }: { limit?: number } = {}) {
   await new Promise((resolve) => setTimeout(resolve, 1500));
