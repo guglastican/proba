@@ -26,6 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="robots" content="index, follow, noarchive, max-image-preview:large" />
+      </head>
       {/* Add Google Tag Manager */}
       <GoogleTagManager gtmId="GTM-KQ7B5BL5" />
       <body className={`${geistSans.className} antialiased flex flex-col min-h-screen`}>
