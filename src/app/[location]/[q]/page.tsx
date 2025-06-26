@@ -10,6 +10,11 @@ interface PageProps {
 
 export const revalidate = 86400; // Refresh cached pages once every 24 hours
 
+// Add robots meta tag using viewport export
+export const viewport = {
+  robots: 'index, follow, noarchive, max-image-preview:large'
+}
+
 export async function generateStaticParams() {
   const allTags = await getAllTags({
     // If you have very many pages, you can only render a subset at compile-time. The rest will be rendered & cached at first access.
@@ -68,10 +73,8 @@ export default async function Page({ params }: PageProps) {
   const results = await getHotels(qDecoded, locationDecoded);
 
   return (
-    <>
-      <meta name="robots" content="index, follow, noarchive, max-image-preview:large" />
-      <div>
-        <Header q={qDecoded} location={locationDecoded} />
+    <div>
+      <Header q={qDecoded} location={locationDecoded} />
       <main className="container mx-auto space-y-8 px-4 py-8">
         <h1 className="text-center text-3xl font-bold">
           Best {results.length} {locationDecoded} with {qDecoded} 
@@ -90,7 +93,6 @@ Right now, our listings highlight {results.length} standout options that meet yo
           ))}
         </div>
       </main>
-      </div>
-    </>
+    </div>
   );
 }
