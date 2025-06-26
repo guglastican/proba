@@ -68,8 +68,10 @@ export default async function Page({ params }: PageProps) {
   const results = await getHotels(qDecoded, locationDecoded);
 
   return (
-    <div>
-      <Header q={qDecoded} location={locationDecoded} />
+    <>
+      <meta name="robots" content="index, follow, noarchive, max-image-preview:large" />
+      <div>
+        <Header q={qDecoded} location={locationDecoded} />
       <main className="container mx-auto space-y-8 px-4 py-8">
         <h1 className="text-center text-3xl font-bold">
           Best {results.length} {locationDecoded} with {qDecoded} 
@@ -88,6 +90,7 @@ Right now, our listings highlight {results.length} standout options that meet yo
           ))}
         </div>
       </main>
-    </div>
+      </div>
+    </>
   );
 }
