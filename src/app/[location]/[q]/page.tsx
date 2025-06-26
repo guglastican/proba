@@ -48,14 +48,13 @@ export async function generateMetadata({
   return {
     title: `Top ${results.length}  ${qDecoded} in ${locationDecoded}`,
     description: `Find the best ${qDecoded} near ${locationDecoded}. Imagine stepping onto your private balcony in the heart of ${locationDecoded}.`,
-    robots: {
-      index: true,
-      follow: true,
-      noarchive: true,
-      'max-image-preview': 'large',
-    },
+    robots: 'index, follow, noarchive, max-image-preview:large',
+    metadataBase: new URL(baseUrl),
     alternates: {    
       canonical: canonicalUrl,
+    },
+    other: {
+      'robots': 'index, follow, noarchive, max-image-preview:large',
     },
   };
 }
