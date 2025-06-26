@@ -1044,7 +1044,7 @@ const hotels: Hotel[] = [
 {
   id: 67,
   name: "Kimpton Hotel Monaco Seattle by IHG",
-  image: "C:\Users\Maglic\OneDrive\Documents\GitHub\proba\proba\public\hotels with tub in seattle.jpg",
+  image: "/public/hotels with tub in seattle.jpg",
   rating: 4.5,
   price: "500", // Requires date input for pricing
   address: "1101 4th Ave, Seattle, WA 98101",
