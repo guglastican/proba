@@ -10,11 +10,6 @@ interface PageProps {
 
 export const revalidate = 86400; // Refresh cached pages once every 24 hours
 
-// Add robots meta tag using viewport export
-export const viewport = {
-  robots: 'index, follow, noarchive, max-image-preview:large'
-}
-
 export async function generateStaticParams() {
   const allTags = await getAllTags({
     // If you have very many pages, you can only render a subset at compile-time. The rest will be rendered & cached at first access.
@@ -43,24 +38,10 @@ export async function generateMetadata({
   
   const results = await getHotels(qDecoded, locationDecoded);
   
-   // Create canonical URL - use custom encoding to preserve commas
-  const baseUrl = 'https://www.romantic-vacations-destinations.com';
-  const encodeWithCommas = (str: string) => {
-    return encodeURIComponent(str).replace(/%2C/g, ',');
-  };
-  const canonicalUrl = `${baseUrl}/${encodeWithCommas(locationDecoded)}/${encodeWithCommas(qDecoded)}`;
 
   return {
-    title: `Top ${results.length}  ${qDecoded} in ${locationDecoded}`,
-    description: `Find the best ${qDecoded} near ${locationDecoded}. Imagine stepping onto your private balcony in the heart of ${locationDecoded}.`,
-    robots: 'index, follow, noarchive, max-image-preview:large',
-    metadataBase: new URL(baseUrl),
-    alternates: {    
-      canonical: canonicalUrl,
-    },
-    other: {
-      'robots': 'index, follow, noarchive, max-image-preview:large',
-    },
+    title: `Top ${results.length} ${qDecoded} near ${locationDecoded} - Updated ${new Date().getFullYear()}`,
+    description: `Find the best ${qDecoded} near ${locationDecoded}`,
   };
 }
 
