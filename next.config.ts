@@ -404,6 +404,231 @@ const nextConfig = {
         permanent: true,
       },
       {
+    source: '/romantic-getaways-ohio',
+    destination: 'https://www.romantic-vacations-destinations.com',
+    permanent: true,
+  },
+  {
+    source: '/romantic-getaways-in-colorado',
+    destination: 'https://www.romantic-vacations-destinations.com',
+    permanent: true,
+  },
+  {
+    source: '/romantic-getaways-in-michigan',
+    destination: 'https://www.romantic-vacations-destinations.com',
+    permanent: true,
+  },
+  {
+    source: '/hotel-with-jacuzzi-in-room-south-bend',
+    destination: 'https://www.romantic-vacations-destinations.com',
+    permanent: true,
+  },
+  {
+    source: '/romantic-getaways-bahamas',
+    destination: 'https://www.romantic-vacations-destinations.com',
+    permanent: true,
+  },
+  {
+    source: '/honeymoon-spots.html',
+    destination: 'https://www.romantic-vacations-destinations.com',
+    permanent: true,
+  },
+  {
+    source: '/reasons-to-elope.html',
+    destination: 'https://www.romantic-vacations-destinations.com',
+    permanent: true,
+  },
+  {
+    source: '/elope-in-europe.html',
+    destination: 'https://www.romantic-vacations-destinations.com',
+    permanent: true,
+  },
+  {
+    source: '/colorado-train.html',
+    destination: 'https://www.romantic-vacations-destinations.com',
+    permanent: true,
+  },
+  {
+    source: '/maui-vacations.html',
+    destination: 'https://www.romantic-vacations-destinations.com',
+    permanent: true,
+  },
+  {
+    source: '/privacy-policy.html',
+    destination: 'https://www.romantic-vacations-destinations.com',
+    permanent: true,
+  },
+  {
+    source: '/elope-ideas.html',
+    destination: 'https://www.romantic-vacations-destinations.com',
+    permanent: true,
+  },
+  {
+    source: '/how-to-elope.html',
+    destination: 'https://www.romantic-vacations-destinations.com',
+    permanent: true,
+  },
+  {
+    source: '/hotels-with-jacuzzi-in-room-tucson',
+    destination: 'https://www.romantic-vacations-destinations.com',
+    permanent: true,
+  },
+  {
+    source: '/romantic-honeymoon-destinations.html',
+    destination: 'https://www.romantic-vacations-destinations.com',
+    permanent: true,
+  },
+  {
+    source: '/costa-rica-vacations.html',
+    destination: 'https://www.romantic-vacations-destinations.com',
+    permanent: true,
+  },
+  {
+    source: '/romantic-getaways-ontario',
+    destination: 'https://www.romantic-vacations-destinations.com',
+    permanent: true,
+  },
+  {
+    source: '/search/:search_term_string/feed/rss2',
+    destination: 'https://www.romantic-vacations-destinations.com',
+    permanent: true,
+  },
+  {
+    source: '/blog/page/2',
+    destination: 'https://www.romantic-vacations-destinations.com',
+    permanent: true,
+  },
+  {
+    source: '/yankee-stadium',
+    destination: 'https://www.romantic-vacations-destinations.com',
+    permanent: true,
+  },
+  {
+    source: '/tips-to-spend-your-leisure-in-summer',
+    destination: 'https://www.romantic-vacations-destinations.com',
+    permanent: true,
+  },
+  {
+    source: '/train-vacations.html',
+    destination: 'https://www.romantic-vacations-destinations.com',
+    permanent: true,
+  },
+  {
+    source: '/us-travel-destinations.html',
+    destination: 'https://www.romantic-vacations-destinations.com',
+    permanent: true,
+  },
+  {
+    source: '/mexico-vacations.html',
+    destination: 'https://www.romantic-vacations-destinations.com',
+    permanent: true,
+  },
+  {
+    source: '/hotel-with-jacuzzi-in-room-tulsa',
+    destination: 'https://www.romantic-vacations-destinations.com',
+    permanent: true,
+  },
+  {
+    source: '/new-york',
+    destination: 'https://www.romantic-vacations-destinations.com',
+    permanent: true,
+  },
+  {
+    source: '/traverse-city-hotels-with-jacuzzi-in-room',
+    destination: 'https://www.romantic-vacations-destinations.com',
+    permanent: true,
+  },
+  {
+    source: '/romantic-getaways-in-washington',
+    destination: 'https://www.romantic-vacations-destinations.com',
+    permanent: true,
+  },
+  {
+    source: '/sitemap',
+    destination: 'https://www.romantic-vacations-destinations.com',
+    permanent: true,
+  },
+  {
+    source: '/romantic-picnic-ideas',
+    destination: 'https://www.romantic-vacations-destinations.com',
+    permanent: true,
+  },
+  {
+    source: '/contact',
+    destination: 'https://www.romantic-vacations-destinations.com',
+    permanent: true,
+  },
+  {
+    source: '/european-vacations.html',
+    destination: 'https://www.romantic-vacations-destinations.com',
+    permanent: true,
+  },
+  {
+    source: '/terms-of-service',
+    destination: 'https://www.romantic-vacations-destinations.com',
+    permanent: true,
+  },
+  {
+    source: '/faq',
+    destination: 'https://www.romantic-vacations-destinations.com',
+    permanent: true,
+  },
+  {
+    source: '/privacy-policy',
+    destination: 'https://www.romantic-vacations-destinations.com',
+    permanent: true,
+  },
+  {
+    source: '/costa-rica-wedding-destination.html',
+    destination: 'https://www.romantic-vacations-destinations.com',
+    permanent: true,
+  },
+  {
+    source: '/safety-tips-for-travellers',
+    destination: 'https://www.romantic-vacations-destinations.com',
+    permanent: true,
+  },
+  {
+    source: '/oklahoma',
+    destination: 'https://www.romantic-vacations-destinations.com',
+    permanent: true,
+  },
+  {
+    source: '/about',
+    destination: 'https://www.romantic-vacations-destinations.com',
+    permanent: true,
+  },
+  {
+    source: '/bronx-zoo',
+    destination: 'https://www.romantic-vacations-destinations.com',
+    permanent: true,
+  },
+  {
+    source: '/$',
+    destination: 'https://www.romantic-vacations-destinations.com',
+    permanent: true,
+  },
+  {
+    source: '/caribbean-romantic-vacation.html',
+    destination: 'https://www.romantic-vacations-destinations.com',
+    permanent: true,
+  },
+  {
+    source: '/maine',
+    destination: 'https://www.romantic-vacations-destinations.com',
+    permanent: true,
+  },
+  {
+    source: '/indiana',
+    destination: 'https://www.romantic-vacations-destinations.com',
+    permanent: true,
+  },
+  {
+    source: '/cabins-in-tennessee-with-hot-tub',
+    destination: 'https://www.romantic-vacations-destinations.com',
+    permanent: true,
+  },   
+      {
         // Using path matching parameters
         source: '/blog/:slug',
         destination: '/articles/:slug',
