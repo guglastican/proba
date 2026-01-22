@@ -6,6 +6,8 @@ import FAQSection from "@/components/FAQSection";
 import SentimentSummary from "@/components/SentimentSummary";
 import AISummaryBlock from "@/components/AISummaryBlock";
 import LocationOverview from "@/components/LocationOverview";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import InternalLinks from "@/components/InternalLinks";
 import { getAllTags, locations, searchHotels } from "@/data/hotels";
 import { locationGEOData } from "@/data/location-geo-data";
 import { Metadata } from "next";
@@ -65,6 +67,8 @@ export default async function Page({ params }: PageProps) {
     <div>
       <Header q={qDecoded} location={locationDecoded} />
       <main className="container mx-auto space-y-8 px-4 py-8">
+        <Breadcrumbs location={locationDecoded} q={qDecoded} />
+
         <h1 className="text-center text-3xl font-bold">
           Best {results.length} {locationDecoded} with {qDecoded}
         </h1>
@@ -86,6 +90,8 @@ export default async function Page({ params }: PageProps) {
         <ExpertTips tips={geoData.expertTips} location={locationDecoded} />
 
         <FAQSection faqs={geoData.faqs} location={locationDecoded} />
+
+        <InternalLinks currentQ={qDecoded} currentLocation={locationDecoded} />
       </main>
     </div>
   );

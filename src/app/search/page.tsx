@@ -6,6 +6,8 @@ import FAQSection from "@/components/FAQSection";
 import SentimentSummary from "@/components/SentimentSummary";
 import AISummaryBlock from "@/components/AISummaryBlock";
 import LocationOverview from "@/components/LocationOverview";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import InternalLinks from "@/components/InternalLinks";
 import { Skeleton } from "@/components/ui/skeleton";
 import { locations, searchHotels } from "@/data/hotels";
 import { locationGEOData } from "@/data/location-geo-data";
@@ -71,6 +73,8 @@ async function Results({ q, location }: ResultsProps) {
 
   return (
     <main className="container mx-auto space-y-8 px-4 py-8">
+      <Breadcrumbs location={location} q={q} />
+
       <p className="text-center font-semibold">
         Showing {results.length} results for {`"${q}"`} near {location}
       </p>
@@ -94,6 +98,8 @@ async function Results({ q, location }: ResultsProps) {
       <ExpertTips tips={geoData.expertTips} location={location} />
 
       <FAQSection faqs={geoData.faqs} location={location} />
+
+      <InternalLinks currentQ={q} currentLocation={location} />
     </main>
   );
 }
