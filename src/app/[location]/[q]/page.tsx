@@ -8,6 +8,7 @@ import AISummaryBlock from "@/components/AISummaryBlock";
 import LocationOverview from "@/components/LocationOverview";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import InternalLinks from "@/components/InternalLinks";
+import HotelSchema from "@/components/HotelSchema";
 import { getAllTags, locations, searchHotels } from "@/data/hotels";
 import { locationGEOData } from "@/data/location-geo-data";
 import { Metadata } from "next";
@@ -76,6 +77,8 @@ export default async function Page({ params }: PageProps) {
         <AISummaryBlock locationName={locationDecoded} summary={geoData.sentimentSummary!} />
 
         <SentimentSummary summary={geoData.sentimentSummary!} />
+
+        <HotelSchema hotels={results} locationName={locationDecoded} />
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {results.map((hotel) => (

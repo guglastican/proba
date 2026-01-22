@@ -8,6 +8,7 @@ import AISummaryBlock from "@/components/AISummaryBlock";
 import LocationOverview from "@/components/LocationOverview";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import InternalLinks from "@/components/InternalLinks";
+import HotelSchema from "@/components/HotelSchema";
 import { Skeleton } from "@/components/ui/skeleton";
 import { locations, searchHotels } from "@/data/hotels";
 import { locationGEOData } from "@/data/location-geo-data";
@@ -85,6 +86,9 @@ async function Results({ q, location }: ResultsProps) {
       <AISummaryBlock locationName={location} summary={geoData.sentimentSummary!} />
 
       <SentimentSummary summary={geoData.sentimentSummary!} />
+
+      <HotelSchema hotels={results} locationName={location} />
+
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {results.map((hotel) => (
           <HotelItem key={hotel.id} hotel={hotel} />

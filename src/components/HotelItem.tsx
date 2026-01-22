@@ -20,8 +20,6 @@ export default function HotelItem({ hotel }: HotelItemProps) {
   return (
     <Card
       className="overflow-hidden border border-gray-200 rounded-lg shadow-sm"
-      itemScope
-      itemType="https://schema.org/Hotel"
     >
       <div className="relative">
         <Image
@@ -30,7 +28,6 @@ export default function HotelItem({ hotel }: HotelItemProps) {
           width={1200}
           height={600}
           className="h-64 w-full object-cover"
-          itemProp="image"
         />
         <div className="absolute top-3 right-3 bg-white px-3 py-1 rounded-full text-sm font-semibold shadow-md">
           ${hotel.price}
@@ -38,25 +35,23 @@ export default function HotelItem({ hotel }: HotelItemProps) {
       </div>
 
       <CardContent className="p-4">
-        <h2 className="text-xl font-bold mb-1" itemProp="name">{hotel.name}</h2>
+        <h2 className="text-xl font-bold mb-1">{hotel.name}</h2>
 
         <div className="flex items-center text-gray-500 mb-2">
           <MapPin className="h-4 w-4 mr-1 flex-shrink-0" />
-          <span className="text-sm truncate" itemProp="address">{hotel.address}</span>
+          <span className="text-sm truncate">{hotel.address}</span>
         </div>
 
         <div className="flex items-center mb-3">
-          <div className="flex mr-2" itemProp="aggregateRating" itemScope itemType="https://schema.org/AggregateRating">
+          <div className="flex mr-2">
             <StarRating rating={hotel.rating} />
-            <meta itemProp="ratingValue" content={hotel.rating.toString()} />
-            <meta itemProp="reviewCount" content={hotel.reviews.toString()} />
           </div>
           <span className="text-sm text-gray-500">
             {hotel.rating} ({hotel.reviews} reviews)
           </span>
         </div>
 
-        <p className="text-sm text-gray-600 mb-5 line-clamp-8" itemProp="description">
+        <p className="text-sm text-gray-600 mb-5 line-clamp-8">
           {hotel.description}
         </p>
 
