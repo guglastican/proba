@@ -15,7 +15,7 @@ export interface Hotel {
   googlePlaceId?: string; // Google Place ID for fetching review
 }
 
-const hotels: Hotel[] = [
+export const hotels: Hotel[] = [
   {
     id: 1,
     name: "1 Hotel San Francisco",
@@ -914,6 +914,45 @@ const hotels: Hotel[] = [
     reviews: 1623,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
     link: "https://expedia.com/affiliates/seattle-hotels-hyatt-at-olive-8.DzFrifo"
+  },
+  {
+    id: 71,
+    name: "Queen Anne Hotel",
+    image: "https://images.trvl-media.com/lodging/1000000/30000/21500/21431/4cd89708.jpg",
+    rating: 4.0,
+    price: "185",
+    address: "1590 Sutter St, San Francisco, CA 94109",
+    description: "Historic Victorian hotel in San Francisco featuring elegant rooms, some with wood-burning fireplaces and private whirlpool tubs. Offers a unique glimpse into the city's rich history with modern comforts.",
+    hours: "24-hour front desk",
+    reviews: 1450,
+    tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    link: "https://expedia.com/affiliates/san-francisco-hotels-queen-anne-hotel.w8njrtz"
+  },
+  {
+    id: 72,
+    name: "Hotel Nikko San Francisco",
+    image: "https://images.trvl-media.com/lodging/1000000/20000/11200/11186/f0e63ed4.jpg",
+    rating: 4.5,
+    price: "245",
+    address: "222 Mason St, San Francisco, CA 94102",
+    description: "Luxury hotel near Union Square offering modern accommodations, a glass-enclosed indoor pool, and suites with deep soaking tubs. Perfectly located for shopping, dining, and exploring the city.",
+    hours: "24-hour front desk",
+    reviews: 3200,
+    tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    link: "https://expedia.com/affiliates/san-francisco-hotels-hotel-nikko.E2njhtz"
+  },
+  {
+    id: 73,
+    name: "The Donatello",
+    image: "https://images.trvl-media.com/lodging/1000000/10000/500/409/1640fae4.jpg",
+    rating: 4.5,
+    price: "215",
+    address: "501 Post St, San Francisco, CA 94102",
+    description: "Sophisticated hotel located just steps from Union Square. Features spacious suites, an Italian restaurant, and wellness facilities including whirlpool tubs for ultimate relaxation.",
+    hours: "24-hour front desk",
+    reviews: 1850,
+    tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    link: "https://expedia.com/affiliates/san-francisco-hotels-the-donatello.EUuglQO"
   },
 ];
 

@@ -1,4 +1,7 @@
 import Header from "@/components/Header";
+import ExpertTips from "@/components/ExpertTips";
+import FAQSection from "@/components/FAQSection";
+import { locationGEOData } from "@/data/location-geo-data";
 import { Metadata } from "next";
 import Link from "next/link";
 import { Search, MapPin, Star } from "lucide-react";
@@ -7,10 +10,10 @@ export const metadata: Metadata = {
   title: "Hot Tub Finder: Discover Luxurious Hotels with Hot Tub",
   description: "Find the perfect hotel with hot tubs across the United States. Explore romantic getaways, spa experiences, and luxury accommodations with private hot tubs.",
   keywords: [
-    "hotels with hot tub", 
-    "luxury accommodations", 
-    "romantic getaways", 
-    "spa hotels", 
+    "hotels with hot tub",
+    "luxury accommodations",
+    "romantic getaways",
+    "spa hotels",
     "private hot tubs"
   ],
   alternates: {
@@ -39,53 +42,53 @@ export const metadata: Metadata = {
 
 export default function Home() {
   const featuredLocations = [
-    { 
-      name: "San Francisco, CA", 
-      hotels: 42, 
+    {
+      name: "San Francisco, CA",
+      hotels: 42,
       description: "Discover stunning hot tub hotels with Bay Area views",
-      url: "/search?q=Hotels+With+Hot+Tub+in+Room&location=San+Francisco%2C+CA" 
+      url: "/search?q=Hotels+With+Hot+Tub+in+Room&location=San+Francisco%2C+CA"
     },
-    { 
-      name: "Miami, FL", 
-      hotels: 35, 
+    {
+      name: "Miami, FL",
+      hotels: 35,
       description: "Tropical hot tub escapes in the Sunshine State",
-      url: "/search?q=Hotels+With+Hot+Tub+in+Room&location=Miami%2C+FL" 
+      url: "/search?q=Hotels+With+Hot+Tub+in+Room&location=Miami%2C+FL"
     },
-    { 
-      name: "Las Vegas, NV", 
-      hotels: 50, 
+    {
+      name: "Las Vegas, NV",
+      hotels: 50,
       description: "Luxurious hot tub experiences in the Entertainment Capital",
-      url: "/search?q=Hotels+With+Hot+Tub+in+Room&location=Las+Vegas%2C+NV" 
+      url: "/search?q=Hotels+With+Hot+Tub+in+Room&location=Las+Vegas%2C+NV"
     },
-    { 
-      name: "New York, NY", 
-      hotels: 28, 
+    {
+      name: "New York, NY",
+      hotels: 28,
       description: "Luxurious hot tub getaways in the iconic city that never sleeps",
-      url: "/search?q=Hotels+With+Hot+Tub+in+Room&location=New+York%2C+NY" 
+      url: "/search?q=Hotels+With+Hot+Tub+in+Room&location=New+York%2C+NY"
     },
-    { 
-      name: "Chicago, IL", 
-      hotels: 28, 
+    {
+      name: "Chicago, IL",
+      hotels: 28,
       description: "Experience pure bliss and unwind completely in our luxurious hot tub.",
-      url: "/search?q=Hotels+With+Hot+Tub+in+Room&location=Chicago%2C+IL" 
+      url: "/search?q=Hotels+With+Hot+Tub+in+Room&location=Chicago%2C+IL"
     },
-    { 
-      name: "London", 
-      hotels: 28, 
+    {
+      name: "London",
+      hotels: 28,
       description: "Urban hot tub getaways in a timeless, bustling cosmopolitan hub",
-      url: "/search?q=Hotels+With+Hot+Tub+in+Room&location=London" 
+      url: "/search?q=Hotels+With+Hot+Tub+in+Room&location=London"
     },
-    { 
-      name: "Atlanta, GA", 
-      hotels: 8, 
+    {
+      name: "Atlanta, GA",
+      hotels: 8,
       description: "Indulge in ultimate relaxation with a soothing hot tub experience. ",
-      url: "/search?q=Hotels+With+Hot+Tub+in+Room&location=Atlanta%2C+GA" 
+      url: "/search?q=Hotels+With+Hot+Tub+in+Room&location=Atlanta%2C+GA"
     },
-    { 
-      name: "Indianapolis, IN", 
-      hotels: 3, 
+    {
+      name: "Indianapolis, IN",
+      hotels: 3,
       description: "Sink into tranquility and let the stresses melt away in the warm, bubbling hot tub.",
-      url: "/search?q=Hotels+With+Hot+Tub+in+Room&location=Indianapolis%2C+IN" 
+      url: "/search?q=Hotels+With+Hot+Tub+in+Room&location=Indianapolis%2C+IN"
     },
   ];
 
@@ -110,14 +113,14 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
-      
+
       <main>
         <section className="container mx-auto px-4 py-16 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Find Your Perfect Hotels With Hot Tub 
+            Find Your Perfect Hotels With Hot Tub
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-10">
-            Discover luxurious hotels with private hot tubs across the United States. 
+            Discover luxurious hotels with private hot tubs across the United States.
             Relax, unwind, and create unforgettable memories.
           </p>
         </section>
@@ -127,8 +130,8 @@ export default function Home() {
             <h2 className="text-3xl font-bold text-center mb-12">Featured Hotels With Hot Tub</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {featuredLocations.map((location) => (
-                <Link 
-                  key={location.name} 
+                <Link
+                  key={location.name}
                   href={location.url}
                   className="bg-gray-100 rounded-lg p-6 text-center hover:bg-gray-200 transition-colors group"
                 >
@@ -147,8 +150,8 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-center mb-12">Why Choose Hot Tub Finder</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {features.map((feature) => (
-              <div 
-                key={feature.title} 
+              <div
+                key={feature.title}
                 className="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow"
               >
                 <feature.icon className="mx-auto h-12 w-12 text-primary mb-4" />
@@ -158,10 +161,23 @@ export default function Home() {
             ))}
           </div>
         </section>
+
+
+
+        <section className="container mx-auto px-4 py-16">
+          <ExpertTips
+            tips={locationGEOData["General"].expertTips}
+            location="your favorite destination"
+          />
+          <FAQSection
+            faqs={locationGEOData["General"].faqs}
+            location="Hot Tub Finder"
+          />
+        </section>
       </main>
 
-      <script 
-        type="application/ld+json" 
+      <script
+        type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
@@ -175,7 +191,7 @@ export default function Home() {
               "query-input": "required name=search_term_string"
             }
           })
-        }} 
+        }}
       />
     </div>
   );

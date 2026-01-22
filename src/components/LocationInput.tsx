@@ -15,7 +15,7 @@ import {
 import { locations } from "@/data/hotels";
 import { cn } from "@/lib/utils";
 import { Check, ChevronsUpDown } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface LocationInputProps {
   name?: string;
@@ -28,6 +28,24 @@ export default function LocationInput({
 }: LocationInputProps) {
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState(defaultValue || "");
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return (
+      <Button
+        variant="outline"
+        role="combobox"
+        className="w-[180px] flex-none justify-between"
+      >
+        {defaultValue || "Filter location..."}
+        <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+      </Button>
+    );
+  }
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -40,7 +58,7 @@ export default function LocationInput({
         >
           {input
             ? // In a real app, search would call an API
-              locations.find((location) => location === input)
+            locations.find((location) => location === input)
             : "Filter location..."}
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>

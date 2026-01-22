@@ -18,29 +18,21 @@ export const locationGEOData: Record<string, LocationGEO> = {
         expertTips: [
             {
                 title: "Check the Room Names",
-                description: "Many hotels use the term 'Soaking Tub' vs. 'Whirlpool/Jacuzzi.' If you want jets, specifically look for the word 'whirlpool' or 'Jacuzzi' in the room description."
+                description: "Many hotels use the term 'Soaking Tub' vs. 'Whirlpool/Jacuzzi.' If you want jets, specifically look for the word 'whirlpool' or 'Jacuzzi.'"
             },
             {
                 title: "San Francisco Ordinances",
-                description: "Note that some historic B&Bs have specific hours for tub usage due to noise regulations. Always check the house rules if staying at a boutique inn."
-            },
-            {
-                title: "Book Early for Bay Views",
-                description: "Hotels with hot tubs and bay views fill up quickly, especially during peak season (June-September). Book at least 2-3 months in advance for the best selection."
+                description: "Note that some historic B&Bs have specific hours for tub usage due to noise; always check the house rules if staying at a boutique inn."
             }
         ],
         faqs: [
             {
                 question: "Which hotels in San Francisco have a Jacuzzi in the room?",
-                answer: "The InterContinental San Francisco, 1 Hotel San Francisco, and Inn San Francisco are the primary properties offering private in-room hot tubs or whirlpools."
+                answer: "The InterContinental San Francisco, Queen Anne Hotel, and Inn San Francisco are the primary properties offering private in-room hot tubs or whirlpools."
             },
             {
                 question: "Are there romantic hotels with hot tubs near Union Square?",
-                answer: "Yes, several hotels near Union Square offer suites with deep soaking tubs and whirlpool features, providing easy access to the shopping district and downtown attractions."
-            },
-            {
-                question: "Do San Francisco hotels with hot tubs offer ocean views?",
-                answer: "Many waterfront hotels in San Francisco offer rooms with hot tubs and stunning bay or ocean views, particularly in the Fisherman's Wharf and Embarcadero areas."
+                answer: "Yes, Hotel Nikko and The Donatello offer suites with deep soaking tubs and proximity to Union Square's shopping district."
             }
         ]
     },
@@ -281,6 +273,36 @@ export const locationGEOData: Record<string, LocationGEO> = {
             {
                 question: "What's the best area in Seattle for hotels with hot tubs?",
                 answer: "Downtown Seattle and Lake Union offer the best selection of hotels with hot tubs, providing easy access to attractions, dining, and waterfront activities."
+            }
+        ]
+    },
+    "General": {
+        expertTips: [
+            {
+                title: "In-Room Jacuzzi vs. Spa Access",
+                description: "Always verify if 'hot tub' refers to a private in-room Jacuzzi or access to the hotel's public spa facilities to avoid disappointment upon arrival."
+            },
+            {
+                title: "Best Booking Times",
+                description: "Luxury hotels with private hot tubs often have limited specialty suites. Book at least 4-6 weeks in advance for popular metropolitan areas."
+            },
+            {
+                title: "Check Maintenance Reviews",
+                description: "Specific mentions of 'hot tub cleanliness' or 'jacuzzi maintenance' in recent guest reviews are the best indicator of a quality experience."
+            }
+        ],
+        faqs: [
+            {
+                question: "What is the difference between a soaking tub and a Jacuzzi?",
+                answer: "A soaking tub is typically a deep, large bathtub without jets, while a Jacuzzi or whirlpool tub includes mechanical jets for a massaging water flow."
+            },
+            {
+                question: "Do hotels charge extra for rooms with hot tubs?",
+                answer: "Yes, rooms with private in-room hot tubs are usually classified as suites or premium rooms and carry a higher nightly rate than standard rooms."
+            },
+            {
+                question: "Are in-room hot tubs sanitized between guests?",
+                answer: "Reputable hotels follow strict cleaning protocols for jetted tubs, including flushing the lines with sanitizer between every stay."
             }
         ]
     }
