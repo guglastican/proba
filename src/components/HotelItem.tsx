@@ -18,9 +18,9 @@ interface HotelItemProps {
 
 export default function HotelItem({ hotel }: HotelItemProps) {
   return (
-    <Card 
+    <Card
       className="overflow-hidden border border-gray-200 rounded-lg shadow-sm"
-      itemScope 
+      itemScope
       itemType="https://schema.org/Hotel"
     >
       <div className="relative">
@@ -36,15 +36,15 @@ export default function HotelItem({ hotel }: HotelItemProps) {
           ${hotel.price}
         </div>
       </div>
-      
+
       <CardContent className="p-4">
         <h2 className="text-xl font-bold mb-1" itemProp="name">{hotel.name}</h2>
-        
+
         <div className="flex items-center text-gray-500 mb-2">
           <MapPin className="h-4 w-4 mr-1 flex-shrink-0" />
           <span className="text-sm truncate" itemProp="address">{hotel.address}</span>
         </div>
-        
+
         <div className="flex items-center mb-3">
           <div className="flex mr-2" itemProp="aggregateRating" itemScope itemType="https://schema.org/AggregateRating">
             <StarRating rating={hotel.rating} />
@@ -55,15 +55,15 @@ export default function HotelItem({ hotel }: HotelItemProps) {
             {hotel.rating} ({hotel.reviews} reviews)
           </span>
         </div>
-        
+
         <p className="text-sm text-gray-600 mb-5 line-clamp-8" itemProp="description">
           {hotel.description}
         </p>
-        
+
         <div className="flex flex-wrap gap-2 mb-4">
           {hotel.tags.slice(0, 7).map((tag) => (
-            <Badge 
-              key={tag} 
+            <Badge
+              key={tag}
               variant="secondary"
               className="bg-gray-100 text-gray-700 hover:bg-gray-200 border-0"
             >
@@ -71,28 +71,18 @@ export default function HotelItem({ hotel }: HotelItemProps) {
             </Badge>
           ))}
         </div>
-        
-        <div className="flex flex-wrap gap-2 mb-4">
-          {hotel.amenities.slice(0, 7).map((amenity) => (
-            <Badge 
-              key={amenity} 
-              variant="secondary"
-              className="bg-blue-100 text-blue-700 hover:bg-blue-200 border-0"
-            >
-              {amenity}
-            </Badge>
-          ))}
-        </div>
+
+
       </CardContent>
-      
+
       <CardFooter className="px-4 pb-4 pt-0">
-        <Link 
-          href={hotel.link} 
-          target="_blank" 
-          rel="noopener noreferrer" 
+        <Link
+          href={hotel.link}
+          target="_blank"
+          rel="noopener noreferrer"
           className="w-full"
         >
-          <Button 
+          <Button
             className="w-full bg-green-600 hover:bg-green-700 text-white"
           >
             View Details

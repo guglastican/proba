@@ -11,7 +11,6 @@ export interface Hotel {
   hours: string;
   reviews: number;
   tags: string[];
-  amenities: string[];
   link: string;
   googlePlaceId?: string; // Google Place ID for fetching review
 }
@@ -28,7 +27,6 @@ const hotels: Hotel[] = [
     hours: "24/7",
     reviews: 367,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
-    amenities: ["Spa", "Hot Tub", "Terrace/Patio"],
     link: "https://expedia.com/affiliates/san-francisco-hotels-1-hotel-san-francisco.nmthOWh",
     googlePlaceId: "ChIJg7PyJ3GBhYARO29J0nraSd0" // Google Place ID for 1 Hotel San Francisco
   },
@@ -43,7 +41,6 @@ const hotels: Hotel[] = [
   hours: "24/7",
   reviews: 1006,
   tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
-  amenities: ["Indoor Pool", "24-Hour Gym", "Hot Tub"],
   link: "https://expedia.com/affiliates/san-francisco-hotels-intercontinental-san-francisco.XFQqP4Y",
   googlePlaceId: "ChIJF1lX2oaAhYARuyWPqjE12Oo" // Google Place ID for InterContinental San Francisco
   },
@@ -58,16 +55,6 @@ const hotels: Hotel[] = [
       hours: "24/7",
       reviews: 514,
       tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
-      amenities: [
-        "Daily Breakfast",
-        "Outdoor Spa Tub",
-        "Rooftop Terrace",
-        "Free WiFi",
-        "Parking Available",
-        "Laundry Facilities",
-        "Pet-Friendly Rooms",
-        "Individually Decorated Rooms"
-      ],
       link: "https://expedia.com/affiliates/san-francisco-hotels-inn-san-francisco.DCgJfcE",
   googlePlaceId: "ChIJyZqebzl-j4ARQNJ9IscV_JU" // Google Place ID for Inn San Francisco 
   },
@@ -80,7 +67,6 @@ const hotels: Hotel[] = [
   address: "373 S Airport Blvd, South San Francisco, CA, 94080",
   description: "Hotel in South San Francisco with free breakfast and airport shuttle service.",
   hours: "24/7",  // Added the 'hours' property
-  amenities: ["Breakfast included", "Free airport shuttle", "Hot Tub", "Gym", "Parking available", "Housekeeping"],
   reviews: 1005,
   tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
   link: "https://expedia.com/affiliates/san-francisco-hotels-holiday-inn-express-san-francisco-airport-north.AhfYCnR",
@@ -95,7 +81,6 @@ const hotels: Hotel[] = [
     address: "100 Boyes Boulevard, North San Francisco, CA, 95416",
     description: "Discover the finest of California Wine Country at Fairmont Sonoma Mission Inn & Spa, a top luxury resort in Sonoma. Just an hour north of San Francisco, it offers an unforgettable experience.",
     hours: "24/7",  // Added the 'hours' property
-    amenities: ["Spa", "Pool", "Hot Tub", "Restaurant", "Hotels in San Francisco With Hot Tub in Room", "Bar"],
     reviews: 1000,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
     link: "https://expedia.com/affiliates/sonoma-hotels-fairmont-sonoma-mission-inn-spa.on9UmAB",
@@ -110,7 +95,6 @@ const hotels: Hotel[] = [
         address: "7871 River Road, San Francisco, CA, 95436",
         description: "The Farmhouse in San Francisco Sonoma County's Russian River Valley offers a luxurious, intimate wine country retreat with 25 rooms, a Michelin-starred restaurant, and a Farm-to-Table Spa, surrounded by vineyards, redwood forests, and the stunning Sonoma Coast.",
         hours: "24/7",
-        amenities: ["Hotels in San Francisco With Hot Tub in Room", "Pool", "Room service", "Spa", "24/7 front desk", "Housekeeping"],
         reviews: 60,
         tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
         link: "https://expedia.com/affiliates/forestville-hotels-farmhouse-inn.gQ3yQdB",
@@ -126,7 +110,6 @@ const hotels: Hotel[] = [
     address: "1551 Thoreau Dr N, Schaumburg Chicago, IL, 60173",
     description: "Hotel connected to the convention center in Chicago Schaumburg with 2 restaurants, pool, hot tub, and parking included.",
     hours: "24/7",
-    amenities: ["Pool", "Hot Tub", "Restaurant", "Parking available", "Bar"],
     reviews: 1002,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
     link: "https://expedia.com/affiliates/chicago-hotels-renaissance-schaumburg-convention-center-hotel.Q08el92",
@@ -141,7 +124,6 @@ const hotels: Hotel[] = [
       address: "330 North Wabash Avenue, Chicago, IL, 60611",
       description: "Luxury hotel in Downtown Chicago with a full-service spa, indoor pool, restaurant, and gym. The on-site spa has 7 treatment rooms including couples treatment rooms. The hotel's spa offers deep-tissue massages, hot stone massages, prenatal massages, and sports massages.",
       hours: "24/7",
-      amenities: ["Spa", "Pool", "Restaurant", "Gym", "Hot Tub", "Free Wi-Fi"],
       reviews: 998,
       tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
       link: "https://expedia.com/affiliates/chicago-hotels-the-langham.TLKl1W3",
@@ -156,7 +138,6 @@ const hotels: Hotel[] = [
       address: "151 West Adams Street, Chicago, IL, 60603",
       description: "Luxury hotel in Downtown Chicago with a full-service spa, indoor pool, restaurant, and fitness center. SPA AT JW CHICAGO has 14 treatment rooms including couples treatment rooms.",
       hours: "24/7",
-      amenities: ["Spa", "Pool", "Restaurant", "Gym", "Hot Tub", "Housekeeping", "Free Wi-Fi"],
       reviews: 1001,
       tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
       link: "https://expedia.com/affiliates/chicago-hotels-jw-marriott-chicago.ctu0tPJ",
@@ -171,7 +152,6 @@ const hotels: Hotel[] = [
       address: "800 N Michigan Ave, Chicago, IL, 60611",
       description: "Luxury Chicago hotel connected to a shopping center, steps from Chicago Water Tower, with a full-service spa, pool, and pet-friendly options.",
       hours: "24/7",
-      amenities: ["Pool", "Hot Tub", "Bar", "Spa", "Breakfast Available", "Pet Friendly"],
       reviews: 1000,
       tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
       link: "https://expedia.com/affiliates/chicago-hotels-park-hyatt-chicago.fLsb72J",
@@ -186,7 +166,6 @@ const hotels: Hotel[] = [
       address: "11 E. Walton Street, Chicago, IL, 60611",
       description: "Luxury Chicago hotel, steps from Oak Street and Michigan Avenue, offering a range of luxurious amenities including a full-service spa, indoor pool, and fine dining.",
       hours: "24/7",
-      amenities: ["Pool", "Parking Available", "Room Service", "Bar", "Housekeeping", "Laundry"],
       reviews: 1000,
       tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
       link: "https://expedia.com/affiliates/chicago-hotels-waldorf-astoria-chicago.5y1tbwo",
@@ -201,7 +180,6 @@ const hotels: Hotel[] = [
       address: "1118 North State Street, Chicago, IL, 60610",
       description: "Luxury Chicago hotel in Downtown Chicago offering 2 restaurants, a seasonal outdoor pool, a fitness center, and chic accommodations near Michigan Avenue and Lake Michigan.",
       hours: "24/7",
-      amenities: ["Pool", "Restaurant", "Gym", "Room Service", "Housekeeping", "Breakfast Available"],
       reviews: 1011,
       tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
       link: "https://expedia.com/affiliates/chicago-hotels-viceroy-chicago.j3TIKar",
@@ -216,7 +194,6 @@ const hotels: Hotel[] = [
       address: "1100 Biscayne Blvd, Miami, FL, 33132",
       description: "A luxury hotel in Downtown Miami offering two outdoor swimming pools, a hot tub, a gym, a restaurant, and pet-friendly accommodations near popular attractions like the Phillip and Patricia Frost Museum of Science.",
       hours: "24/7",
-      amenities: ["2 Outdoor Swimming Pools", "Restaurant", "Gym", "Hot Tub", "Breakfast Available", "Pet Friendly"],
       reviews: 1000,
       tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
       link: "https://expedia.com/affiliates/miami-hotels-the-gabriel-miami.bcBMhFf",
@@ -231,7 +208,6 @@ const hotels: Hotel[] = [
       address: "17875 Collins Ave, Miami Sunny Isles Beach Miami, FL, 33160",
       description: "A luxurious beachfront resort offering 3 outdoor pools, a spa, multiple dining options, and stunning ocean views, located in Sunny Isles Beach near various local attractions.",
       hours: "24/7",
-      amenities: ["3 Outdoor Pools", "Spa", "Restaurant", "Bar", "Hot Tub", "Parking Available", "Housekeeping"],
       reviews: 531,
       tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
       link: "https://expedia.com/affiliates/miami-hotels-acqualina-resort-residences-on-the-beach.4dr761K",
@@ -246,7 +222,6 @@ const hotels: Hotel[] = [
       address: "788 Brickell Plaza, Miami, FL, 33131",
       description: "A luxurious hotel in the heart of Miami's Brickell neighborhood, connected to a shopping center and offering an exceptional rooftop terrace, pool, gym, restaurant, and more.",
       hours: "24/7",
-      amenities: ["Restaurant", "Pool", "Gym", "Hot Tub", "Bar", "Pet Friendly"],
       reviews: 2962,
       tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
       link: "https://expedia.com/affiliates/miami-hotels-east-miami.oKqd8tm",
@@ -262,7 +237,6 @@ const hotels: Hotel[] = [
       address: "50 Sw 12th Street, Miami, FL, 33130",
       description: "A convenient hotel located a short walk from Brickell City Centre, offering a range of amenities including 3 restaurants, breakfast, hot tub, gym, and a bar.",
       hours: "24/7",
-      amenities: ["Breakfast Included", "Restaurant", "Hot Tub", "Gym", "Bar", "Housekeeping"],
       reviews: 4231,
       tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
       link: "https://expedia.com/affiliates/miami-hotels-hampton-inn-suites-miamibrickell-downtown.THG9rMr",
@@ -277,7 +251,6 @@ const hotels: Hotel[] = [
       address: "270 Biscayne Blvd Way, Miami, FL, 33131",
       description: "Luxury hotel in Downtown Miami with 2 restaurants, offering an outdoor pool, spa, and pet-friendly accommodations. Ideal for relaxation and enjoyment.",
       hours: "24/7",
-      amenities: ["Pool", "Restaurant", "Pet Friendly", "Spa", "Bar", "Breakfast Available"],
       reviews: 1709,
       tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
       link: "https://expedia.com/affiliates/miami-hotels-kimpton-epic-hotel.ZNrsbxq",
@@ -292,7 +265,6 @@ const hotels: Hotel[] = [
       address: "255 Biscayne Boulevard Way, Miami, FL, 33131",
       description: "Luxury hotel in Downtown Miami with 3 restaurants, a spa, and a rooftop pool, offering premium rooms and exceptional service.",
       hours: "24/7",
-      amenities: ["Pool", "Restaurant", "Bar", "Spa", "Room Service", "Breakfast Available", "Hot Tub"],
       reviews: 282,
       tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
       link: "https://expedia.com/affiliates/miami-hotels-hotel-beaux-arts.s9Nwwe8",
@@ -307,7 +279,6 @@ const hotels: Hotel[] = [
     address: "38 Leicester Square, London, England, WC2H 7LL",
     description: `Luxury hotel in the heart of London offering a full-service spa, fitness center, indoor pool, and multiple dining options. Ideal for both relaxation and exploration.`,
     hours: "24/7",
-    amenities: ["Spa", "Gym", "Pool", "Restaurant", "Breakfast Available", "Hot Tub"],
     reviews: 728,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
     link: "https://expedia.com/affiliates/london-hotels-the-londoner.Ga1bnEj"
@@ -321,7 +292,6 @@ const hotels: Hotel[] = [
     address: "On Cadogan Place, London, England, SW1X 9PY",
     description: "Luxury hotel in Knightsbridge offering a full-service spa, health club, indoor pool, and multiple dining options. Perfect for relaxation and exploring nearby attractions like Harrods and Hyde Park.",
     hours: "24/7",
-    amenities: ["Pool", "Hot Tub", "Spa", "Bar", "Parking available", "Pet friendly"],
     reviews: 26,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
     link: "https://expedia.com/affiliates/london-hotels-the-carlton-tower-jumeirah.uwgkESe"
@@ -335,7 +305,6 @@ const hotels: Hotel[] = [
   address: "Hamilton Place, Park Lane, London, England, W1J 7DR",
   description: "Luxury hotel in Park Lane featuring a full-service spa with couples treatment rooms, hot tub, sauna, and steam room. Offers premium accommodations with minibar, in-room safe, and terrace options. Ideally located steps from Hyde Park and Buckingham Palace.",
   hours: "24/7",
-  amenities: ["Hot Tub", "Spa", "Bar", "Parking available", "Gym", "Room service"],
   reviews: 302,
   tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
   link: "https://expedia.com/affiliates/london-hotels-four-seasons-hotel-london-at-park-lane.U6FEqCw"
@@ -349,7 +318,6 @@ const hotels: Hotel[] = [
   address: "54 Buckingham Gate, London, England, SW1E 6AF",
   description: "Luxury hotel in London City Centre featuring 4 restaurants, a full-service spa with couples treatment rooms, sauna, and steam room. Situated steps from Buckingham Palace and Westminster Abbey, it offers a serene garden, courtyard, and 24/7 front desk. Perfect for exploring landmarks like Big Ben and the London Eye.",
   hours: "24/7",
-  amenities: ["Breakfast available", "Spa", "Restaurant", "Gym", "Housekeeping", "Parking available"],
   reviews: 1475,
   tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
   link: "https://expedia.com/affiliates/london-hotels-st-james-court.0REEqRe"
@@ -363,7 +331,6 @@ const hotels: Hotel[] = [
     address: "222 Marylebone Road, London, England, NW1 6JQ",
     description: "Luxury 5-star hotel in London's historical district featuring 2 restaurants, a full-service spa, indoor pool, and hot tub. Ideally located near Hyde Park, Marble Arch, and Baker Street. Offers family-friendly amenities including a children's pool and cribs.",
     hours: "24/7",
-    amenities: ["Breakfast available", "Spa", "Pool", "Hot Tub", "Bar", "Gym"],
     reviews: 1002,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
     link: "https://expedia.com/affiliates/london-hotels-the-landmark-london.EDafs2W"
@@ -377,7 +344,6 @@ const hotels: Hotel[] = [
     address: "On Cadogan Place, London, England, SW1X 9PY",
     description: "Luxury 5-star hotel in Knightsbridge featuring a full-service spa with Ayurvedic treatments, steam room, and hot tub. Boasts a health club, indoor pool, and pet-friendly accommodations. Steps from Hyde Park and Buckingham Palace, with fine dining options and premium suites.",
     hours: "24/7",
-    amenities: ["Pool", "Hot Tub", "Spa", "Bar", "Parking available", "Pet friendly"],
     reviews: 26,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
     link: "https://expedia.com/affiliates/london-hotels-the-carlton-tower-jumeirah.DMngRTI"
@@ -391,7 +357,6 @@ const hotels: Hotel[] = [
     address: "60 Upper Thames Street, London, England",
     description: "Luxury 5-star hotel connected to a convention center, featuring a full-service spa with hot stone massages, aromatherapy treatments, steam room, and sauna. Offers an indoor pool, pet-friendly accommodations, and local cuisine dining. Prime location near Tower of London and Tower Bridge.",
     hours: "24/7",
-    amenities: ["Spa", "Breakfast available", "Gym", "Pool", "Bar", "Pet friendly"],
     reviews: 267,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
     link: "https://expedia.com/affiliates/london-hotels-the-westin-london-city.fk015eR"
@@ -405,7 +370,6 @@ const hotels: Hotel[] = [
     address: "68 Regent Street, London, England, W1B 4DY",
     description: "Luxury 5-star hotel in London's historic district featuring 4 restaurants, a full-service spa with Ayurvedic treatments, indoor pool, and rooftop terrace. Offers pet-friendly accommodations with premium bedding and Egyptian cotton sheets. Steps from Piccadilly Circus and Trafalgar Square.",
     hours: "24/7",
-    amenities: ["Pool", "Spa", "Bar", "Parking available", "Pet friendly", "Gym"],
     reviews: 506,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
     link: "https://images.trvl-media.com/lodging/6000000/5350000/5349200/5349114/bc3fede3.jpg"
@@ -419,7 +383,6 @@ const hotels: Hotel[] = [
     address: "20 Warwick Street, Soho, London, England, W1B 5NF",
     description: "Experience luxury at this boutique hotel in the heart of London City Centre. Enjoy a rooftop terrace, a relaxing hot tub, and a 24/7 front desk for seamless service. This pet-friendly retreat features plush Egyptian cotton sheets and hypoallergenic bedding for ultimate comfort. Ideally situated near Piccadilly Circus and The British Museum, it also offers all-day dining options for a delightful culinary experience.",
     hours: "24/7",
-    amenities: ["Breakfast available", "Restaurant", "Hot Tub", "Bar", "Pet friendly", "24/7 front desk"],
     reviews: 1000,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
     link: "https://expedia.com/affiliates/las-vegas-hotels-hampton-inn-suites-las-vegas-convention-center.vqRL5D8"
@@ -433,7 +396,6 @@ const hotels: Hotel[] = [
     address: "Cnvention Center, Las Vegas, NV, 89109",
     description: "Enjoy a stress-free stay at this convenient hotel with no resort fees. Perfect for convention attendees, it features a hot tub, outdoor terrace, and modern rooms with 50-inch LCD TVs. Includes free hot breakfast and WiFi. Just minutes from the Las Vegas Strip and Harry Reid International Airport.",
     hours: "24/7",
-    amenities: ["Free Breakfast", "Bar", "Hot Tub", "Terrace/Patio", "Free WiFi", "LCD TV"],
     reviews: 31,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
     link: "https://www.expedia.com/Las-Vegas-Hotels-Hampton-Inn-Suites-Las-Vegas-Convention-Center.h42574390.Hotel-Information"
@@ -447,7 +409,6 @@ const hotels: Hotel[] = [
     address: "2600A West Harmon Ave, Las Vegas, NV, 89109",
     description: "Indulge in a sophisticated retreat at this 4.5-star Las Vegas Strip oasis, offering smoke-free luxury suites with floor-to-ceiling windows and modern kitchens. Enjoy VIP treatment with a full-service spa, year-round hot tub, and seasonal rooftop pool. Perfect for both relaxation and entertainment - steps from Bellagio Fountains and Cosmopolitan Casino.",
     hours: "24/7",
-    amenities: [ "Full-Service Spa", "Seasonal Outdoor Pool", "Hot Tub", "Pet Friendly", "Free Valet Parking", "Bar (On Property)","Wheelchair Accessible Facilities"],
     reviews: 1000,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
     link: "https://expedia.com/affiliates/las-vegas-hotels-jet-luxury-at-the-vdara-condo-hotel.qp48dgq"
@@ -461,7 +422,6 @@ const hotels: Hotel[] = [
     address: "80 East Harmon Avenue, Las Vegas, NV 89109",
     description: "Experience Art Deco elegance at this smoke-free urban retreat, offering direct access to Miracle Mile Shops and panoramic Strip views from modern suites. Perfect for families and discerning travelers, the property features two year-round hot tubs and a seasonal rooftop pool (March-October).",
     hours: "24/7",
-    amenities: ["Dual Hot Tubs", "Seasonal Rooftop Pool", "Art Deco Design", "Direct Shopping Access", "55-inch Smart TVs", "24/7 Concierge", "Wheelchair Accessible Facilities"],
     reviews: 210,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
     link: "https://expedia.com/affiliates/las-vegas-hotels-hilton-club-elara-las-vegas.Tb6WRKQ"
@@ -475,7 +435,6 @@ const hotels: Hotel[] = [
     address: "2600 W Harmon Ave, Las Vegas, NV 89158",
     description: "Experience contemporary elegance at this smoke-free urban sanctuary, featuring panoramic Bellagio fountain views from sleek suites with floor-to-ceiling windows. Indulge in curated luxury with dual year-round hot tubs, a seasonal rooftop pool (March-October), and gourmet dining at two on-site restaurants. ",
     hours: "24/7",
-    amenities: ["Two Hot Tubs", "Outdoor Pool", "Bellagio Fountain Views", "24/7 Room Service", "Two Restaurants", "Complimentary Parking", "Pet-Friendly Accommodations"],
     reviews: 94,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
     link: "https://expedia.com/affiliates/las-vegas-hotels-secret-suites-at-vdara.PrNpGng"
@@ -489,7 +448,6 @@ const hotels: Hotel[] = [
     address: "3570 Las Vegas Boulevard South, Las Vegas, NV 89109",
     description: "Immerse in Roman-inspired opulence at this sophisticated retreat, offering exclusive access to Caesars Palace's luxury boutiques and Qua Baths & Spa's therapeutic wonders - including Arctic Ice Rooms and Roman baths. Seasonal poolside cabanas (March-October) complement expansive suites featuring marble bathrooms, 75-inch smart mirrors, and private balconies with Strip vistas.",
     hours: "24/7",
-    amenities: ["Luxury Spa", "Seasonal Outdoor Pool", "24/7 Room Service", "Pet-Friendly Rooms", "On-Site Dining", "Steam Room", "Hot Stone Massages", "Concierge Services"],
     reviews: 1001,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
     link: "https://expedia.com/affiliates/las-vegas-hotels-nobu-hotel-at-caesars-palace.zqz0dJv"
@@ -503,7 +461,6 @@ const hotels: Hotel[] = [
     address: "145 East Harmon Avenue, Las Vegas, NV 89109",
     description: "Experience Art Deco grandeur at this smoke-free urban retreat, featuring direct access to Miracle Mile Shops and panoramic Strip views from contemporary suites with kitchenettes and 55-inch smart TVs. Enjoy dual year-round hot tubs, a seasonal rooftop pool (March-October), and upscale American cuisine at on-site brasseries.",
     hours: "24/7",
-    amenities: ["Luxury Suites", "Two Hot Tubs", "Free Valet Parking", "On-Site Dining", "Pool", "24/7 Housekeeping", "Pillowtop Beds", "Business Center"],
     reviews: 1755,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
     link: "https://expedia.com/affiliates/las-vegas-hotels-the-signature-at-mgm-grand.4VBZyGv"
@@ -517,7 +474,6 @@ const hotels: Hotel[] = [
     address: "5625 W Flamingo Rd, Las Vegas, NV 89103",
     description: "A suburban retreat featuring spacious villas equipped with full kitchens, a pool, hot tub, and BBQ amenities. Ideally situated near major casinos, this pet-friendly resort offers 24/7 services for your convenience.",
     hours: "24/7",
-    amenities: ["Private Kitchen Villas", "Outdoor Pool", "Hot Tub", "BBQ/Picnic Area", "Pet-Friendly Rooms", "24-Hour Front Desk", "Laundry Facilities", "Air Conditioning", "Flat-Screen TV", "Fitness Center"],
     reviews: 1003,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
     link: "https://expedia.com/affiliates/las-vegas-hotels-westgate-flamingo-bay-resort.zITcLDW"
@@ -531,7 +487,6 @@ const hotels: Hotel[] = [
     address: "3730 Las Vegas Boulevard South, Las Vegas, NV 89158",
     description: "Connected to Aria Casino, this elegant 5-star hotel offers three outdoor pools, a full-service spa, and 14 dining venues. Guests can enjoy Sky Suites with premium features and direct access to the vibrant attractions of the Las Vegas Strip.",
     hours: "24/7",
-    amenities: ["Luxury Sky Suites", "Three Outdoor Pools", "Full-Service Spa", "14 Restaurants", "24/7 Room Service", "Hot Tub", "Italian Cuisine", "Concierge Services", "In-Room Minibar"],
     reviews: 11,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
     link: "https://expedia.com/affiliates/las-vegas-hotels-aria-sky-suites.RrIWyk7"
@@ -545,7 +500,6 @@ const hotels: Hotel[] = [
     address: "2300 Paseo Verde Parkway, Henderson Las Vegas, NV 89052",
     description: "Luxury suburban resort featuring 10 restaurants, a full-service spa, and outdoor pool complex. Offers casino access, 6 bars/lounges, and family-friendly amenities near Green Valley Ranch attractions.",
     hours: "24/7",
-    amenities: ["Full-Service Spa", "10 Restaurants", "Outdoor Pool", "Hot Tub", "6 Bars/Lounges", "Free Parking", "Fitness Center", "Poolside Bar", "Casino Access", "24/7 Front Desk"],
     reviews: 1659,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
     link: "https://expedia.com/affiliates/las-vegas-hotels-green-valley-ranch-resort-and-spa.nKkr0EB"
@@ -559,7 +513,6 @@ const hotels: Hotel[] = [
     address: "222 West 23rd Street, New York, NY 10011",
     description: "A historic luxury hotel offering a full-service spa with six treatment rooms, a Spanish cuisine restaurant, and pet-friendly accommodations. Situated near iconic NYC landmarks, it provides a vibrant cultural atmosphere.",
     hours: "24/7",
-    amenities: ["Full-Service Spa", "24/7 Room Service", "Spanish Restaurant", "Pet-Friendly Rooms", "Free WiFi", "Hot Tub", "Steam Room", "Mud Baths", "Hydrotherapy", "Fitness Center"],
     reviews: 992,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
     link: "https://expedia.com/affiliates/new-york-hotels-hotel-chelsea.xxMoztw"
@@ -573,7 +526,6 @@ const hotels: Hotel[] = [
     address: "700 Fifth Avenue, New York, NY 10019",
     description: "A landmark Beaux Arts hotel boasting a spa with 10 treatment rooms, a rooftop bar, and upscale amenities. Ideally located on 5th Avenue, just moments from Rockefeller Center and Times Square, it features premium bedding and round-the-clock services.",
     hours: "24/7",
-    amenities: ["Luxury Spa", "Rooftop Bar", "Indoor Pool", "24/7 Room Service", "Premium Bedding", "Minibar", "Valet Parking", "3 Bars/Lounges", "Steam Room", "Couples Treatments"],
     reviews: 1002,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
     link: "https://expedia.com/affiliates/new-york-hotels-the-peninsula-new-york.hHCJwUk"
@@ -587,7 +539,6 @@ const hotels: Hotel[] = [
     address: "153 West 57th Street, New York, NY 10019",
     description: "Experience upscale elegance at a prestigious Midtown hotel, featuring elevated sky terrace suites, a rejuvenating spa with dedicated couples' therapies, and a serene indoor pool staffed with attentive lifeguards. Perfectly positioned in the heart of Manhattan, this retreat places you moments from iconic attractions like Broadway’s vibrant theaters and the timeless Rockefeller Center.",
     hours: "24/7",
-    amenities: ["Indoor Pool", "Luxury Spa", "24-Hour Fitness", "Sky Terrace Suites", "Couples Treatments", "Deep Soaking Tubs", "Steam Room", "24/7 Room Service", "On-Site Dining", "Valet Parking"],
     reviews: 315,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
     link: "https://expedia.com/affiliates/new-york-hotels-park-hyatt-new-york.3iiDYqE"
@@ -601,7 +552,6 @@ const hotels: Hotel[] = [
     address: "33 Hudson Yards, New York, NY 10001",
     description: "Discover a sanctuary of luxury well-being at this elevated retreat, boasting a six-treatment-room spa, serene seasonal pools, and a chic rooftop terrace with sweeping views. Nestled in the dynamic Hudson Yards district, the hotel sits moments from the iconic High Line and offers cutting-edge fitness amenities, complemented by stylish, pet-welcoming stays for discerning travelers.",
     hours: "24/7",
-    amenities: ["Luxury Spa", "Seasonal Pools", "Rooftop Terrace", "24/7 Fitness Center", "Pet-Friendly Rooms", "Valet Parking", "Steam Room", "Couples Treatments", "On-Site Dining", "Ayurvedic Therapies"],
     reviews: 619,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
     link: "https://expedia.com/affiliates/new-york-hotels-equinox-hotel-new-york.u2PoxKA"
@@ -615,7 +565,6 @@ const hotels: Hotel[] = [
     address: "1000 Baychester Avenue, New York, NY 10475",
     description: "Affordable hotel with free breakfast and whirlpool tub suites. Ideally located in the Bronx near Yankee Stadium and the Bronx Zoo, featuring 24-hour amenities and complimentary parking.",
     hours: "24/7",
-    amenities: ["Free Breakfast", "Jetted Tub Suites", "Free Parking", "24/7 Front Desk", "Air Conditioning", "Free WiFi", "Housekeeping", "On-Site Dining", "Elevator Access"],
     reviews: 1008,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
     link: "https://expedia.com/affiliates/new-york-hotels-ramada-by-wyndham-bronx.mI1iqjg"
@@ -629,7 +578,6 @@ const hotels: Hotel[] = [
     address: "75 Wall Street, New York, NY 10005",
     description: "Luxury hotel in the Financial District featuring premium bedding, 24/7 services, and prime proximity to Wall Street attractions. Offers pet-friendly accommodations and modern business amenities.",
     hours: "24/7",
-    amenities: ["Premium Bedding", "24-Hour Fitness Center", "On-Site Bar", "Pet-Friendly Rooms", "Hot Tub", "24/7 Front Desk", "Business Center", "Down Comforters", "Pillowtop Beds"],
     reviews: 1004,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
     link: "https://expedia.com/affiliates/new-york-hotels-hyatt-centric-wall-street-new-york.jDCsGAV"
@@ -757,7 +705,6 @@ const hotels: Hotel[] = [
     hours: "Not specified",
     reviews: 1001,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
-    amenities: ["Indoor pool", "Full-service spa", "Hot Tub", "Fine-dining restaurant", "Free WiFi"],
     link: "https://expedia.com/affiliates/indianapolis-hotels-conrad-indianapolis.hR9ux4X"
    },
    {
@@ -771,7 +718,6 @@ const hotels: Hotel[] = [
     hours: "Not specified",
     reviews: 797,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
-    amenities: ["Indoor pool", "Hot tub", "Free WiFi", "Free breakfast", "Fitness center"],
     link: "https://expedia.com/affiliates/indianapolis-hotels-fairfield-inn-and-suites-by-marriott-indianapolis-east.E9YkYf5"
    },
    {
@@ -785,7 +731,6 @@ const hotels: Hotel[] = [
     hours: "Not specified",
     reviews: 1002,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
-    amenities: ["Hot Tub", "Indoor pool", "Outdoor pool", "Spa"],
     link: "https://expedia.com/affiliates/indianapolis-hotels-drury-inn-suites-indianapolis-northeast.g3PZW86"
    },
    {
@@ -799,14 +744,6 @@ const hotels: Hotel[] = [
   hours: "Check-in: 3 PM, Check-out: 12 PM",
   reviews: 2992,
   tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
-  amenities: [
-    "Free WiFi",
-    "Fitness Center",
-    "Restaurant",
-    "Bar / Lounge",
-    "Valet Parking",
-    "Meeting Rooms"
-  ],
   link: "https://expedia.com/affiliates/seattle-hotels-mayflower-park-hotel.S25cDBs"
 },
 {
@@ -820,17 +757,6 @@ const hotels: Hotel[] = [
   hours: "Check-in: 3:00 PM | Check-out: 12:00 PM",
   reviews: 2053,
   tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
-  amenities: [
-    "Lakefront views",
-    "Free breakfast",
-    "Fitness Center",
-    "Free WiFi",
-    "Microwave",
-    "Refrigerator",
-    "Shuttle Service",
-    "Laundry Service",
-    "Business Center"
-  ],
   link: "https://expedia.com/affiliates/seattle-hotels-silver-cloud-inn-seattle-lake-union.JndsOYk"
 },
 {
@@ -844,7 +770,6 @@ const hotels: Hotel[] = [
   hours: "24-hour front desk",
   reviews: 2055,
   tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
-  amenities: ["Rooftop pool", "Hot tub", "Fitness Center", "Restaurant", "Free WiFi", "Valet Parking", "Meeting rooms"],
   link: "https://expedia.com/affiliates/seattle-hotels-silver-cloud-inn-seattle-lake-union.IXZSU6J"
 },
 {
@@ -858,16 +783,6 @@ const hotels: Hotel[] = [
   hours: "24-hour front desk",
   reviews: 805,
   tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
-  amenities: [
-    "Free parking",
-    "Free High Speed Internet (WiFi)",
-    "Free breakfast",
-    "Beach access",
-    "Business Center",
-    "Laundry service",
-    "Waterfront views",
-    "Jacuzzi suites"
-  ],
   link: "https://www.tripadvisor.com/Hotel_Review-g58625-d126094-Reviews-Silver_Cloud_Hotel_Mukilteo_Waterfront-Mukilteo_Washington.html"
 },
 {
@@ -881,16 +796,6 @@ const hotels: Hotel[] = [
   hours: "24-hour front desk",
   reviews: 1625,
   tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
-  amenities: [
-    "Free parking",
-    "Free High Speed Internet (WiFi)",
-    "Fitness Center",
-    "Hot tub",
-    "Full-service spa",
-    "Pet Friendly",
-    "Two restaurants",
-    "Event space"
-  ],
   link: "https://expedia.com/affiliates/seattle-hotels-willows-lodge.cp5RONo"
 },
 {
@@ -904,18 +809,6 @@ const hotels: Hotel[] = [
   hours: "24-hour front desk",
   reviews: 244,
   tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
-  amenities: [
-    "Free parking",
-    "Free High Speed Internet (WiFi)",
-    "Fitness Center with Gym / Workout Room",
-    "Conference facilities",
-    "Banquet room",
-    "Breakfast available",
-    "Kids stay free",
-    "Meeting rooms",
-    "Laundry service",
-    "Non-smoking hotel"
-  ],
   link: "https://expedia.com/affiliates/seattle-hotels-eastgate-hotel.JJZFyo2"
 },
 {
@@ -929,24 +822,6 @@ const hotels: Hotel[] = [
   hours: "24-hour front desk",
   reviews: 1008,
   tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
-  amenities: [
-    "Free parking",
-    "Free High Speed Internet (WiFi)",
-    "Fitness Center with Gym / Workout Room",
-    "Indoor pool",
-    "Heated pool",
-    "Hot tub",
-    "Free breakfast",
-    "Kids stay free",
-    "Pets Allowed (Dog / Pet Friendly)",
-    "Laundry service",
-    "Kitchenette",
-    "Refrigerator",
-    "Microwave",
-    "Stovetop",
-    "Air conditioning",
-    "Flatscreen TV"
-  ],
   link: "https://expedia.com/affiliates/everett-hotels-best-western-plus-navigator-inn-suites.4q7Jlag"
 },
 {
@@ -960,35 +835,6 @@ const hotels: Hotel[] = [
   hours: "Not specified",
   reviews: 250,
   tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
-  amenities: [
-    "Free parking",
-    "Free High Speed Internet (WiFi)",
-    "Hot tub",
-    "Free breakfast",
-    "Beach",
-    "Board games / puzzles",
-    "Meeting rooms",
-    "Non-smoking hotel",
-    "Breakfast buffet",
-    "Complimentary Instant Coffee",
-    "Complimentary tea",
-    "Special diet menus",
-    "Wine / champagne",
-    "Outdoor fireplace",
-    "Shared kitchen",
-    "Sun terrace",
-    "Blackout curtains",
-    "Bathrobes",
-    "Housekeeping",
-    "Private balcony",
-    "VIP room facilities",
-    "Private bathrooms",
-    "Flatscreen TV",
-    "Whirlpool bathtub",
-    "Bath / shower",
-    "Complimentary toiletries",
-    "Hair dryer"
-  ],
   link: "https://expedia.com/affiliates/camano-island-hotels-camano-island-inn.ChJFwNr"
 },
 {
@@ -1002,17 +848,6 @@ const hotels: Hotel[] = [
   hours: "Check-in: 3 PM | Check-out: 12 PM",
   reviews: 1932,
   tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
-  amenities: [
-    "Indoor pool",
-    "Fitness center",
-    "Restaurant",
-    "Bar/Lounge",
-    "Free WiFi",
-    "Business center",
-    "24-hour front desk",
-    "Meeting rooms",
-    "Accessible facilities"
-  ],
   link: "https://expedia.com/affiliates/seattle-hotels-embassy-suites-by-hilton-seattle-downtown-pioneer-square.3PI1fFt"
 },
 {
@@ -1026,19 +861,6 @@ const hotels: Hotel[] = [
   hours: "Check-in: 3 PM | Check-out: 12 PM | Pool: 6:00 AM to 10:00 PM",
   reviews: 850,
   tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
-  amenities: [
-    "Full-service spa",
-    "Infinity pool",
-    "24-hour fitness center",
-    "Restaurant",
-    "Bar",
-    "Hot tub",
-    "Room service",
-    "Valet parking",
-    "Business center",
-    "Meeting rooms",
-    "Concierge services"
-  ],
   link: "https://expedia.com/affiliates/seattle-hotels-four-seasons-hotel-seattle.TZaAuTs"
 },
 {
@@ -1052,19 +874,6 @@ const hotels: Hotel[] = [
   hours: "24-hour front desk | Check-in: 3 PM | Check-out: 12 PM",
   reviews: 1001,
   tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
-  amenities: [
-    "24-hour fitness center",
-    "Restaurant",
-    "Bar",
-    "Pet friendly",
-    "Room service",
-    "Housekeeping",
-    "Breakfast available",
-    "24-hour front desk",
-    "Business center",
-    "Meeting rooms",
-    "Concierge services"
-  ],
   link: "https://expedia.com/affiliates/seattle-hotels-kimpton-hotel-monaco-seattle.4q7Jlag"
 },
 {
@@ -1078,23 +887,6 @@ const hotels: Hotel[] = [
   hours: "24-hour front desk | Check-in: 3 PM | Check-out: 12 PM",
   reviews: 2313,
   tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
-  amenities: [
-    "Indoor pool",
-    "Heated pool",
-    "Hot tub",
-    "Fitness Center with Gym / Workout Room",
-    "Restaurant",
-    "Bar / lounge",
-    "Free High Speed Internet (WiFi)",
-    "Valet parking",
-    "24-hour front desk",
-    "Business Center",
-    "Room service",
-    "Air conditioning",
-    "Flatscreen TV",
-    "Refrigerator",
-    "Coffee / tea maker"
-  ],
   link: "https://expedia.com/affiliates/seattle-hotels-warwick-seattle.akBeQTx"
 },
 {
@@ -1108,21 +900,6 @@ const hotels: Hotel[] = [
   hours: "24-hour front desk | Check-in: 3 PM | Check-out: 12 PM",
   reviews: 1799,
   tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
-  amenities: [
-    "4 restaurants",
-    "24-hour fitness center",
-    "Hot tub",
-    "Room service",
-    "Bar",
-    "Breakfast available",
-    "Premium bedding",
-    "Pillowtop beds",
-    "In-room safe",
-    "Desk",
-    "Business center",
-    "Concierge services",
-    "Valet parking"
-  ],
   link: "https://expedia.com/affiliates/seattle-hotels-grand-hyatt-seattle.JT8QGaK"
 },
 {
@@ -1136,23 +913,6 @@ const hotels: Hotel[] = [
   hours: "24-hour front desk | Check-in: 3 PM | Check-out: 12 PM | Spa hours: Vary",
   reviews: 1623,
   tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
-  amenities: [
-    "Full-service spa",
-    "Indoor pool",
-    "24-hour fitness center",
-    "Hot tub",
-    "Sauna",
-    "Steam room",
-    "Body treatments",
-    "Hydrotherapy",
-    "Aromatherapy",
-    "Restaurant",
-    "Breakfast available",
-    "Premium bedding",
-    "Pillowtop beds",
-    "In-room safe",
-    "Desk"
-  ],
   link: "https://expedia.com/affiliates/seattle-hotels-hyatt-at-olive-8.DzFrifo"
 },
 ];
