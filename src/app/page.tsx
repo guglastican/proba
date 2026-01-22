@@ -138,8 +138,8 @@ export default function Home() {
                   <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
                     {location.name}
                   </h3>
-                  <p className="text-gray-600 mb-2">{location.hotels} Hot Tub Hotels</p>
-                  <p className="text-sm text-gray-500 italic">{location.description}</p>
+                  <p className="text-gray-800 font-medium mb-2">{location.hotels} Hot Tub Hotels</p>
+                  <p className="text-sm text-gray-700 italic">{location.description}</p>
                 </Link>
               ))}
             </div>
