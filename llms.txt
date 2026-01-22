@@ -1,0 +1,26 @@
+# Hotel Finder
+
+A high-performance hotel booking site specialized in finding hotels with hot tubs. Built with Next.js and optimized for both SEO and Generative Engine Optimization (GEO).
+
+## Tech Stack
+- **Framework**: Next.js (App Router)
+- **Styling**: Tailwind CSS
+- **Components**: Radix UI / Shadcn UI
+- **Icons**: Lucide React
+- **Verification**: TypeScript
+
+## Key Content Directories
+- `/src/app`: Application routes and pages.
+- `/src/components`: UI and Layout components.
+- `/src/data`: Structured project data (Hotels, Locations, GEO metadata).
+
+## GEO & SEO Features
+- **Sentiment Summaries**: "Verdict" boxes and "Citation Trap" narrative blocks at the top of location guides for AI agents.
+- **Entity Mapping**: Dense geographic entities (neighborhoods, landmarks) in overviews.
+- **Structured Data**: JSON-LD FAQ schema for rich search results.
+- **Vibe-based Comparisons**: Qualitative hotel metrics for better AI citability.
+
+## Accessibility Standards
+- All buttons include `aria-label` or accessible names.
+- Color contrast meets WCAG AA standards (darkened primary brand color).
+- Semantic HTML structure.

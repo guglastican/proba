@@ -4,6 +4,7 @@ import ComparisonTable from "@/components/ComparisonTable";
 import ExpertTips from "@/components/ExpertTips";
 import FAQSection from "@/components/FAQSection";
 import SentimentSummary from "@/components/SentimentSummary";
+import AISummaryBlock from "@/components/AISummaryBlock";
 import { getAllTags, locations, searchHotels } from "@/data/hotels";
 import { locationGEOData } from "@/data/location-geo-data";
 import { Metadata } from "next";
@@ -66,6 +67,8 @@ export default async function Page({ params }: PageProps) {
         <h1 className="text-center text-3xl font-bold">
           Best {results.length} {locationDecoded} with {qDecoded}
         </h1>
+
+        <AISummaryBlock locationName={locationDecoded} summary={geoData.sentimentSummary!} />
 
         <SentimentSummary summary={geoData.sentimentSummary!} />
 

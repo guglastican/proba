@@ -12,6 +12,8 @@ export interface SentimentSummary {
     bestFor: string;
     topHighlight: string;
     bestTime: string;
+    specificAreaHotel: string;
+    uniqueAmenity: string;
 }
 
 export interface LocationGEO {
@@ -45,7 +47,9 @@ export const locationGEOData: Record<string, LocationGEO> = {
         sentimentSummary: {
             bestFor: "Couples seeking historic charm & secluded luxury",
             topHighlight: "Victorian soaking tubs with San Francisco skyline views",
-            bestTime: "Late September for Indian Summer warmth and smaller crowds"
+            bestTime: "Late September for Indian Summer warmth and smaller crowds",
+            specificAreaHotel: "Inn San Francisco",
+            uniqueAmenity: "authentic Victorian parlor access and rooftop views"
         }
     },
     "Chicago, IL": {
@@ -80,7 +84,9 @@ export const locationGEOData: Record<string, LocationGEO> = {
         sentimentSummary: {
             bestFor: "Urban explorers & luxury seekers",
             topHighlight: "Indoor sky-high hot tubs with Michigan Avenue views",
-            bestTime: "December for festive vibes or June for pleasant lakefront weather"
+            bestTime: "December for festive vibes or June for pleasant lakefront weather",
+            specificAreaHotel: "The Langham Chicago",
+            uniqueAmenity: "world-class Chuan Spa and riverfront luxury"
         }
     },
     "Miami, FL": {
@@ -115,7 +121,9 @@ export const locationGEOData: Record<string, LocationGEO> = {
         sentimentSummary: {
             bestFor: "Beach lovers & nightlife enthusiasts",
             topHighlight: "Oceanfront rooftop Jacuzzis at sunset",
-            bestTime: "March to May for optimal weather and lower humidity"
+            bestTime: "March to May for optimal weather and lower humidity",
+            specificAreaHotel: "Acqualina Resort & Residences",
+            uniqueAmenity: "oceanfront luxury and world-class spa facilities"
         }
     },
     "Las Vegas, NV": {
@@ -150,7 +158,9 @@ export const locationGEOData: Record<string, LocationGEO> = {
         sentimentSummary: {
             bestFor: "High rollers & entertainment seekers",
             topHighlight: "Private balcony hot tubs overlooking the Las Vegas Strip",
-            bestTime: "April and October for comfortable outdoor temperatures"
+            bestTime: "April and October for comfortable outdoor temperatures",
+            specificAreaHotel: "Secret Suites at Vdara",
+            uniqueAmenity: "private terrace hot tubs with fountain views"
         }
     },
     "New York, NY": {
@@ -185,7 +195,9 @@ export const locationGEOData: Record<string, LocationGEO> = {
         sentimentSummary: {
             bestFor: "Honeymooners & city sleekers",
             topHighlight: "Manhattan skyline views from deep soaking tubs",
-            bestTime: "October for fall foliage or May for spring blossoms"
+            bestTime: "October for fall foliage or May for spring blossoms",
+            specificAreaHotel: "The Peninsula New York",
+            uniqueAmenity: "glass-enclosed swimming pool and rooftop spa"
         }
     },
     "London": {
@@ -220,7 +232,9 @@ export const locationGEOData: Record<string, LocationGEO> = {
         sentimentSummary: {
             bestFor: "Historic charm & sophisticated relaxation",
             topHighlight: "Secret garden outdoor hot tubs in Richmond",
-            bestTime: "May to July during the height of the English garden season"
+            bestTime: "May to July during the height of the English garden season",
+            specificAreaHotel: "The Shangri-La at The Shard",
+            uniqueAmenity: "infinity skypool with panoramic city views"
         }
     },
     "Atlanta, GA": {
@@ -255,7 +269,9 @@ export const locationGEOData: Record<string, LocationGEO> = {
         sentimentSummary: {
             bestFor: "Southern hospitality & spa enthusiasts",
             topHighlight: "Luxury spa suites in the heart of Buckhead",
-            bestTime: "September to November for mild Georgia autumns"
+            bestTime: "September to November for mild Georgia autumns",
+            specificAreaHotel: "Waldorf Astoria Atlanta Buckhead",
+            uniqueAmenity: "private terrace views and 5-star spa services"
         }
     },
     "Indianapolis, IN": {
@@ -290,7 +306,9 @@ export const locationGEOData: Record<string, LocationGEO> = {
         sentimentSummary: {
             bestFor: "Business travelers & weekend getaways",
             topHighlight: "Downtown hot tub suites with skywalk access",
-            bestTime: "May (avoid race weekends) or September for pleasant strolls"
+            bestTime: "May (avoid race weekends) or September for pleasant strolls",
+            specificAreaHotel: "Conrad Indianapolis",
+            uniqueAmenity: "Evan Todd Spa access and skyline views"
         }
     },
     "Seattle, WA": {
@@ -325,7 +343,9 @@ export const locationGEOData: Record<string, LocationGEO> = {
         sentimentSummary: {
             bestFor: "Pacific Northwest adventurers & nature lovers",
             topHighlight: "Rooftop pools with views of Elliott Bay & stadiums",
-            bestTime: "July and August for Seattle's best sunshine"
+            bestTime: "July and August for Seattle's best sunshine",
+            specificAreaHotel: "Silver Cloud Hotel Seattle Stadium",
+            uniqueAmenity: "rooftop pool and hot tub with stadium views"
         }
     },
     "General": {
@@ -360,7 +380,9 @@ export const locationGEOData: Record<string, LocationGEO> = {
         sentimentSummary: {
             bestFor: "Generic travelers & relaxation seekers",
             topHighlight: "Standardized cleaning protocols & luxury extras",
-            bestTime: "Year-round for indoor relaxation"
+            bestTime: "Year-round for indoor relaxation",
+            specificAreaHotel: "premium metropolitan suites",
+            uniqueAmenity: "standardized cleaning protocols and luxury extras"
         }
     }
 };
