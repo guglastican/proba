@@ -1,8 +1,11 @@
 import Header from "@/components/Header";
 import HotelItem from "@/components/HotelItem";
 import ComparisonTable from "@/components/ComparisonTable";
+import ExpertTips from "@/components/ExpertTips";
+import FAQSection from "@/components/FAQSection";
 import { Skeleton } from "@/components/ui/skeleton";
 import { locations, searchHotels } from "@/data/hotels";
+import { locationGEOData } from "@/data/location-geo-data";
 import { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { Suspense } from "react";
@@ -61,6 +64,7 @@ interface ResultsProps {
 
 async function Results({ q, location }: ResultsProps) {
   const results = await searchHotels(q, location);
+  const geoData = locationGEOData[location] || { expertTips: [], faqs: [] };
 
   return (
     <main className="container mx-auto space-y-8 px-4 py-8">
@@ -77,6 +81,10 @@ async function Results({ q, location }: ResultsProps) {
       </div>
 
       <ComparisonTable hotels={results} />
+
+      <ExpertTips tips={geoData.expertTips} location={location} />
+
+      <FAQSection faqs={geoData.faqs} location={location} />
     </main>
   );
 }

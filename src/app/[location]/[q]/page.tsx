@@ -1,7 +1,10 @@
 import Header from "@/components/Header";
 import HotelItem from "@/components/HotelItem";
 import ComparisonTable from "@/components/ComparisonTable";
+import ExpertTips from "@/components/ExpertTips";
+import FAQSection from "@/components/FAQSection";
 import { getAllTags, locations, searchHotels } from "@/data/hotels";
+import { locationGEOData } from "@/data/location-geo-data";
 import { Metadata } from "next";
 import { cache } from "react";
 
@@ -53,6 +56,7 @@ export default async function Page({ params }: PageProps) {
   const locationDecoded = decodeURIComponent(location);
 
   const results = await getHotels(qDecoded, locationDecoded);
+  const geoData = locationGEOData[locationDecoded] || { expertTips: [], faqs: [] };
 
   return (
     <div>
@@ -69,6 +73,10 @@ export default async function Page({ params }: PageProps) {
         </div>
 
         <ComparisonTable hotels={results} />
+
+        <ExpertTips tips={geoData.expertTips} location={locationDecoded} />
+
+        <FAQSection faqs={geoData.faqs} location={locationDecoded} />
       </main>
     </div>
   );
