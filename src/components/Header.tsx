@@ -49,7 +49,7 @@ export default function Header({ q, location }: HeaderProps) {
               required
             />
             <LocationInput name="location" defaultValue={location} />
-            <Button variant="secondary">
+            <Button variant="secondary" aria-label="Search">
               <Search className="size-4" />
               Search
             </Button>

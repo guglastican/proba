@@ -39,6 +39,7 @@ export default function LocationInput({
       <Button
         variant="outline"
         role="combobox"
+        aria-label="Filter location"
         className="w-[180px] flex-none justify-between"
       >
         {defaultValue || "Filter location..."}
@@ -53,6 +54,7 @@ export default function LocationInput({
         <Button
           variant="outline"
           role="combobox"
+          aria-label={input ? `Location selected: ${input}` : "Filter by location"}
           aria-expanded={open}
           className="w-[180px] flex-none justify-between"
         >
