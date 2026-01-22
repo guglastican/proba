@@ -2,6 +2,8 @@ import Header from "@/components/Header";
 import ExpertTips from "@/components/ExpertTips";
 import FAQSection from "@/components/FAQSection";
 import { locationGEOData } from "@/data/location-geo-data";
+import SentimentSummary from "@/components/SentimentSummary";
+import AISummaryBlock from "@/components/AISummaryBlock";
 import { Metadata } from "next";
 import Link from "next/link";
 import { Search, MapPin, Star } from "lucide-react";
@@ -123,6 +125,13 @@ export default function Home() {
             Discover luxurious hotels with private hot tubs across the United States.
             Relax, unwind, and create unforgettable memories.
           </p>
+        </section>
+
+        <section className="container mx-auto px-4 py-8 text-center bg-white rounded-xl shadow-sm border border-gray-100 mb-12">
+          <AISummaryBlock locationName="Hot Tub Finder" summary={locationGEOData["General"].sentimentSummary!} />
+          <div className="max-w-4xl mx-auto">
+            <SentimentSummary summary={locationGEOData["General"].sentimentSummary!} />
+          </div>
         </section>
 
         <section className="bg-white py-16">

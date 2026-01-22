@@ -4,7 +4,7 @@ export const locationDescriptions = {
       name: "Emma Caldwell",
       title: "Travel Writer & Reviewer",
       bio: "With over a decade of experience in travel journalism, Emma specializes in authentic local experiences and hotel reviews. Her work has been featured in numerous international publications. If you love the idea of unwinding in a private hot tub after a long day of sightseeing, enjoying a romantic getaway, or simply indulging in a luxurious hotel experience, you're in the right place!",
-      photo: "/Emma-Caldwell.png"
+      photo: "/Emma-Caldwell.jpg"
     },
     overview: "Discover luxurious hot tub retreats in the heart of San Francisco, from the upscale boutiques of Union Square to the historic elegance of Nob Hill and the scenic waterfront of The Embarcadero.",
     attractions: [

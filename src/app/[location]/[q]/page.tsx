@@ -5,6 +5,7 @@ import ExpertTips from "@/components/ExpertTips";
 import FAQSection from "@/components/FAQSection";
 import SentimentSummary from "@/components/SentimentSummary";
 import AISummaryBlock from "@/components/AISummaryBlock";
+import LocationOverview from "@/components/LocationOverview";
 import { getAllTags, locations, searchHotels } from "@/data/hotels";
 import { locationGEOData } from "@/data/location-geo-data";
 import { Metadata } from "next";
@@ -77,6 +78,8 @@ export default async function Page({ params }: PageProps) {
             <HotelItem key={hotel.id} hotel={hotel} />
           ))}
         </div>
+
+        <LocationOverview location={locationDecoded} />
 
         <ComparisonTable hotels={results} />
 
