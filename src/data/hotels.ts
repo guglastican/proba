@@ -11,6 +11,7 @@ export interface Hotel {
   hours: string;
   reviews: number;
   tags: string[];
+  vibe?: string;
   link: string;
   googlePlaceId?: string; // Google Place ID for fetching review
 }
@@ -27,6 +28,7 @@ export const hotels: Hotel[] = [
     hours: "24/7",
     reviews: 367,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Eco-luxury & waterfront serenity",
     link: "https://expedia.com/affiliates/san-francisco-hotels-1-hotel-san-francisco.nmthOWh",
     googlePlaceId: "ChIJg7PyJ3GBhYARO29J0nraSd0" // Google Place ID for 1 Hotel San Francisco
   },
@@ -112,6 +114,7 @@ export const hotels: Hotel[] = [
     hours: "24/7",
     reviews: 1002,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Business-chic & convention convenience",
     link: "https://expedia.com/affiliates/chicago-hotels-renaissance-schaumburg-convention-center-hotel.Q08el92",
     googlePlaceId: "ChIJZ3QZ-oevD4gRxc0-8O37cQ0" // Google Place ID for Renaissance Schaumburg
   },
@@ -126,6 +129,7 @@ export const hotels: Hotel[] = [
     hours: "24/7",
     reviews: 998,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Ultra-luxury & riverfront elegance",
     link: "https://expedia.com/affiliates/chicago-hotels-the-langham.TLKl1W3",
     googlePlaceId: "ChIJa8l-R64sDogREysrVzDMWTQ" // Google Place ID for The Langham, Chicago
   },
@@ -140,6 +144,7 @@ export const hotels: Hotel[] = [
     hours: "24/7",
     reviews: 1001,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Sophisticated luxury in the Loop",
     link: "https://expedia.com/affiliates/chicago-hotels-jw-marriott-chicago.ctu0tPJ",
     googlePlaceId: "ChIJESf9FrwsDogRg9RZOPtiZp8" // Google Place ID for JW Marriott Chicago, Chicago
   },
@@ -154,6 +159,7 @@ export const hotels: Hotel[] = [
     hours: "24/7",
     reviews: 1000,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Upscale Magnificent Mile sanctuary",
     link: "https://expedia.com/affiliates/chicago-hotels-park-hyatt-chicago.fLsb72J",
     googlePlaceId: "ChIJeQOqg1PTD4gRc2VKeAYbq1M" // Google Place ID for Park Hyatt Chicago, Chicago
   },
@@ -168,6 +174,7 @@ export const hotels: Hotel[] = [
     hours: "24/7",
     reviews: 1000,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Opulent Gold Coast glamour",
     link: "https://expedia.com/affiliates/chicago-hotels-waldorf-astoria-chicago.5y1tbwo",
     googlePlaceId: "ChIJ6wr9GlLTD4gRQ_i8UgKu6W0" // Google Place ID for Waldorf Astoria Chicago, Chicago
   },
@@ -182,6 +189,7 @@ export const hotels: Hotel[] = [
     hours: "24/7",
     reviews: 1011,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Chic rooftop luxury & Gold Coast style",
     link: "https://expedia.com/affiliates/chicago-hotels-viceroy-chicago.j3TIKar",
     googlePlaceId: "ChIJh_G21VHTD4gRoxM2FR9qB-I" // Google Place ID for Viceroy Chicago, Chicago
   },
@@ -196,6 +204,7 @@ export const hotels: Hotel[] = [
     hours: "24/7",
     reviews: 1000,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Sleek downtown skyline views",
     link: "https://expedia.com/affiliates/miami-hotels-the-gabriel-miami.bcBMhFf",
     googlePlaceId: "ChIJH3sx21u32YgR4AFUjoHgRIQ" // Google Place ID for The Grayson Miami Downtown, Chicago
   },
@@ -294,6 +303,7 @@ export const hotels: Hotel[] = [
     hours: "24/7",
     reviews: 26,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Opulent Knightsbridge relaxation",
     link: "https://expedia.com/affiliates/london-hotels-the-carlton-tower-jumeirah.uwgkESe"
   },
   {
@@ -307,6 +317,7 @@ export const hotels: Hotel[] = [
     hours: "24/7",
     reviews: 302,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Park Lane prestige & spa sanctuary",
     link: "https://expedia.com/affiliates/london-hotels-four-seasons-hotel-london-at-park-lane.U6FEqCw"
   },
   {
@@ -320,6 +331,7 @@ export const hotels: Hotel[] = [
     hours: "24/7",
     reviews: 1475,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Regal charm & courtyard tranquility",
     link: "https://expedia.com/affiliates/london-hotels-st-james-court.0REEqRe"
   },
   {
@@ -333,6 +345,7 @@ export const hotels: Hotel[] = [
     hours: "24/7",
     reviews: 1002,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Historic Marylebone grandeur",
     link: "https://expedia.com/affiliates/london-hotels-the-landmark-london.EDafs2W"
   },
   {
@@ -398,6 +411,7 @@ export const hotels: Hotel[] = [
     hours: "24/7",
     reviews: 31,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Convention convenience & no-nonsense value",
     link: "https://www.expedia.com/Las-Vegas-Hotels-Hampton-Inn-Suites-Las-Vegas-Convention-Center.h42574390.Hotel-Information"
   },
   {
@@ -411,6 +425,7 @@ export const hotels: Hotel[] = [
     hours: "24/7",
     reviews: 1000,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Upscale Vdara condo luxury",
     link: "https://expedia.com/affiliates/las-vegas-hotels-jet-luxury-at-the-vdara-condo-hotel.qp48dgq"
   },
   {
@@ -424,6 +439,7 @@ export const hotels: Hotel[] = [
     hours: "24/7",
     reviews: 210,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Art Deco elegance & Strip-adjacent",
     link: "https://expedia.com/affiliates/las-vegas-hotels-hilton-club-elara-las-vegas.Tb6WRKQ"
   },
   {
@@ -437,6 +453,7 @@ export const hotels: Hotel[] = [
     hours: "24/7",
     reviews: 94,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Contemporary urban sanctuary",
     link: "https://expedia.com/affiliates/las-vegas-hotels-secret-suites-at-vdara.PrNpGng"
   },
   {
@@ -450,6 +467,7 @@ export const hotels: Hotel[] = [
     hours: "24/7",
     reviews: 1001,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Serene Japanese-inspired minimalist luxury",
     link: "https://expedia.com/affiliates/las-vegas-hotels-nobu-hotel-at-caesars-palace.zqz0dJv"
   },
   {
@@ -463,6 +481,7 @@ export const hotels: Hotel[] = [
     hours: "24/7",
     reviews: 1755,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "All-suite comfort with Strip-adjacent access",
     link: "https://expedia.com/affiliates/las-vegas-hotels-the-signature-at-mgm-grand.4VBZyGv"
   },
   {
@@ -476,6 +495,7 @@ export const hotels: Hotel[] = [
     hours: "24/7",
     reviews: 1003,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Family-friendly suburban villa retreat",
     link: "https://expedia.com/affiliates/las-vegas-hotels-westgate-flamingo-bay-resort.zITcLDW"
   },
   {
@@ -489,6 +509,7 @@ export const hotels: Hotel[] = [
     hours: "24/7",
     reviews: 11,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Exclusive high-roller sanctuary",
     link: "https://expedia.com/affiliates/las-vegas-hotels-aria-sky-suites.RrIWyk7"
   },
   {
@@ -502,6 +523,7 @@ export const hotels: Hotel[] = [
     hours: "24/7",
     reviews: 1659,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Suburban Mediterranean resort luxury",
     link: "https://expedia.com/affiliates/las-vegas-hotels-green-valley-ranch-resort-and-spa.nKkr0EB"
   },
   {
@@ -515,6 +537,7 @@ export const hotels: Hotel[] = [
     hours: "24/7",
     reviews: 992,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Historic bohemian arts district charm",
     link: "https://expedia.com/affiliates/new-york-hotels-hotel-chelsea.xxMoztw"
   },
   {
@@ -528,6 +551,7 @@ export const hotels: Hotel[] = [
     hours: "24/7",
     reviews: 1002,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Prestige 5th Avenue Beaux-Arts elegance",
     link: "https://expedia.com/affiliates/new-york-hotels-the-peninsula-new-york.hHCJwUk"
   },
   {
@@ -541,6 +565,7 @@ export const hotels: Hotel[] = [
     hours: "24/7",
     reviews: 315,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Sleek sky-high Midtown luxury",
     link: "https://expedia.com/affiliates/new-york-hotels-park-hyatt-new-york.3iiDYqE"
   },
   {
@@ -554,6 +579,7 @@ export const hotels: Hotel[] = [
     hours: "24/7",
     reviews: 619,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Wellness-focused Hudson Yards lifestyle",
     link: "https://expedia.com/affiliates/new-york-hotels-equinox-hotel-new-york.u2PoxKA"
   },
   {
@@ -567,6 +593,7 @@ export const hotels: Hotel[] = [
     hours: "24/7",
     reviews: 1008,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "No-fuss Bronx stadium proximity",
     link: "https://expedia.com/affiliates/new-york-hotels-ramada-by-wyndham-bronx.mI1iqjg"
   },
   {
@@ -580,6 +607,7 @@ export const hotels: Hotel[] = [
     hours: "24/7",
     reviews: 1004,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Modern Financial District professional",
     link: "https://expedia.com/affiliates/new-york-hotels-hyatt-centric-wall-street-new-york.jDCsGAV"
   },
   {
@@ -594,6 +622,7 @@ export const hotels: Hotel[] = [
 
     reviews: 1261, // Number of reviews provided
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Business-efficient Perimeter value",
     link: "https://expedia.com/affiliates/atlanta-hotels-hilton-suites-atlanta-perimeter.9z7rbAh" // Base URL for the hotel on Expedia
   },
   {
@@ -608,6 +637,7 @@ export const hotels: Hotel[] = [
 
     reviews: 1100, // Number of reviews provided
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Artistic boutique Midtown chic",
     link: "https://expedia.com/affiliates/atlanta-hotels-kimpton-shane-hotel.E2njhtz" // Base URL for the hotel on Expedia
   },
   {
@@ -622,6 +652,7 @@ export const hotels: Hotel[] = [
 
     reviews: 751, // Number of reviews provided
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Sophisticated Buckhead tranquility",
     link: "https://expedia.com/affiliates/atlanta-hotels-waldorf-astoria-atlanta-buckhead.EUuglQO" // Base URL for the hotel on Expedia
   },
   {
@@ -636,6 +667,7 @@ export const hotels: Hotel[] = [
 
     reviews: 1000, // Number of reviews provided
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Holistic wellness & Midtown energy",
     link: "https://expedia.com/affiliates/atlanta-hotels-loews-atlanta-hotel.N8Dmvij" // Base URL for the hotel on Expedia
   },
   {
@@ -650,6 +682,7 @@ export const hotels: Hotel[] = [
 
     reviews: 205, // Number of reviews provided
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Regal Buckhead classic luxury",
     link: "https://expedia.com/affiliates/atlanta-hotels-the-st-regis-atlanta.z3Zi7rW" // Base URL for the hotel on Expedia
   },
   {
@@ -664,6 +697,7 @@ export const hotels: Hotel[] = [
 
     reviews: 1001, // Number of reviews provided
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Vibrant Midtown cultural gateway",
     link: "https://expedia.com/affiliates/atlanta-hotels-hyatt-centric-midtown-atlanta.Qm8NYZi" // Base URL for the hotel on Expedia
   },
   {
@@ -678,6 +712,7 @@ export const hotels: Hotel[] = [
 
     reviews: 1002, // Number of reviews provided
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Upscale Buckhead focal point",
     link: "https://expedia.com/affiliates/atlanta-hotels-grand-hyatt-atlanta-in-buckhead.2cZB6Mb" // Base URL for the hotel on Expedia
   },
   {
@@ -692,6 +727,7 @@ export const hotels: Hotel[] = [
 
     reviews: 1001, // Number of reviews provided
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Heated rooftop sanctuary",
     link: "https://expedia.com/affiliates/atlanta-hotels-intercontinental-buckhead-atlanta.nnzWgd9" // Base URL for the hotel on Expedia
   },
   {
@@ -705,6 +741,7 @@ export const hotels: Hotel[] = [
     hours: "Not specified",
     reviews: 1001,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Art-inspired downtown connectivity",
     link: "https://expedia.com/affiliates/indianapolis-hotels-conrad-indianapolis.hR9ux4X"
   },
   {
@@ -718,6 +755,7 @@ export const hotels: Hotel[] = [
     hours: "Not specified",
     reviews: 797,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Reliable suburban road-trip comfort",
     link: "https://expedia.com/affiliates/indianapolis-hotels-fairfield-inn-and-suites-by-marriott-indianapolis-east.E9YkYf5"
   },
   {
@@ -731,6 +769,7 @@ export const hotels: Hotel[] = [
     hours: "Not specified",
     reviews: 1002,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Classic Drury 'Kickback' value",
     link: "https://expedia.com/affiliates/indianapolis-hotels-drury-inn-suites-indianapolis-northeast.g3PZW86"
   },
   {
@@ -744,6 +783,7 @@ export const hotels: Hotel[] = [
     hours: "Check-in: 3 PM, Check-out: 12 PM",
     reviews: 2992,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "European-influenced Westlake elegance",
     link: "https://expedia.com/affiliates/seattle-hotels-mayflower-park-hotel.S25cDBs"
   },
   {
@@ -757,6 +797,7 @@ export const hotels: Hotel[] = [
     hours: "Check-in: 3:00 PM | Check-out: 12:00 PM",
     reviews: 2053,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Scenic Lake Union waterfront",
     link: "https://expedia.com/affiliates/seattle-hotels-silver-cloud-inn-seattle-lake-union.JndsOYk"
   },
   {
@@ -770,6 +811,7 @@ export const hotels: Hotel[] = [
     hours: "24-hour front desk",
     reviews: 2055,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Stadium-side sports-fan luxury",
     link: "https://expedia.com/affiliates/seattle-hotels-silver-cloud-inn-seattle-lake-union.IXZSU6J"
   },
   {
@@ -783,6 +825,7 @@ export const hotels: Hotel[] = [
     hours: "24-hour front desk",
     reviews: 805,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Serene Mukilteo waterfront charm",
     link: "https://www.tripadvisor.com/Hotel_Review-g58625-d126094-Reviews-Silver_Cloud_Hotel_Mukilteo_Waterfront-Mukilteo_Washington.html"
   },
   {
@@ -796,6 +839,7 @@ export const hotels: Hotel[] = [
     hours: "24-hour front desk",
     reviews: 1625,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Sophisticated Woodinville wine-country lodge",
     link: "https://expedia.com/affiliates/seattle-hotels-willows-lodge.cp5RONo"
   },
   {
@@ -809,6 +853,7 @@ export const hotels: Hotel[] = [
     hours: "24-hour front desk",
     reviews: 244,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Modern tech-corridor convenience",
     link: "https://expedia.com/affiliates/seattle-hotels-eastgate-hotel.JJZFyo2"
   },
   {
@@ -822,6 +867,7 @@ export const hotels: Hotel[] = [
     hours: "24-hour front desk",
     reviews: 1008,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Extended-stay Everett comfort",
     link: "https://expedia.com/affiliates/everett-hotels-best-western-plus-navigator-inn-suites.4q7Jlag"
   },
   {
@@ -835,6 +881,7 @@ export const hotels: Hotel[] = [
     hours: "Not specified",
     reviews: 250,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Romantic Camano Island oceanfront",
     link: "https://expedia.com/affiliates/camano-island-hotels-camano-island-inn.ChJFwNr"
   },
   {
@@ -848,6 +895,7 @@ export const hotels: Hotel[] = [
     hours: "Check-in: 3 PM | Check-out: 12 PM",
     reviews: 1932,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Modern all-suite Pioneer Square",
     link: "https://expedia.com/affiliates/seattle-hotels-embassy-suites-by-hilton-seattle-downtown-pioneer-square.3PI1fFt"
   },
   {
@@ -861,6 +909,7 @@ export const hotels: Hotel[] = [
     hours: "Check-in: 3 PM | Check-out: 12 PM | Pool: 6:00 AM to 10:00 PM",
     reviews: 850,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Ultra-luxury Elliott Bay prestige",
     link: "https://expedia.com/affiliates/seattle-hotels-four-seasons-hotel-seattle.TZaAuTs"
   },
   {
@@ -874,6 +923,7 @@ export const hotels: Hotel[] = [
     hours: "24-hour front desk | Check-in: 3 PM | Check-out: 12 PM",
     reviews: 1001,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Stylish boutique downtown energy",
     link: "https://expedia.com/affiliates/seattle-hotels-kimpton-hotel-monaco-seattle.4q7Jlag"
   },
   {
@@ -887,6 +937,7 @@ export const hotels: Hotel[] = [
     hours: "24-hour front desk | Check-in: 3 PM | Check-out: 12 PM",
     reviews: 2313,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Classic Belltown city-view charm",
     link: "https://expedia.com/affiliates/seattle-hotels-warwick-seattle.akBeQTx"
   },
   {
@@ -900,6 +951,7 @@ export const hotels: Hotel[] = [
     hours: "24-hour front desk | Check-in: 3 PM | Check-out: 12 PM",
     reviews: 1799,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Sophisticated downtown business luxury",
     link: "https://expedia.com/affiliates/seattle-hotels-grand-hyatt-seattle.JT8QGaK"
   },
   {
@@ -913,6 +965,7 @@ export const hotels: Hotel[] = [
     hours: "24-hour front desk | Check-in: 3 PM | Check-out: 12 PM | Spa hours: Vary",
     reviews: 1623,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Eco-certified wellness retreat",
     link: "https://expedia.com/affiliates/seattle-hotels-hyatt-at-olive-8.DzFrifo"
   },
   {
@@ -926,6 +979,7 @@ export const hotels: Hotel[] = [
     hours: "24-hour front desk",
     reviews: 1450,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Historic Victorian romance",
     link: "https://expedia.com/affiliates/san-francisco-hotels-queen-anne-hotel.w8njrtz"
   },
   {
@@ -939,6 +993,7 @@ export const hotels: Hotel[] = [
     hours: "24-hour front desk",
     reviews: 3200,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Modern elegance near Union Square",
     link: "https://expedia.com/affiliates/san-francisco-hotels-hotel-nikko.E2njhtz"
   },
   {
@@ -952,6 +1007,7 @@ export const hotels: Hotel[] = [
     hours: "24-hour front desk",
     reviews: 1850,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
+    vibe: "Sophisticated urban relaxation",
     link: "https://expedia.com/affiliates/san-francisco-hotels-the-donatello.EUuglQO"
   },
 ];

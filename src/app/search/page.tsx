@@ -3,6 +3,7 @@ import HotelItem from "@/components/HotelItem";
 import ComparisonTable from "@/components/ComparisonTable";
 import ExpertTips from "@/components/ExpertTips";
 import FAQSection from "@/components/FAQSection";
+import SentimentSummary from "@/components/SentimentSummary";
 import { Skeleton } from "@/components/ui/skeleton";
 import { locations, searchHotels } from "@/data/hotels";
 import { locationGEOData } from "@/data/location-geo-data";
@@ -74,6 +75,8 @@ async function Results({ q, location }: ResultsProps) {
       <h1 className="text-center text-3xl font-bold">
         {results.length} Best {q} in {location}
       </h1>
+
+      <SentimentSummary summary={geoData.sentimentSummary!} />
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {results.map((hotel) => (
           <HotelItem key={hotel.id} hotel={hotel} />

@@ -34,6 +34,7 @@ export default function ComparisonTable({ hotels }: ComparisonTableProps) {
                         <TableHead className="w-[300px] font-semibold text-gray-900">Hotel Name</TableHead>
                         <TableHead className="font-semibold text-gray-900">Rating</TableHead>
                         <TableHead className="font-semibold text-gray-900">Price</TableHead>
+                        <TableHead className="hidden lg:table-cell font-semibold text-gray-900">Vibe / Ideal For</TableHead>
                         <TableHead className="font-semibold text-gray-900">Reviews</TableHead>
                         <TableHead className="hidden md:table-cell font-semibold text-gray-900">Top Features</TableHead>
                         <TableHead className="text-right font-semibold text-gray-900">Action</TableHead>
@@ -57,6 +58,9 @@ export default function ComparisonTable({ hotels }: ComparisonTableProps) {
                                 </div>
                             </TableCell>
                             <TableCell className="font-medium">${hotel.price}</TableCell>
+                            <TableCell className="hidden lg:table-cell italic text-gray-500">
+                                {hotel.vibe || "Romantic relaxation"}
+                            </TableCell>
                             <TableCell className="text-gray-600">{hotel.reviews.toLocaleString()}</TableCell>
                             <TableCell className="hidden md:table-cell">
                                 <div className="flex flex-wrap gap-1">

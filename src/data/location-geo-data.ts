@@ -8,9 +8,16 @@ export interface FAQ {
     answer: string;
 }
 
+export interface SentimentSummary {
+    bestFor: string;
+    topHighlight: string;
+    bestTime: string;
+}
+
 export interface LocationGEO {
     expertTips: ExpertTip[];
     faqs: FAQ[];
+    sentimentSummary?: SentimentSummary;
 }
 
 export const locationGEOData: Record<string, LocationGEO> = {
@@ -34,7 +41,12 @@ export const locationGEOData: Record<string, LocationGEO> = {
                 question: "Are there romantic hotels with hot tubs near Union Square?",
                 answer: "Yes, Hotel Nikko and The Donatello offer suites with deep soaking tubs and proximity to Union Square's shopping district."
             }
-        ]
+        ],
+        sentimentSummary: {
+            bestFor: "Couples seeking historic charm & secluded luxury",
+            topHighlight: "Victorian soaking tubs with San Francisco skyline views",
+            bestTime: "Late September for Indian Summer warmth and smaller crowds"
+        }
     },
     "Chicago, IL": {
         expertTips: [
@@ -64,7 +76,12 @@ export const locationGEOData: Record<string, LocationGEO> = {
                 question: "Do Chicago hotels with hot tubs have skyline views?",
                 answer: "Yes, many downtown Chicago hotels like The Langham and Park Hyatt offer rooms with hot tubs and stunning skyline views of the city and Lake Michigan."
             }
-        ]
+        ],
+        sentimentSummary: {
+            bestFor: "Urban explorers & luxury seekers",
+            topHighlight: "Indoor sky-high hot tubs with Michigan Avenue views",
+            bestTime: "December for festive vibes or June for pleasant lakefront weather"
+        }
     },
     "Miami, FL": {
         expertTips: [
@@ -94,7 +111,12 @@ export const locationGEOData: Record<string, LocationGEO> = {
                 question: "What's the best area in Miami for hotels with hot tubs?",
                 answer: "Brickell and Miami Beach are the top areas, offering luxury hotels with hot tubs, easy beach access, and proximity to dining and entertainment."
             }
-        ]
+        ],
+        sentimentSummary: {
+            bestFor: "Beach lovers & nightlife enthusiasts",
+            topHighlight: "Oceanfront rooftop Jacuzzis at sunset",
+            bestTime: "March to May for optimal weather and lower humidity"
+        }
     },
     "Las Vegas, NV": {
         expertTips: [
@@ -124,7 +146,12 @@ export const locationGEOData: Record<string, LocationGEO> = {
                 question: "Do Las Vegas hot tub hotels include spa access?",
                 answer: "Many luxury Las Vegas hotels include spa access with hot tub bookings, though some charge additional fees. Always verify what's included in your room rate."
             }
-        ]
+        ],
+        sentimentSummary: {
+            bestFor: "High rollers & entertainment seekers",
+            topHighlight: "Private balcony hot tubs overlooking the Las Vegas Strip",
+            bestTime: "April and October for comfortable outdoor temperatures"
+        }
     },
     "New York, NY": {
         expertTips: [
@@ -154,7 +181,12 @@ export const locationGEOData: Record<string, LocationGEO> = {
                 question: "Do NYC hotels with hot tubs offer 24/7 access?",
                 answer: "Most luxury NYC hotels provide 24/7 access to spa facilities and hot tubs, though some boutique properties may have limited hours. Always confirm when booking."
             }
-        ]
+        ],
+        sentimentSummary: {
+            bestFor: "Honeymooners & city sleekers",
+            topHighlight: "Manhattan skyline views from deep soaking tubs",
+            bestTime: "October for fall foliage or May for spring blossoms"
+        }
     },
     "London": {
         expertTips: [
@@ -184,7 +216,12 @@ export const locationGEOData: Record<string, LocationGEO> = {
                 question: "What's the best area in London for hotels with hot tubs?",
                 answer: "Knightsbridge and South Kensington offer the highest concentration of luxury hotels with hot tub facilities, plus easy access to museums and shopping."
             }
-        ]
+        ],
+        sentimentSummary: {
+            bestFor: "Historic charm & sophisticated relaxation",
+            topHighlight: "Secret garden outdoor hot tubs in Richmond",
+            bestTime: "May to July during the height of the English garden season"
+        }
     },
     "Atlanta, GA": {
         expertTips: [
@@ -214,7 +251,12 @@ export const locationGEOData: Record<string, LocationGEO> = {
                 question: "What's the average cost for an Atlanta hotel with a hot tub?",
                 answer: "Prices range from $139-$732 per night depending on location and luxury level. Buckhead properties tend to be more expensive than suburban options."
             }
-        ]
+        ],
+        sentimentSummary: {
+            bestFor: "Southern hospitality & spa enthusiasts",
+            topHighlight: "Luxury spa suites in the heart of Buckhead",
+            bestTime: "September to November for mild Georgia autumns"
+        }
     },
     "Indianapolis, IN": {
         expertTips: [
@@ -244,7 +286,12 @@ export const locationGEOData: Record<string, LocationGEO> = {
                 question: "Do Indianapolis hotels with hot tubs offer free parking?",
                 answer: "Many suburban Indianapolis hotels include free parking, while downtown properties typically charge $20-$35 per day. Always verify parking costs when booking."
             }
-        ]
+        ],
+        sentimentSummary: {
+            bestFor: "Business travelers & weekend getaways",
+            topHighlight: "Downtown hot tub suites with skywalk access",
+            bestTime: "May (avoid race weekends) or September for pleasant strolls"
+        }
     },
     "Seattle, WA": {
         expertTips: [
@@ -274,7 +321,12 @@ export const locationGEOData: Record<string, LocationGEO> = {
                 question: "What's the best area in Seattle for hotels with hot tubs?",
                 answer: "Downtown Seattle and Lake Union offer the best selection of hotels with hot tubs, providing easy access to attractions, dining, and waterfront activities."
             }
-        ]
+        ],
+        sentimentSummary: {
+            bestFor: "Pacific Northwest adventurers & nature lovers",
+            topHighlight: "Rooftop pools with views of Elliott Bay & stadiums",
+            bestTime: "July and August for Seattle's best sunshine"
+        }
     },
     "General": {
         expertTips: [
@@ -304,6 +356,11 @@ export const locationGEOData: Record<string, LocationGEO> = {
                 question: "Are in-room hot tubs sanitized between guests?",
                 answer: "Reputable hotels follow strict cleaning protocols for jetted tubs, including flushing the lines with sanitizer between every stay."
             }
-        ]
+        ],
+        sentimentSummary: {
+            bestFor: "Generic travelers & relaxation seekers",
+            topHighlight: "Standardized cleaning protocols & luxury extras",
+            bestTime: "Year-round for indoor relaxation"
+        }
     }
 };
