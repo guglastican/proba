@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import HotelItem from "@/components/HotelItem";
+import ComparisonTable from "@/components/ComparisonTable";
 import { getAllTags, locations, searchHotels } from "@/data/hotels";
 import { Metadata } from "next";
 import { cache } from "react";
@@ -32,12 +33,12 @@ export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
   const { q, location } = await params;
-  
+
   const qDecoded = decodeURIComponent(q);
   const locationDecoded = decodeURIComponent(location);
-  
+
   const results = await getHotels(qDecoded, locationDecoded);
-  
+
 
   return {
     title: `Top ${results.length} ${qDecoded} near ${locationDecoded} - Updated ${new Date().getFullYear()}`,
@@ -58,14 +59,16 @@ export default async function Page({ params }: PageProps) {
       <Header q={qDecoded} location={locationDecoded} />
       <main className="container mx-auto space-y-8 px-4 py-8">
         <h1 className="text-center text-3xl font-bold">
-          Best {results.length} {locationDecoded} with {qDecoded} 
+          Best {results.length} {locationDecoded} with {qDecoded}
         </h1>
-               
+
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {results.map((hotel) => (
             <HotelItem key={hotel.id} hotel={hotel} />
           ))}
         </div>
+
+        <ComparisonTable hotels={results} />
       </main>
     </div>
   );

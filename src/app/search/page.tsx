@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import HotelItem from "@/components/HotelItem";
+import ComparisonTable from "@/components/ComparisonTable";
 import { Skeleton } from "@/components/ui/skeleton";
 import { locations, searchHotels } from "@/data/hotels";
 import { Metadata } from "next";
@@ -65,15 +66,17 @@ async function Results({ q, location }: ResultsProps) {
     <main className="container mx-auto space-y-8 px-4 py-8">
       <p className="text-center font-semibold">
         Showing {results.length} results for {`"${q}"`} near {location}
-     </p>
-    <h1 className="text-center text-3xl font-bold">
-      {results.length} Best {q} in {location}
-    </h1>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      </p>
+      <h1 className="text-center text-3xl font-bold">
+        {results.length} Best {q} in {location}
+      </h1>
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {results.map((hotel) => (
           <HotelItem key={hotel.id} hotel={hotel} />
         ))}
       </div>
+
+      <ComparisonTable hotels={results} />
     </main>
   );
 }
