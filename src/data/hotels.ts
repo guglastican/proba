@@ -1027,7 +1027,7 @@ export const hotels: Hotel[] = [
   {
     id: 75,
     name: "InterContinental Berlin by IHG",
-    image: "https://images.trvl-media.com/lodging/1000000/10000/500/409/1640fae4.jpg", // Placeholder image
+    image: "https://images.trvl-media.com/lodging/1000000/10000/5700/5619/9bd4930c.jpg", // Placeholder image
     rating: 4.6,
     price: "161",
     address: "Budapester Str. 2, Berlin, DE, 10787",
@@ -1048,7 +1048,7 @@ export const hotels: Hotel[] = [
     description: "An opulent tribute to Art Deco architecture in the heart of Berlin. This luxury hotel offers a sophisticated sanctuary at Potsdamer Platz, featuring the Michelin-influenced POTS restaurant, the glamorous Fragrances bar, and a high-end wellness facility just steps from the Brandenburg Gate.",
     hours: "24-hour front desk",
     reviews: 1002,
-    tags: ["IndoorPool", "Spa", "Pet Friendly", "Luxury Suites"],
+    tags: ["Indoor Pool", "Spa", "Pet Friendly", "Luxury Suites"],
     vibe: "Golden-era glamour and prestige",
     link: "https://expedia.com/affiliates/berlin-hotels-sana-berlin-residence.kaLGFDS"
   },
