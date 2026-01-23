@@ -1010,6 +1010,20 @@ export const hotels: Hotel[] = [
     vibe: "Sophisticated urban relaxation",
     link: "https://expedia.com/affiliates/san-francisco-hotels-the-donatello.EUuglQO"
   },
+  {
+    id: 74,
+    name: "Das Stue",
+    image: "https://images.trvl-media.com/lodging/6000000/5260000/5257000/5256909/99b0704e.jpg", // Note: Using your provided example image as the raw text did not contain a direct image URL for Das Stue
+    rating: 5.0,
+    price: "325",
+    address: "Drakestr. 1, Berlin, DE, 10787",
+    description: "A luxury palace retreat overlooking Tiergarten Park. This sophisticated hotel features a French restaurant, a Susanne Kaufmann spa, and unique views of the Berlin Zoo animals from its stylish bar.",
+    hours: "24-hour front desk",
+    reviews: 873,
+    tags: ["hot tub", "Spa", "Indoor Pool", "Pet Friendly", "Balcony Rooms"],
+    vibe: "Sophisticated parkside elegance",
+    link: "https://expedia.com/affiliates/berlin-hotels-das-stue.example" // Placeholder link
+  }
 ];
 
 export async function searchHotels(q: string, location: string) {
@@ -1034,7 +1048,7 @@ export async function searchHotels(q: string, location: string) {
     .sort((a, b) => b.rating - a.rating);
 }
 
-export const locations = ["San Francisco, CA", "Chicago, IL", "Las Vegas, NV", "Miami, FL", "New York, NY", "London", "Atlanta, GA", "Indianapolis, IN", "Seattle, WA"];
+export const locations = ["San Francisco, CA", "Chicago, IL", "Las Vegas, NV", "Miami, FL", "New York, NY", "London", "Atlanta, GA", "Indianapolis, IN", "Seattle, WA", "Berlin, DE"];
 
 export async function getAllTags({ limit }: { limit?: number } = {}) {
   await new Promise((resolve) => setTimeout(resolve, 1500));
