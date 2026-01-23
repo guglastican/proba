@@ -1055,7 +1055,7 @@ export const hotels: Hotel[] = [
   {
     id: 77,
     name: "SANA Berlin Residence",
-    image: "https://images.trvl-media.com/lodging/1000000/10000/500/409/1640fae4.jpg", // Placeholder image
+    image: "https://images.trvl-media.com/lodging/45000000/44470000/44468100/44468096/131019f1.jpg", // Placeholder image
     rating: 4.5,
     price: "181",
     address: "Nürnberger Strasse 33/34, Berlin, DE, 10777",
@@ -1079,6 +1079,34 @@ export const hotels: Hotel[] = [
     tags: ["Indoor Pool", "Sauna", "Spa", "Shopping District", "Business Hotel"],
     vibe: "Modern architectural elegance",
     link: "https://expedia.com/affiliates/berlin-hotels-eurostars-berlin.Oo8YzhZ"
+  },
+  {
+    id: 79,
+    name: "Radisson Collection Hotel, Berlin",
+    image: "https://images.trvl-media.com/lodging/1000000/20000/15700/15620/016fbef9.jpg", // Placeholder image
+    rating: 5.0,
+    price: "177",
+    address: "Karl-Liebknecht-Str. 3, Berlin, BE, 10178",
+    description: "A riverside sanctuary in the heart of Berlin, steps from Museum Island. This luxury hotel features a dramatic bar area, a full-service spa with an indoor pool and sauna, and rooms offering stunning views of the Berlin Cathedral and the Spree River.",
+    hours: "24-hour front desk",
+    reviews: 1004,
+    tags: ["Indoor Pool", "Riverside View", "Spa", "Cathedral View", "Museum Island"],
+    vibe: "Elegant riverside urban retreat",
+    link: "https://expedia.com/affiliates/berlin-hotels-radisson-blu-hotel.9ZrOz9g"
+  },
+  {
+    id: 80,
+    name: "Waldorf Astoria Berlin",
+    image: "https://images.trvl-media.com/lodging/5000000/4740000/4738600/4738600/c86fbdb0.jpg", // Placeholder image
+    rating: 5.0,
+    price: "364",
+    address: "Hardenbergstr. 28, Berlin, BE, 10623",
+    description: "A prestigious high-rise sanctuary offering panoramic city views beside the Berlin Zoo. Features the exclusive Waldorf Astoria Spa with a signature indoor pool and hot tub, world-class service, and sophisticated rooms located steps from the Kurfürstendamm shopping district.",
+    hours: "24-hour front desk",
+    reviews: 1000,
+    tags: ["Hot Tub", "Indoor Pool", "Full-Service Spa", "Pet Friendly", "City View"],
+    vibe: "High-floor luxury and panoramic serenity",
+    link: "https://expedia.com/affiliates/berlin-hotels-waldorf-astoria-berlin.EtvLfmy"
   }
 
 ];
