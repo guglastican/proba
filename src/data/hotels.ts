@@ -1044,7 +1044,7 @@ export const hotels: Hotel[] = [
     image: "https://images.trvl-media.com/lodging/45000000/44470000/44468100/44468096/131019f1.jpg", // Placeholder image
     rating: 5.0,
     price: "208",
-    address: "Potsdamer Platz 3, Berlin, 10785",
+    address: "Potsdamer Platz 3, Berlin, DE, 10785",
     description: "An opulent tribute to Art Deco architecture in the heart of Berlin. This luxury hotel offers a sophisticated sanctuary at Potsdamer Platz, featuring the Michelin-influenced POTS restaurant, the glamorous Fragrances bar, and a high-end wellness facility just steps from the Brandenburg Gate.",
     hours: "24-hour front desk",
     reviews: 1002,
@@ -1058,7 +1058,7 @@ export const hotels: Hotel[] = [
     image: "https://images.trvl-media.com/lodging/1000000/10000/500/409/1640fae4.jpg", // Placeholder image
     rating: 4.5,
     price: "181",
-    address: "Nürnberger Strasse 33/34, Berlin, 10777",
+    address: "Nürnberger Strasse 33/34, Berlin, DE, 10777",
     description: "A luxury 4.5-star aparthotel offering the comforts of home with the amenities of a high-end hotel. Each unit features a full kitchen and laundry facilities, with guests enjoying access to a full-service spa and indoor pool just a short walk from Kurfürstendamm.",
     hours: "24-hour front desk",
     reviews: 90,
@@ -1076,7 +1076,7 @@ export const hotels: Hotel[] = [
     description: "A striking glass-fronted luxury hotel on Berlin's premier shopping street. Features a light-filled atrium, a top-floor wellness area with an indoor pool and sauna, and international Mediterranean-inspired cuisine, all located just a minute's walk from Friedrichstrasse station.",
     hours: "24-hour front desk",
     reviews: 1003,
-    tags: ["Indoor Pool", "Sauna", "Central Location", "Shopping District", "Business Hotel"],
+    tags: ["Indoor Pool", "Sauna", "Spa", "Shopping District", "Business Hotel"],
     vibe: "Modern architectural elegance",
     link: "https://expedia.com/affiliates/berlin-hotels-eurostars-berlin.Oo8YzhZ"
   }
