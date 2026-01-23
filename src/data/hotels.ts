@@ -1022,7 +1022,35 @@ export const hotels: Hotel[] = [
     reviews: 873,
     tags: ["hot tub", "Spa", "Indoor Pool", "Pet Friendly", "Balcony Rooms"],
     vibe: "Sophisticated parkside elegance",
-    link: "https://expedia.com/affiliates/berlin-hotels-das-stue.example" // Placeholder link
+    link: "https://expedia.com/affiliates/berlin-hotels-so-berlin-das-stue.8MVXH6P" // Placeholder link
+  },
+  {
+    id: 75,
+    name: "InterContinental Berlin by IHG",
+    image: "https://images.trvl-media.com/lodging/1000000/10000/500/409/1640fae4.jpg", // Placeholder image
+    rating: 4.6,
+    price: "161",
+    address: "Budapester Str. 2, Berlin, DE, 10787",
+    description: "Iconic luxury hotel near Zoo Berlin featuring a Michelin-starred restaurant and an expansive onsite spa. Offers top-rated breakfast, an indoor pool, and elegant rooms with city or park views, conveniently connected to the convention center.",
+    hours: "24-hour front desk",
+    reviews: 1006,
+    tags: ["Michelin Star Dining", "Indoor Pool", "Full-Service Spa", "Pet Friendly"],
+    vibe: "Iconic luxury and culinary excellence",
+    link: "https://expedia.com/affiliates/berlin-hotels-intercontinental-berlin.aJWP4ge"
+  },
+  {
+    id: 76,
+    name: "The Ritz-Carlton, Berlin",
+    image: "https://images.trvl-media.com/lodging/45000000/44470000/44468100/44468096/131019f1.jpg", // Placeholder image
+    rating: 5.0,
+    price: "208",
+    address: "Potsdamer Platz 3, Berlin, 10785",
+    description: "An opulent tribute to Art Deco architecture in the heart of Berlin. This luxury hotel offers a sophisticated sanctuary at Potsdamer Platz, featuring the Michelin-influenced POTS restaurant, the glamorous Fragrances bar, and a high-end wellness facility just steps from the Brandenburg Gate.",
+    hours: "24-hour front desk",
+    reviews: 1002,
+    tags: ["Pool", "Spa", "Pet Friendly", "Luxury Suites"],
+    vibe: "Golden-era glamour and prestige",
+    link: "https://expedia.com/affiliates/berlin-hotels-sana-berlin-residence.kaLGFDS"
   }
 ];
 
