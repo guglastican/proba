@@ -1048,10 +1048,39 @@ export const hotels: Hotel[] = [
     description: "An opulent tribute to Art Deco architecture in the heart of Berlin. This luxury hotel offers a sophisticated sanctuary at Potsdamer Platz, featuring the Michelin-influenced POTS restaurant, the glamorous Fragrances bar, and a high-end wellness facility just steps from the Brandenburg Gate.",
     hours: "24-hour front desk",
     reviews: 1002,
-    tags: ["Pool", "Spa", "Pet Friendly", "Luxury Suites"],
+    tags: ["IndoorPool", "Spa", "Pet Friendly", "Luxury Suites"],
     vibe: "Golden-era glamour and prestige",
     link: "https://expedia.com/affiliates/berlin-hotels-sana-berlin-residence.kaLGFDS"
+  },
+  {
+    id: 77,
+    name: "SANA Berlin Residence",
+    image: "https://images.trvl-media.com/lodging/1000000/10000/500/409/1640fae4.jpg", // Placeholder image
+    rating: 4.5,
+    price: "181",
+    address: "Nürnberger Strasse 33/34, Berlin, 10777",
+    description: "A luxury 4.5-star aparthotel offering the comforts of home with the amenities of a high-end hotel. Each unit features a full kitchen and laundry facilities, with guests enjoying access to a full-service spa and indoor pool just a short walk from Kurfürstendamm.",
+    hours: "24-hour front desk",
+    reviews: 90,
+    tags: ["Aparthotel", "Full Kitchen", "Indoor Pool", "Spa", "Pet Friendly"],
+    vibe: "Modern upscale residential living",
+    link: "https://expedia.com/affiliates/berlin-hotels-sana-berlin-residence.nxhFDOG"
+  },
+  {
+    id: 78,
+    name: "Eurostars Berlin",
+    image: "https://images.trvl-media.com/lodging/1000000/10000/500/409/1640fae4.jpg", // Placeholder image
+    rating: 4.5,
+    price: "124",
+    address: "Friedrichstr. 99, Berlin, BE, 10117",
+    description: "A striking glass-fronted luxury hotel on Berlin's premier shopping street. Features a light-filled atrium, a top-floor wellness area with an indoor pool and sauna, and international Mediterranean-inspired cuisine, all located just a minute's walk from Friedrichstrasse station.",
+    hours: "24-hour front desk",
+    reviews: 1003,
+    tags: ["Indoor Pool", "Sauna", "Central Location", "Shopping District", "Business Hotel"],
+    vibe: "Modern architectural elegance",
+    link: "https://expedia.com/affiliates/berlin-hotels-eurostars-berlin.Oo8YzhZ"
   }
+
 ];
 
 export async function searchHotels(q: string, location: string) {
