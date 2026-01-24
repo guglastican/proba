@@ -1138,9 +1138,11 @@ export const locations = ["San Francisco, CA", "Chicago, IL", "Las Vegas, NV", "
 export async function getAllTags({ limit }: { limit?: number } = {}) {
   await new Promise((resolve) => setTimeout(resolve, 1500));
 
-  return hotels
+  const allTags = hotels
     .slice(0, limit)
     .reduce<string[]>(function (acc, hotel) {
       return acc.concat(hotel.tags);
     }, []);
+
+  return Array.from(new Set(allTags));
 }

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { locations } from "@/data/hotels";
 import { Search, MapPin } from "lucide-react";
+import { slugify } from "@/lib/utils";
 
 interface InternalLinksProps {
     currentQ: string;
@@ -34,7 +35,7 @@ export default function InternalLinks({ currentQ, currentLocation }: InternalLin
                     {relatedTags.map((tag) => (
                         <li key={tag}>
                             <Link
-                                href={`/search?q=${encodeURIComponent(tag)}&location=${encodeURIComponent(currentLocation)}`}
+                                href={`/${slugify(currentLocation)}/${slugify(tag)}`}
                                 className="block p-4 rounded-lg bg-white border border-gray-200 hover:border-blue-400 hover:shadow-md transition-all group"
                             >
                                 <span className="text-gray-700 group-hover:text-blue-600 font-medium">{tag}</span>
@@ -55,7 +56,7 @@ export default function InternalLinks({ currentQ, currentLocation }: InternalLin
                     {relatedLocations.map((loc) => (
                         <li key={loc}>
                             <Link
-                                href={`/search?q=${encodeURIComponent(currentQ)}&location=${encodeURIComponent(loc)}`}
+                                href={`/${slugify(loc)}/${slugify(currentQ)}`}
                                 className="block p-4 rounded-lg bg-white border border-gray-200 hover:border-red-400 hover:shadow-md transition-all group"
                             >
                                 <span className="text-gray-700 group-hover:text-red-600 font-medium">{loc}</span>

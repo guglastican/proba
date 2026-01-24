@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ChevronRight, Home } from "lucide-react";
+import { slugify } from "@/lib/utils";
 
 interface BreadcrumbsProps {
     location: string;
@@ -7,6 +8,7 @@ interface BreadcrumbsProps {
 }
 
 export default function Breadcrumbs({ location, q }: BreadcrumbsProps) {
+    const baseUrl = "https://www.romantic-vacations-destinations.com";
     const breadcrumbSchema = {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
@@ -15,19 +17,19 @@ export default function Breadcrumbs({ location, q }: BreadcrumbsProps) {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://www.romantic-vacations-destinations.com/"
+                "item": `${baseUrl}/`
             },
             {
                 "@type": "ListItem",
                 "position": 2,
                 "name": location,
-                "item": `https://www.romantic-vacations-destinations.com/search?location=${encodeURIComponent(location)}&q=Hotels+With+Hot+Tub+in+Room`
+                "item": `${baseUrl}/${slugify(location)}/${slugify("Hotels With Hot Tub in Room")}`
             },
             {
                 "@type": "ListItem",
                 "position": 3,
                 "name": q,
-                "item": `https://www.romantic-vacations-destinations.com/search?location=${encodeURIComponent(location)}&q=${encodeURIComponent(q)}`
+                "item": `${baseUrl}/${slugify(location)}/${slugify(q)}`
             }
         ]
     };
@@ -48,7 +50,7 @@ export default function Breadcrumbs({ location, q }: BreadcrumbsProps) {
                 <li className="flex items-center space-x-2">
                     <ChevronRight className="h-4 w-4 shrink-0" />
                     <Link
-                        href={`/search?location=${encodeURIComponent(location)}&q=Hotels+With+Hot+Tub+in+Room`}
+                        href={`/${slugify(location)}/${slugify("Hotels With Hot Tub in Room")}`}
                         className="hover:text-primary transition-colors whitespace-nowrap"
                     >
                         {location}
