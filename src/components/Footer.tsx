@@ -22,6 +22,7 @@ export default function Footer() {
             <Link href="/seattle-wa/hotels-with-hot-tub-in-room" className="text-sm text-gray-600 hover:text-primary transition-colors">Seattle</Link>
           </nav>
           <nav className="flex space-x-4">
+            <Link href="/destinations" className="text-sm text-gray-600 hover:text-primary transition-colors font-bold border-r border-gray-300 pr-4 mr-4">All Destinations</Link>
             <Link href="/about" className="text-sm text-gray-600 hover:text-primary transition-colors">
               About
             </Link>
