@@ -56,6 +56,9 @@ export async function generateMetadata({
   return {
     title: `Top ${results.length} ${q} near ${location} - Updated ${new Date().getFullYear()}`,
     description: `Find the best ${q} near ${location}`,
+    alternates: {
+      canonical: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.romantic-vacations-destinations.com'}/${resolvedParams.location}/${resolvedParams.q}`,
+    },
   };
 }
 

@@ -1146,3 +1146,21 @@ export async function getAllTags({ limit }: { limit?: number } = {}) {
 
   return Array.from(new Set(allTags));
 }
+export async function getValidLocationTagPairs() {
+  const pairs = new Set<string>();
+
+  hotels.forEach(hotel => {
+    // Find which canonical location this hotel belongs to
+    const canonicalLocation = locations.find(loc =>
+      hotel.address.toLowerCase().includes(loc.toLowerCase())
+    );
+
+    if (canonicalLocation) {
+      hotel.tags.forEach(tag => {
+        pairs.add(JSON.stringify({ location: canonicalLocation, tag }));
+      });
+    }
+  });
+
+  return Array.from(pairs).map(p => JSON.parse(p) as { location: string; tag: string });
+}

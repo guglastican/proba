@@ -25,8 +25,9 @@ export default function HotelItem({ hotel }: HotelItemProps) {
         <Image
           src={hotel.image}
           alt={hotel.name}
-          width={1200}
-          height={600}
+          width={600}
+          height={400}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="h-64 w-full object-cover"
         />
         <div className="absolute top-3 right-3 bg-white px-3 py-1 rounded-full text-sm font-semibold shadow-md">

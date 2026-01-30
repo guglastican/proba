@@ -56,7 +56,7 @@ export const locationDescriptions = {
       name: "Emma Caldwell",
       title: "Travel Writer & Reviewer",
       bio: "With over a decade of experience in travel journalism, Emma specializes in authentic local experiences and hotel reviews. Her work has been featured in numerous international publications. If you love the idea of unwinding in a private hot tub after a long day of sightseeing, enjoying a romantic getaway, or simply indulging in a luxurious hotel experience, you're in the right place!",
-      photo: "/Emma-Caldwell.png"
+      photo: "/Emma-Caldwell.jpg"
     },
     overview: "Experience a tropical paradise in Miami, from the legendary Art Deco architecture of South Beach to the vibrant murals of the Wynwood Design District and the sophisticated skyline of Brickell.",
     attractions: [
@@ -108,7 +108,7 @@ export const locationDescriptions = {
       name: "Emma Caldwell",
       title: "Travel Writer & Reviewer",
       bio: "With over a decade of experience in travel journalism, Emma specializes in authentic local experiences and hotel reviews. Her work has been featured in numerous international publications. If you love the idea of unwinding in a private hot tub after a long day of sightseeing, enjoying a romantic getaway, or simply indulging in a luxurious hotel experience, you're in the right place!",
-      photo: "/Emma-Caldwell.png"
+      photo: "/Emma-Caldwell.jpg"
     },
     overview: "Discover the architectural wonders and urban luxury of Chicago, from the historic skyscrapers of The Loop to the upscale shopping of the Magnificent Mile and the scenic shoreline of Lake Michigan.",
     attractions: [
@@ -160,7 +160,7 @@ export const locationDescriptions = {
       name: "Emma Caldwell",
       title: "Travel Writer & Reviewer",
       bio: "With over a decade of experience in travel journalism, Emma specializes in authentic local experiences and hotel reviews. Her work has been featured in numerous international publications. If you love the idea of unwinding in a private hot tub after a long day of sightseeing, enjoying a romantic getaway, or simply indulging in a luxurious hotel experience, you're in the right place!",
-      photo: "/Emma-Caldwell.png"
+      photo: "/Emma-Caldwell.jpg"
     },
     overview: "Las Vegas: Entertainment Capital with Luxurious Hot Tub Escapes",
     attractions: [
@@ -212,7 +212,7 @@ export const locationDescriptions = {
       name: "Emma Caldwell",
       title: "Travel Writer & Reviewer",
       bio: "With over a decade of experience in travel journalism, Emma specializes in authentic local experiences and hotel reviews. Her work has been featured in numerous international publications. If you love the idea of unwinding in a private hot tub after a long day of sightseeing, enjoying a romantic getaway, or simply indulging in a luxurious hotel experience, you're in the right place!",
-      photo: "/Emma-Caldwell.png"
+      photo: "/Emma-Caldwell.jpg"
     },
     overview: "New York City: Urban Luxury and Hot Tub Retreats in the City That Never Sleeps",
     attractions: [
@@ -264,7 +264,7 @@ export const locationDescriptions = {
       name: "Emma Caldwell",
       title: "Travel Writer & Reviewer",
       bio: "With over a decade of experience in travel journalism, Emma specializes in authentic local experiences and hotel reviews. Her work has been featured in numerous international publications. If you love the idea of unwinding in a private hot tub after a long day of sightseeing, enjoying a romantic getaway, or simply indulging in a luxurious hotel experience, you're in the right place!",
-      photo: "/Emma-Caldwell.png"
+      photo: "/Emma-Caldwell.jpg"
     },
     overview: "Discover the best hotels with hot tubs in London, blending luxury, comfort, and relaxation.",
     attractions: [
@@ -358,7 +358,7 @@ export const locationDescriptions = {
       name: "Emma Caldwell",
       title: "Travel Writer & Reviewer",
       bio: "With over a decade of experience in travel journalism, Emma specializes in authentic local experiences and hotel reviews. Her work has been featured in numerous international publications. If you love the idea of unwinding in a private hot tub after a long day of sightseeing, enjoying a romantic getaway, or simply indulging in a luxurious hotel experience, you're in the right place!",
-      photo: "/Emma-Caldwell.png"
+      photo: "/Emma-Caldwell.jpg"
     },
     overview: "Experience the vibrant heart of the New South in Atlanta, from the historic streets of Old Fourth Ward to the upscale boutiques of Buckhead and the sprawling green space of Piedmont Park.",
     attractions: [
@@ -410,7 +410,7 @@ export const locationDescriptions = {
       name: "Emma Caldwell",
       title: "Travel Writer & Reviewer",
       bio: "With over a decade of experience in travel journalism, Emma specializes in authentic local experiences and hotel reviews. Her work has been featured in numerous international publications. If you love the idea of unwinding in a private hot tub after a long day of sightseeing, enjoying a romantic getaway, or simply indulging in a luxurious hotel experience, you're in the right place!",
-      photo: "/Emma-Caldwell.png"
+      photo: "/Emma-Caldwell.jpg"
     },
     overview: "Discover the unexpected charm and hospitality of Indianapolis, from the bustling Wholesale District to the scenic canal walks of White River State Park and the historic architecture of Lockerbie Square.",
     attractions: [
@@ -458,7 +458,7 @@ export const locationDescriptions = {
       name: "Emma Caldwell",
       title: "Travel Writer & Reviewer",
       bio: "With over a decade of experience in travel journalism, Emma specializes in authentic local experiences and hotel reviews. Her work has been featured in numerous international publications. If you love the idea of unwinding in a private hot tub after a long day of sightseeing, enjoying a romantic getaway, or simply indulging in a luxurious hotel experience, you're in the right place!",
-      photo: "/Emma-Caldwell.png"
+      photo: "/Emma-Caldwell.jpg"
     },
     overview: "Immerse yourself in the emerald beauty of Seattle, from the bustling stalls of Pike Place Market to the futuristic skyline of the Space Needle and the scenic waters of Puget Sound and Elliott Bay.",
     attractions: [

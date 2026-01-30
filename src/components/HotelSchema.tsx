@@ -14,14 +14,18 @@ export default function HotelSchema({ hotels, locationName }: HotelSchemaProps) 
         "name": `Best Hotels with Hot Tub in ${locationName}`,
         "description": `A curated list of the top-rated hotels featuring private hot tubs and luxury spa amenities in ${locationName}.`,
         "numberOfItems": hotels.length,
+        "url": typeof window !== "undefined" ? window.location.href : "",
         "itemListElement": hotels.map((hotel, index) => ({
             "@type": "ListItem",
             "position": index + 1,
             "item": {
                 "@type": "Hotel",
+                "@id": `https://www.romantic-vacations-destinations.com/hotel/${hotel.id}`,
+                "url": hotel.link,
                 "name": hotel.name,
                 "image": hotel.image,
                 "description": hotel.description,
+                "priceRange": `$$ - $$$`,
                 "address": {
                     "@type": "PostalAddress",
                     "streetAddress": hotel.address,
