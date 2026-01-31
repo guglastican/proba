@@ -54,8 +54,8 @@ export async function generateMetadata({
   const results = await getHotels(q, location);
 
   return {
-    title: `Top ${results.length} ${q} near ${location} - Updated ${new Date().getFullYear()}`,
-    description: `Find the best ${q} near ${location}`,
+    title: `Top ${results.length} ${q} near ${location}`,
+    description: `Find the best ${q} near ${location}. Book Now`,
     alternates: {
       canonical: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.romantic-vacations-destinations.com'}/${resolvedParams.location}/${resolvedParams.q}`,
     },
