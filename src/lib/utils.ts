@@ -10,15 +10,15 @@ export function cn(...inputs: ClassValue[]) {
 export function sanitizeUrl(url: string | undefined): string {
   if (!url) return '';
 
-  // Remove any whitespace and newlines
-  const trimmedUrl = url.trim().replace(/\n/g, '');
+  // Remove any whitespace, tabs, and newlines
+  const cleanUrl = url.replace(/\s/g, '');
 
   // Ensure the URL has a protocol
-  if (!trimmedUrl.match(/^https?:\/\//)) {
-    return `https://${trimmedUrl}`;
+  if (!cleanUrl.match(/^https?:\/\//)) {
+    return `https://${cleanUrl}`;
   }
 
-  return trimmedUrl;
+  return cleanUrl;
 }
 
 export function slugify(text: string): string {

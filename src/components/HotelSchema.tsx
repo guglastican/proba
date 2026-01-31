@@ -1,4 +1,5 @@
 import { Hotel } from "@/data/hotels";
+import { sanitizeUrl } from "@/lib/utils";
 
 interface HotelSchemaProps {
     hotels: Hotel[];
@@ -23,7 +24,7 @@ export default function HotelSchema({ hotels, locationName }: HotelSchemaProps) 
                 "@id": `https://www.romantic-vacations-destinations.com/hotel/${hotel.id}`,
                 "url": hotel.link,
                 "name": hotel.name,
-                "image": hotel.image,
+                "image": sanitizeUrl(hotel.image),
                 "description": hotel.description,
                 "priceRange": `$$ - $$$`,
                 "address": {

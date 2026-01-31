@@ -11,6 +11,7 @@ import { Hotel } from "@/data/hotels";
 import { MapPin, Star, StarHalf } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { sanitizeUrl } from "@/lib/utils";
 
 interface HotelItemProps {
   hotel: Hotel;
@@ -23,7 +24,7 @@ export default function HotelItem({ hotel }: HotelItemProps) {
     >
       <div className="relative">
         <Image
-          src={hotel.image}
+          src={sanitizeUrl(hotel.image)}
           alt={hotel.name}
           width={600}
           height={400}
