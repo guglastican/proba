@@ -1,22 +1,18 @@
-import { getAllTags, locations } from "@/data/hotels";
+import { getValidLocationTagPairs } from "@/data/hotels";
 import { slugify } from "@/lib/utils";
 import { MetadataRoute } from "next";
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://www.romantic-vacations-destinations.com";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const allTags = await getAllTags();
+  const validPairs = await getValidLocationTagPairs();
 
-  const searchLandingPages = allTags
-    .map((tag) =>
-      locations.map((location) => ({
-        url: `${baseUrl}/${slugify(location)}/${slugify(tag)}`,
-        lastModified: new Date(),
-        changeFrequency: "weekly" as const,
-        priority: 0.9,
-      })),
-    )
-    .flat();
+  const searchLandingPages = validPairs.map((pair) => ({
+    url: `${baseUrl}/${slugify(pair.location)}/${slugify(pair.tag)}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.9,
+  }));
 
   return [
     {
