@@ -9,9 +9,8 @@ import LocationOverview from "@/components/LocationOverview";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import InternalLinks from "@/components/InternalLinks";
 import HotelSchema from "@/components/HotelSchema";
-import { getAllTags, getValidLocationTagPairs, locations, searchHotels } from "@/data/hotels";
+import { getAllTags, locations, searchHotels } from "@/data/hotels";
 import { locationGEOData } from "@/data/location-geo-data";
-import { locationDescriptions } from "@/data/location-descriptions";
 import { Metadata } from "next";
 import { cache } from "react";
 import { slugify } from "@/lib/utils";
@@ -23,38 +22,23 @@ interface PageProps {
 export const revalidate = 86400; // Refresh cached pages once every 24 hours
 
 export async function generateStaticParams() {
-  const validPairs = await getValidLocationTagPairs();
+  const allTags = await getAllTags();
 
-  const hotelPages = validPairs.map((pair) => ({
-    location: slugify(pair.location),
-    q: slugify(pair.tag),
-  }));
-
-  // Also pre-render attraction pages
-  const attractionPages: any[] = [];
-  Object.entries(locationDescriptions).forEach(([locationName, data]) => {
-    data.attractions.forEach(attraction => {
-      attractionPages.push({
-        location: slugify(locationName),
-        q: slugify(attraction.title),
-      });
-    });
-  });
-
-  // Deduplicate and return
-  const allParams = [...hotelPages, ...attractionPages];
-  const uniquePaths = new Set(allParams.map(p => `${p.location}/${p.q}`));
-
-  return Array.from(uniquePaths).map(path => {
-    const [location, q] = path.split('/');
-    return { location, q };
-  });
+  return allTags
+    .map((tag) =>
+      locations.map((location) => ({
+        location: slugify(location),
+        q: slugify(tag),
+      })),
+    )
+    .flat();
 }
 
 const getHotels = cache(searchHotels);
 
 async function getMatchedParams(params: { location: string; q: string }) {
   const allTags = await getAllTags();
+
   const matchedLocation = locations.find(l => slugify(l) === params.location) || params.location;
   const matchedTag = allTags.find(t => slugify(t) === params.q) || params.q;
 
@@ -86,52 +70,36 @@ export default async function Page({ params }: PageProps) {
   const geoData = locationGEOData[location] || { expertTips: [], faqs: [] };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div>
       <Header q={q} location={location} />
-      <main className="standard-container py-12 space-y-20">
-        <section className="text-center max-w-4xl mx-auto">
-          <Breadcrumbs location={location} q={q} />
-          <h1 className="mt-8 text-4xl md:text-6xl font-black text-gray-900 tracking-tight leading-tight">
-            Top {results.length} Best <br />
-            <span className="text-transparent bg-clip-text premium-gradient">{q}</span> <br />
-            <span className="text-2xl md:text-3xl text-gray-400 font-bold block mt-4">near {location}</span>
-          </h1>
-        </section>
+      <main className="container mx-auto space-y-8 px-4 py-8">
+        <Breadcrumbs location={location} q={q} />
 
-        <section className="bg-gray-50 rounded-3xl p-8 md:p-12 border border-gray-100 shadow-sm relative overflow-hidden group">
-          <AISummaryBlock locationName={location} summary={geoData.sentimentSummary!} />
-          <div className="max-w-4xl mx-auto mt-8">
-            <SentimentSummary summary={geoData.sentimentSummary!} />
-          </div>
-        </section>
+        <h1 className="text-center text-3xl font-bold">
+          Best {results.length} {location} with {q}
+        </h1>
+
+        <AISummaryBlock locationName={location} summary={geoData.sentimentSummary!} />
+
+        <SentimentSummary summary={geoData.sentimentSummary!} />
 
         <HotelSchema hotels={results} locationName={location} />
 
-        <section className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {results.map((hotel) => (
             <HotelItem key={hotel.id} hotel={hotel} />
           ))}
-        </section>
+        </div>
 
-        <section className="pt-20 border-t border-gray-100">
-          <LocationOverview location={location} />
-        </section>
+        <LocationOverview location={location} />
 
-        <section className="pt-20 border-t border-gray-100">
-          <h2 className="text-3xl font-black text-gray-900 mb-10 tracking-tight">Direct Comparison</h2>
-          <ComparisonTable hotels={results} />
-        </section>
+        <ComparisonTable hotels={results} />
 
-        <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 pt-20 border-t border-gray-100">
-          <ExpertTips tips={geoData.expertTips} location={location} />
-          <FAQSection faqs={geoData.faqs} location={location} />
-        </section>
+        <ExpertTips tips={geoData.expertTips} location={location} />
 
-        <section className="pt-20 border-t border-gray-100 bg-gray-50/50 -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 py-20 rounded-t-[3rem]">
-          <div className="max-w-7xl mx-auto">
-            <InternalLinks currentQ={q} currentLocation={location} />
-          </div>
-        </section>
+        <FAQSection faqs={geoData.faqs} location={location} />
+
+        <InternalLinks currentQ={q} currentLocation={location} />
       </main>
     </div>
   );

@@ -113,119 +113,75 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gray-50">
       <Header />
 
       <main>
-        {/* Modern Hero Section */}
-        <section className="relative overflow-hidden pt-20 pb-24 lg:pt-32 lg:pb-36">
-          <div className="absolute inset-0 -z-10 bg-[radial-gradient(45%_40%_at_50%_50%,rgba(16,185,129,0.08)_0%,rgba(255,255,255,0)_100%)]" />
-          <div className="standard-container text-center">
-            <h1 className="text-5xl md:text-7xl font-black text-gray-900 mb-8 tracking-tight leading-[1.1]">
-              Elevate Your Escape with <br />
-              <span className="text-transparent bg-clip-text premium-gradient">Private Hot Tubs</span>
-            </h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-12 leading-relaxed">
-              We've curated the most luxurious hotel experiences across the USA,
-              specifically designed for those who value privacy and relaxation.
-            </p>
+        <section className="container mx-auto px-4 py-16 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Find Your Perfect Hotels With Hot Tub
+          </h1>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-10">
+            Discover luxurious hotels with private hot tubs across the United States.
+            Relax, unwind, and create unforgettable memories.
+          </p>
+        </section>
+
+        <section className="container mx-auto px-4 py-8 text-center bg-white rounded-xl shadow-sm border border-gray-100 mb-12">
+          <AISummaryBlock locationName="Hot Tub Finder" summary={locationGEOData["General"].sentimentSummary!} />
+          <div className="max-w-4xl mx-auto">
+            <SentimentSummary summary={locationGEOData["General"].sentimentSummary!} />
           </div>
         </section>
 
-        {/* Dynamic Sentiment Block */}
-        <section className="standard-container mb-24">
-          <div className="bg-gray-50 rounded-3xl p-8 md:p-12 border border-gray-100 shadow-sm relative overflow-hidden group hover:shadow-md transition-shadow">
-            <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
-              <Search className="w-32 h-32 text-primary" />
-            </div>
-            <AISummaryBlock locationName="Hot Tub Finder" summary={locationGEOData["General"].sentimentSummary!} />
-            <div className="max-w-4xl mx-auto mt-8">
-              <SentimentSummary summary={locationGEOData["General"].sentimentSummary!} />
-            </div>
-          </div>
-        </section>
-
-        {/* Featured Locations - Improved Dimensions */}
-        <section className="bg-gray-50/50 py-24 border-y border-gray-100">
-          <div className="standard-container">
-            <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
-              <div>
-                <h2 className="text-4xl font-black text-gray-900 mb-4 tracking-tight">Top Destinations</h2>
-                <p className="text-gray-600">Explore our most popular cities for romantic spa getaways.</p>
-              </div>
-              <Link href="/destinations" className="text-primary font-bold hover:underline">
-                View All Destinations →
-              </Link>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <section className="bg-white py-16">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center mb-12">Featured Hotels With Hot Tub</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {featuredLocations.map((location) => (
                 <Link
                   key={location.name}
                   href={location.url}
-                  className="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all border border-gray-100 flex flex-col h-full active:scale-95"
+                  className="bg-gray-100 rounded-lg p-6 text-center hover:bg-gray-200 transition-colors group"
                 >
-                  <div className="mb-6 flex items-center justify-between">
-                    <div className="w-12 h-12 rounded-xl bg-primary/5 flex items-center justify-center group-hover:bg-primary/10 transition-colors">
-                      <MapPin className="text-primary w-6 h-6" />
-                    </div>
-                    <span className="text-xs font-bold text-gray-400 group-hover:text-primary transition-colors">NEW</span>
-                  </div>
-                  <h3 className="text-2xl font-bold mb-3 text-gray-900">
+                  <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
                     {location.name}
                   </h3>
-                  <p className="text-primary font-bold text-sm mb-4">{location.hotels} Verified Hotels</p>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-6 line-clamp-3 italic">"{location.description}"</p>
-                  <div className="mt-auto pt-4 border-t border-gray-50 flex items-center text-primary font-bold text-xs uppercase tracking-widest group-hover:translate-x-2 transition-transform">
-                    Explore Now
-                  </div>
+                  <p className="text-gray-800 font-medium mb-2">{location.hotels} Hot Tub Hotels</p>
+                  <p className="text-sm text-gray-700 italic">{location.description}</p>
                 </Link>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Why Choose Section - Premium Polish */}
-        <section className="standard-container py-32">
-          <div className="text-center max-w-3xl mx-auto mb-20">
-            <h2 className="text-4xl font-black text-gray-900 mb-6 tracking-tight">Redefining Your Search</h2>
-            <p className="text-gray-600 text-lg">We obsess over the details so you can focus on the bubbles. Here's why travelers trust us.</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <section className="container mx-auto px-4 py-16">
+          <h2 className="text-3xl font-bold text-center mb-12">Why Choose Hot Tub Finder</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className="relative group p-4"
+                className="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow"
               >
-                <div className="absolute inset-0 bg-primary/5 rounded-3xl scale-95 opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500" />
-                <div className="relative z-10 text-center">
-                  <div className="mx-auto h-20 w-20 rounded-2xl premium-gradient flex items-center justify-center text-white shadow-xl mb-8 group-hover:rotate-6 transition-transform">
-                    <feature.icon className="h-10 w-10" />
-                  </div>
-                  <h3 className="text-2xl font-bold mb-4 text-gray-900">{feature.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{feature.description}</p>
-                </div>
+                <feature.icon className="mx-auto h-12 w-12 text-primary mb-4" />
+                <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
+                <p className="text-gray-600">{feature.description}</p>
               </div>
             ))}
           </div>
         </section>
 
-        {/* SEO Content Section */}
-        <section className="bg-gray-900 text-white py-24">
-          <div className="standard-container">
-            <ExpertTips
-              tips={locationGEOData["General"].expertTips}
-              location="your next escape"
-              className="text-white"
-            />
-            <div className="mt-20 border-t border-white/10 pt-20">
-              <FAQSection
-                faqs={locationGEOData["General"].faqs}
-                location="Hot Tub Finder"
-                className="text-white"
-              />
-            </div>
-          </div>
+
+
+        <section className="container mx-auto px-4 py-16">
+          <ExpertTips
+            tips={locationGEOData["General"].expertTips}
+            location="your favorite destination"
+          />
+          <FAQSection
+            faqs={locationGEOData["General"].faqs}
+            location="Hot Tub Finder"
+          />
         </section>
       </main>
 

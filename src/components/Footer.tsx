@@ -4,52 +4,41 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-white border-t border-gray-100 py-16 mt-20">
-      <div className="standard-container">
-        <div className="flex flex-col md:flex-row justify-between items-start gap-12">
-          <div className="max-w-sm">
-            <Link href="/" className="transition-transform hover:scale-105 active:scale-95">
-              <span className="text-xl font-black tracking-tighter text-primary flex items-center gap-2 mb-4">
-                <div className="w-6 h-6 rounded-md premium-gradient flex items-center justify-center">
-                  <span className="text-white text-[10px]">HT</span>
-                </div>
-                HOT TUB FINDER
-              </span>
+    <footer className="bg-gray-100 py-6 mt-8">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="text-sm text-gray-600 mb-4 md:mb-0">
+            &copy; {currentYear} HotTubFinder. All rights reserved.
+          </div>
+          <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-8 border-b border-gray-200 pb-8 w-full">
+            <h4 className="text-sm font-bold text-gray-900 w-full text-center mb-2 uppercase tracking-wider">Top Destinations</h4>
+            <Link href="/san-francisco-ca/hotels-with-hot-tub-in-room" className="text-sm text-gray-600 hover:text-primary transition-colors">San Francisco</Link>
+            <Link href="/miami-fl/hotels-with-hot-tub-in-room" className="text-sm text-gray-600 hover:text-primary transition-colors">Miami</Link>
+            <Link href="/chicago-il/hotels-with-hot-tub-in-room" className="text-sm text-gray-600 hover:text-primary transition-colors">Chicago</Link>
+            <Link href="/las-vegas-nv/hotels-with-hot-tub-in-room" className="text-sm text-gray-600 hover:text-primary transition-colors">Las Vegas</Link>
+            <Link href="/new-york-ny/hotels-with-hot-tub-in-room" className="text-sm text-gray-600 hover:text-primary transition-colors">New York</Link>
+            <Link href="/london/hotels-with-hot-tub-in-room" className="text-sm text-gray-600 hover:text-primary transition-colors">London</Link>
+            <Link href="/atlanta-ga/hotels-with-hot-tub-in-room" className="text-sm text-gray-600 hover:text-primary transition-colors">Atlanta</Link>
+            <Link href="/seattle-wa/hotels-with-hot-tub-in-room" className="text-sm text-gray-600 hover:text-primary transition-colors">Seattle</Link>
+          </nav>
+          <nav className="flex space-x-4">
+            <Link href="/destinations" className="text-sm text-gray-600 hover:text-primary transition-colors font-bold border-r border-gray-300 pr-4 mr-4">All Destinations</Link>
+            <Link href="/about" className="text-sm text-gray-600 hover:text-primary transition-colors">
+              About
             </Link>
-            <p className="text-gray-500 text-sm leading-relaxed mb-6">
-              Expertly curated hotel selections featuring the finest private hot tubs and spa experiences across the United States.
-            </p>
-            <div className="text-sm text-gray-400">
-              &copy; {currentYear} HotTubFinder. <br />Handcrafted for ultimate relaxation.
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-12">
-            <div>
-              <h4 className="text-xs font-bold text-gray-900 uppercase tracking-widest mb-6">Company</h4>
-              <nav className="flex flex-col space-y-4">
-                <Link href="/about" className="text-sm text-gray-500 hover:text-primary transition-all">About Our Mission</Link>
-                <Link href="/author" className="text-sm text-gray-500 hover:text-primary transition-all">Meet Excellence</Link>
-                <Link href="/destinations" className="text-sm text-gray-500 hover:text-primary transition-all font-bold">All Destinations</Link>
-              </nav>
-            </div>
-
-            <div>
-              <h4 className="text-xs font-bold text-gray-900 uppercase tracking-widest mb-6">Legal</h4>
-              <nav className="flex flex-col space-y-4">
-                <Link href="/privacy-policy" className="text-sm text-gray-500 hover:text-primary transition-all">Privacy Policy</Link>
-                <Link href="/terms-of-service" className="text-sm text-gray-500 hover:text-primary transition-all">Terms of Service</Link>
-              </nav>
-            </div>
-
-            <div>
-              <h4 className="text-xs font-bold text-gray-900 uppercase tracking-widest mb-6">Resources</h4>
-              <nav className="flex flex-col space-y-4">
-                <Link href="/sitemap.xml" className="text-sm text-gray-500 hover:text-primary transition-all">XML Sitemap</Link>
-                <Link href="/author" className="text-sm text-gray-500 hover:text-primary transition-all italic">Expert Tips</Link>
-              </nav>
-            </div>
-          </div>
+            <Link href="/author" className="text-sm text-gray-600 hover:text-primary transition-colors">
+              Author
+            </Link>
+            <Link href="/privacy-policy" className="text-sm text-gray-600 hover:text-primary transition-colors">
+              Privacy Policy
+            </Link>
+            <Link href="/terms-of-service" className="text-sm text-gray-600 hover:text-primary transition-colors">
+              Terms of Service
+            </Link>
+            <Link href="/sitemap.xml" className="text-sm text-gray-600 hover:text-primary transition-colors">
+              Sitemap
+            </Link>
+          </nav>
         </div>
       </div>
     </footer>
