@@ -29,35 +29,49 @@ export default async function DestinationsPage() {
     }, {} as Record<string, string[]>);
 
     return (
-        <div className="min-h-screen bg-gray-50">
+        <div className="min-h-screen bg-white">
             <Header />
-            <main className="container mx-auto px-4 py-12">
-                <header className="mb-12 text-center">
-                    <h1 className="text-4xl font-bold text-gray-900 mb-4">Destinations Directory</h1>
-                    <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                        Explore our comprehensive guide to luxury hotels.
-                        Browse by city and specific features to find your perfect stay.
+            <main className="standard-container py-20">
+                <header className="mb-20 text-center max-w-3xl mx-auto">
+                    <h1 className="text-4xl md:text-6xl font-black text-gray-900 mb-6 tracking-tight leading-[1.1]">
+                        Our Curated <br />
+                        <span className="text-transparent bg-clip-text premium-gradient">Destinations</span>
+                    </h1>
+                    <p className="text-lg text-gray-600 leading-relaxed font-medium">
+                        A comprehensive directory of the finest hotel experiences. Discover secluded escapes,
+                        urban sanctuaries, and romantic suites tailored to your location.
                     </p>
                 </header>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                     {Object.entries(locationGroups).map(([location, tags]) => (
-                        <section key={location} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex flex-col">
-                            <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-                                <MapPin className="text-red-500 h-6 w-6" />
-                                {location}
-                            </h2>
-                            <ul className="space-y-2 flex-grow">
+                        <section key={location} className="flex flex-col group">
+                            <div className="mb-8 flex items-center gap-4">
+                                <div className="w-12 h-12 rounded-2xl bg-secondary flex items-center justify-center text-primary group-hover:premium-gradient group-hover:text-white transition-all shadow-sm">
+                                    <MapPin className="h-6 w-6" />
+                                </div>
+                                <h2 className="text-2xl font-black text-gray-900 tracking-tight">
+                                    {location}
+                                </h2>
+                            </div>
+                            <ul className="space-y-3">
                                 {tags.map((tag) => (
                                     <li key={tag}>
                                         <Link
                                             href={`/${slugify(location)}/${slugify(tag)}`}
-                                            className="group flex items-center justify-between p-2 rounded-lg hover:bg-blue-50 border border-transparent hover:border-blue-100 transition-all text-sm font-medium text-gray-700 hover:text-blue-700"
+                                            className="group/link flex items-center justify-between p-4 rounded-2xl bg-gray-50/50 hover:bg-white border border-transparent hover:border-gray-100 hover:shadow-lg transition-all"
                                         >
-                                            <span className="flex items-center gap-2">
-                                                <Search className="h-3 w-3 text-gray-400 group-hover:text-blue-500" />
-                                                {tag}
-                                            </span>
+                                            <div className="flex items-center gap-3">
+                                                <div className="p-2 rounded-lg bg-white border border-gray-100 group-hover/link:border-primary/20 transition-all">
+                                                    <Search className="h-3 w-3 text-primary" />
+                                                </div>
+                                                <span className="text-sm font-bold text-gray-700 group-hover/link:text-primary transition-colors">
+                                                    {tag}
+                                                </span>
+                                            </div>
+                                            <div className="opacity-0 group-hover/link:opacity-100 translate-x-4 group-hover/link:translate-x-0 transition-all text-primary font-bold text-xs uppercase tracking-widest">
+                                                GO
+                                            </div>
                                         </Link>
                                     </li>
                                 ))}

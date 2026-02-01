@@ -1157,7 +1157,12 @@ export async function getValidLocationTagPairs() {
 
     if (canonicalLocation) {
       hotel.tags.forEach(tag => {
-        pairs.add(JSON.stringify({ location: canonicalLocation, tag }));
+        // Normalize tag to Title Case for consistency
+        const normalizedTag = tag.trim().split(' ')
+          .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+          .join(' ');
+
+        pairs.add(JSON.stringify({ location: canonicalLocation, tag: normalizedTag }));
       });
     }
   });
