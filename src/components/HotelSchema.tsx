@@ -21,7 +21,7 @@ export default function HotelSchema({ hotels, locationName }: HotelSchemaProps) 
             "position": index + 1,
             "item": {
                 "@type": "Hotel",
-                "@id": `https://www.romantic-vacations-destinations.com/hotel/${hotel.id}`,
+                "@id": `hotel-${hotel.id}`,
                 "url": hotel.link,
                 "name": hotel.name,
                 "image": sanitizeUrl(hotel.image),

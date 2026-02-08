@@ -14,6 +14,7 @@ import { locationGEOData } from "@/data/location-geo-data";
 import { Metadata } from "next";
 import { cache } from "react";
 import { slugify } from "@/lib/utils";
+import { notFound } from "next/navigation";
 
 interface PageProps {
   params: Promise<{ location: string; q: string }>;
@@ -37,9 +38,14 @@ export async function generateStaticParams() {
 const getHotels = cache(searchHotels);
 
 async function getMatchedParams(params: { location: string; q: string }) {
-  const allTags = await getAllTags();
+  // Validate that location is one of our canonical locations
+  const matchedLocation = locations.find(l => slugify(l) === params.location);
+  if (!matchedLocation) return null;
 
-  const matchedLocation = locations.find(l => slugify(l) === params.location) || params.location;
+  // Validate that q is not just numbers (which indicates an indexed internal ID)
+  if (/^\d+$/.test(params.q)) return null;
+
+  const allTags = await getAllTags();
   const matchedTag = allTags.find(t => slugify(t) === params.q) || params.q;
 
   return { location: matchedLocation, q: matchedTag };
@@ -49,8 +55,13 @@ export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
   const resolvedParams = await params;
-  const { location, q } = await getMatchedParams(resolvedParams);
+  const matchedParams = await getMatchedParams(resolvedParams);
 
+  if (!matchedParams) {
+    return {}; // Metadata for 404 page
+  }
+
+  const { location, q } = matchedParams;
   const results = await getHotels(q, location);
 
   return {
@@ -64,8 +75,13 @@ export async function generateMetadata({
 
 export default async function Page({ params }: PageProps) {
   const resolvedParams = await params;
-  const { location, q } = await getMatchedParams(resolvedParams);
+  const matchedParams = await getMatchedParams(resolvedParams);
 
+  if (!matchedParams) {
+    notFound();
+  }
+
+  const { location, q } = matchedParams;
   const results = await getHotels(q, location);
   const geoData = locationGEOData[location] || { expertTips: [], faqs: [] };
 
