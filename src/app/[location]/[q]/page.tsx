@@ -65,7 +65,7 @@ export async function generateMetadata({
   const results = await getHotels(q, location);
 
   return {
-    title: `Top ${results.length} ${q} near ${location}`,
+    title: `Best ${results.length} ${q} near ${location}`,
     description: `Find the best ${q} near ${location}. Book Now`,
     alternates: {
       canonical: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.romantic-vacations-destinations.com'}/${resolvedParams.location}/${resolvedParams.q}`,
@@ -92,7 +92,7 @@ export default async function Page({ params }: PageProps) {
         <Breadcrumbs location={location} q={q} />
 
         <h1 className="text-center text-3xl font-bold">
-          Best {results.length} {location} with {q}
+          Best {results.length} {location} {q}
         </h1>
 
         <AISummaryBlock locationName={location} summary={geoData.sentimentSummary!} />

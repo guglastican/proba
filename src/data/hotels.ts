@@ -1104,10 +1104,38 @@ export const hotels: Hotel[] = [
     description: "A prestigious high-rise sanctuary offering panoramic city views beside the Berlin Zoo. Features the exclusive Waldorf Astoria Spa with a signature indoor pool and hot tub, world-class service, and sophisticated rooms located steps from the Kurfürstendamm shopping district.",
     hours: "24-hour front desk",
     reviews: 1000,
-    tags: ["Hot Tub", "Indoor Pool", "Full-Service Spa", "Pet Friendly", "City View"],
+    tags: ["Hot Tub", "Indoor Pool", "Spa", "Pet Friendly", "City View"],
     vibe: "High-floor luxury and panoramic serenity",
     link: "https://expedia.com/affiliates/berlin-hotels-waldorf-astoria-berlin.EtvLfmy"
-  }
+  },
+  {
+    id: 81,
+    name: "Hotel Adlon Kempinski",
+    image: "https://images.trvl-media.com/lodging/1000000/200000/199300/199220/w3837h2557x3y3-f5cde4b6.jpg",
+    rating: 5.0,
+    price: "545",
+    address: "Unter Den Linden 77, Berlin, BE, 10117",
+    description: "A legendary historic landmark situated directly beside the Brandenburg Gate. This ultra-luxury hotel offers Michelin-starred dining, a mezzanine breakfast with iconic views, and an extensive spa featuring hot stone massages, three saunas, and an indoor pool.",
+    hours: "24-hour front desk",
+    reviews: 1003,
+    tags: ["Hot Tub", "Indoor Pool", "Spa", "Pet Friendly",],
+    vibe: "Timeless elegance and historic prestige",
+    link: "https://expedia.com/affiliates/berlin-hotels-hotel-adlon-kempinski.xHBoNt2"
+  },
+  {
+    id: 82,
+    name: "Hotel Palace Berlin",
+    image: "https://images.trvl-media.com/lodging/1000000/20000/18100/18069/87e9a3a7.jpg",
+    rating: 5.0,
+    price: "211",
+    address: "Budapester Strasse 45, Berlin, BE, 10787",
+    description: "An 'urban oasis' located steps from the Berlin Zoo and Kurfürstendamm. This luxury hotel features a stunning indoor pool area with marble columns, a poolside bar serving signature cocktails, and a dedicated spa offering Ayurvedic treatments and a sauna.",
+    hours: "24-hour front desk",
+    reviews: 1000,
+    tags: ["Hot Tub", "Indoor Pool", "Palace Spa", "Pet Friendly", "24-hour Airport Shuttle"],
+    vibe: "Sophisticated relaxation in the heart of the city",
+    link: "https://expedia.com/affiliates/berlin-hotels-hotel-palace-berlin.uF1ZiV0"
+  },
 
 ];
 
