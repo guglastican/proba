@@ -30,11 +30,16 @@ export default function Header({ q, location }: HeaderProps) {
     <header className="bg-primary py-6">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center gap-4">
-          <Link href="/">
-            <span className="text-3xl font-bold text-primary-foreground">
-              Hotel Finder
-            </span>
-          </Link>
+          <div className="flex items-center gap-6">
+            <Link href="/">
+              <span className="text-3xl font-bold text-primary-foreground">
+                Hotel Finder
+              </span>
+            </Link>
+            <Link href="/destinations" className="text-primary-foreground/90 hover:text-white font-medium transition-colors hidden sm:block">
+              Destinations
+            </Link>
+          </div>
           <form
             action="/"
             onSubmit={handleSubmit}

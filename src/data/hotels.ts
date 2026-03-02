@@ -67,7 +67,7 @@ export const hotels: Hotel[] = [
     rating: 3.8,
     price: "217",
     address: "373 S Airport Blvd, South San Francisco, CA, 94080",
-    description: "Hotel in South San Francisco with free breakfast and airport shuttle service.",
+    description: "Perfect for couples seeking convenience without sacrificing comfort, this Holiday Inn Express in South San Francisco offers a complimentary hot breakfast buffet to start your romantic mornings right. Enjoy the ease of a free 24-hour airport shuttle service, making your getaway stress-free from the moment you arrive. Relax in modern, quiet rooms featuring plush bedding and contemporary amenities, providing a peaceful retreat after a day of exploring the Bay Area.",
     hours: "24/7",  // Added the 'hours' property
     reviews: 1005,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
@@ -81,7 +81,7 @@ export const hotels: Hotel[] = [
     rating: 4.6,
     price: "550",
     address: "100 Boyes Boulevard, North San Francisco, CA, 95416",
-    description: "Discover the finest of California Wine Country at Fairmont Sonoma Mission Inn & Spa, a top luxury resort in Sonoma. Just an hour north of San Francisco, it offers an unforgettable experience.",
+    description: "Discover the pinnacle of romantic luxury at the Fairmont Sonoma Mission Inn & Spa, an iconic oasis nestled in the heart of California Wine Country. Just an hour north of San Francisco, this historic resort boasts exclusive thermal mineral hot springs, a world-class Willow Stream Spa offering signature couples' treatments, and exceptional dining experiences. Set on immaculately manicured grounds, it provides an unforgettable, deeply relaxing escape for couples seeking the ultimate romantic indulgence.",
     hours: "24/7",  // Added the 'hours' property
     reviews: 1000,
     tags: ["Hot Tub", "Spa Hotel", "Hotels With Hot Tub in Room", "Hotels With Jacuzzi In Room"],
@@ -1020,7 +1020,7 @@ export const hotels: Hotel[] = [
     description: "A luxury palace retreat overlooking Tiergarten Park. This sophisticated hotel features a French restaurant, a Susanne Kaufmann spa, and unique views of the Berlin Zoo animals from its stylish bar.",
     hours: "24-hour front desk",
     reviews: 873,
-    tags: ["hot tub", "Spa", "Indoor Pool", "Pet Friendly", "Balcony Rooms"],
+    tags: ["hot tub", "Spa", "Indoor Pool", "Pet Friendly"],
     vibe: "Sophisticated parkside elegance",
     link: "https://expedia.com/affiliates/berlin-hotels-so-berlin-das-stue.8MVXH6P" // Placeholder link
   },
@@ -1034,7 +1034,7 @@ export const hotels: Hotel[] = [
     description: "Iconic luxury hotel near Zoo Berlin featuring a Michelin-starred restaurant and an expansive onsite spa. Offers top-rated breakfast, an indoor pool, and elegant rooms with city or park views, conveniently connected to the convention center.",
     hours: "24-hour front desk",
     reviews: 1006,
-    tags: ["Michelin Star Dining", "Indoor Pool", "Full-Service Spa", "Pet Friendly"],
+    tags: ["Hot tub", "Indoor Pool", "Spa", "Pet Friendly"],
     vibe: "Iconic luxury and culinary excellence",
     link: "https://expedia.com/affiliates/berlin-hotels-intercontinental-berlin.aJWP4ge"
   },
@@ -1048,7 +1048,7 @@ export const hotels: Hotel[] = [
     description: "An opulent tribute to Art Deco architecture in the heart of Berlin. This luxury hotel offers a sophisticated sanctuary at Potsdamer Platz, featuring the Michelin-influenced POTS restaurant, the glamorous Fragrances bar, and a high-end wellness facility just steps from the Brandenburg Gate.",
     hours: "24-hour front desk",
     reviews: 1002,
-    tags: ["Indoor Pool", "Spa", "Pet Friendly", "Luxury Suites"],
+    tags: ["Indoor Pool", "Spa", "Pet Friendly", "Hot Tub"],
     vibe: "Golden-era glamour and prestige",
     link: "https://expedia.com/affiliates/berlin-hotels-sana-berlin-residence.kaLGFDS"
   },
@@ -1062,7 +1062,7 @@ export const hotels: Hotel[] = [
     description: "A luxury 4.5-star aparthotel offering the comforts of home with the amenities of a high-end hotel. Each unit features a full kitchen and laundry facilities, with guests enjoying access to a full-service spa and indoor pool just a short walk from Kurfürstendamm.",
     hours: "24-hour front desk",
     reviews: 90,
-    tags: ["Aparthotel", "Full Kitchen", "Indoor Pool", "Spa", "Pet Friendly"],
+    tags: ["Indoor Pool", "Spa", "Pet Friendly", "Hot Tub"],
     vibe: "Modern upscale residential living",
     link: "https://expedia.com/affiliates/berlin-hotels-sana-berlin-residence.nxhFDOG"
   },
@@ -1076,7 +1076,7 @@ export const hotels: Hotel[] = [
     description: "A striking glass-fronted luxury hotel on Berlin's premier shopping street. Features a light-filled atrium, a top-floor wellness area with an indoor pool and sauna, and international Mediterranean-inspired cuisine, all located just a minute's walk from Friedrichstrasse station.",
     hours: "24-hour front desk",
     reviews: 1003,
-    tags: ["Indoor Pool", "Sauna", "Spa", "Shopping District", "Business Hotel"],
+    tags: ["Indoor Pool", "Spa", "Hot Tub"],
     vibe: "Modern architectural elegance",
     link: "https://expedia.com/affiliates/berlin-hotels-eurostars-berlin.Oo8YzhZ"
   },
@@ -1090,7 +1090,7 @@ export const hotels: Hotel[] = [
     description: "A riverside sanctuary in the heart of Berlin, steps from Museum Island. This luxury hotel features a dramatic bar area, a full-service spa with an indoor pool and sauna, and rooms offering stunning views of the Berlin Cathedral and the Spree River.",
     hours: "24-hour front desk",
     reviews: 1004,
-    tags: ["Indoor Pool", "Riverside View", "Spa", "Cathedral View", "Museum Island"],
+    tags: ["Indoor Pool", "Spa", "Hot Tub"],
     vibe: "Elegant riverside urban retreat",
     link: "https://expedia.com/affiliates/berlin-hotels-radisson-blu-hotel.9ZrOz9g"
   },
@@ -1104,7 +1104,7 @@ export const hotels: Hotel[] = [
     description: "A prestigious high-rise sanctuary offering panoramic city views beside the Berlin Zoo. Features the exclusive Waldorf Astoria Spa with a signature indoor pool and hot tub, world-class service, and sophisticated rooms located steps from the Kurfürstendamm shopping district.",
     hours: "24-hour front desk",
     reviews: 1000,
-    tags: ["Hot Tub", "Indoor Pool", "Spa", "Pet Friendly", "City View"],
+    tags: ["Hot Tub", "Indoor Pool", "Spa", "Pet Friendly"],
     vibe: "High-floor luxury and panoramic serenity",
     link: "https://expedia.com/affiliates/berlin-hotels-waldorf-astoria-berlin.EtvLfmy"
   },
@@ -1132,7 +1132,7 @@ export const hotels: Hotel[] = [
     description: "An 'urban oasis' located steps from the Berlin Zoo and Kurfürstendamm. This luxury hotel features a stunning indoor pool area with marble columns, a poolside bar serving signature cocktails, and a dedicated spa offering Ayurvedic treatments and a sauna.",
     hours: "24-hour front desk",
     reviews: 1000,
-    tags: ["Hot Tub", "Indoor Pool", "Palace Spa", "Pet Friendly", "24-hour Airport Shuttle"],
+    tags: ["Hot Tub", "Indoor Pool", "Spa", "Pet Friendly",],
     vibe: "Sophisticated relaxation in the heart of the city",
     link: "https://expedia.com/affiliates/berlin-hotels-hotel-palace-berlin.uF1ZiV0"
   },

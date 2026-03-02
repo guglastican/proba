@@ -11,11 +11,26 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Hotel With Hot Tubs",
-  description: "Find the best hotels near you",
+  title: {
+    template: "%s | Romantic Vacations",
+    default: "Romantic Vacations & Destinations",
+  },
+  description: "Find the best hotels near you for the perfect romantic getaway.",
   metadataBase: new URL(sanitizeUrl(process.env.NEXT_PUBLIC_BASE_URL) || 'https://romantic-vacations-destinations.com'),
   alternates: {
     canonical: '/',
+  },
+  openGraph: {
+    title: "Romantic Vacations & Destinations",
+    description: "Discover the world's most romantic hotels and destinations.",
+    url: "/",
+    siteName: "Romantic Vacations Destinations",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Romantic Vacations & Destinations",
+    description: "Discover the world's most romantic hotels and destinations.",
   },
 };
 
@@ -27,7 +42,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta name="robots" content="index, follow, noarchive, max-image-preview:large" />
       </head>
       {/* Add Google Tag Manager */}
       <GoogleTagManager gtmId="GTM-KQ7B5BL5" />

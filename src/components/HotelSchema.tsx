@@ -4,16 +4,17 @@ import { sanitizeUrl } from "@/lib/utils";
 interface HotelSchemaProps {
     hotels: Hotel[];
     locationName: string;
+    q: string;
 }
 
-export default function HotelSchema({ hotels, locationName }: HotelSchemaProps) {
+export default function HotelSchema({ hotels, locationName, q }: HotelSchemaProps) {
     if (!hotels || hotels.length === 0) return null;
 
     const schema = {
         "@context": "https://schema.org",
         "@type": "ItemList",
-        "name": `Best Hotels with Hot Tub in ${locationName}`,
-        "description": `A curated list of the top-rated hotels featuring private hot tubs and luxury spa amenities in ${locationName}.`,
+        "name": `Best Hotels offering ${q} in ${locationName}`,
+        "description": `A curated list of the top-rated hotels featuring ${q.toLowerCase()} and luxury amenities in ${locationName}.`,
         "numberOfItems": hotels.length,
         "url": typeof window !== "undefined" ? window.location.href : "",
         "itemListElement": hotels.map((hotel, index) => ({

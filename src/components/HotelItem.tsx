@@ -25,7 +25,7 @@ export default function HotelItem({ hotel }: HotelItemProps) {
       <div className="relative">
         <Image
           src={sanitizeUrl(hotel.image)}
-          alt={hotel.name}
+          alt={`Photo of ${hotel.name}, a romantic luxury hotel in ${hotel.address.split(',')[hotel.address.split(',').length - 2]?.trim() || 'the area'} offering ${hotel.tags[0] || 'great amenities'}`}
           width={600}
           height={400}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

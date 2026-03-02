@@ -15,6 +15,7 @@ import { locationGEOData } from "@/data/location-geo-data";
 import { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { Suspense } from "react";
+import { getSeoPhrasing } from "@/lib/utils";
 
 interface PageProps {
   searchParams: Promise<{ q?: string; location?: string }>;
@@ -36,9 +37,16 @@ export async function generateMetadata({ searchParams }: PageProps): Promise<Met
   const searchPath = 'search';
   const canonicalUrl = `${baseUrl.endsWith('/') ? baseUrl : baseUrl + '/'}${searchPath}?${queryParams}`;
 
+  // Use the helper for metadata, defaulting to 10 if we don't know the exact count here
+  const { title, description } = getSeoPhrasing(q, location, 10);
+
+  // We rewrite title to strip out "Top 10" because this is a general search page
+  // A simple safe string replace or relying on just "Best X in Y" is okay
+  const dynamicTitle = `${q ? `${q}` : 'Best Hotels'} in ${location}`;
+
   return {
-    title: `${q ? `Best ${q}` : 'Best'} in ${location}`,
-    description: `Discover the best ${q} in ${location}. Luxurious accommodations with private ${q} for a relaxing getaway.`,
+    title: dynamicTitle,
+    description,
     alternates: {
       canonical: canonicalUrl,
     },
@@ -79,15 +87,16 @@ async function Results({ q, location }: ResultsProps) {
       <p className="text-center font-semibold">
         Showing {results.length} results for {`"${q}"`} near {location}
       </p>
-      <h1 className="text-center text-3xl font-bold">
-        {results.length} Best {q} in {location}
+
+      <h1 className="text-center text-3xl font-bold md:text-4xl lg:text-5xl lg:leading-tight mb-2 mt-4">
+        {getSeoPhrasing(q, location, results.length).h1}
       </h1>
 
-      <AISummaryBlock locationName={location} summary={geoData.sentimentSummary!} />
+      <AISummaryBlock locationName={location} summary={geoData.sentimentSummary!} q={q} />
 
       <SentimentSummary summary={geoData.sentimentSummary!} />
 
-      <HotelSchema hotels={results} locationName={location} />
+      <HotelSchema hotels={results} locationName={location} q={q} />
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {results.map((hotel) => (

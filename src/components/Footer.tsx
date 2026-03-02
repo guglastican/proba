@@ -11,6 +11,9 @@ export default function Footer() {
             &copy; {currentYear} HotTubFinder. All rights reserved.
           </div>
           <nav className="flex space-x-4">
+            <Link href="/destinations" className="text-sm font-semibold text-gray-700 hover:text-primary transition-colors">
+              Destinations
+            </Link>
             <Link href="/about" className="text-sm text-gray-600 hover:text-primary transition-colors">
               About
             </Link>

@@ -128,7 +128,7 @@ export default function Home() {
         </section>
 
         <section className="container mx-auto px-4 py-8 text-center bg-white rounded-xl shadow-sm border border-gray-100 mb-12">
-          <AISummaryBlock locationName="Hot Tub Finder" summary={locationGEOData["General"].sentimentSummary!} />
+          <AISummaryBlock locationName="Hot Tub Finder" summary={locationGEOData["General"].sentimentSummary!} q="Hot Tubs" />
           <div className="max-w-4xl mx-auto">
             <SentimentSummary summary={locationGEOData["General"].sentimentSummary!} />
           </div>
