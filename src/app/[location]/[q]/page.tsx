@@ -14,7 +14,7 @@ import { locationGEOData } from "@/data/location-geo-data";
 import { Metadata } from "next";
 import { cache } from "react";
 import { sanitizeUrl, slugify, getSeoPhrasing } from "@/lib/utils";
-import { notFound, permanentRedirect } from "next/navigation";
+import { notFound } from "next/navigation";
 import Image from "next/image";
 
 interface PageProps {
@@ -34,64 +34,18 @@ export async function generateStaticParams() {
 
 const getHotels = cache(searchHotels);
 
-type MatchedParamsResult =
-  | { type: 'render'; location: string; q: string }
-  | { type: 'redirect'; url: string }
-  | { type: 'not-found' };
+async function getMatchedParams(params: { location: string; q: string }) {
+  // Validate that location is one of our canonical locations
+  const matchedLocation = locations.find(l => slugify(l) === params.location);
+  if (!matchedLocation) return null;
 
-async function getMatchedParams(params: { location: string; q: string }): Promise<MatchedParamsResult> {
-  const decodedLocation = decodeURIComponent(params.location);
-  const decodedQ = decodeURIComponent(params.q);
-
-  const slugifiedLocation = slugify(decodedLocation);
-  const slugifiedQ = slugify(decodedQ);
-
-  const matchedLocation = locations.find(l => slugify(l) === slugifiedLocation);
-
-  if (!matchedLocation) {
-    // Check for known legacy non-location paths
-    if (slugifiedLocation === 'hotel' || slugifiedLocation === 'destination-weddings-in-oregon' || slugifiedLocation === 'caribbean-sailing-cruise-vacation') {
-      return { type: 'redirect', url: '/' };
-    }
-
-    // Fallback for weird typos like cas-vegas-nv
-    if (slugifiedLocation === 'cas-vegas-nv') {
-      return { type: 'redirect', url: '/las-vegas-nv/hotels-with-hot-tub-in-room' };
-    }
-
-    return { type: 'not-found' };
-  }
-
-  // If the query is just numbers (indicating an old indexed internal ID)
-  if (/^\d+$/.test(decodedQ)) {
-    return { type: 'redirect', url: `/${slugify(matchedLocation)}/hotels-with-hot-tub-in-room` };
-  }
+  // Validate that q is not just numbers (which indicates an indexed internal ID)
+  if (/^\d+$/.test(params.q)) return null;
 
   const allTags = await getAllTags();
+  const matchedTag = allTags.find(t => slugify(t) === params.q) || params.q;
 
-  // Try exact match first
-  let matchedTag = allTags.find(t => slugify(t) === slugifiedQ);
-
-  // If not found, try partial match (e.g. 'Hotels With Hot' -> 'Hotels With Hot Tub In Room')
-  if (!matchedTag) {
-    matchedTag = allTags.find(t => slugify(t).includes(slugifiedQ) || slugifiedQ.includes(slugify(t)));
-  }
-
-  // If still no tag match (e.g. completely invalid tag for a valid location)
-  if (!matchedTag) {
-    return { type: 'redirect', url: `/${slugify(matchedLocation)}/hotels-with-hot-tub-in-room` };
-  }
-
-  const targetLocationSlug = slugify(matchedLocation);
-  const targetTagSlug = slugify(matchedTag);
-
-  // If the current URL parameters exactly match the clean slugs, render the page
-  if (params.location === targetLocationSlug && params.q === targetTagSlug) {
-    return { type: 'render', location: matchedLocation, q: matchedTag };
-  }
-
-  // Otherwise, issue a 301 Permanent Redirect to the clean slugified URL
-  return { type: 'redirect', url: `/${targetLocationSlug}/${targetTagSlug}` };
+  return { location: matchedLocation, q: matchedTag };
 }
 
 export async function generateMetadata({
@@ -100,7 +54,7 @@ export async function generateMetadata({
   const resolvedParams = await params;
   const matchedParams = await getMatchedParams(resolvedParams);
 
-  if (matchedParams.type !== 'render') {
+  if (!matchedParams) {
     return {
       title: "Page Not Found",
       description: "The requested page could not be found.",
@@ -153,9 +107,7 @@ export default async function Page({ params }: PageProps) {
   const resolvedParams = await params;
   const matchedParams = await getMatchedParams(resolvedParams);
 
-  if (matchedParams.type === 'redirect') {
-    permanentRedirect(matchedParams.url);
-  } else if (matchedParams.type === 'not-found') {
+  if (!matchedParams) {
     notFound();
   }
 
