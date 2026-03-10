@@ -15,7 +15,8 @@ import { locationGEOData } from "@/data/location-geo-data";
 import { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { Suspense } from "react";
-import { getSeoPhrasing } from "@/lib/utils";
+import { getSeoPhrasing, sanitizeUrl } from "@/lib/utils";
+import Image from "next/image";
 
 interface PageProps {
   searchParams: Promise<{ q?: string; location?: string }>;
@@ -80,40 +81,60 @@ async function Results({ q, location }: ResultsProps) {
   const results = await searchHotels(q, location);
   const geoData = locationGEOData[location] || { expertTips: [], faqs: [] };
 
+  const heroImage = results.length > 0 ? results[0].image : "/hotels-with-hot-tub.jpg";
+  const { h1, intro } = getSeoPhrasing(q, location, results.length);
+
   return (
-    <main className="container mx-auto space-y-8 px-4 py-8">
-      <Breadcrumbs location={location} q={q} />
+    <>
+      {/* Header Section without Photo */}
+      <section className="container mx-auto px-4 pt-10 pb-4">
+        <Breadcrumbs location={location} q={q} />
 
-      <p className="text-center font-semibold">
-        Showing {results.length} results for {`"${q}"`} near {location}
-      </p>
+        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight max-w-4xl mx-auto text-gray-900 text-center">
+          {h1}
+        </h1>
+        <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto font-medium text-center">
+          {intro}
+        </p>
+      </section>
 
-      <h1 className="text-center text-3xl font-bold md:text-4xl lg:text-5xl lg:leading-tight mb-2 mt-4">
-        {getSeoPhrasing(q, location, results.length).h1}
-      </h1>
+      <main className="container mx-auto space-y-12 px-4 py-8 bg-white">
 
-      <AISummaryBlock locationName={location} summary={geoData.sentimentSummary!} q={q} />
+        {/* Elevated E-E-A-T Section */}
+        <div className="flex flex-col gap-10 mb-8 max-w-5xl mx-auto">
+          <AISummaryBlock locationName={location} summary={geoData.sentimentSummary!} q={q} />
+          <ExpertTips tips={geoData.expertTips} location={location} />
+        </div>
 
-      <SentimentSummary summary={geoData.sentimentSummary!} />
+        <HotelSchema hotels={results} locationName={location} q={q} />
 
-      <HotelSchema hotels={results} locationName={location} q={q} />
+        <div className="flex flex-col space-y-16 py-12 border-t border-gray-100 mt-12">
+          {results.slice(0, 1).map((hotel, index) => (
+            <HotelItem key={hotel.id} hotel={hotel} index={index} />
+          ))}
 
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {results.map((hotel) => (
-          <HotelItem key={hotel.id} hotel={hotel} />
-        ))}
-      </div>
+          {geoData.sentimentSummary && (
+            <div className="my-8 max-w-5xl mx-auto w-full">
+              <SentimentSummary summary={geoData.sentimentSummary} />
+            </div>
+          )}
 
-      <LocationOverview location={location} />
+          {results.slice(1).map((hotel, index) => (
+            <HotelItem key={hotel.id} hotel={hotel} index={index + 1} />
+          ))}
+        </div>
 
-      <ComparisonTable hotels={results} />
+        <ComparisonTable hotels={results} />
 
-      <ExpertTips tips={geoData.expertTips} location={location} />
+        <FAQSection faqs={geoData.faqs} location={location} />
 
-      <FAQSection faqs={geoData.faqs} location={location} />
+        <div className="max-w-5xl mx-auto w-full pt-8">
+          <LocationOverview location={location} />
+        </div>
 
-      <InternalLinks currentQ={q} currentLocation={location} />
-    </main>
+        <InternalLinks currentQ={q} currentLocation={location} />
+      </main>
+    </>
   );
 }
 

@@ -32,23 +32,27 @@ export default async function InternalLinks({ currentQ, currentLocation }: Inter
     if (validTagsForLocation.length === 0 && validLocationsForTag.length === 0) return null;
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-16 border-t border-gray-100 pt-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 my-16 border-t border-gray-200 pt-16">
             {/* Category Cross-Links */}
             {validTagsForLocation.length > 0 && (
                 <section>
-                    <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-                        <Search className="h-5 w-5 text-blue-600" />
-                        More Romantic Options in {currentLocation}
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
+                        <Search className="h-6 w-6 text-indigo-600" />
+                        Explore the Neighbourhood
                     </h3>
-                    <ul className="grid grid-cols-1 gap-3">
+                    <p className="text-gray-500 mb-6">Discover more romantic experiences and top-rated stays near {currentLocation}.</p>
+                    <ul className="space-y-4">
                         {validTagsForLocation.map((tag) => (
                             <li key={tag}>
                                 <Link
                                     href={`/${slugify(currentLocation)}/${slugify(tag)}`}
-                                    className="block p-4 rounded-lg bg-white border border-gray-200 hover:border-blue-400 hover:shadow-md transition-all group"
+                                    className="group flex items-center justify-between p-4 rounded-xl bg-gray-50 hover:bg-indigo-50 border border-transparent hover:border-indigo-100 transition-all"
                                 >
-                                    <span className="text-gray-700 group-hover:text-blue-600 font-medium">{tag}</span>
-                                    <span className="text-gray-400 text-sm block mt-1">Explore {tag} near {currentLocation}</span>
+                                    <div>
+                                        <span className="text-gray-900 group-hover:text-indigo-700 font-semibold text-lg block">{tag}</span>
+                                        <span className="text-gray-500 text-sm mt-1">in {currentLocation}</span>
+                                    </div>
+                                    <span className="text-indigo-400 group-hover:text-indigo-600">→</span>
                                 </Link>
                             </li>
                         ))}
@@ -59,19 +63,23 @@ export default async function InternalLinks({ currentQ, currentLocation }: Inter
             {/* Location Cross-Links */}
             {validLocationsForTag.length > 0 && (
                 <section>
-                    <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-                        <MapPin className="h-5 w-5 text-red-500" />
-                        {currentQ} in Other Cities
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
+                        <MapPin className="h-6 w-6 text-rose-500" />
+                        Similar Getaways
                     </h3>
-                    <ul className="grid grid-cols-1 gap-3">
+                    <p className="text-gray-500 mb-6">Looking for {currentQ} elsewhere? Explore our curated lists for other top destinations.</p>
+                    <ul className="space-y-4">
                         {validLocationsForTag.map((loc) => (
                             <li key={loc}>
                                 <Link
                                     href={`/${slugify(loc)}/${slugify(currentQ)}`}
-                                    className="block p-4 rounded-lg bg-white border border-gray-200 hover:border-red-400 hover:shadow-md transition-all group"
+                                    className="group flex items-center justify-between p-4 rounded-xl bg-gray-50 hover:bg-rose-50 border border-transparent hover:border-rose-100 transition-all"
                                 >
-                                    <span className="text-gray-700 group-hover:text-red-600 font-medium">{loc}</span>
-                                    <span className="text-gray-400 text-sm block mt-1">Find {currentQ} in {loc}</span>
+                                    <div>
+                                        <span className="text-gray-900 group-hover:text-rose-700 font-semibold text-lg block">{loc}</span>
+                                        <span className="text-gray-500 text-sm mt-1">{currentQ}</span>
+                                    </div>
+                                    <span className="text-rose-400 group-hover:text-rose-600">→</span>
                                 </Link>
                             </li>
                         ))}

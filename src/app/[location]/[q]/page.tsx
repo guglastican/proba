@@ -13,8 +13,9 @@ import { getValidLocationTagPairs, getAllTags, locations, searchHotels } from "@
 import { locationGEOData } from "@/data/location-geo-data";
 import { Metadata } from "next";
 import { cache } from "react";
-import { slugify, sanitizeUrl, getSeoPhrasing } from "@/lib/utils";
-import { notFound } from "next/navigation";
+import { sanitizeUrl, slugify, getSeoPhrasing } from "@/lib/utils";
+import { notFound, permanentRedirect } from "next/navigation";
+import Image from "next/image";
 
 interface PageProps {
   params: Promise<{ location: string; q: string }>;
@@ -33,18 +34,64 @@ export async function generateStaticParams() {
 
 const getHotels = cache(searchHotels);
 
-async function getMatchedParams(params: { location: string; q: string }) {
-  // Validate that location is one of our canonical locations
-  const matchedLocation = locations.find(l => slugify(l) === params.location);
-  if (!matchedLocation) return null;
+type MatchedParamsResult =
+  | { type: 'render'; location: string; q: string }
+  | { type: 'redirect'; url: string }
+  | { type: 'not-found' };
 
-  // Validate that q is not just numbers (which indicates an indexed internal ID)
-  if (/^\d+$/.test(params.q)) return null;
+async function getMatchedParams(params: { location: string; q: string }): Promise<MatchedParamsResult> {
+  const decodedLocation = decodeURIComponent(params.location);
+  const decodedQ = decodeURIComponent(params.q);
+
+  const slugifiedLocation = slugify(decodedLocation);
+  const slugifiedQ = slugify(decodedQ);
+
+  const matchedLocation = locations.find(l => slugify(l) === slugifiedLocation);
+
+  if (!matchedLocation) {
+    // Check for known legacy non-location paths
+    if (slugifiedLocation === 'hotel' || slugifiedLocation === 'destination-weddings-in-oregon' || slugifiedLocation === 'caribbean-sailing-cruise-vacation') {
+      return { type: 'redirect', url: '/' };
+    }
+
+    // Fallback for weird typos like cas-vegas-nv
+    if (slugifiedLocation === 'cas-vegas-nv') {
+      return { type: 'redirect', url: '/las-vegas-nv/hotels-with-hot-tub-in-room' };
+    }
+
+    return { type: 'not-found' };
+  }
+
+  // If the query is just numbers (indicating an old indexed internal ID)
+  if (/^\d+$/.test(decodedQ)) {
+    return { type: 'redirect', url: `/${slugify(matchedLocation)}/hotels-with-hot-tub-in-room` };
+  }
 
   const allTags = await getAllTags();
-  const matchedTag = allTags.find(t => slugify(t) === params.q) || params.q;
 
-  return { location: matchedLocation, q: matchedTag };
+  // Try exact match first
+  let matchedTag = allTags.find(t => slugify(t) === slugifiedQ);
+
+  // If not found, try partial match (e.g. 'Hotels With Hot' -> 'Hotels With Hot Tub In Room')
+  if (!matchedTag) {
+    matchedTag = allTags.find(t => slugify(t).includes(slugifiedQ) || slugifiedQ.includes(slugify(t)));
+  }
+
+  // If still no tag match (e.g. completely invalid tag for a valid location)
+  if (!matchedTag) {
+    return { type: 'redirect', url: `/${slugify(matchedLocation)}/hotels-with-hot-tub-in-room` };
+  }
+
+  const targetLocationSlug = slugify(matchedLocation);
+  const targetTagSlug = slugify(matchedTag);
+
+  // If the current URL parameters exactly match the clean slugs, render the page
+  if (params.location === targetLocationSlug && params.q === targetTagSlug) {
+    return { type: 'render', location: matchedLocation, q: matchedTag };
+  }
+
+  // Otherwise, issue a 301 Permanent Redirect to the clean slugified URL
+  return { type: 'redirect', url: `/${targetLocationSlug}/${targetTagSlug}` };
 }
 
 export async function generateMetadata({
@@ -53,7 +100,7 @@ export async function generateMetadata({
   const resolvedParams = await params;
   const matchedParams = await getMatchedParams(resolvedParams);
 
-  if (!matchedParams) {
+  if (matchedParams.type !== 'render') {
     return {
       title: "Page Not Found",
       description: "The requested page could not be found.",
@@ -106,7 +153,9 @@ export default async function Page({ params }: PageProps) {
   const resolvedParams = await params;
   const matchedParams = await getMatchedParams(resolvedParams);
 
-  if (!matchedParams) {
+  if (matchedParams.type === 'redirect') {
+    permanentRedirect(matchedParams.url);
+  } else if (matchedParams.type === 'not-found') {
     notFound();
   }
 
@@ -115,39 +164,57 @@ export default async function Page({ params }: PageProps) {
   const geoData = locationGEOData[location] || { expertTips: [], faqs: [] };
 
   const { h1, intro } = getSeoPhrasing(q, location, results.length);
+  const heroImage = results.length > 0 ? results[0].image : "/hotels-with-hot-tub.jpg";
 
   return (
     <div>
       <Header q={q} location={location} />
-      <main className="container mx-auto space-y-8 px-4 py-8">
+
+      {/* Header Section without Photo */}
+      <section className="container mx-auto px-4 pt-10 pb-4">
         <Breadcrumbs location={location} q={q} />
 
-        <h1 className="text-center text-3xl font-bold md:text-4xl lg:text-5xl lg:leading-tight mb-2">
+        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight max-w-4xl mx-auto text-gray-900 text-center">
           {h1}
         </h1>
-        <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
+        <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto font-medium text-center">
           {intro}
         </p>
+      </section>
 
-        <AISummaryBlock locationName={location} summary={geoData.sentimentSummary!} q={q} />
+      <main className="container mx-auto space-y-12 px-4 py-8 bg-white">
 
-        <SentimentSummary summary={geoData.sentimentSummary!} />
+        {/* Elevated E-E-A-T Section */}
+        <div className="flex flex-col gap-10 mb-8 max-w-5xl mx-auto">
+          <AISummaryBlock locationName={location} summary={geoData.sentimentSummary!} q={q} />
+          <ExpertTips tips={geoData.expertTips} location={location} />
+        </div>
 
         <HotelSchema hotels={results} locationName={location} q={q} />
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {results.map((hotel) => (
-            <HotelItem key={hotel.id} hotel={hotel} />
+        <div className="flex flex-col space-y-16 py-12 border-t border-gray-100 mt-12">
+          {results.slice(0, 1).map((hotel, index) => (
+            <HotelItem key={hotel.id} hotel={hotel} index={index} />
+          ))}
+
+          {geoData.sentimentSummary && (
+            <div className="my-8 max-w-5xl mx-auto w-full">
+              <SentimentSummary summary={geoData.sentimentSummary} />
+            </div>
+          )}
+
+          {results.slice(1).map((hotel, index) => (
+            <HotelItem key={hotel.id} hotel={hotel} index={index + 1} />
           ))}
         </div>
 
-        <LocationOverview location={location} />
-
         <ComparisonTable hotels={results} />
 
-        <ExpertTips tips={geoData.expertTips} location={location} />
-
         <FAQSection faqs={geoData.faqs} location={location} />
+
+        <div className="max-w-5xl mx-auto w-full pt-8">
+          <LocationOverview location={location} />
+        </div>
 
         <InternalLinks currentQ={q} currentLocation={location} />
       </main>

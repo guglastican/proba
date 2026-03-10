@@ -15,77 +15,76 @@ import { sanitizeUrl } from "@/lib/utils";
 
 interface HotelItemProps {
   hotel: Hotel;
+  index?: number;
 }
 
-export default function HotelItem({ hotel }: HotelItemProps) {
+export default function HotelItem({ hotel, index = 0 }: HotelItemProps) {
+  const isEven = index % 2 === 0;
+
   return (
-    <Card
-      className="overflow-hidden border border-gray-200 rounded-lg shadow-sm"
-    >
-      <div className="relative">
+    <Card className="overflow-hidden border-0 shadow-none mb-12 flex flex-col md:flex-row gap-8 lg:gap-16 bg-transparent">
+      {/* Image Container */}
+      <div className={`relative w-full md:w-1/2 h-[350px] md:h-[450px] rounded-3xl overflow-hidden shrink-0 ${!isEven ? 'md:order-2' : ''}`}>
         <Image
           src={sanitizeUrl(hotel.image)}
           alt={`Photo of ${hotel.name}, a romantic luxury hotel in ${hotel.address.split(',')[hotel.address.split(',').length - 2]?.trim() || 'the area'} offering ${hotel.tags[0] || 'great amenities'}`}
-          width={600}
-          height={400}
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="h-64 w-full object-cover"
+          fill
+          sizes="(max-width: 768px) 100vw, 50vw"
+          className="object-cover hover:scale-105 transition-transform duration-700"
         />
-        <div className="absolute top-3 right-3 bg-white px-3 py-1 rounded-full text-sm font-semibold shadow-md">
-          ${hotel.price}
+        <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-full text-base font-bold shadow-lg text-gray-900">
+          ${hotel.price} <span className="text-sm font-normal text-gray-600">/ night</span>
         </div>
       </div>
 
-      <CardContent className="p-4">
-        <h2 className="text-xl font-bold mb-1">{hotel.name}</h2>
+      {/* Editor Content Container */}
+      <div className={`w-full md:w-1/2 flex flex-col justify-center ${!isEven ? 'md:order-1' : ''}`}>
+        <h2 className="text-3xl lg:text-4xl font-bold mb-3 text-gray-900 leading-tight">{hotel.name}</h2>
 
-        <div className="flex items-center text-gray-500 mb-2">
-          <MapPin className="h-4 w-4 mr-1 flex-shrink-0" />
-          <span className="text-sm truncate">{hotel.address}</span>
-        </div>
-
-        <div className="flex items-center mb-3">
-          <div className="flex mr-2">
-            <StarRating rating={hotel.rating} />
+        {/* Rating & Address */}
+        <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-6 text-gray-600">
+          <div className="flex items-center">
+            <div className="flex mr-2">
+              <StarRating rating={hotel.rating} />
+            </div>
+            <span className="font-medium text-gray-900">{hotel.rating} <span className="text-gray-500 font-normal">({hotel.reviews} reviews)</span></span>
           </div>
-          <span className="text-sm text-gray-500">
-            {hotel.rating} ({hotel.reviews} reviews)
-          </span>
+          <div className="hidden sm:block text-gray-300">•</div>
+          <div className="flex items-center text-sm">
+            <MapPin className="h-4 w-4 mr-1 text-red-500" />
+            {hotel.address.split(',').slice(-3, -1).join(',').trim() || hotel.address}
+          </div>
         </div>
 
-        <p className="text-sm text-gray-600 mb-5 line-clamp-8">
+        <p className="text-lg text-gray-700 leading-relaxed mb-8">
           {hotel.description}
         </p>
 
-        <div className="flex flex-wrap gap-2 mb-4">
-          {hotel.tags.slice(0, 7).map((tag) => (
+        <div className="flex flex-wrap gap-2 mb-8">
+          {hotel.tags.slice(0, 5).map((tag) => (
             <Badge
               key={tag}
-              variant="secondary"
-              className="bg-gray-100 text-gray-700 hover:bg-gray-200 border-0"
+              variant="outline"
+              className="bg-blue-50 text-blue-700 border-blue-200 px-3 py-1 font-medium"
             >
               {tag}
             </Badge>
           ))}
         </div>
 
-
-      </CardContent>
-
-      <CardFooter className="px-4 pb-4 pt-0">
-        <Link
-          href={hotel.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-full"
-        >
-          <Button
-            className="w-full bg-green-600 hover:bg-green-700 text-white"
+        <div className="mt-auto">
+          <Link
+            href={hotel.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block w-full sm:w-auto"
           >
-            View Details
-          </Button>
-        </Link>
-      </CardFooter>
+            <Button size="lg" className="w-full sm:w-auto bg-gray-900 hover:bg-gray-800 text-white rounded-full px-10 py-6 text-lg tracking-wide font-semibold shadow-md hover:shadow-xl transition-all">
+              Check Availability
+            </Button>
+          </Link>
+        </div>
+      </div>
     </Card>
   );
 }
