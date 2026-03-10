@@ -1,3 +1,5 @@
+import { legacyRedirects } from './src/data/legacy-redirects';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
@@ -18,6 +20,7 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      ...legacyRedirects,
       {
         source: '/new-york',
         destination: '/new-york-ny/hotels-with-hot-tub-in-room',
