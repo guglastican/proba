@@ -20,6 +20,41 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      {
+        source: '/indianapolis2c20in/hotels20with20jacuzzi20in20room',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/atlanta/hotel-with-tub',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/las20vegas2c20nv/boutique-hotels-with-tubs',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/atlanta/rooftop-pool',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/atlanta/hotels-with-jetted-tub-in-room',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/Miami,%20FL/Michelin%20Star%20Dining',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/berlin-de/riverside-view',
+        destination: '/',
+        permanent: true,
+      },
       ...legacyRedirects,
       {
         source: '/new-york',
