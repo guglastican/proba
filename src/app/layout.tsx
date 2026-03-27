@@ -11,10 +11,7 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: {
-    template: "%s | Romantic Vacations",
-    default: "Romantic Vacations & Destinations",
-  },
+  title: "Romantic Vacations & Destinations",
   description: "Find the best hotels near you for the perfect romantic getaway.",
   metadataBase: new URL(sanitizeUrl(process.env.NEXT_PUBLIC_BASE_URL) || 'https://romantic-vacations-destinations.com'),
   alternates: {
