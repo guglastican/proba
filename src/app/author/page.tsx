@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "About the Author - Hotel Reviews and Recommendations",
+  title: "About the Author - Hot Tub Finder",
   description: "Learn more about our travel writer and hotel reviewer",
   alternates: {
     canonical: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.romantic-vacations-destinations.com'}/author`,
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function AuthorPage() {
   return (
     <>
-      <Header q="" location="" />
+      <Header />
       <main className="container mx-auto px-4 py-8">
         <h1 className="text-4xl font-bold mb-6">About the Author</h1>
         <div className="max-w-2xl mx-auto">
@@ -38,7 +38,7 @@ export default function AuthorPage() {
             </p>
             <div>
               <h2 className="text-2xl font-semibold">Why I Created This Website</h2>
-              <p className="text-gray-800">My passion for travel and comfortable accommodations inspired me to create Booking Hotels with Hot Tubs. I realized that finding the perfect hotel with a private hot tub, jetted suite, or spa-like amenities was often difficult and time-consuming. Many hotel booking sites list thousands of options, but very few focus specifically on hot tub hotels—which is where I come in.</p>
+              <p className="text-gray-800">My passion for travel and comfortable accommodations inspired me to create Hot Tub Finder. I realized that finding the perfect hotel with a private hot tub, jetted suite, or spa-like amenities was often difficult and time-consuming. Many hotel booking sites list thousands of options, but very few focus specifically on hot tub hotels—which is where I come in.</p>
             </div>
             <div className="bg-gray-50 p-6 rounded-lg">
               <h2 className="text-2xl font-semibold mb-4">What You&apos;ll Find on This Website</h2>
@@ -56,7 +56,7 @@ export default function AuthorPage() {
             </div>
             <div>
               <h2 className="text-2xl font-semibold">My Mission: Helping You Book the Perfect Stay</h2>
-              <p className="text-gray-800">At Booking Hotels with Hot Tubs, my mission is to make luxurious and relaxing travel experiences accessible to everyone. Whether you&apos;re looking for a secluded cabin with a hot tub, a beachfront jetted suite, or a five-star spa resort, I strive to bring you the best options at the best prices.</p>
+              <p className="text-gray-800">At Hot Tub Finder, my mission is to make luxurious and relaxing travel experiences accessible to everyone. Whether you&apos;re looking for a secluded cabin with a hot tub, a beachfront jetted suite, or a five-star spa resort, I strive to bring you the best options at the best prices.</p>
             </div>
             <div className="mt-6">
               <h3 className="text-xl font-semibold mb-2">Let&apos;s Connect!</h3>

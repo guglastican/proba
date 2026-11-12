@@ -14,6 +14,7 @@ export interface Hotel {
   vibe?: string;
   link: string;
   googlePlaceId?: string; // Google Place ID for fetching review
+  whyBook?: string; // Optional hand-written "why book this stay" copy (up to ~300 words)
 }
 
 export const hotels: Hotel[] = [
@@ -915,7 +916,7 @@ export const hotels: Hotel[] = [
   {
     id: 67,
     name: "Kimpton Hotel Monaco Seattle by IHG",
-    image: "/public/hotels with tub in seattle.jpg",
+    image: "/hotels with tub in seattle.jpg",
     rating: 4.5,
     price: "500", // Requires date input for pricing
     address: "1101 4th Ave, Seattle, WA 98101",
@@ -1139,9 +1140,15 @@ export const hotels: Hotel[] = [
 
 ];
 
-export async function searchHotels(q: string, location: string) {
-  await new Promise((resolve) => setTimeout(resolve, 1500));
+function cityOf(location: string): string {
+  return location.split(",")[0].trim().toLowerCase();
+}
 
+function matchesLocation(address: string, location: string): boolean {
+  return address.toLowerCase().includes(cityOf(location));
+}
+
+export async function searchHotels(q: string, location: string) {
   const searchWords = q?.split(" ").filter(Boolean) || [];
 
   return hotels
@@ -1155,17 +1162,13 @@ export async function searchHotels(q: string, location: string) {
           )
       )
     )
-    .filter((hotel) =>
-      hotel.address.toLowerCase().includes(location.toLowerCase())
-    )
+    .filter((hotel) => matchesLocation(hotel.address, location))
     .sort((a, b) => b.rating - a.rating);
 }
 
 export const locations = ["San Francisco, CA", "Chicago, IL", "Las Vegas, NV", "Miami, FL", "New York, NY", "London", "Atlanta, GA", "Indianapolis, IN", "Seattle, WA", "Berlin, DE"];
 
 export async function getAllTags({ limit }: { limit?: number } = {}) {
-  await new Promise((resolve) => setTimeout(resolve, 1500));
-
   const allTags = hotels
     .slice(0, limit)
     .reduce<string[]>(function (acc, hotel) {
@@ -1180,7 +1183,7 @@ export async function getValidLocationTagPairs() {
   hotels.forEach(hotel => {
     // Find which canonical location this hotel belongs to
     const canonicalLocation = locations.find(loc =>
-      hotel.address.toLowerCase().includes(loc.toLowerCase())
+      matchesLocation(hotel.address, loc)
     );
 
     if (canonicalLocation) {

@@ -8,9 +8,12 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="text-sm text-gray-600 mb-4 md:mb-0">
-            &copy; {currentYear} HotTubFinder. All rights reserved.
+            &copy; {currentYear} Hot Tub Finder. All rights reserved.
           </div>
           <nav className="flex space-x-4">
+            <Link href="/categories" className="text-sm font-semibold text-gray-700 hover:text-primary transition-colors">
+              Stay Types
+            </Link>
             <Link href="/destinations" className="text-sm font-semibold text-gray-700 hover:text-primary transition-colors">
               Destinations
             </Link>

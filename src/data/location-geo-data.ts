@@ -375,6 +375,22 @@ export const locationGEOData: Record<string, LocationGEO> = {
             {
                 question: "Are in-room hot tubs sanitized between guests?",
                 answer: "Reputable hotels follow strict cleaning protocols for jetted tubs, including flushing the lines with sanitizer between every stay."
+            },
+            {
+                question: "Are hotel hot tubs private or shared?",
+                answer: "It depends on the property. In-room hot tubs and Jacuzzi suites are private, while hot tubs in the spa or pool area are usually shared. Always confirm whether you're booking a private in-room tub or access to a communal spa before you pay."
+            },
+            {
+                question: "How much does a hotel room with a hot tub cost?",
+                answer: "Prices typically range from about $150 per night for budget chains with a hot tub to $1,000+ for luxury suites and resorts with private whirlpools. Weekday stays and booking 4-6 weeks ahead usually get the best rates."
+            },
+            {
+                question: "Can I bring my pet to a hotel with a hot tub?",
+                answer: "Some properties welcome pets, but it's not universal. Look for hotels that are explicitly pet-friendly and confirm any pet fees and size limits before booking, since hot tub and spa areas are often restricted to guests only."
+            },
+            {
+                question: "How do I know a hotel's hot tub is clean before booking?",
+                answer: "Check recent guest reviews for mentions of cleanliness and maintenance, and look for photos of the tub itself. A pattern of complaints about cloudy water or 'closed for maintenance' is a red flag."
             }
         ],
         sentimentSummary: {

@@ -5,9 +5,10 @@ interface HotelSchemaProps {
     hotels: Hotel[];
     locationName: string;
     q: string;
+    url?: string;
 }
 
-export default function HotelSchema({ hotels, locationName, q }: HotelSchemaProps) {
+export default function HotelSchema({ hotels, locationName, q, url = "" }: HotelSchemaProps) {
     if (!hotels || hotels.length === 0) return null;
 
     const schema = {
@@ -16,7 +17,7 @@ export default function HotelSchema({ hotels, locationName, q }: HotelSchemaProp
         "name": `Best Hotels offering ${q} in ${locationName}`,
         "description": `A curated list of the top-rated hotels featuring ${q.toLowerCase()} and luxury amenities in ${locationName}.`,
         "numberOfItems": hotels.length,
-        "url": typeof window !== "undefined" ? window.location.href : "",
+        "url": url,
         "itemListElement": hotels.map((hotel, index) => ({
             "@type": "ListItem",
             "position": index + 1,

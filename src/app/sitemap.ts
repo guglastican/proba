@@ -1,23 +1,32 @@
-import { getValidLocationTagPairs } from "@/data/hotels";
-import { slugify } from "@/lib/utils";
+import { locations } from "@/data/hotels";
+import { categories } from "@/data/directory";
+import { slugify, PRIMARY_TAG_SLUG } from "@/lib/utils";
 import { MetadataRoute } from "next";
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://www.romantic-vacations-destinations.com";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const validPairs = await getValidLocationTagPairs();
+  const now = new Date();
 
-  const searchLandingPages = validPairs.map((pair) => ({
-    url: `${baseUrl}/${slugify(pair.location)}/${slugify(pair.tag)}`,
-    lastModified: new Date(),
-    changeFrequency: "weekly" as const,
+  // One canonical page per city (all tag variations canonicalize to it).
+  const cityPages: MetadataRoute.Sitemap = locations.map((location) => ({
+    url: `${baseUrl}/${slugify(location)}/${PRIMARY_TAG_SLUG}`,
+    lastModified: now,
+    changeFrequency: "weekly",
     priority: 0.9,
+  }));
+
+  const categoryPages: MetadataRoute.Sitemap = categories.map((category) => ({
+    url: `${baseUrl}/categories/${category.slug}`,
+    lastModified: now,
+    changeFrequency: "weekly",
+    priority: 0.8,
   }));
 
   return [
     {
       url: `${baseUrl}/`,
-      lastModified: new Date(),
+      lastModified: now,
       changeFrequency: "daily",
       priority: 1.0,
     },
@@ -29,10 +38,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     {
       url: `${baseUrl}/destinations`,
-      lastModified: new Date(),
+      lastModified: now,
       changeFrequency: "weekly",
       priority: 0.9,
     },
+    {
+      url: `${baseUrl}/categories`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    ...categoryPages,
+    ...cityPages,
     {
       url: `${baseUrl}/privacy-policy`,
       lastModified: "2024-12-31",
@@ -51,6 +68,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "yearly",
       priority: 0.7,
     },
-    ...searchLandingPages,
   ];
 }

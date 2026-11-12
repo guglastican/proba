@@ -1,7 +1,8 @@
 import { Metadata } from "next";
+import Header from "@/components/Header";
 
 export const metadata: Metadata = {
-  title: "Terms of Service - Romantic Vacations Destinations",
+  title: "Terms of Service - Hot Tub Finder",
   description: "Terms and conditions for using our services",
   alternates: {
     canonical: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.romantic-vacations-destinations.com'}/terms-of-service`,
@@ -10,8 +11,10 @@ export const metadata: Metadata = {
 
 export default function TermsOfService() {
   return (
-    <div className="container mx-auto px-4 py-12 max-w-4xl">
-      <h1 className="text-3xl font-bold mb-8">Terms of Service</h1>
+    <div>
+      <Header />
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
+        <h1 className="text-3xl font-bold mb-8">Terms of Service</h1>
 
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-4">1. Acceptance of Terms</h2>
@@ -24,8 +27,8 @@ export default function TermsOfService() {
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-4">2. Service Description</h2>
         <p>
-          We provide hotel search and recommendation services for romantic vacation
-          destinations. All information is provided for general informational purposes only.
+          We provide hotel search and recommendation services for hot tub hotels
+          and romantic getaways. All information is provided for general informational purposes only.
         </p>
       </section>
 
@@ -53,6 +56,7 @@ export default function TermsOfService() {
           of the service constitutes acceptance of the modified terms.
         </p>
       </section>
+      </div>
     </div>
   );
 }

@@ -9,11 +9,12 @@ import LocationOverview from "@/components/LocationOverview";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import InternalLinks from "@/components/InternalLinks";
 import HotelSchema from "@/components/HotelSchema";
+import QuickAnswer from "@/components/QuickAnswer";
 import { getValidLocationTagPairs, getAllTags, locations, searchHotels } from "@/data/hotels";
 import { locationGEOData } from "@/data/location-geo-data";
 import { Metadata } from "next";
 import { cache } from "react";
-import { sanitizeUrl, slugify, getSeoPhrasing } from "@/lib/utils";
+import { sanitizeUrl, slugify, getSeoPhrasing, PRIMARY_TAG_SLUG } from "@/lib/utils";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 
@@ -66,7 +67,8 @@ export async function generateMetadata({
   const results = await getHotels(q, location);
 
   const baseUrl = sanitizeUrl(process.env.NEXT_PUBLIC_BASE_URL) || 'https://www.romantic-vacations-destinations.com';
-  const url = `${baseUrl}/${resolvedParams.location}/${resolvedParams.q}`;
+  // Consolidate duplicate tag pages to the single canonical page per city.
+  const canonicalUrl = `${baseUrl}/${resolvedParams.location}/${PRIMARY_TAG_SLUG}`;
 
   const { title, description } = getSeoPhrasing(q, location, results.length);
 
@@ -74,7 +76,7 @@ export async function generateMetadata({
     title,
     description,
     alternates: {
-      canonical: url,
+      canonical: canonicalUrl,
     },
     robots: {
       index: true,
@@ -89,8 +91,8 @@ export async function generateMetadata({
     openGraph: {
       title,
       description,
-      url,
-      siteName: "Romantic Vacations Destinations",
+      url: canonicalUrl,
+      siteName: "Hot Tub Finder",
       type: "website",
       images: results.length > 0 ? [{ url: sanitizeUrl(results[0].image) }] : [],
     },
@@ -118,9 +120,12 @@ export default async function Page({ params }: PageProps) {
   const { h1, intro } = getSeoPhrasing(q, location, results.length);
   const heroImage = results.length > 0 ? results[0].image : "/hotels-with-hot-tub.jpg";
 
+  const baseUrl = sanitizeUrl(process.env.NEXT_PUBLIC_BASE_URL) || 'https://www.romantic-vacations-destinations.com';
+  const canonicalUrl = `${baseUrl}/${resolvedParams.location}/${PRIMARY_TAG_SLUG}`;
+
   return (
     <div>
-      <Header q={q} location={location} />
+      <Header />
 
       {/* Header Section without Photo */}
       <section className="container mx-auto px-4 pt-10 pb-4">
@@ -136,13 +141,17 @@ export default async function Page({ params }: PageProps) {
 
       <main className="container mx-auto space-y-12 px-4 py-8 bg-white">
 
+        <div className="max-w-5xl mx-auto w-full">
+          <QuickAnswer location={location} q={q} hotels={results} summary={geoData.sentimentSummary} />
+        </div>
+
         {/* Elevated E-E-A-T Section */}
         <div className="flex flex-col gap-10 mb-8 max-w-5xl mx-auto">
           <AISummaryBlock locationName={location} summary={geoData.sentimentSummary!} q={q} />
           <ExpertTips tips={geoData.expertTips} location={location} />
         </div>
 
-        <HotelSchema hotels={results} locationName={location} q={q} />
+        <HotelSchema hotels={results} locationName={location} q={q} url={canonicalUrl} />
 
         <div className="flex flex-col space-y-16 py-12 border-t border-gray-100 mt-12">
           {results.slice(0, 1).map((hotel, index) => (
@@ -162,7 +171,7 @@ export default async function Page({ params }: PageProps) {
 
         <ComparisonTable hotels={results} />
 
-        <FAQSection faqs={geoData.faqs} location={location} />
+        <FAQSection faqs={[...geoData.faqs, ...locationGEOData["General"].faqs]} location={location} />
 
         <div className="max-w-5xl mx-auto w-full pt-8">
           <LocationOverview location={location} />

@@ -11,23 +11,23 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Romantic Vacations & Destinations",
-  description: "Find the best hotels near you for the perfect romantic getaway.",
-  metadataBase: new URL(sanitizeUrl(process.env.NEXT_PUBLIC_BASE_URL) || 'https://romantic-vacations-destinations.com'),
+  title: "Hot Tub Finder - Hotels with Hot Tubs & Jacuzzi Suites",
+  description: "Find the best hotels with hot tubs across the U.S. Browse in-room Jacuzzis, spa retreats, romantic getaways and more.",
+  metadataBase: new URL(sanitizeUrl(process.env.NEXT_PUBLIC_BASE_URL) || 'https://www.romantic-vacations-destinations.com'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: "Romantic Vacations & Destinations",
-    description: "Discover the world's most romantic hotels and destinations.",
+    title: "Hot Tub Finder - Hotels with Hot Tubs",
+    description: "Discover the most relaxing hotels with hot tubs across the U.S.",
     url: "/",
-    siteName: "Romantic Vacations Destinations",
+    siteName: "Hot Tub Finder",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Romantic Vacations & Destinations",
-    description: "Discover the world's most romantic hotels and destinations.",
+    title: "Hot Tub Finder - Hotels with Hot Tubs",
+    description: "Discover the most relaxing hotels with hot tubs across the U.S.",
   },
 };
 
@@ -43,6 +43,32 @@ export default function RootLayout({
       {/* Add Google Tag Manager */}
       <GoogleTagManager gtmId="GTM-KQ7B5BL5" />
       <body className={`${geistSans.className} antialiased flex flex-col min-h-screen`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  "name": "Hot Tub Finder",
+                  "url": "https://www.romantic-vacations-destinations.com/",
+                  "logo": "https://www.romantic-vacations-destinations.com/hotels-with-hot-tub.jpg",
+                  "founder": {
+                    "@type": "Person",
+                    "name": "Emma Caldwell",
+                    "jobTitle": "Travel Writer & Reviewer"
+                  }
+                },
+                {
+                  "@type": "WebSite",
+                  "name": "Hot Tub Finder",
+                  "url": "https://www.romantic-vacations-destinations.com/"
+                }
+              ]
+            }),
+          }}
+        />
         <div className="flex-grow">
           {children}
         </div>

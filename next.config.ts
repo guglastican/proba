@@ -2,6 +2,9 @@ import { legacyRedirects } from './src/data/legacy-redirects';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  turbopack: {
+    root: process.cwd(),
+  },
   images: {
     remotePatterns: [
       {

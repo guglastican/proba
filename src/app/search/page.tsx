@@ -26,7 +26,7 @@ export async function generateMetadata({ searchParams }: PageProps): Promise<Met
   const params = await searchParams;
   const q = params.q || ''; // q is always present due to redirect in Page
   const location = params.location || locations[0]; // Default to first location if not provided
-  const baseUrl = 'https://www.romantic-vacations-destinations.com/'; // Replace with your actual domain, e.g., process.env.SITE_URL
+  const baseUrl = sanitizeUrl(process.env.NEXT_PUBLIC_BASE_URL) || 'https://www.romantic-vacations-destinations.com/';
 
   // Build the query string with q and effective location
   const queryParams = new URLSearchParams({
@@ -48,6 +48,10 @@ export async function generateMetadata({ searchParams }: PageProps): Promise<Met
   return {
     title: dynamicTitle,
     description,
+    robots: {
+      index: false,
+      follow: true,
+    },
     alternates: {
       canonical: canonicalUrl,
     },
@@ -64,7 +68,7 @@ export default async function Page({ searchParams }: PageProps) {
 
   return (
     <div>
-      <Header q={q} location={userLocation} />
+      <Header />
       <Suspense fallback={<ResultsLoadingSkeleton />} key={`${q}-${location}`}>
         <Results q={q} location={userLocation} />
       </Suspense>

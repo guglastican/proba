@@ -10,8 +10,16 @@ export function cn(...inputs: ClassValue[]) {
 export function sanitizeUrl(url: string | undefined): string {
   if (!url) return '';
 
+  const trimmed = url.trim();
+
+  // Local public paths (e.g. "/images/hero.jpg") are served from the public
+  // directory — keep them relative and encode any whitespace in the filename.
+  if (trimmed.startsWith('/')) {
+    return encodeURI(trimmed);
+  }
+
   // Remove any whitespace, tabs, and newlines
-  const cleanUrl = url.replace(/\s/g, '');
+  const cleanUrl = trimmed.replace(/\s/g, '');
 
   // Ensure the URL has a protocol
   if (!cleanUrl.match(/^https?:\/\//)) {
@@ -32,6 +40,11 @@ export function slugify(text: string): string {
     .replace(/^-+/, '')       // Trim - from start of text
     .replace(/-+$/, '');      // Trim - from end of text
 }
+
+// The single canonical tag for every city. All other tag variations
+// (hot-tub, spa-hotel, hotels-with-jacuzzi-in-room, …) canonicalize here.
+export const PRIMARY_TAG = "Hotels With Hot Tub in Room";
+export const PRIMARY_TAG_SLUG = "hotels-with-hot-tub-in-room";
 
 export function getSeoPhrasing(q: string, location: string, count: number) {
   const lowerQ = q.toLowerCase();

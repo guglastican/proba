@@ -1,7 +1,8 @@
 import { Metadata } from "next";
+import Header from "@/components/Header";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy - Romantic Vacations Destinations",
+  title: "Privacy Policy - Hot Tub Finder",
   description: "Read our privacy policy and learn how we protect your data",
   alternates: {
     canonical: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.romantic-vacations-destinations.com'}/privacy-policy`,
@@ -10,8 +11,10 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicy() {
   return (
-    <div className="container mx-auto px-4 py-12 max-w-4xl">
-      <h1 className="text-3xl font-bold mb-8">Privacy Policy</h1>
+    <div>
+      <Header />
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
+        <h1 className="text-3xl font-bold mb-8">Privacy Policy</h1>
 
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-4">Information We Collect</h2>
@@ -49,6 +52,7 @@ export default function PrivacyPolicy() {
           of any changes by posting the new Privacy Policy on this page.
         </p>
       </section>
+      </div>
     </div>
   );
 }

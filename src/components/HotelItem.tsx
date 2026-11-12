@@ -8,10 +8,11 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { Hotel } from "@/data/hotels";
-import { MapPin, Star, StarHalf } from "lucide-react";
+import { Check, MapPin, Star, StarHalf } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { sanitizeUrl } from "@/lib/utils";
+import { buildWhyBook, expandDescription } from "@/lib/hotel-content";
 
 interface HotelItemProps {
   hotel: Hotel;
@@ -20,6 +21,8 @@ interface HotelItemProps {
 
 export default function HotelItem({ hotel, index = 0 }: HotelItemProps) {
   const isEven = index % 2 === 0;
+  const description = expandDescription(hotel);
+  const { reasons, summary } = buildWhyBook(hotel);
 
   return (
     <Card className="overflow-hidden border-0 shadow-none mb-12 flex flex-col md:flex-row gap-8 lg:gap-16 bg-transparent">
@@ -56,9 +59,23 @@ export default function HotelItem({ hotel, index = 0 }: HotelItemProps) {
           </div>
         </div>
 
-        <p className="text-lg text-gray-700 leading-relaxed mb-8">
-          {hotel.description}
+        <p className="text-lg text-gray-700 leading-relaxed mb-6">
+          {description}
         </p>
+
+        {/* Why book this stay */}
+        <div className="mb-6 rounded-xl border border-emerald-100 bg-emerald-50/60 p-5">
+          <h3 className="mb-3 text-lg font-bold text-gray-900">Why book this stay</h3>
+          <ul className="mb-4 space-y-2">
+            {reasons.map((reason, i) => (
+              <li key={i} className="flex items-start gap-2 text-gray-700">
+                <Check className="mt-0.5 size-5 shrink-0 text-emerald-600" />
+                <span>{reason}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="text-sm italic text-gray-600">{summary}</p>
+        </div>
 
         <div className="flex flex-wrap gap-2 mb-8">
           {hotel.tags.slice(0, 5).map((tag) => (
